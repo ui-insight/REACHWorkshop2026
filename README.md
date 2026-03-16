@@ -19,5 +19,6 @@ Then open `http://127.0.0.1:4173`.
 
 ## Deployment
 
-The repository includes a GitHub Actions workflow at `.github/workflows/pages.yml`
-that deploys the static files in the repository root to GitHub Pages.
+This site is designed for branch-based GitHub Pages deployment from the root of
+the `main` branch. Add `.nojekyll` to keep GitHub Pages from trying to process
+the site with Jekyll.
