@@ -3,239 +3,331 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#191919" />
     <title>AI4RA Workshop | REACH 2026</title>
     <meta
       name="description"
-      content="Workshop companion site for AI4RA: The Intersection Between AI and Data at the REACH 2026 workshop."
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Manrope:wght@400;500;700;800&display=swap"
-      rel="stylesheet"
+      content="Workshop companion site for AI4RA: The Intersection Between AI and Data at REACH 2026."
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div class="page-shell">
-      <header class="hero">
-        <div class="hero__aurora" aria-hidden="true"></div>
-        <nav class="hero__nav">
-          <span class="eyebrow">REACH 2026 Workshop Companion</span>
-          <a class="nav-link" href="#agenda">View agenda</a>
-        </nav>
-        <div class="hero__content reveal">
-          <div class="hero__copy">
-            <p class="kicker">Session 2: WA3</p>
-            <h1>AI4RA: The Intersection Between AI and Data</h1>
-            <p class="hero__lede">
-              A hands-on workshop about prompt engineering, research administration
-              workflows, judgment, and where AI genuinely helps instead of merely
-              creating noise.
-            </p>
-            <div class="hero__meta">
-              <span>Monday, April 20, 2026</span>
-              <span>1:00 PM - 4:00 PM</span>
-              <span>Room BRISTOL</span>
-              <span>Intermediate</span>
-            </div>
+    <div class="page-frame">
+      <header class="site-header">
+        <div class="shell">
+          <div class="brand-lockup">
+            <a class="brand-home" href="#top">
+              <span class="brand-mark">AI4RA Workshop</span>
+              <span class="brand-line">REACH 2026 companion site</span>
+            </a>
           </div>
-          <aside class="hero__card">
-            <p class="card-label">Workshop snapshot</p>
-            <ul class="stat-list">
-              <li><strong>Co-presenters</strong> Nathan Wiggins, Barrie Robison</li>
-              <li><strong>Seats</strong> 24 participants</li>
-              <li><strong>Access</strong> Workshop registration required</li>
-              <li>
-                <strong>Demo tool</strong>
-                <a href="https://n8-layman.shinyapps.io/promptulus/">Promptulus</a>
-              </li>
+          <nav aria-label="Primary">
+            <ul class="nav-list">
+              <li><a class="nav-link" href="#objectives">Objectives</a></li>
+              <li><a class="nav-link" href="#agenda">Agenda</a></li>
+              <li><a class="nav-link" href="#topics">Topics</a></li>
+              <li><a class="nav-link" href="#details">Details</a></li>
             </ul>
-          </aside>
+          </nav>
         </div>
       </header>
 
-      <main>
-        <section class="intro panel reveal">
-          <div>
-            <p class="section-tag">Why this session</p>
-            <h2>Human-centered AI for research administration</h2>
+      <main id="top">
+        <section class="hero reveal">
+          <div class="hero-panel">
+            <div>
+              <p class="eyebrow">Session 2: WA3 | REACH 2026</p>
+              <h1>AI4RA: The Intersection Between AI and Data</h1>
+              <p class="hero-copy">
+                A three-hour intermediate workshop on prompt engineering,
+                structured output, response evaluation, research administration
+                workflows, and where AI belongs in human-centered institutional
+                practice.
+              </p>
+              <div class="hero-actions">
+                <a class="button" href="#agenda">View the workshop flow</a>
+                <a
+                  class="button-secondary"
+                  href="https://n8-layman.shinyapps.io/promptulus/"
+                >
+                  Open Promptulus
+                </a>
+              </div>
+            </div>
+            <div class="stat-block">
+              <article class="stat-card">
+                <strong>April 20, 2026</strong>
+                <span>Monday from 1:00 PM to 4:00 PM in Room BRISTOL</span>
+              </article>
+              <article class="stat-card">
+                <strong>24 seats</strong>
+                <span>Intermediate session with workshop registration required</span>
+              </article>
+              <article class="stat-card">
+                <strong>Presenters</strong>
+                <span>Nathan Wiggins and Barrie Robison</span>
+              </article>
+              <article class="stat-card">
+                <strong>Hands-on</strong>
+                <span>Promptulus, Vandalizer, UDM feedback, and applied workflow design</span>
+              </article>
+            </div>
           </div>
-          <p>
-            Artificial intelligence and data science are creating new ways to
-            improve efficiency, uncover insight, and support strategic
-            decision-making in higher education. This workshop helps attendees
-            separate hype from practical value by showing how AI and data work
-            together, where human expertise remains essential, and how to design
-            workflows that are useful, reviewable, and grounded in real research
-            administration work.
+        </section>
+
+        <section class="content-block reveal">
+          <p class="eyebrow">Why this workshop exists</p>
+          <h2 class="section-heading">
+            Practical AI adoption starts with judgment, not novelty.
+          </h2>
+          <p class="section-copy">
+            Artificial intelligence and data science are transforming research
+            administration and other higher education functions, but the value is
+            uneven unless people can distinguish useful application from hype. This
+            session frames AI and data science as complementary tools, shows where
+            human expertise remains essential, and gives participants a grounded way
+            to design reviewable workflows rather than black-box experiments.
           </p>
         </section>
 
-        <section id="objectives" class="section reveal">
-          <div class="section-heading">
-            <p class="section-tag">Learning objectives</p>
-            <h2>What attendees should leave ready to do</h2>
-          </div>
+        <section id="objectives" class="content-block reveal">
+          <p class="eyebrow">Learning objectives</p>
+          <h2 class="section-heading">What participants should leave able to do</h2>
           <div class="card-grid">
-            <article class="info-card">
-              <h3>Prompt with intent</h3>
+            <article class="content-card">
+              <span class="tag">Prompting</span>
+              <h3>Improve output quality</h3>
               <p>
-                Apply prompt engineering fundamentals to improve AI output
-                quality, relevance, and consistency.
+                Apply prompt engineering fundamentals to improve quality,
+                relevance, and consistency in AI responses.
               </p>
             </article>
-            <article class="info-card">
-              <h3>Decompose the work</h3>
+            <article class="content-card">
+              <span class="tag">Decomposition</span>
+              <h3>Break work into parts</h3>
               <p>
-                Break complex research administration tasks into discrete,
-                AI-manageable components.
+                Turn complex research administration tasks into discrete,
+                AI-manageable components with review points.
               </p>
             </article>
-            <article class="info-card">
-              <h3>Design end-to-end workflows</h3>
+            <article class="content-card">
+              <span class="tag">Workflow design</span>
+              <h3>Build end-to-end workflows</h3>
               <p>
-                Build complete AI-assisted workflows for common research
+                Develop complete AI-assisted workflows for common research
                 administration processes.
               </p>
             </article>
-            <article class="info-card">
-              <h3>Judge fit and risk</h3>
+            <article class="content-card">
+              <span class="tag">Judgment</span>
+              <h3>Decide what belongs</h3>
               <p>
-                Evaluate which tasks and workflows are suitable for AI
-                deployment in participants' own institutions.
+                Evaluate which tasks and workflows are suitable for AI deployment
+                in participants' own institutions.
               </p>
             </article>
           </div>
         </section>
 
-        <section id="agenda" class="section reveal">
-          <div class="section-heading">
-            <p class="section-tag">Agenda direction</p>
-            <h2>Three hours organized around judgment, not just tooling</h2>
-          </div>
-          <div class="timeline">
-            <article class="timeline-card">
-              <p class="timeline-time">1:00 PM</p>
-              <h3>Foundations</h3>
-              <p>
-                AI versus data science, human-centered decision-making, and how
-                to recognize tasks suited to each approach.
+        <section id="agenda" class="split-block reveal">
+          <div class="split-grid">
+            <div>
+              <p class="eyebrow">Workshop flow</p>
+              <h2 class="section-heading">Three hours organized around decision quality</h2>
+              <p class="section-copy">
+                The session moves from framing and task selection into prompting,
+                context design, and demonstrations so attendees can connect ideas
+                directly to real research administration work.
               </p>
-            </article>
-            <article class="timeline-card">
-              <p class="timeline-time">1:45 PM</p>
-              <h3>Prompt engineering and evaluation</h3>
-              <p>
-                Fundamentals, structured output, response evaluation, and how to
-                judge whether an answer is usable.
-              </p>
-            </article>
-            <article class="timeline-card">
-              <p class="timeline-time">2:30 PM</p>
-              <h3>Context and workflow design</h3>
-              <p>
-                Files, CLI, images, MCP tools, RAG, semantic search, extraction,
-                SQL, and unstructured data as workflow inputs.
-              </p>
-            </article>
-            <article class="timeline-card">
-              <p class="timeline-time">3:15 PM</p>
-              <h3>Applied demos</h3>
-              <p>
-                Promptulus, Vandalizer, UDM feedback, and guardrails for
-                automation and responsible vibe coding.
-              </p>
-            </article>
-          </div>
-        </section>
-
-        <section class="section split reveal">
-          <div>
-            <p class="section-tag">Topic brainstorm</p>
-            <h2>Priority content threads</h2>
-            <div class="topic-list">
-              <article class="topic">
-                <h3>Tasks suitable for AI and automation</h3>
+            </div>
+            <div class="card-grid compact-grid">
+              <article class="content-card">
+                <span class="tag">1:00 PM</span>
+                <h3>Foundations</h3>
                 <p>
-                  Translate technical ideas into layman-friendly decision rules
-                  for what AI should handle, assist with, or stay away from.
+                  AI versus data science, actionable human-centered applications,
+                  and lessons from the AI4RA NSF GRANTED project.
                 </p>
               </article>
-              <article class="topic">
-                <h3>Efficiency augmentation</h3>
+              <article class="content-card">
+                <span class="tag">1:45 PM</span>
+                <h3>Prompting and evaluation</h3>
                 <p>
-                  Practical guardrails for AI-assisted work, including workflow
-                  checks, review steps, and safer vibe coding habits.
+                  Prompt engineering, structured output, and judging whether a
+                  response is trustworthy and usable.
                 </p>
               </article>
-              <article class="topic">
-                <h3>RAG and unstructured data</h3>
+              <article class="content-card">
+                <span class="tag">2:30 PM</span>
+                <h3>Context and retrieval</h3>
                 <p>
-                  Semantic search, extraction, context retrieval, and how to use
-                  incomplete data without pretending it is clean.
+                  CLI, files, images, MCP tools, RAG, SQL, semantic search, and
+                  unstructured data as workflow inputs.
                 </p>
               </article>
-              <article class="topic">
-                <h3>Structured outputs and judging responses</h3>
+              <article class="content-card">
+                <span class="tag">3:15 PM</span>
+                <h3>Demos and discussion</h3>
                 <p>
-                  Show how better prompting and schema-driven output make review
-                  faster and follow-on automation more reliable.
+                  Promptulus, Vandalizer, UDM feedback, automation fit, and
+                  guardrails for vibe coding.
                 </p>
               </article>
             </div>
           </div>
-          <aside class="callout-stack">
-            <article class="callout">
-              <p class="card-label">Demo spotlight</p>
-              <h3>Vandalizer</h3>
-              <p>
-                Use the temporary demo to show how AI can streamline research
-                administration workflows and support UDM population.
-              </p>
-            </article>
-            <article class="callout">
-              <p class="card-label">Teaching frame</p>
-              <h3>Kinds of context</h3>
-              <p>
-                Compare CLI, files, images, MCP tools, RAG, and SQL so attendees
-                see context as a design choice rather than a buzzword.
-              </p>
-            </article>
-          </aside>
         </section>
 
-        <section class="section reveal">
-          <div class="section-heading">
-            <p class="section-tag">Session details</p>
-            <h2>Quick facts</h2>
+        <section id="topics" class="split-block reveal">
+          <div class="split-grid">
+            <div>
+              <p class="eyebrow">Topic brainstorm</p>
+              <h2 class="section-heading">Priority threads for the session</h2>
+              <p class="section-copy">
+                These are the content lanes that make the workshop practical for
+                participants who need to return to their institutions and decide
+                what to pilot, what to document, and what to reject.
+              </p>
+              <ul class="plain-list">
+                <li>Which tasks are suitable for AI and automation in layman-friendly terms</li>
+                <li>Efficiency augmentation and guardrails for responsible vibe coding</li>
+                <li>RAG, semantic search, extraction, and unstructured data workflows</li>
+                <li>Kinds of context: CLI, files, images, MCP tools, RAG, and SQL</li>
+                <li>Response evaluation and judging AI output quality</li>
+                <li>Structured output for repeatable workflows and downstream automation</li>
+              </ul>
+            </div>
+            <div class="card-grid compact-grid">
+              <article class="content-card">
+                <span class="tag">Applied tool</span>
+                <h3>Promptulus</h3>
+                <p>
+                  Use the live demo environment to make prompt structure and
+                  output comparison concrete for attendees.
+                </p>
+              </article>
+              <article class="content-card">
+                <span class="tag">Applied tool</span>
+                <h3>Vandalizer</h3>
+                <p>
+                  Show how AI can streamline and enhance research administration
+                  workflows in a temporary demo setting.
+                </p>
+              </article>
+              <article class="content-card">
+                <span class="tag">Institutional fit</span>
+                <h3>UDM feedback</h3>
+                <p>
+                  Connect the session back to practical data standards work and
+                  how Vandalizer can help populate the UDM.
+                </p>
+              </article>
+              <article class="content-card">
+                <span class="tag">Decision lens</span>
+                <h3>Human review</h3>
+                <p>
+                  Reinforce where human oversight, policy interpretation, and
+                  institutional context remain non-negotiable.
+                </p>
+              </article>
+            </div>
           </div>
-          <div class="details-grid">
-            <article class="detail-card">
-              <span class="detail-label">Session</span>
-              <p>WA3 - Workshop AI4RA - The Intersection Between AI and Data</p>
+        </section>
+
+        <section id="details" class="content-block reveal">
+          <p class="eyebrow">Session details</p>
+          <h2 class="section-heading">Quick facts for facilitators and attendees</h2>
+          <div class="card-grid">
+            <article class="content-card">
+              <span class="tag">Format</span>
+              <h3>Workshop session</h3>
+              <p>
+                WA3 - Workshop AI4RA - The Intersection Between AI and Data.
+              </p>
             </article>
-            <article class="detail-card">
-              <span class="detail-label">Audience</span>
-              <p>Intermediate participants interested in applied AI for RA work</p>
+            <article class="content-card">
+              <span class="tag">Audience</span>
+              <h3>Intermediate level</h3>
+              <p>
+                Best suited for attendees ready to move from AI curiosity into
+                workflow and governance questions.
+              </p>
             </article>
-            <article class="detail-card">
-              <span class="detail-label">Format</span>
-              <p>Three-hour workshop with framing, examples, and live demos</p>
+            <article class="content-card">
+              <span class="tag">Framing</span>
+              <h3>Human-centered practice</h3>
+              <p>
+                Emphasizes actionable use cases, evaluation, and where human
+                expertise remains essential.
+              </p>
             </article>
-            <article class="detail-card">
-              <span class="detail-label">Takeaway</span>
-              <p>Actionable guidance for deciding where AI belongs in local workflows</p>
-            </article>
+          </div>
+        </section>
+
+        <section class="callout-band reveal">
+          <div class="callout-panel">
+            <p class="eyebrow">Workshop takeaway</p>
+            <h2 class="section-heading">
+              Participants should leave with a sharper sense of what to automate,
+              what to augment, and what still demands human judgment.
+            </h2>
+            <p>
+              The goal is not simply to introduce tools. It is to help research
+              administration professionals build safer, more relevant, more
+              inspectable AI-assisted workflows in their own institutions.
+            </p>
+            <div class="cta-row">
+              <a class="button" href="https://n8-layman.shinyapps.io/promptulus/">
+                Launch Promptulus
+              </a>
+              <a class="button-secondary" href="#top">Back to top</a>
+            </div>
           </div>
         </section>
       </main>
-    </div>
 
-    <footer class="footer">
-      <p>Prepared for the REACH Workshop 2026 program.</p>
-      <p>Built for GitHub Pages deployment.</p>
-    </footer>
+      <footer class="site-footer">
+        <div class="shell footer-grid">
+          <div>
+            <p class="footer-kicker">AI4RA Workshop</p>
+            <p class="footer-copy">
+              Building a practical, trustworthy, practitioner-centered entry point
+              for AI in research administration.
+            </p>
+          </div>
+          <div>
+            <p class="footer-heading">Focus</p>
+            <ul class="footer-list">
+              <li>Responsible AI</li>
+              <li>Workflow design</li>
+              <li>Evaluation</li>
+              <li>Data and context</li>
+            </ul>
+          </div>
+          <div>
+            <p class="footer-heading">Session</p>
+            <ul class="footer-list">
+              <li>Monday, April 20, 2026</li>
+              <li>1:00 PM - 4:00 PM</li>
+              <li>Room BRISTOL</li>
+              <li>24 participants</li>
+            </ul>
+          </div>
+          <div>
+            <p class="footer-heading">Links</p>
+            <ul class="footer-list">
+              <li>
+                <a href="https://n8-layman.shinyapps.io/promptulus/">Promptulus demo</a>
+              </li>
+              <li>
+                <a href="https://github.com/ui-insight/REACHWorkshop2026">Repository</a>
+              </li>
+              <li><a href="#objectives">Learning objectives</a></li>
+              <li><a href="#agenda">Workshop flow</a></li>
+            </ul>
+          </div>
+        </div>
+      </footer>
+    </div>
 
     <script src="app.js"></script>
   </body>
