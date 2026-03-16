@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#191919" />
+    <title>Context Layers Slides | AI4RA Workshop</title>
+    <meta
+      name="description"
+      content="Reveal.js slide deck for the AI4RA workshop module on layers of context engineering."
+    />
+    <link rel="stylesheet" href="reveal/dist/reveal.css" />
+    <link rel="stylesheet" href="reveal/dist/theme/white.css" />
+    <link rel="stylesheet" href="slides.css" />
+  </head>
+  <body class="slides-page">
+    <div class="slides-home">
+      <a href="course-content.html">Back to Course Content</a>
+    </div>
+
+    <div class="reveal">
+      <div class="slides">
+        <section class="title-slide" data-background-color="#191919">
+          <p class="slide-kicker">AI4RA Workshop | REACH 2026</p>
+          <h1>Layers of Context Engineering</h1>
+          <p class="slide-lede">
+            A Reveal.js outline for the second workshop teaching module.
+          </p>
+        </section>
+
+        <section>
+          <p class="slide-kicker">Module goal</p>
+          <h2>Participants should leave with one core idea</h2>
+          <p>
+            Strong AI workflows do not come from one giant prompt. They come
+            from a deliberate stack of instructions, examples, files, tools,
+            retrieval, and human review boundaries.
+          </p>
+        </section>
+
+        <section>
+          <p class="slide-kicker">Opening frame</p>
+          <h2>Start with the stack, not the magic</h2>
+          <p>
+            Prompting matters, but it is only one layer. Real systems succeed
+            when teams decide what context belongs in the workflow, what each
+            layer contributes, and where each layer introduces new risk.
+          </p>
+        </section>
+
+        <section>
+          <p class="slide-kicker">Definition</p>
+          <h2>What counts as context?</h2>
+          <ul>
+            <li>Instructions that define the model's role and boundaries</li>
+            <li>Task prompts that define the immediate assignment</li>
+            <li>Examples and templates that shape consistency</li>
+            <li>Files, images, and documents that provide reference material</li>
+            <li>Tools and retrieved data that expand what the system can do</li>
+          </ul>
+        </section>
+
+        <section>
+          <p class="slide-kicker">The stack</p>
+          <h2>A practical context stack</h2>
+          <ul>
+            <li>System or role instructions</li>
+            <li>Task prompt</li>
+            <li>Examples and templates</li>
+            <li>Files and documents</li>
+            <li>Tools and actions</li>
+            <li>Retrieved and structured institutional data</li>
+          </ul>
+        </section>
+
+        <section>
+          <p class="slide-kicker">Decision rule</p>
+          <h2>Use the thinnest layer that gets the job done</h2>
+          <p>
+            If a template and a clearer prompt solve the problem, stop there.
+            If a trusted PDF is enough, do not jump straight to retrieval. If
+            the task depends on local judgment, the right layer may be human
+            escalation instead of more automation.
+          </p>
+        </section>
+
+        <section>
+          <p class="slide-kicker">Research administration lens</p>
+          <h2>Why layered context matters in RA work</h2>
+          <p>
+            RA workflows mix sponsor rules, institutional practice, templates,
+            policy documents, deadlines, and exceptions. A generic prompt will
+            miss too much. Layered context helps teams decide which parts need
+            instructions, which need grounding, and which need a person.
+          </p>
+        </section>
+
+        <section>
+          <p class="slide-kicker">Worked example</p>
+          <h2>Proposal routing response</h2>
+          <p>
+            A faculty member asks about routing deadlines and required internal
+            approvals for a proposal. A generic answer can sound polished while
+            missing local forms, current deadlines, or special cases.
+          </p>
+          <p class="slide-callout">
+            Better workflows combine role guidance, templates, policy, current
+            data, and escalation rules.
+          </p>
+        </section>
+
+        <section>
+          <p class="slide-kicker">What to teach</p>
+          <h2>What each layer contributes</h2>
+          <ul>
+            <li>Instructions set tone, caution, and escalation boundaries</li>
+            <li>The prompt defines the current task and output</li>
+            <li>Templates keep responses consistent</li>
+            <li>Policy documents provide institutional authority</li>
+            <li>Retrieved tables add current operational detail</li>
+            <li>Human review protects edge cases and exceptions</li>
+          </ul>
+        </section>
+
+        <section>
+          <p class="slide-kicker">Exercise</p>
+          <h2>Have participants map their own stack</h2>
+          <ul>
+            <li>Pick one workflow people want to automate</li>
+            <li>Write the smallest useful prompt</li>
+            <li>List the other context needed for trust</li>
+            <li>Sort it into layers</li>
+            <li>Mark what is ready now and what still needs governance work</li>
+          </ul>
+        </section>
+
+        <section>
+          <p class="slide-kicker">Discussion</p>
+          <h2>Questions for participants</h2>
+          <ul>
+            <li>Which workflows only need better prompts or templates?</li>
+            <li>Which ones need files or retrieval before they are useful?</li>
+            <li>Which become risky once the system can take an action?</li>
+            <li>Where should a human remain part of the context stack?</li>
+          </ul>
+        </section>
+
+        <section data-background-color="#f1b300">
+          <p class="slide-kicker slide-kicker-dark">Bridge forward</p>
+          <h2 class="slide-dark">Next modules build from this stack</h2>
+          <p class="slide-dark">
+            Once participants can see context as layers, it becomes easier to
+            teach structured output, evaluation, retrieval design, automation
+            fit, and where human judgment still needs to stay in the loop.
+          </p>
+        </section>
+      </div>
+    </div>
+
+    <script src="reveal/dist/reveal.js"></script>
+    <script>
+      Reveal.initialize({
+        hash: true,
+        controls: true,
+        progress: true,
+        center: true,
+        slideNumber: true,
+        transition: "slide"
+      });
+    </script>
+  </body>
+</html>
