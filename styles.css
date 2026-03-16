@@ -132,6 +132,11 @@ a {
   color: var(--gold);
 }
 
+.nav-link.is-active {
+  background: rgba(241, 179, 0, 0.18);
+  color: var(--gold);
+}
+
 .hero {
   padding: 4rem 0 2.5rem;
 }
@@ -316,6 +321,12 @@ p {
   padding: 2rem 0;
 }
 
+.page-intro {
+  width: min(calc(100% - 2rem), var(--shell));
+  margin: 0 auto;
+  padding: 4rem 0 1.5rem;
+}
+
 .section-heading {
   max-width: 24ch;
 }
@@ -404,6 +415,71 @@ p {
   color: var(--white);
 }
 
+.presenter-grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.presenter-card {
+  display: grid;
+  grid-template-columns: minmax(220px, 280px) minmax(0, 1fr);
+  gap: 1.5rem;
+  padding: 1.5rem;
+  border-radius: var(--radius-lg);
+  background: var(--white);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+}
+
+.presenter-photo {
+  display: grid;
+  place-items: center;
+  min-height: 280px;
+  padding: 1rem;
+  border-radius: var(--radius-md);
+  background: linear-gradient(180deg, #efefef 0%, #dadde2 100%);
+  border: 1px dashed rgba(25, 25, 25, 0.2);
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  text-align: center;
+}
+
+.presenter-body {
+  display: grid;
+  gap: 0.9rem;
+  align-content: start;
+}
+
+.presenter-name {
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+}
+
+.presenter-role {
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.presenter-meta {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.meta-label {
+  font-family: var(--mono);
+  font-size: 0.76rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #9a7300;
+}
+
+.meta-copy {
+  color: var(--muted);
+  max-width: 70ch;
+}
+
 .footer-grid {
   align-items: start;
 }
@@ -447,7 +523,8 @@ p {
   .split-grid,
   .card-grid,
   .compact-grid,
-  .stat-block {
+  .stat-block,
+  .presenter-card {
     grid-template-columns: 1fr;
   }
 
@@ -467,7 +544,8 @@ p {
   .hero,
   .content-block,
   .split-block,
-  .callout-band {
+  .callout-band,
+  .page-intro {
     width: min(calc(100% - 1rem), var(--shell));
   }
 
@@ -491,6 +569,14 @@ p {
 
   .hero-art {
     min-height: 180px;
+  }
+
+  .presenter-card {
+    padding: 1.1rem;
+  }
+
+  .presenter-photo {
+    min-height: 220px;
   }
 }
 
