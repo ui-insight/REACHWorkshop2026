@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#191919" />
+    <title>Data Governance Slides | AI4RA Workshop</title>
+    <meta
+      name="description"
+      content="Reveal.js slide deck for the AI4RA workshop module on data governance and context engineering."
+    />
+    <link rel="stylesheet" href="reveal/dist/reveal.css" />
+    <link rel="stylesheet" href="reveal/dist/theme/white.css" />
+    <link rel="stylesheet" href="slides.css" />
+  </head>
+  <body class="slides-page">
+    <div class="slides-home">
+      <a href="course-content.html">Back to Course Content</a>
+    </div>
+
+    <div class="reveal">
+      <div class="slides">
+        <section class="title-slide" data-background-color="#191919">
+          <p class="slide-kicker">AI4RA Workshop | REACH 2026</p>
+          <h1>Data Governance as the Foundation for Context Engineering</h1>
+          <p class="slide-lede">
+            A Reveal.js outline for the first workshop teaching module.
+          </p>
+        </section>
+
+        <section>
+          <p class="slide-kicker">Module goal</p>
+          <h2>Participants should leave with one core idea</h2>
+          <p>
+            Context engineering is not only about retrieving more information.
+            It is about deciding what information can be trusted, used, shared,
+            and acted on inside an institutional workflow.
+          </p>
+        </section>
+
+        <section>
+          <p class="slide-kicker">Opening frame</p>
+          <h2>Better context is only useful if it is governed.</h2>
+          <p>
+            More documents, more tools, and more retrieval layers do not
+            automatically produce better AI output. Ungoverned context can make
+            answers sound more confident while becoming less safe.
+          </p>
+        </section>
+
+        <section>
+          <p class="slide-kicker">Definition</p>
+          <h2>What do we mean by context engineering?</h2>
+          <ul>
+            <li>Designing what the model can see</li>
+            <li>Designing what the model can use</li>
+            <li>Designing what the model should rely on</li>
+            <li>Designing when the model should abstain or escalate</li>
+          </ul>
+        </section>
+
+        <section>
+          <p class="slide-kicker">Governance questions</p>
+          <h2>Every new context source should trigger these questions</h2>
+          <ul>
+            <li>Where did this information come from?</li>
+            <li>Who is allowed to access it?</li>
+            <li>How current and reliable is it?</li>
+            <li>Is it sensitive, regulated, or institution-specific?</li>
+            <li>What human review is still required?</li>
+          </ul>
+        </section>
+
+        <section>
+          <p class="slide-kicker">Research administration lens</p>
+          <h2>Why this matters especially in RA work</h2>
+          <p>
+            Research administration depends on sponsor rules, institutional
+            exceptions, local process knowledge, and policy interpretation. If
+            the AI sees the wrong mix of sources, it may generate plausible but
+            operationally invalid guidance.
+          </p>
+        </section>
+
+        <section>
+          <p class="slide-kicker">Worked example</p>
+          <h2>Proposal routing assistant</h2>
+          <p>
+            Imagine connecting a current policy PDF, outdated forms in a shared
+            drive, exception-heavy email guidance, and informal staff notes.
+          </p>
+          <p class="slide-callout">
+            The system now has more context, but not necessarily trustworthy context.
+          </p>
+        </section>
+
+        <section>
+          <p class="slide-kicker">What to teach</p>
+          <h2>Where governance enters the example</h2>
+          <ul>
+            <li>Which source is authoritative?</li>
+            <li>Which sources are historical or supplemental?</li>
+            <li>Who refreshes the source material?</li>
+            <li>What should the system cite back?</li>
+            <li>When must it escalate to a human?</li>
+          </ul>
+        </section>
+
+        <section>
+          <p class="slide-kicker">Presenter note</p>
+          <h2>Do not frame governance as bureaucracy</h2>
+          <p>
+            Frame it as the condition that makes automation safe, inspectable,
+            and institutionally legitimate. Governance is what determines
+            whether the system should answer, abstain, or route the question to
+            a person.
+          </p>
+        </section>
+
+        <section>
+          <p class="slide-kicker">Discussion</p>
+          <h2>Questions for participants</h2>
+          <ul>
+            <li>Which local data sources are reliable enough to become AI context?</li>
+            <li>Which ones are too messy, sensitive, or incomplete?</li>
+            <li>Who defines what is authoritative in your workflow?</li>
+            <li>What governance work has to happen before automation expands?</li>
+          </ul>
+        </section>
+
+        <section data-background-color="#f1b300">
+          <p class="slide-kicker slide-kicker-dark">Bridge forward</p>
+          <h2 class="slide-dark">Next modules build on this foundation</h2>
+          <p class="slide-dark">
+            Once governance is clear, the workshop can move into layers of
+            context engineering, structured data, retrieval, synthetic corpora,
+            and response evaluation.
+          </p>
+        </section>
+      </div>
+    </div>
+
+    <script src="reveal/dist/reveal.js"></script>
+    <script>
+      Reveal.initialize({
+        hash: true,
+        controls: true,
+        progress: true,
+        center: true,
+        slideNumber: true,
+        transition: "slide"
+      });
+    </script>
+  </body>
+</html>
