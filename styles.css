@@ -420,6 +420,35 @@ p {
   gap: 1.5rem;
 }
 
+.module-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.course-module {
+  padding: 1.4rem;
+  border-radius: var(--radius-md);
+  background: var(--white);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+}
+
+.module-full {
+  margin-top: 1rem;
+}
+
+.module-points {
+  margin: 0.9rem 0 0;
+  padding-left: 1.2rem;
+  color: var(--muted);
+}
+
+.module-points li + li {
+  margin-top: 0.55rem;
+}
+
 .presenter-card {
   display: grid;
   grid-template-columns: minmax(220px, 280px) minmax(0, 1fr);
@@ -532,6 +561,7 @@ p {
   .split-grid,
   .card-grid,
   .compact-grid,
+  .module-grid,
   .stat-block,
   .presenter-card {
     grid-template-columns: 1fr;

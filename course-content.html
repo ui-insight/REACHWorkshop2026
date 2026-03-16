@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#191919" />
+    <title>Course Content | AI4RA Workshop</title>
+    <meta
+      name="description"
+      content="Course content and teaching modules for the AI4RA REACH 2026 workshop."
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-frame">
+      <header class="site-header">
+        <div class="shell">
+          <div class="brand-lockup">
+            <a class="brand-home" href="index.html">
+              <img class="brand-logo" src="ai4ra-logo.png" alt="AI4RA logo" />
+              <span class="brand-line">AI4RA workshop companion for REACH 2026</span>
+            </a>
+          </div>
+          <nav aria-label="Primary">
+            <ul class="nav-list">
+              <li><a class="nav-link is-active" href="course-content.html">Course Content</a></li>
+              <li><a class="nav-link" href="presenters.html">Presenters</a></li>
+              <li><a class="nav-link" href="index.html#objectives">Objectives</a></li>
+              <li><a class="nav-link" href="index.html#agenda">Agenda</a></li>
+              <li><a class="nav-link" href="index.html#topics">Topics</a></li>
+              <li><a class="nav-link" href="index.html#details">Details</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+
+      <main>
+        <section class="page-intro reveal">
+          <p class="eyebrow">Course content</p>
+          <h1>Teaching materials organized as reusable workshop modules.</h1>
+          <p class="section-copy">
+            This section is the beginning of the course content area for the
+            workshop site. It is designed to hold durable teaching material that
+            can support the live session, the slide deck, downloadable assets,
+            and follow-up learning after the workshop.
+          </p>
+          <div class="hero-actions">
+            <a class="button" href="#data-governance">Start with issue #1</a>
+            <a class="button-secondary" href="index.html">Back to workshop home</a>
+          </div>
+        </section>
+
+        <section class="content-block reveal">
+          <p class="eyebrow">Current modules</p>
+          <h2 class="section-heading">A place for the workshop's core teaching topics</h2>
+          <div class="card-grid">
+            <article class="content-card">
+              <span class="tag">Issue #1</span>
+              <h3><a href="#data-governance">Data governance and context engineering</a></h3>
+              <p>
+                The first live teaching module now frames governance as the
+                prerequisite for trustworthy context use.
+              </p>
+            </article>
+            <article class="content-card">
+              <span class="tag">Coming next</span>
+              <h3>Layers of context engineering</h3>
+              <p>
+                This area can expand to cover prompts, files, tools, RAG, SQL,
+                images, and other context layers in a consistent format.
+              </p>
+            </article>
+            <article class="content-card">
+              <span class="tag">Future use</span>
+              <h3>Downloadable workshop materials</h3>
+              <p>
+                The same section can later host bundled assets, handouts,
+                example prompts, and synthetic datasets.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section id="data-governance" class="content-block reveal">
+          <p class="eyebrow">Issue #1 module</p>
+          <h2 class="section-heading">
+            Data governance is the foundation for context engineering.
+          </h2>
+          <p class="section-copy">
+            Context engineering is not just about giving an AI model more
+            information. It is about deciding which information can be used,
+            where it came from, how much it can be trusted, who is allowed to
+            see it, and what should happen to it after the interaction. Those
+            are governance questions first and technical questions second.
+          </p>
+
+          <div class="module-grid">
+            <article class="course-module">
+              <span class="tag">Why it matters</span>
+              <h3>Better context is only valuable if it is governed.</h3>
+              <p>
+                Teams often talk about adding more documents, more system access,
+                or richer retrieval pipelines to improve AI output. But if the
+                underlying data is outdated, poorly permissioned, ambiguous, or
+                untraceable, the added context can make the answer more
+                dangerous, not more useful.
+              </p>
+            </article>
+
+            <article class="course-module">
+              <span class="tag">Core governance questions</span>
+              <h3>What every institution should ask before adding context</h3>
+              <ul class="module-points">
+                <li>Where did this information come from, and can we prove its provenance?</li>
+                <li>Who is allowed to access it, and under what conditions?</li>
+                <li>How current, complete, and reliable is it?</li>
+                <li>Does it contain private, regulated, or institutionally sensitive material?</li>
+                <li>What human review is needed before the output is used operationally?</li>
+              </ul>
+            </article>
+          </div>
+
+          <div class="module-grid">
+            <article class="course-module">
+              <span class="tag">Research administration lens</span>
+              <h3>Why this matters in RA workflows</h3>
+              <p>
+                Research administration work depends on policy interpretation,
+                institutional rules, sponsor requirements, and local process
+                knowledge. If an AI system is given incomplete or ungoverned
+                context, it may produce answers that sound confident while
+                quietly ignoring the most important institutional constraints.
+              </p>
+            </article>
+
+            <article class="course-module">
+              <span class="tag">Teaching takeaway</span>
+              <h3>Governance should shape what context enters the system.</h3>
+              <p>
+                A good workshop message is that context engineering is not only
+                about retrieval quality. It is also about stewardship:
+                permissions, quality standards, curation, traceability, and
+                clearly defined review boundaries. Those governance choices are
+                what make AI-assisted workflows trustworthy.
+              </p>
+            </article>
+          </div>
+
+          <article class="course-module module-full">
+            <span class="tag">Discussion prompt</span>
+            <h3>Questions to ask participants</h3>
+            <ul class="module-points">
+              <li>Which data sources in your institution are reliable enough to become AI context?</li>
+              <li>Which ones are too messy, sensitive, or incomplete to trust yet?</li>
+              <li>Who currently decides what is authoritative in your workflow?</li>
+              <li>What governance work has to happen before retrieval or automation should expand?</li>
+            </ul>
+          </article>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <div class="shell footer-grid">
+          <div>
+            <p class="footer-kicker">AI4RA Community of Practice</p>
+            <p class="footer-copy">
+              Building open, trustworthy, practitioner-centered infrastructure
+              for research administration.
+            </p>
+          </div>
+          <div>
+            <p class="footer-heading">Workshop</p>
+            <ul class="footer-list">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="course-content.html">Course Content</a></li>
+              <li><a href="presenters.html">Presenters</a></li>
+              <li>Monday, April 20, 2026</li>
+            </ul>
+          </div>
+          <div>
+            <p class="footer-heading">Current focus</p>
+            <ul class="footer-list">
+              <li><a href="#data-governance">Issue #1: Data governance</a></li>
+              <li><a href="https://github.com/ui-insight/REACHWorkshop2026/issues/1">GitHub issue</a></li>
+            </ul>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
