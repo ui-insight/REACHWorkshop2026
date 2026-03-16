@@ -94,6 +94,18 @@
             are governance questions first and technical questions second.
           </p>
 
+          <article class="course-module module-full module-lead">
+            <span class="tag">Lecture framing</span>
+            <h3>A simple way to open the topic</h3>
+            <p>
+              You can introduce this section with a blunt contrast: most people
+              think context engineering is about giving the model more useful
+              information, but institutions actually succeed or fail here based
+              on whether they govern that information well. Retrieval quality is
+              downstream from governance quality.
+            </p>
+          </article>
+
           <div class="module-grid">
             <article class="course-module">
               <span class="tag">Why it matters</span>
@@ -119,6 +131,18 @@
               </ul>
             </article>
           </div>
+
+          <article class="course-module module-full">
+            <span class="tag">Suggested teaching flow</span>
+            <h3>A five-part sequence for presenting this idea</h3>
+            <ol class="module-points">
+              <li>Define context engineering as the design of what the model can see, use, and rely on.</li>
+              <li>Explain that every added source of context introduces governance questions, not just technical opportunity.</li>
+              <li>Show how bad governance creates confident but unsafe or institutionally invalid output.</li>
+              <li>Connect governance to provenance, permissions, quality, stewardship, and review boundaries.</li>
+              <li>End by reframing governance as the operating system behind trustworthy AI workflows.</li>
+            </ol>
+          </article>
 
           <div class="module-grid">
             <article class="course-module">
@@ -146,6 +170,50 @@
             </article>
           </div>
 
+          <div class="module-grid">
+            <article class="course-module">
+              <span class="tag">Worked example</span>
+              <h3>A realistic workshop scenario</h3>
+              <p>
+                Imagine an institution wants an AI assistant to help answer
+                questions about proposal routing. The team connects policy
+                documents, old email guidance, a shared drive of forms, and a
+                few notes from experienced staff. The system now has more
+                context, but not necessarily better context.
+              </p>
+              <p class="module-follow">
+                If the policy PDF is current, the shared drive is out of date,
+                the email guidance reflects exceptions, and the notes are
+                informal local practice, the model may blend all of that into a
+                plausible answer that no one should trust without review.
+              </p>
+            </article>
+
+            <article class="course-module">
+              <span class="tag">What to point out</span>
+              <h3>Where governance enters the scenario</h3>
+              <ul class="module-points">
+                <li>Which source is authoritative and who says so?</li>
+                <li>Which sources are only supplemental or historical?</li>
+                <li>Who is responsible for refreshing the materials?</li>
+                <li>What should the system cite back to the user?</li>
+                <li>When should the answer escalate to a human instead of completing the task?</li>
+              </ul>
+            </article>
+          </div>
+
+          <article class="course-module module-full">
+            <span class="tag">Speaker notes</span>
+            <h3>Talking points for the presenter</h3>
+            <ul class="module-points">
+              <li>Do not present governance as bureaucracy; present it as the condition that makes automation safe.</li>
+              <li>Emphasize that context can increase error surface area when institutions do not know which data is authoritative.</li>
+              <li>Keep returning to the phrase “trustworthy context” rather than simply “more context.”</li>
+              <li>Use local examples: policy manuals, sponsor guidance, routing workflows, and institutional exceptions.</li>
+              <li>Remind participants that governance decisions determine whether an AI system should answer, abstain, or escalate.</li>
+            </ul>
+          </article>
+
           <article class="course-module module-full">
             <span class="tag">Discussion prompt</span>
             <h3>Questions to ask participants</h3>
@@ -155,6 +223,18 @@
               <li>Who currently decides what is authoritative in your workflow?</li>
               <li>What governance work has to happen before retrieval or automation should expand?</li>
             </ul>
+          </article>
+
+          <article class="course-module module-full">
+            <span class="tag">Bridge to future modules</span>
+            <h3>How this sets up the rest of the course content</h3>
+            <p>
+              This module should lead naturally into later sections on layers of
+              context engineering, structured data, RAG, synthetic corpora, and
+              response evaluation. The through-line is simple: every technical
+              layer becomes more useful when the institution knows what it is
+              allowed to trust, retrieve, expose, and act on.
+            </p>
           </article>
         </section>
       </main>
