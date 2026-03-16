@@ -90,11 +90,12 @@ a {
   color: var(--white);
 }
 
-.brand-mark {
-  font-family: var(--serif);
-  font-size: 1.4rem;
-  font-weight: 700;
-  letter-spacing: 0.02em;
+.brand-logo {
+  width: 42px;
+  height: 42px;
+  border-radius: 999px;
+  object-fit: cover;
+  background: rgba(255, 255, 255, 0.08);
 }
 
 .brand-line {
@@ -196,6 +197,28 @@ p {
 
 .hero-copy {
   margin-top: 1.25rem;
+}
+
+.hero-aside {
+  display: grid;
+  gap: 1rem;
+  align-content: start;
+}
+
+.hero-art {
+  display: grid;
+  place-items: center;
+  padding: 1.25rem;
+  border-radius: var(--radius-md);
+  background: linear-gradient(180deg, #2b2b2b 0%, #191919 100%);
+  border: 1px solid var(--charcoal);
+  min-height: 220px;
+}
+
+.hero-art img {
+  width: min(100%, 220px);
+  height: auto;
+  display: block;
 }
 
 .hero-actions,
@@ -455,6 +478,19 @@ p {
   .hero-panel,
   .callout-panel {
     padding: 1.4rem;
+  }
+
+  .brand-home {
+    align-items: center;
+  }
+
+  .brand-logo {
+    width: 36px;
+    height: 36px;
+  }
+
+  .hero-art {
+    min-height: 180px;
   }
 }
 
