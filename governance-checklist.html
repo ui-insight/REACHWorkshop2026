@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#191919" />
+    <title>Context Readiness Checklist | AI4RA Workshop</title>
+    <meta
+      name="description"
+      content="Participant-facing checklist for deciding whether institutional data or documents are ready to become AI context."
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-frame">
+      <header class="site-header">
+        <div class="shell">
+          <div class="brand-lockup">
+            <a class="brand-home" href="index.html">
+              <img class="brand-logo" src="ai4ra-logo.png" alt="AI4RA logo" />
+              <span class="brand-line">AI4RA workshop companion for REACH 2026</span>
+            </a>
+          </div>
+          <nav aria-label="Primary">
+            <ul class="nav-list">
+              <li><a class="nav-link" href="course-content.html">Course Content</a></li>
+              <li><a class="nav-link" href="slides-governance.html">Slides</a></li>
+              <li><a class="nav-link" href="presenters.html">Presenters</a></li>
+              <li><a class="nav-link" href="index.html#details">Details</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+
+      <main>
+        <section class="page-intro reveal">
+          <p class="eyebrow">Participant handout</p>
+          <h1>Context readiness checklist for AI-assisted workflows.</h1>
+          <p class="section-copy">
+            Use this handout before connecting a document set, spreadsheet,
+            dashboard table, policy collection, or retrieval source to an AI
+            workflow. The goal is not to stop experimentation. The goal is to
+            decide what is trustworthy enough to become operational context.
+          </p>
+          <div class="hero-actions">
+            <a class="button" href="course-content.html#data-governance">Open the full governance module</a>
+            <a class="button-secondary" href="slides-governance.html">Open the slide deck</a>
+            <a class="button-secondary" href="index.html">Back to workshop home</a>
+          </div>
+        </section>
+
+        <section class="content-block reveal">
+          <p class="eyebrow">How to use it</p>
+          <h2 class="section-heading">Ask these questions before you trust the context.</h2>
+          <div class="card-grid">
+            <article class="content-card">
+              <span class="tag">1. Authority</span>
+              <h3>Is this source actually authoritative?</h3>
+              <p>
+                Decide whether this source is the one your institution would
+                trust in a dashboard, audit trail, policy interpretation, or
+                official workflow decision.
+              </p>
+            </article>
+            <article class="content-card">
+              <span class="tag">2. Currency</span>
+              <h3>Is it current enough to act on?</h3>
+              <p>
+                Check refresh cadence, version history, and whether someone can
+                explain when it was last updated and what changed.
+              </p>
+            </article>
+            <article class="content-card">
+              <span class="tag">3. Permissions</span>
+              <h3>Should the system even be allowed to use it?</h3>
+              <p>
+                Confirm access rules, sensitivity constraints, privacy concerns,
+                and whether the workflow is allowed to expose or transform this
+                information.
+              </p>
+            </article>
+            <article class="content-card">
+              <span class="tag">4. Explainability</span>
+              <h3>Can someone defend where the answer came from?</h3>
+              <p>
+                If the source cannot be cited, traced, or explained to another
+                colleague, it is not ready for trustworthy AI-assisted work.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section class="split-block reveal">
+          <div class="split-grid">
+            <div>
+              <p class="eyebrow">Quick rubric</p>
+              <h2 class="section-heading">Classify the source before you connect it.</h2>
+              <ul class="plain-list">
+                <li><strong>Ready now</strong>: authoritative, current, permissioned, and explainable.</li>
+                <li><strong>Needs cleanup</strong>: useful source, but ownership, freshness, or access rules are still unclear.</li>
+                <li><strong>Keep out</strong>: sensitive, untrusted, or too ambiguous to support operational use safely.</li>
+              </ul>
+            </div>
+            <div class="card-grid compact-grid">
+              <article class="content-card">
+                <span class="tag">Ask next</span>
+                <h3>What is the failure mode?</h3>
+                <p>
+                  Name what goes wrong if the system uses this source
+                  uncritically: wrong answer, outdated answer, leaked answer, or
+                  overconfident answer.
+                </p>
+              </article>
+              <article class="content-card">
+                <span class="tag">Human review</span>
+                <h3>Where does a person stay in the loop?</h3>
+                <p>
+                  Decide whether the workflow should answer directly, cite and
+                  defer, or escalate to a staff member before action is taken.
+                </p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="content-block reveal">
+          <p class="eyebrow">Workshop use</p>
+          <h2 class="section-heading">A good source is not automatically a good context source.</h2>
+          <p class="section-copy">
+            Many institutional materials are useful for human staff but still
+            unsafe for AI workflows because they are outdated, exception-heavy,
+            or hard to explain. This checklist helps teams slow down just enough
+            to decide whether a source belongs in the system, needs more
+            governance work, or should remain outside the workflow.
+          </p>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <div class="shell footer-grid">
+          <div>
+            <p class="footer-kicker">AI4RA Community of Practice</p>
+            <p class="footer-copy">
+              Building open, trustworthy, practitioner-centered infrastructure
+              for research analytics and administration.
+            </p>
+          </div>
+          <div>
+            <p class="footer-heading">Module links</p>
+            <ul class="footer-list">
+              <li><a href="course-content.html#data-governance">Governance module</a></li>
+              <li><a href="slides-governance.html">Governance slide deck</a></li>
+              <li><a href="index.html">Workshop home</a></li>
+            </ul>
+          </div>
+          <div>
+            <p class="footer-heading">Use this for</p>
+            <ul class="footer-list">
+              <li>Policy collections</li>
+              <li>Shared-drive documents</li>
+              <li>Spreadsheet or dashboard sources</li>
+              <li>Retrieval and RAG planning</li>
+            </ul>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
