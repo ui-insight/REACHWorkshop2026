@@ -234,6 +234,16 @@
               </p>
             </article>
             <article class="content-card">
+              <span class="tag">Key distinction</span>
+              <h3>AI both consumes data and generates new data</h3>
+              <p>
+                The system may read governed inputs such as policy documents,
+                spreadsheets, and dashboard tables, but it can also produce new
+                structured outputs such as extracted fields, classifications,
+                summaries, and routing data that enter downstream workflows.
+              </p>
+            </article>
+            <article class="content-card">
               <span class="tag">Participant artifact</span>
               <h3>A context readiness checklist</h3>
               <p>
@@ -281,6 +291,19 @@
             </article>
 
             <article class="course-module">
+              <span class="tag">Generated data</span>
+              <h3>Governance applies to outputs as well as inputs</h3>
+              <p>
+                AI systems do not only consume institutional data. They can
+                also generate new data products: extracted fields from PDFs,
+                tagged records, structured summaries, classifications, and
+                draft workflow metadata. Once those outputs feed a dashboard,
+                a queue, a report, or a routing decision, they become governed
+                data too.
+              </p>
+            </article>
+
+            <article class="course-module">
               <span class="tag">Decision aid</span>
               <h3>What every institution should ask before adding context</h3>
               <ul class="module-points">
@@ -310,9 +333,10 @@
             <ol class="module-points">
               <li>Define context engineering as the design of what the model can see, use, and rely on.</li>
               <li>Explain that every added source of context introduces governance questions, not just technical opportunity.</li>
+              <li>Show that AI can also generate new structured data, not just read existing data.</li>
               <li>Show how bad governance creates confident but unsafe or institutionally invalid output.</li>
-              <li>Connect governance to provenance, permissions, quality, stewardship, and review boundaries.</li>
-              <li>Bridge the concept: if you already govern data for a dashboard (ownership, refresh cadence, access controls, metric definitions), you already understand the core of AI governance — the difference is that AI can act on the data, not just display it.</li>
+              <li>Connect governance to provenance, permissions, quality, stewardship, and review boundaries for both inputs and generated outputs.</li>
+              <li>Bridge the concept: if you already govern data for a dashboard (ownership, refresh cadence, access controls, metric definitions), you already understand the core of AI governance — the difference is that AI can act on the data and produce new data, not just display it.</li>
               <li>End by reframing governance as the operating system behind trustworthy AI workflows.</li>
             </ol>
           </article>
@@ -367,6 +391,14 @@
                 informal local practice, the model may blend all of that into a
                 plausible answer that no one should trust without review.
               </p>
+              <p class="module-follow">
+                Now push the example one step further: if the system extracts
+                deadlines, approver names, sponsor requirements, or routing
+                codes into a structured table, that generated table may look
+                like clean data for analytics or workflow automation. It still
+                needs provenance, validation, and ownership before people
+                should rely on it.
+              </p>
             </article>
 
             <article class="course-module">
@@ -378,6 +410,7 @@
                 <li>Who is responsible for refreshing the materials?</li>
                 <li>What should the system cite back to the user?</li>
                 <li>When should the answer escalate to a human instead of completing the task?</li>
+                <li>If the AI extracts structured fields, who validates and owns that new dataset?</li>
               </ul>
             </article>
           </div>
@@ -389,8 +422,9 @@
               <li>Do not present governance as bureaucracy; present it as the condition that makes automation safe.</li>
               <li>Emphasize that context can increase error surface area when institutions do not know which data is authoritative.</li>
               <li>Keep returning to the phrase “trustworthy context” rather than simply “more context.”</li>
+              <li>Make the consume-versus-generate distinction explicit: AI reads governed inputs, but it can also create new structured outputs that look authoritative if people do not stop to validate them.</li>
               <li>Use local examples: policy manuals, sponsor guidance, routing workflows, HERD submissions, dashboard data sources, and institutional exceptions.</li>
-              <li>Connect to what they already do: governing data for dashboards and reports is the same muscle as governing data for AI — the stakes are just higher because AI acts on the data, not just displays it.</li>
+              <li>Connect to what they already do: governing data for dashboards and reports is the same muscle as governing data for AI — the stakes are just higher because AI acts on the data and may generate new data for downstream use.</li>
               <li>Remind participants that governance decisions determine whether an AI system should answer, abstain, or escalate.</li>
             </ul>
           </article>
@@ -401,6 +435,7 @@
             <ul class="module-points">
               <li>Which data sources in your institution are reliable enough to become AI context?</li>
               <li>Which ones are too messy, sensitive, or incomplete to trust yet?</li>
+              <li>Where could AI-generated structured data enter your analytics or operational workflows, and how would you validate it?</li>
               <li>Who currently decides what is authoritative in your workflow — and is it the same person who would govern AI context?</li>
               <li>What governance work has to happen before retrieval or automation should expand?</li>
               <li>How do you currently handle it when a source system changes and your dashboard breaks? How would that same change affect an AI workflow?</li>
