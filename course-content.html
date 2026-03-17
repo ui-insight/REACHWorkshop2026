@@ -40,46 +40,163 @@
           <p class="eyebrow">Course content</p>
           <h1>Teaching materials organized as reusable workshop modules.</h1>
           <p class="section-copy">
-            This section is the beginning of the course content area for the
-            workshop site. It is designed to hold durable teaching material that
-            can support the live session, the slide deck, downloadable assets,
-            and follow-up learning after the workshop.
+            This page is the workshop's source of truth. Each module should be
+            fully teachable here before it is shortened into slide decks,
+            presenter notes, downloadable handouts, or post-workshop follow-up
+            materials.
           </p>
           <div class="hero-actions">
-            <a class="button" href="#data-governance">Start with issue #1</a>
-            <a class="button-secondary" href="#context-layers">Jump to issue #2</a>
-            <a class="button-secondary" href="slides-governance.html">Open slide deck</a>
+            <a class="button" href="#course-workflow">How this page works</a>
+            <a class="button-secondary" href="#module-template">Module template</a>
+            <a class="button-secondary" href="#data-governance">Start with issue #1</a>
             <a class="button-secondary" href="index.html">Back to workshop home</a>
+          </div>
+        </section>
+
+        <section id="course-workflow" class="content-block reveal">
+          <p class="eyebrow">Production workflow</p>
+          <h2 class="section-heading">How this page becomes the workshop.</h2>
+          <p class="section-copy">
+            Content should be written and reviewed here first. If a key idea
+            only exists in a slide, a speaker's memory, or a draft handout, the
+            module is not finished yet.
+          </p>
+          <div class="card-grid">
+            <article class="content-card">
+              <span class="tag">Step 1</span>
+              <h3>Write the teachable version here first</h3>
+              <p>
+                Each module needs a clear learning goal, lecture framing,
+                explanation, example, participant activity, decision aid, and
+                takeaway before it is considered stable.
+              </p>
+            </article>
+            <article class="content-card">
+              <span class="tag">Step 2</span>
+              <h3>Separate presenter and participant needs</h3>
+              <p>
+                Speaker notes, discussion prompts, and presentation flow belong
+                alongside the participant-facing examples, worksheets, and
+                decision tools they support.
+              </p>
+            </article>
+            <article class="content-card">
+              <span class="tag">Step 3</span>
+              <h3>Derive assets from the completed module</h3>
+              <p>
+                Slide decks, download bundles, and workshop handouts should all
+                point back to the sections on this page that they summarize or
+                package for reuse.
+              </p>
+            </article>
+          </div>
+          <ul class="plain-list">
+            <li>Use this page to make the content teachable, not just describable.</li>
+            <li>When a module changes, update the full version here before revising the slides.</li>
+            <li>Each module should leave a visible trail from concept to exercise to derived assets.</li>
+          </ul>
+        </section>
+
+        <section id="module-template" class="content-block reveal">
+          <p class="eyebrow">Module template</p>
+          <h2 class="section-heading">Every module should follow the same anatomy.</h2>
+          <p class="section-copy">
+            The sections below are the minimum completion standard for a module
+            on this page. They give presenters a reliable structure and make it
+            easier to derive slides and participant materials without losing the
+            underlying teaching logic.
+          </p>
+          <div class="card-grid">
+            <article class="content-card">
+              <span class="tag">1. Module brief</span>
+              <h3>State the learning goal and in-room use</h3>
+              <p>
+                Capture what participants should be able to do, how long the
+                module should take, and what artifact or judgment skill they
+                leave with.
+              </p>
+            </article>
+            <article class="content-card">
+              <span class="tag">2. Explanation</span>
+              <h3>Include framing and core ideas</h3>
+              <p>
+                Give the presenter a clear opening, a practical explanation of
+                the concept, and a short flow for teaching it in sequence.
+              </p>
+            </article>
+            <article class="content-card">
+              <span class="tag">3. Example</span>
+              <h3>Show the idea in a real workflow</h3>
+              <p>
+                Use a research analytics or administration scenario that makes
+                the module concrete and gives the presenter something specific
+                to point at live.
+              </p>
+            </article>
+            <article class="content-card">
+              <span class="tag">4. Activity</span>
+              <h3>Ask participants to do something with it</h3>
+              <p>
+                Every module should include an exercise, discussion move, or
+                reflection prompt that helps participants test the concept
+                against their own institution.
+              </p>
+            </article>
+            <article class="content-card">
+              <span class="tag">5. Decision aid</span>
+              <h3>Leave them with a reusable tool</h3>
+              <p>
+                Checklists, rules of thumb, readiness questions, and quick
+                rubrics turn the module into something participants can reuse
+                after the session.
+              </p>
+            </article>
+            <article class="content-card">
+              <span class="tag">6. Derived assets</span>
+              <h3>Trace slide and handout updates back here</h3>
+              <p>
+                Each module should explicitly note which slide deck, worksheet,
+                or downloadable asset was derived from it so future edits have a
+                clear upstream source.
+              </p>
+            </article>
           </div>
         </section>
 
         <section class="content-block reveal">
           <p class="eyebrow">Current modules</p>
-          <h2 class="section-heading">A place for the workshop's core teaching topics</h2>
+          <h2 class="section-heading">A production board for the workshop's core topics</h2>
+          <p class="section-copy">
+            These modules are the current build targets. Each one should become
+            a facilitator-ready section here before the companion pages are
+            treated as final.
+          </p>
           <div class="card-grid">
             <article class="content-card">
               <span class="tag">Issue #1</span>
               <h3><a href="#data-governance">Data governance and context engineering</a></h3>
               <p>
-                The first live teaching module now frames governance as the
-                prerequisite for trustworthy context use.
-              </p>
-            </article>
-            <article class="content-card">
-              <span class="tag">Issue #3</span>
-              <h3><a href="slides-governance.html">Reveal.js slide outline</a></h3>
-              <p>
-                A hosted slide deck now translates this module into a
-                presentation flow that can be used live during the workshop.
+                The governance module now has framing, examples, discussion
+                prompts, and derived slide support. It should set the template
+                for the rest of the page.
               </p>
             </article>
             <article class="content-card">
               <span class="tag">Issue #2</span>
               <h3><a href="#context-layers">Layers of context engineering</a></h3>
               <p>
-                The next module shows participants how prompts, files, tools,
-                retrieval, and structured data combine into a usable context
-                stack.
+                The context module maps prompts, files, tools, retrieval, and
+                structured data into a repeatable teaching sequence with an
+                exercise and facilitator guidance.
+              </p>
+            </article>
+            <article class="content-card">
+              <span class="tag">Derived assets</span>
+              <h3>Slides and downloads should point back here</h3>
+              <p>
+                Use the presentation asset blocks in each module as the bridge
+                between canonical content on this page and the slide decks or
+                handouts built from it.
               </p>
             </article>
           </div>
@@ -97,6 +214,44 @@
             see it, and what should happen to it after the interaction. Those
             are governance questions first and technical questions second.
           </p>
+          <div class="compact-grid">
+            <article class="content-card">
+              <span class="tag">Learning goal</span>
+              <h3>Teach participants to evaluate context before they trust it</h3>
+              <p>
+                Participants should leave able to explain why provenance,
+                permissions, quality, and stewardship determine whether context
+                is safe enough to use in an AI workflow.
+              </p>
+            </article>
+            <article class="content-card">
+              <span class="tag">In-room move</span>
+              <h3>Open with a dashboard analogy</h3>
+              <p>
+                Start from the governance work they already do for dashboards,
+                then show that AI context uses the same institutional muscles
+                under higher stakes.
+              </p>
+            </article>
+            <article class="content-card">
+              <span class="tag">Participant artifact</span>
+              <h3>A context readiness checklist</h3>
+              <p>
+                This module should leave people with a short set of questions
+                they can use to judge whether a document set, policy source, or
+                dataset is ready for AI-assisted work.
+              </p>
+            </article>
+            <article class="content-card">
+              <span class="tag">Derived assets</span>
+              <h3>Governance slide deck and future handout</h3>
+              <p>
+                The hosted governance deck should summarize the framing,
+                example, and exercise on this page rather than introduce new
+                content that only exists in slides.
+              </p>
+            </article>
+          </div>
 
           <article class="course-module module-full module-lead">
             <span class="tag">Lecture framing</span>
@@ -112,7 +267,7 @@
 
           <div class="module-grid">
             <article class="course-module">
-              <span class="tag">Why it matters</span>
+              <span class="tag">Module explanation</span>
               <h3>Better context is only valuable if it is governed.</h3>
               <p>
                 Teams often talk about adding more documents, more system access,
@@ -124,7 +279,7 @@
             </article>
 
             <article class="course-module">
-              <span class="tag">Core governance questions</span>
+              <span class="tag">Decision aid</span>
               <h3>What every institution should ask before adding context</h3>
               <ul class="module-points">
                 <li>Where did this information come from, and can we prove its provenance? (The same question you ask when a dashboard number looks wrong.)</li>
@@ -137,8 +292,19 @@
           </div>
 
           <article class="course-module module-full">
+            <span class="tag">Participant activity</span>
+            <h3>Run a fast context readiness audit</h3>
+            <ol class="module-points">
+              <li>Ask participants to choose one institutional source they would like to use in an AI workflow.</li>
+              <li>Have them mark whether the source is authoritative, current, permissioned, and explainable to another staff member.</li>
+              <li>Ask what could go wrong if the system used that source without review.</li>
+              <li>End by deciding whether the source is ready now, needs cleanup, or should stay outside the workflow.</li>
+            </ol>
+          </article>
+
+          <article class="course-module module-full">
             <span class="tag">Suggested teaching flow</span>
-            <h3>A five-part sequence for presenting this idea</h3>
+            <h3>A six-part sequence for presenting this idea</h3>
             <ol class="module-points">
               <li>Define context engineering as the design of what the model can see, use, and rely on.</li>
               <li>Explain that every added source of context introduces governance questions, not just technical opportunity.</li>
@@ -272,7 +438,9 @@
             <h3>Slide version of this module</h3>
             <p>
               A Reveal.js slide outline based on this material is now available
-              for live delivery and iteration during workshop prep.
+              for live delivery and iteration during workshop prep. It should
+              continue to summarize the lecture framing, explanation, example,
+              participant activity, and discussion prompts captured above.
             </p>
             <div class="hero-actions module-actions">
               <a class="button" href="slides-governance.html">Launch the slide deck</a>
@@ -296,6 +464,42 @@
             files, tools, retrieved sources, and structured data so AI can
             work with institutional information where it actually lives.
           </p>
+          <div class="compact-grid">
+            <article class="content-card">
+              <span class="tag">Learning goal</span>
+              <h3>Help participants choose the right layer for the job</h3>
+              <p>
+                Participants should be able to describe the major context
+                layers, explain what each one adds, and decide when a workflow
+                needs retrieval, tools, templates, or human escalation.
+              </p>
+            </article>
+            <article class="content-card">
+              <span class="tag">In-room move</span>
+              <h3>Teach from familiar silo problems</h3>
+              <p>
+                Use dashboard integration work, policy lookups, and crosswalks
+                as the bridge to prompt layers, files, tools, and structured
+                retrieval.
+              </p>
+            </article>
+            <article class="content-card">
+              <span class="tag">Participant artifact</span>
+              <h3>A context stack map</h3>
+              <p>
+                The main reusable output is a simple map of the layers a real
+                workflow needs now, plus which ones are unsafe or unnecessary.
+              </p>
+            </article>
+            <article class="content-card">
+              <span class="tag">Derived assets</span>
+              <h3>Context layers slide deck and future worksheet</h3>
+              <p>
+                The current slide deck should be read as a condensed version of
+                this module's framing, stack definition, example, and activity.
+              </p>
+            </article>
+          </div>
 
           <article class="course-module module-full module-lead">
             <span class="tag">Lecture framing</span>
@@ -314,7 +518,7 @@
 
           <div class="module-grid">
             <article class="course-module">
-              <span class="tag">Core idea</span>
+              <span class="tag">Module explanation</span>
               <h3>Each layer changes both capability and risk.</h3>
               <p>
                 Adding a role prompt can improve tone and framing. Adding
@@ -355,7 +559,7 @@
 
           <div class="module-grid">
             <article class="course-module">
-              <span class="tag">Research administration lens</span>
+              <span class="tag">Research analytics lens</span>
               <h3>Why research analytics workflows benefit from layered context</h3>
               <p>
                 Research analytics and administration work mixes policy
@@ -371,7 +575,7 @@
             </article>
 
             <article class="course-module">
-              <span class="tag">Decision rule</span>
+              <span class="tag">Teaching takeaway</span>
               <h3>Use the thinnest layer that gets the job done.</h3>
               <p>
                 This is a strong practical takeaway for participants. If a
@@ -383,6 +587,17 @@
               </p>
             </article>
           </div>
+
+          <article class="course-module module-full">
+            <span class="tag">Decision aid</span>
+            <h3>A quick rule for choosing the next layer</h3>
+            <ul class="module-points">
+              <li>If the job is mostly wording and tone, start with instructions, examples, and templates.</li>
+              <li>If the job depends on a current policy or reference, add the smallest trusted file set that answers it.</li>
+              <li>If the job depends on live institutional facts, move to retrieval or SQL only after governance and permissions are clear.</li>
+              <li>If the job changes records, sends approvals, or creates risk, add a human gate before adding more automation.</li>
+            </ul>
+          </article>
 
           <div class="module-grid">
             <article class="course-module">
@@ -496,7 +711,9 @@
             <h3>Slide version of this module</h3>
             <p>
               A Reveal.js slide outline is now available for live delivery,
-              workshop rehearsal, and follow-up refinement.
+              workshop rehearsal, and follow-up refinement. It should remain a
+              condensed version of the framing, layer map, worked example,
+              decision aid, and exercise documented here.
             </p>
             <div class="hero-actions module-actions">
               <a class="button" href="slides-context-layers.html">Launch the slide deck</a>
