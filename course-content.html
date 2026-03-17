@@ -127,9 +127,9 @@
               <span class="tag">Core governance questions</span>
               <h3>What every institution should ask before adding context</h3>
               <ul class="module-points">
-                <li>Where did this information come from, and can we prove its provenance?</li>
-                <li>Who is allowed to access it, and under what conditions?</li>
-                <li>How current, complete, and reliable is it?</li>
+                <li>Where did this information come from, and can we prove its provenance? (The same question you ask when a dashboard number looks wrong.)</li>
+                <li>Who is allowed to access it, and under what conditions? (The same permissions logic behind your reporting access controls.)</li>
+                <li>How current, complete, and reliable is it? (The same data quality concern that drives your data dictionary work.)</li>
                 <li>Does it contain private, regulated, or institutionally sensitive material?</li>
                 <li>What human review is needed before the output is used operationally?</li>
               </ul>
@@ -144,20 +144,26 @@
               <li>Explain that every added source of context introduces governance questions, not just technical opportunity.</li>
               <li>Show how bad governance creates confident but unsafe or institutionally invalid output.</li>
               <li>Connect governance to provenance, permissions, quality, stewardship, and review boundaries.</li>
+              <li>Bridge the concept: if you already govern data for a dashboard (ownership, refresh cadence, access controls, metric definitions), you already understand the core of AI governance — the difference is that AI can act on the data, not just display it.</li>
               <li>End by reframing governance as the operating system behind trustworthy AI workflows.</li>
             </ol>
           </article>
 
           <div class="module-grid">
             <article class="course-module">
-              <span class="tag">Research administration lens</span>
-              <h3>Why this matters in RA workflows</h3>
+              <span class="tag">Research analytics lens</span>
+              <h3>Why this matters — you already govern data for dashboards</h3>
               <p>
-                Research administration work depends on policy interpretation,
-                institutional rules, sponsor requirements, and local process
-                knowledge. If an AI system is given incomplete or ungoverned
-                context, it may produce answers that sound confident while
-                quietly ignoring the most important institutional constraints.
+                Research analytics teams already practice governance every
+                day: they decide which data source is authoritative for a
+                metric, how to version a KPI definition, who can see which
+                dashboard, and what happens when a source system changes
+                mid-reporting cycle. AI governance is the same discipline
+                applied to a new output. If an AI system is given incomplete
+                or ungoverned context, it may produce answers that sound
+                confident while quietly ignoring the most important
+                institutional constraints — the same failure mode as a
+                dashboard built on stale data.
               </p>
             </article>
 
@@ -169,7 +175,9 @@
                 about retrieval quality. It is also about stewardship:
                 permissions, quality standards, curation, traceability, and
                 clearly defined review boundaries. Those governance choices are
-                what make AI-assisted workflows trustworthy.
+                what make AI-assisted workflows trustworthy — and they are
+                also a form of data literacy that strengthens the institution's
+                ability to work with data in any context, not just AI.
               </p>
             </article>
           </div>
@@ -213,7 +221,8 @@
               <li>Do not present governance as bureaucracy; present it as the condition that makes automation safe.</li>
               <li>Emphasize that context can increase error surface area when institutions do not know which data is authoritative.</li>
               <li>Keep returning to the phrase “trustworthy context” rather than simply “more context.”</li>
-              <li>Use local examples: policy manuals, sponsor guidance, routing workflows, and institutional exceptions.</li>
+              <li>Use local examples: policy manuals, sponsor guidance, routing workflows, HERD submissions, dashboard data sources, and institutional exceptions.</li>
+              <li>Connect to what they already do: governing data for dashboards and reports is the same muscle as governing data for AI — the stakes are just higher because AI acts on the data, not just displays it.</li>
               <li>Remind participants that governance decisions determine whether an AI system should answer, abstain, or escalate.</li>
             </ul>
           </article>
@@ -224,8 +233,10 @@
             <ul class="module-points">
               <li>Which data sources in your institution are reliable enough to become AI context?</li>
               <li>Which ones are too messy, sensitive, or incomplete to trust yet?</li>
-              <li>Who currently decides what is authoritative in your workflow?</li>
+              <li>Who currently decides what is authoritative in your workflow — and is it the same person who would govern AI context?</li>
               <li>What governance work has to happen before retrieval or automation should expand?</li>
+              <li>How do you currently handle it when a source system changes and your dashboard breaks? How would that same change affect an AI workflow?</li>
+              <li>What governance practices from your reporting work (data dictionaries, refresh schedules, access controls) could transfer directly to AI governance?</li>
             </ul>
           </article>
 
@@ -257,27 +268,32 @@
         <section id="context-layers" class="content-block reveal">
           <p class="eyebrow">Issue #2 module</p>
           <h2 class="section-heading">
-            Context engineering works in layers, not in one giant prompt.
+            Your institutional data is already layered — context engineering
+            is how AI meets it where it is.
           </h2>
           <p class="section-copy">
-            Once participants understand that governance determines what the
-            model should be allowed to use, the next step is showing them how
-            context is actually assembled. Useful workflows rarely depend on a
-            single perfect prompt. They depend on a stack of instructions,
-            examples, files, tools, retrieved sources, and structured data that
-            each play a different role.
+            Research analytics teams already work across fragmented systems:
+            HERD submissions live in one place, policy documents in another,
+            departmental spreadsheets somewhere else, and dashboards try to
+            pull it all together. Context engineering acknowledges this
+            reality. Instead of pretending the data is clean and unified,
+            it shows how to assemble the right combination of instructions,
+            files, tools, retrieved sources, and structured data so AI can
+            work with institutional information where it actually lives.
           </p>
 
           <article class="course-module module-full module-lead">
             <span class="tag">Lecture framing</span>
-            <h3>Start with the stack, not the magic.</h3>
+            <h3>Start with the data they already manage, not the magic.</h3>
             <p>
-              A practical way to teach this module is to demystify the idea of
-              "context." Participants often hear that better prompting solves
-              everything, but real systems work because they combine multiple
-              layers of context on purpose. Each layer improves capability in a
-              different way, and each layer creates its own review and design
-              obligations.
+              A practical way to teach this module is to connect to what the
+              audience already knows: they spend their days integrating data
+              from siloed systems into dashboards and reports. Context
+              engineering is the same challenge applied to AI — assembling
+              the right information from multiple sources so the system can
+              produce trustworthy output. Each layer improves capability in
+              a different way, and each layer creates its own review and
+              design obligations.
             </p>
           </article>
 
@@ -325,14 +341,17 @@
           <div class="module-grid">
             <article class="course-module">
               <span class="tag">Research administration lens</span>
-              <h3>Why RA workflows benefit from layered context</h3>
+              <h3>Why research analytics workflows benefit from layered context</h3>
               <p>
-                Research administration work mixes policy interpretation,
-                institutional practice, sponsor rules, templates, and local
-                data. A single generic prompt will miss too much of that
-                environment. A layered approach lets teams decide whether the
-                job needs only better instructions, a trusted template, a policy
-                document, a database lookup, or an escalation path to a human.
+                Research analytics and administration work mixes policy
+                interpretation, institutional practice, sponsor rules,
+                dashboard data, HERD submissions, and local spreadsheets. A
+                single generic prompt will miss too much of that environment.
+                A layered approach lets teams decide whether the job needs
+                only better instructions, a trusted template, a policy
+                document, a SQL query, or an escalation path to a human —
+                the same kind of decision they already make when building a
+                dashboard.
               </p>
             </article>
 
@@ -357,15 +376,19 @@
               <p>
                 Imagine a unit wants AI help answering a faculty member's
                 question about proposal routing deadlines and required internal
-                approvals. A basic prompt can draft a friendly response, but it
-                may miss the institution's actual routing policy, local
-                exceptions, or the right form names.
+                approvals. Today, that information might live in a Power BI
+                dashboard, a policy PDF, a departmental spreadsheet, and the
+                institutional knowledge of an experienced staff member. A
+                basic prompt can draft a friendly response, but it will miss
+                most of what matters.
               </p>
               <p class="module-follow">
                 With layered context, the workflow can combine role
-                instructions, a response template, the current routing policy,
-                a retrieved deadline table, and a rule that sends edge cases to
-                an RA professional instead of guessing.
+                instructions, a response template, the current routing policy
+                PDF, a SQL query against the deadline database, and a rule
+                that sends edge cases to an RA professional instead of
+                guessing — much like building a crosswalk between data
+                sources for a dashboard, but for an AI workflow.
               </p>
             </article>
 
@@ -404,6 +427,7 @@
               <li>Show that some workflows improve more from templates and examples than from more model sophistication.</li>
               <li>Stress that tools and retrieval increase power, but also increase the need for permissions, logging, and review.</li>
               <li>Connect every layer back to trust: what is this layer allowed to influence, and who owns it?</li>
+              <li>Remind participants this scales down: a small institution with a few policy PDFs and a spreadsheet can still use layered context effectively — you do not need an enterprise data warehouse to start.</li>
             </ul>
           </article>
 
@@ -415,6 +439,8 @@
               <li>Which ones need trusted files or retrieval before the output could be useful?</li>
               <li>Which workflows would become risky the moment the system could take an action?</li>
               <li>Where should a human remain part of the context stack rather than outside it?</li>
+              <li>When would AI add value beyond what your existing dashboard or SQL query already delivers?</li>
+              <li>How would you apply layered context at an institution without a dedicated analytics office or data warehouse?</li>
             </ul>
           </article>
 
@@ -424,10 +450,11 @@
             <p>
               This module creates a practical bridge into structured output,
               evaluation, retrieval design, and workflow automation. Once
-              participants can see context as a layered stack, it becomes much
-              easier to ask which layers belong in a given workflow, which ones
-              are governed well enough to use, and where human judgment still
-              has to stay in the loop.
+              participants can see context as a layered stack — familiar from
+              the way they already integrate data sources for dashboards and
+              reports — it becomes much easier to ask which layers belong in
+              a given AI workflow, which ones are governed well enough to use,
+              and where human judgment still has to stay in the loop.
             </p>
           </article>
 
@@ -451,7 +478,7 @@
             <p class="footer-kicker">AI4RA Community of Practice</p>
             <p class="footer-copy">
               Building open, trustworthy, practitioner-centered infrastructure
-              for research administration.
+              for research analytics and administration.
             </p>
           </div>
           <div>
