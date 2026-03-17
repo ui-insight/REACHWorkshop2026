@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#191919" />
+    <title>Context Layers Module | AI4RA Workshop</title>
+    <meta
+      name="description"
+      content="Facilitator-ready workshop module on layers of context engineering for AI4RA REACH 2026."
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-frame">
+      <header class="site-header">
+        <div class="shell">
+          <div class="brand-lockup">
+            <a class="brand-home" href="index.html">
+              <img class="brand-logo" src="ai4ra-logo.png" alt="AI4RA logo" />
+              <span class="brand-line">AI4RA workshop companion for REACH 2026</span>
+            </a>
+          </div>
+          <nav aria-label="Primary">
+            <ul class="nav-list">
+              <li><a class="nav-link" href="index.html">Home</a></li>
+              <li><a class="nav-link is-active" href="course-content.html">Course Content</a></li>
+              <li><a class="nav-link" href="slides.html">Slides</a></li>
+              <li><a class="nav-link" href="presenters.html">Presenters</a></li>
+              <li><a class="nav-link" href="index.html#details">Workshop Details</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+
+      <main>
+        <section class="page-intro reveal">
+          <div class="page-intro-panel">
+            <p class="eyebrow">Module 2</p>
+            <h1>Your institutional data is already layered.</h1>
+            <p class="section-copy">
+              Context engineering is how AI meets institutional information
+              where it actually lives: prompts, files, tools, retrieved
+              sources, structured data, and the human review boundaries around
+              them.
+            </p>
+            <div class="hero-actions">
+              <a class="button" href="course-content.html">Back to course hub</a>
+              <a class="button-secondary" href="slides-context-layers.html">Launch slide deck</a>
+              <a class="button-secondary" href="module-data-governance.html">Previous module</a>
+            </div>
+          </div>
+        </section>
+
+        <section class="jump-strip reveal" aria-label="Module sections">
+          <div class="jump-links">
+            <a class="jump-link" href="#overview">Overview</a>
+            <a class="jump-link" href="#teaching-flow">Teaching flow</a>
+            <a class="jump-link" href="#example-practice">Example and activity</a>
+            <a class="jump-link" href="#facilitation">Facilitation</a>
+            <a class="jump-link" href="#assets">Assets</a>
+          </div>
+        </section>
+
+        <section id="overview" class="content-block reveal">
+          <p class="eyebrow">Module brief</p>
+          <h2 class="section-heading section-heading-wide">Help participants choose the right layer for the job.</h2>
+          <div class="compact-grid">
+            <article class="content-card">
+              <span class="tag">Learning goal</span>
+              <h3>Choose the layer that fits the workflow</h3>
+              <p>
+                Participants should be able to describe the major context
+                layers, explain what each one adds, and decide when a workflow
+                needs retrieval, tools, templates, or human escalation.
+              </p>
+            </article>
+            <article class="content-card">
+              <span class="tag">In-room move</span>
+              <h3>Teach from familiar silo problems</h3>
+              <p>
+                Use dashboard integration work, policy lookups, and crosswalks
+                as the bridge to prompt layers, files, tools, and structured
+                retrieval.
+              </p>
+            </article>
+            <article class="content-card">
+              <span class="tag">Participant artifact</span>
+              <h3>A context stack map</h3>
+              <p>
+                The main reusable output is a simple map of the layers a real
+                workflow needs now, plus which ones are unsafe or unnecessary.
+              </p>
+            </article>
+            <article class="content-card">
+              <span class="tag">Derived assets</span>
+              <h3>Context layers slide deck and future worksheet</h3>
+              <p>
+                The current slide deck should be read as a condensed version of
+                this module's framing, stack definition, example, and activity.
+              </p>
+            </article>
+          </div>
+
+          <article class="course-module module-full module-lead">
+            <span class="tag">Lecture framing</span>
+            <h3>Start with the data they already manage, not the magic</h3>
+            <p>
+              A practical way to teach this module is to connect to what the
+              audience already knows: they spend their days integrating data
+              from siloed systems into dashboards and reports. Context
+              engineering is the same challenge applied to AI, with each layer
+              improving capability in a different way and creating its own
+              review obligations.
+            </p>
+          </article>
+        </section>
+
+        <section id="teaching-flow" class="content-block reveal">
+          <p class="eyebrow">Core teaching arc</p>
+          <h2 class="section-heading">Each layer changes both capability and risk.</h2>
+          <div class="module-grid">
+            <article class="course-module">
+              <span class="tag">Module explanation</span>
+              <h3>Prompting is only one layer in the stack</h3>
+              <p>
+                Adding a role prompt can improve tone and framing. Adding
+                examples can improve consistency. Adding files and retrieval can
+                improve grounding. Adding tools can make the workflow act on the
+                world. Every new layer expands both what the system can do and
+                what the team must validate.
+              </p>
+            </article>
+
+            <article class="course-module">
+              <span class="tag">The layers</span>
+              <h3>A context stack participants can remember</h3>
+              <ul class="module-points">
+                <li>System or role instructions that define the model's job and boundaries.</li>
+                <li>Task prompts that describe the immediate assignment.</li>
+                <li>Examples or templates that show the expected format and tone.</li>
+                <li>Files, images, or documents that provide direct reference material.</li>
+                <li>Tools and actions such as search, code, SQL, or workflow integrations.</li>
+                <li>Retrieved and structured institutional data that grounds answers in current sources.</li>
+              </ul>
+            </article>
+
+            <article class="course-module">
+              <span class="tag">Research analytics lens</span>
+              <h3>Why layered context fits institutional work</h3>
+              <p>
+                Research analytics and administration work mixes policy
+                interpretation, institutional practice, sponsor rules,
+                dashboard data, HERD submissions, and local spreadsheets. A
+                layered approach lets teams decide whether the job needs only
+                better instructions, a trusted template, a policy document, a
+                SQL query, or a human escalation rule.
+              </p>
+            </article>
+
+            <article class="course-module">
+              <span class="tag">Teaching takeaway</span>
+              <h3>Use the thinnest layer that gets the job done</h3>
+              <p>
+                If a better prompt and a template produce reliable output, they
+                may not need retrieval. If a current policy PDF is enough, they
+                may not need a live database connection. If an answer depends
+                on institution-specific judgment, the right layer may be an
+                escalation rule instead of more automation.
+              </p>
+            </article>
+          </div>
+
+          <article class="course-module module-full">
+            <span class="tag">Suggested teaching flow</span>
+            <h3>A sequence for presenting the stack</h3>
+            <ol class="module-points">
+              <li>Start with a plain-language definition: context is everything the model can rely on while doing the task.</li>
+              <li>Show that a prompt is only one layer in a broader design stack.</li>
+              <li>Walk through the major layers from lightest to heaviest.</li>
+              <li>Explain what each layer is good at and where it introduces new failure modes.</li>
+              <li>Emphasize that teams should use the thinnest layer that solves the problem reliably.</li>
+              <li>Close by connecting layered context to evaluation, governance, and human review.</li>
+            </ol>
+          </article>
+
+          <article class="course-module module-full">
+            <span class="tag">Decision aid</span>
+            <h3>A quick rule for choosing the next layer</h3>
+            <ul class="module-points">
+              <li>If the job is mostly wording and tone, start with instructions, examples, and templates.</li>
+              <li>If the job depends on a current policy or reference, add the smallest trusted file set that answers it.</li>
+              <li>If the job depends on live institutional facts, move to retrieval or SQL only after governance and permissions are clear.</li>
+              <li>If the job changes records, sends approvals, or creates risk, add a human gate before adding more automation.</li>
+            </ul>
+          </article>
+        </section>
+
+        <section id="example-practice" class="content-block reveal">
+          <p class="eyebrow">Example and activity</p>
+          <h2 class="section-heading section-heading-wide">Map the stack against a real institutional workflow.</h2>
+          <div class="module-grid">
+            <article class="course-module">
+              <span class="tag">Worked example</span>
+              <h3>Drafting a proposal routing response</h3>
+              <p>
+                Imagine a unit wants AI help answering a faculty member's
+                question about proposal routing deadlines and required internal
+                approvals. Today, that information might live in a Power BI
+                dashboard, a policy PDF, a departmental spreadsheet, and the
+                institutional knowledge of an experienced staff member.
+              </p>
+              <p class="module-follow">
+                With layered context, the workflow can combine role
+                instructions, a response template, the current routing policy
+                PDF, a SQL query against the deadline database, and a rule that
+                sends edge cases to an RA professional instead of guessing.
+              </p>
+            </article>
+
+            <article class="course-module">
+              <span class="tag">What to point out</span>
+              <h3>What each layer contributes in the example</h3>
+              <ul class="module-points">
+                <li>The role instruction sets tone, caution, and escalation boundaries.</li>
+                <li>The task prompt defines the current question and desired output.</li>
+                <li>The template keeps the answer consistent across requests.</li>
+                <li>The policy document provides authoritative institutional grounding.</li>
+                <li>The retrieved deadline table adds current, specific operational detail.</li>
+                <li>The human-review rule protects cases where policy and local practice diverge.</li>
+              </ul>
+            </article>
+          </div>
+
+          <article class="course-module module-full">
+            <span class="tag">Hands-on exercise</span>
+            <h3>Ask participants to map their own context stack</h3>
+            <ol class="module-points">
+              <li>Choose a real workflow from your institution that people are tempted to automate.</li>
+              <li>Write the smallest prompt that describes the task.</li>
+              <li>List what other context the model would need to be genuinely useful.</li>
+              <li>Separate that context into layers: instructions, examples, files, tools, retrieval, and human escalation.</li>
+              <li>Decide which layers are available now, which ones are unsafe, and which ones need governance work first.</li>
+            </ol>
+          </article>
+
+          <article class="course-module module-full">
+            <span class="tag">Discussion prompt</span>
+            <h3>Questions to ask participants</h3>
+            <ul class="module-points">
+              <li>Which workflows at your institution only need a better prompt or template?</li>
+              <li>Which ones need trusted files or retrieval before the output could be useful?</li>
+              <li>Which workflows would become risky the moment the system could take an action?</li>
+              <li>Where should a human remain part of the context stack rather than outside it?</li>
+              <li>When would AI add value beyond what your existing dashboard or SQL query already delivers?</li>
+            </ul>
+          </article>
+        </section>
+
+        <section id="facilitation" class="content-block reveal">
+          <p class="eyebrow">Facilitation support</p>
+          <h2 class="section-heading">Keep every layer connected to trust and review.</h2>
+          <article class="course-module module-full">
+            <span class="tag">Speaker notes</span>
+            <h3>Talking points for the presenter</h3>
+            <ul class="module-points">
+              <li>Keep reminding participants that prompting is not the whole system.</li>
+              <li>Use the phrase "thin layer first" to normalize incremental design.</li>
+              <li>Show that some workflows improve more from templates and examples than from more model sophistication.</li>
+              <li>Stress that tools and retrieval increase power, but also increase the need for permissions, logging, and review.</li>
+              <li>Connect every layer back to trust: what is this layer allowed to influence, and who owns it?</li>
+            </ul>
+          </article>
+
+          <article class="course-module module-full">
+            <span class="tag">REACH sessions to highlight</span>
+            <h3>Complementary sessions on Monday and Tuesday</h3>
+            <ul class="module-points">
+              <li><strong>E5</strong> - Building a Crosswalk: A Practical Framework for Standardizing Messy Research Data (Mon 3:45 PM, NEWPORT).</li>
+              <li><strong>C2</strong> - Bridging Data Silos in Academia: Smartsheet, Tableau, and Power BI as Catalysts (Mon 1:30 PM, WEATHERLY).</li>
+              <li><strong>D3</strong> - Demystifying SQL: Interpreting and Building Queries for Beginners (Mon 2:30 PM, COLUMBIA).</li>
+              <li><strong>I3</strong> - From Manual Downloading to Automated Data Collection with APIs (Tue 2:30 PM, COLUMBIA).</li>
+              <li><strong>F2</strong> - Can Prompt Engineering Turn General Questions into Actionable Research Intelligence? (Tue 10:15 AM, WEATHERLY).</li>
+              <li><strong>F1</strong> - Lessons Learned from Implementing AI Agents for Higher Ed Research Compliance (Tue 10:15 AM, FREEDOM).</li>
+            </ul>
+          </article>
+
+          <article class="course-module module-full">
+            <span class="tag">Bridge forward</span>
+            <h3>How this sets up later sections</h3>
+            <p>
+              This module creates a practical bridge into structured output,
+              evaluation, retrieval design, and workflow automation. Once
+              participants can see context as a layered stack, it becomes much
+              easier to ask which layers belong in a given workflow, which ones
+              are governed well enough to use, and where human judgment still
+              has to stay in the loop.
+            </p>
+          </article>
+        </section>
+
+        <section id="assets" class="content-block reveal">
+          <p class="eyebrow">Derived assets</p>
+          <h2 class="section-heading">Slides and related materials for this module</h2>
+          <article class="course-module module-full">
+            <span class="tag">Presentation asset</span>
+            <h3>Slide version of this module</h3>
+            <p>
+              A Reveal.js slide outline is available for live delivery,
+              workshop rehearsal, and follow-up refinement. It should remain a
+              condensed version of the framing, layer map, worked example,
+              decision aid, and exercise documented here.
+            </p>
+            <div class="hero-actions module-actions">
+              <a class="button" href="slides-context-layers.html">Launch the slide deck</a>
+              <a class="button-secondary" href="module-data-governance.html">Previous module</a>
+              <a class="button-secondary" href="slides.html">All slide decks</a>
+            </div>
+          </article>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <div class="shell footer-grid">
+          <div>
+            <p class="footer-kicker">AI4RA Community of Practice</p>
+            <p class="footer-copy">
+              Building open, trustworthy, practitioner-centered infrastructure
+              for research analytics and administration.
+            </p>
+          </div>
+          <div>
+            <p class="footer-heading">Module navigation</p>
+            <ul class="footer-list">
+              <li><a href="course-content.html">Course hub</a></li>
+              <li><a href="module-data-governance.html">Previous module: Data governance</a></li>
+              <li><a href="slides-context-layers.html">Context layers slide deck</a></li>
+            </ul>
+          </div>
+          <div>
+            <p class="footer-heading">Workshop</p>
+            <ul class="footer-list">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="slides.html">Slides</a></li>
+              <li><a href="presenters.html">Presenters</a></li>
+            </ul>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

@@ -327,8 +327,20 @@ p {
   padding: 4rem 0 1.5rem;
 }
 
+.page-intro-panel {
+  padding: 2rem;
+  border-radius: var(--radius-lg);
+  background: var(--white);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+}
+
 .section-heading {
   max-width: 24ch;
+}
+
+.section-heading-wide {
+  max-width: 32ch;
 }
 
 .section-copy {
@@ -462,6 +474,45 @@ p {
   margin-top: 1rem;
 }
 
+.jump-strip {
+  width: min(calc(100% - 2rem), var(--shell));
+  margin: 0 auto;
+  padding: 0 0 1.5rem;
+}
+
+.jump-links,
+.card-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.jump-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.7rem;
+  padding: 0.6rem 1rem;
+  border-radius: 999px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  color: var(--muted);
+  font-weight: 600;
+  transition:
+    border-color 140ms ease,
+    color 140ms ease,
+    transform 80ms ease,
+    box-shadow 140ms ease;
+}
+
+.jump-link:hover,
+.jump-link:focus-visible {
+  transform: translateY(-1px);
+  border-color: rgba(241, 179, 0, 0.4);
+  color: #9a7300;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+}
+
 .presenter-card {
   display: grid;
   grid-template-columns: minmax(220px, 280px) minmax(0, 1fr);
@@ -575,6 +626,7 @@ p {
   .card-grid,
   .compact-grid,
   .module-grid,
+  .jump-links,
   .stat-block,
   .presenter-card {
     grid-template-columns: 1fr;
@@ -597,7 +649,8 @@ p {
   .content-block,
   .split-block,
   .callout-band,
-  .page-intro {
+  .page-intro,
+  .jump-strip {
     width: min(calc(100% - 1rem), var(--shell));
   }
 
@@ -606,7 +659,8 @@ p {
   }
 
   .hero-panel,
-  .callout-panel {
+  .callout-panel,
+  .page-intro-panel {
     padding: 1.4rem;
   }
 

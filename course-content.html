@@ -7,7 +7,7 @@
     <title>Course Content | AI4RA Workshop</title>
     <meta
       name="description"
-      content="Course content and teaching modules for the AI4RA REACH 2026 workshop."
+      content="Course hub and module directory for the AI4RA REACH 2026 workshop."
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
@@ -23,13 +23,11 @@
           </div>
           <nav aria-label="Primary">
             <ul class="nav-list">
+              <li><a class="nav-link" href="index.html">Home</a></li>
               <li><a class="nav-link is-active" href="course-content.html">Course Content</a></li>
-              <li><a class="nav-link" href="slides-governance.html">Slides</a></li>
+              <li><a class="nav-link" href="slides.html">Slides</a></li>
               <li><a class="nav-link" href="presenters.html">Presenters</a></li>
-              <li><a class="nav-link" href="index.html#objectives">Objectives</a></li>
-              <li><a class="nav-link" href="index.html#agenda">Agenda</a></li>
-              <li><a class="nav-link" href="index.html#topics">Topics</a></li>
-              <li><a class="nav-link" href="index.html#details">Details</a></li>
+              <li><a class="nav-link" href="index.html#details">Workshop Details</a></li>
             </ul>
           </nav>
         </div>
@@ -37,74 +35,114 @@
 
       <main>
         <section class="page-intro reveal">
-          <p class="eyebrow">Course content</p>
-          <h1>Teaching materials organized as reusable workshop modules.</h1>
-          <p class="section-copy">
-            This page is the workshop's source of truth. Each module should be
-            fully teachable here before it is shortened into slide decks,
-            presenter notes, downloadable handouts, or post-workshop follow-up
-            materials.
-          </p>
-          <div class="hero-actions">
-            <a class="button" href="#course-workflow">How this page works</a>
-            <a class="button-secondary" href="#module-template">Module template</a>
-            <a class="button-secondary" href="#data-governance">Start with issue #1</a>
-            <a class="button-secondary" href="index.html">Back to workshop home</a>
+          <div class="page-intro-panel">
+            <p class="eyebrow">Course content</p>
+            <h1>Workshop modules, now organized as separate pages.</h1>
+            <p class="section-copy">
+              This page is now the course hub instead of one long facilitator
+              document. Use it to move between modules, slide decks, and
+              handouts without scrolling through the full workshop in a single
+              page.
+            </p>
+            <div class="hero-actions">
+              <a class="button" href="#module-library">Browse module pages</a>
+              <a class="button-secondary" href="#module-template">Review the module template</a>
+              <a class="button-secondary" href="index.html">Back to workshop home</a>
+            </div>
           </div>
         </section>
 
         <section id="course-workflow" class="content-block reveal">
-          <p class="eyebrow">Production workflow</p>
-          <h2 class="section-heading">How this page becomes the workshop.</h2>
+          <p class="eyebrow">How the site works</p>
+          <h2 class="section-heading section-heading-wide">A cleaner structure for workshop prep, delivery, and follow-up</h2>
           <p class="section-copy">
-            Content should be written and reviewed here first. If a key idea
-            only exists in a slide, a speaker's memory, or a draft handout, the
-            module is not finished yet.
+            The landing page introduces the workshop, this hub organizes the
+            teaching materials, and each module page holds the full
+            facilitator-ready version of one topic. That keeps the content
+            easier to navigate while preserving the detailed teaching notes.
           </p>
           <div class="card-grid">
             <article class="content-card">
-              <span class="tag">Step 1</span>
-              <h3>Write the teachable version here first</h3>
+              <span class="tag">Landing page</span>
+              <h3>Use the home page for workshop framing</h3>
               <p>
-                Each module needs a clear learning goal, lecture framing,
-                explanation, example, participant activity, decision aid, and
-                takeaway before it is considered stable.
+                The home page now works as the front door: workshop purpose,
+                agenda, themes, and session details all stay there.
               </p>
             </article>
             <article class="content-card">
-              <span class="tag">Step 2</span>
-              <h3>Separate presenter and participant needs</h3>
+              <span class="tag">Course hub</span>
+              <h3>Use this page as the directory</h3>
               <p>
-                Speaker notes, discussion prompts, and presentation flow belong
-                alongside the participant-facing examples, worksheets, and
-                decision tools they support.
+                Start here when you want the module list, the shared template,
+                and quick links out to slides, handouts, and module pages.
               </p>
             </article>
             <article class="content-card">
-              <span class="tag">Step 3</span>
-              <h3>Derive assets from the completed module</h3>
+              <span class="tag">Module pages</span>
+              <h3>Keep the full teaching guide with the module</h3>
               <p>
-                Slide decks, download bundles, and workshop handouts should all
-                point back to the sections on this page that they summarize or
-                package for reuse.
+                Each module now gets its own page so presenters can focus on
+                one topic at a time without losing the full explanation,
+                exercise, and discussion flow.
               </p>
             </article>
           </div>
           <ul class="plain-list">
-            <li>Use this page to make the content teachable, not just describable.</li>
-            <li>When a module changes, update the full version here before revising the slides.</li>
-            <li>Each module should leave a visible trail from concept to exercise to derived assets.</li>
+            <li>Start on this hub when you are preparing the workshop or choosing what to revise next.</li>
+            <li>Open a module page when you need the full facilitator guide for one topic.</li>
+            <li>Use the slides page when you want the Reveal decks without hunting through the rest of the site.</li>
           </ul>
+        </section>
+
+        <section id="module-library" class="split-block reveal">
+          <div class="split-grid">
+            <div>
+              <p class="eyebrow">Module library</p>
+              <h2 class="section-heading">Choose a module, then open its dedicated page.</h2>
+              <p class="section-copy">
+                Each card below links to the full facilitator guide for that
+                module, along with its related slide deck and handout where
+                available.
+              </p>
+            </div>
+            <div class="card-grid compact-grid">
+              <article class="content-card">
+                <span class="tag">Module 1</span>
+                <h3>Data governance and context engineering</h3>
+                <p>
+                  Governance, provenance, permissions, and the checklist for
+                  deciding whether a source is ready to become AI context.
+                </p>
+                <div class="card-actions">
+                  <a class="button" href="module-data-governance.html">Open module page</a>
+                  <a class="button-secondary" href="slides-governance.html">Slide deck</a>
+                  <a class="button-secondary" href="governance-checklist.html">Checklist</a>
+                </div>
+              </article>
+              <article class="content-card">
+                <span class="tag">Module 2</span>
+                <h3>Layers of context engineering</h3>
+                <p>
+                  A practical stack for prompts, files, tools, retrieval, and
+                  human escalation in institutional workflows.
+                </p>
+                <div class="card-actions">
+                  <a class="button" href="module-context-layers.html">Open module page</a>
+                  <a class="button-secondary" href="slides-context-layers.html">Slide deck</a>
+                </div>
+              </article>
+            </div>
+          </div>
         </section>
 
         <section id="module-template" class="content-block reveal">
           <p class="eyebrow">Module template</p>
-          <h2 class="section-heading">Every module should follow the same anatomy.</h2>
+          <h2 class="section-heading">Every module page should follow the same anatomy.</h2>
           <p class="section-copy">
-            The sections below are the minimum completion standard for a module
-            on this page. They give presenters a reliable structure and make it
-            easier to derive slides and participant materials without losing the
-            underlying teaching logic.
+            The completion standard stays the same even though the content is
+            now split across separate pages. That makes each module easier to
+            maintain and easier to turn into slides or participant materials.
           </p>
           <div class="card-grid">
             <article class="content-card">
@@ -112,16 +150,17 @@
               <h3>State the learning goal and in-room use</h3>
               <p>
                 Capture what participants should be able to do, how long the
-                module should take, and what artifact or judgment skill they
-                leave with.
+                module should take, and what judgment skill or artifact they
+                should leave with.
               </p>
             </article>
             <article class="content-card">
               <span class="tag">2. Explanation</span>
               <h3>Include framing and core ideas</h3>
               <p>
-                Give the presenter a clear opening, a practical explanation of
-                the concept, and a short flow for teaching it in sequence.
+                Give the presenter a practical opening, a clear explanation of
+                the concept, and a teaching flow that moves the topic forward in
+                sequence.
               </p>
             </article>
             <article class="content-card">
@@ -129,8 +168,7 @@
               <h3>Show the idea in a real workflow</h3>
               <p>
                 Use a research analytics or administration scenario that makes
-                the module concrete and gives the presenter something specific
-                to point at live.
+                the module concrete and worth discussing live.
               </p>
             </article>
             <article class="content-card">
@@ -138,8 +176,8 @@
               <h3>Ask participants to do something with it</h3>
               <p>
                 Every module should include an exercise, discussion move, or
-                reflection prompt that helps participants test the concept
-                against their own institution.
+                reflection prompt that helps participants test the idea against
+                their own institution.
               </p>
             </article>
             <article class="content-card">
@@ -147,618 +185,38 @@
               <h3>Leave them with a reusable tool</h3>
               <p>
                 Checklists, rules of thumb, readiness questions, and quick
-                rubrics turn the module into something participants can reuse
-                after the session.
+                rubrics help the workshop travel beyond the room.
               </p>
             </article>
             <article class="content-card">
               <span class="tag">6. Derived assets</span>
-              <h3>Trace slide and handout updates back here</h3>
+              <h3>Trace slides and handouts back to the source</h3>
               <p>
-                Each module should explicitly note which slide deck, worksheet,
-                or downloadable asset was derived from it so future edits have a
-                clear upstream source.
+                The slide decks and downloads should point back to the module
+                page they summarize so future revisions keep a clear upstream
+                source of truth.
               </p>
             </article>
           </div>
         </section>
 
-        <section class="content-block reveal">
-          <p class="eyebrow">Current modules</p>
-          <h2 class="section-heading">A production board for the workshop's core topics</h2>
-          <p class="section-copy">
-            These modules are the current build targets. Each one should become
-            a facilitator-ready section here before the companion pages are
-            treated as final.
-          </p>
-          <div class="card-grid">
-            <article class="content-card">
-              <span class="tag">Issue #1</span>
-              <h3><a href="#data-governance">Data governance and context engineering</a></h3>
-              <p>
-                The governance module now has framing, examples, discussion
-                prompts, and derived slide support. It should set the template
-                for the rest of the page.
-              </p>
-            </article>
-            <article class="content-card">
-              <span class="tag">Issue #2</span>
-              <h3><a href="#context-layers">Layers of context engineering</a></h3>
-              <p>
-                The context module maps prompts, files, tools, retrieval, and
-                structured data into a repeatable teaching sequence with an
-                exercise and facilitator guidance.
-              </p>
-            </article>
-            <article class="content-card">
-              <span class="tag">Derived assets</span>
-              <h3>Slides and downloads should point back here</h3>
-              <p>
-                Use the presentation asset blocks in each module as the bridge
-                between canonical content on this page and the slide decks or
-                handouts built from it.
-              </p>
-            </article>
-          </div>
-        </section>
-
-        <section id="data-governance" class="content-block reveal">
-          <p class="eyebrow">Issue #1 module</p>
-          <h2 class="section-heading">
-            Data governance is the foundation for context engineering.
-          </h2>
-          <p class="section-copy">
-            Context engineering is not just about giving an AI model more
-            information. It is about deciding which information can be used,
-            where it came from, how much it can be trusted, who is allowed to
-            see it, and what should happen to it after the interaction. Those
-            are governance questions first and technical questions second.
-          </p>
-          <div class="compact-grid">
-            <article class="content-card">
-              <span class="tag">Learning goal</span>
-              <h3>Teach participants to evaluate context before they trust it</h3>
-              <p>
-                Participants should leave able to explain why provenance,
-                permissions, quality, and stewardship determine whether context
-                is safe enough to use in an AI workflow.
-              </p>
-            </article>
-            <article class="content-card">
-              <span class="tag">In-room move</span>
-              <h3>Open with a dashboard analogy</h3>
-              <p>
-                Start from the governance work they already do for dashboards,
-                then show that AI context uses the same institutional muscles
-                under higher stakes.
-              </p>
-            </article>
-            <article class="content-card">
-              <span class="tag">Key distinction</span>
-              <h3>AI both consumes data and generates new data</h3>
-              <p>
-                The system may read governed inputs such as policy documents,
-                spreadsheets, and dashboard tables, but it can also produce new
-                structured outputs such as extracted fields, classifications,
-                summaries, and routing data that enter downstream workflows.
-              </p>
-            </article>
-            <article class="content-card">
-              <span class="tag">Participant artifact</span>
-              <h3>A context readiness checklist</h3>
-              <p>
-                This module should leave people with a short set of questions
-                they can use to judge whether a document set, policy source, or
-                dataset is ready for AI-assisted work.
-              </p>
-            </article>
-            <article class="content-card">
-              <span class="tag">Derived assets</span>
-              <h3>Governance slide deck and checklist handout</h3>
-              <p>
-                The hosted governance deck and the
-                <a href="governance-checklist.html">context readiness checklist</a>
-                should summarize the framing, example, and exercise on this
-                page rather than introduce new content that only exists in
-                slides.
-              </p>
-            </article>
-          </div>
-
-          <article class="course-module module-full module-lead">
-            <span class="tag">Lecture framing</span>
-            <h3>A simple way to open the topic</h3>
+        <section class="callout-band reveal">
+          <div class="callout-panel">
+            <p class="eyebrow">Build forward</p>
+            <h2 class="section-heading">
+              Add future modules here as cards, then give each one its own page.
+            </h2>
             <p>
-              You can introduce this section with a blunt contrast: most people
-              think context engineering is about giving the model more useful
-              information, but institutions actually succeed or fail here based
-              on whether they govern that information well. Retrieval quality is
-              downstream from governance quality.
+              The site structure is now set up for growth: the landing page can
+              stay concise, the course hub can stay browseable, and new modules
+              can expand without turning the site back into a single long-scroll
+              document.
             </p>
-          </article>
-
-          <div class="module-grid">
-            <article class="course-module">
-              <span class="tag">Module explanation</span>
-              <h3>Better context is only valuable if it is governed.</h3>
-              <p>
-                Teams often talk about adding more documents, more system access,
-                or richer retrieval pipelines to improve AI output. But if the
-                underlying data is outdated, poorly permissioned, ambiguous, or
-                untraceable, the added context can make the answer more
-                dangerous, not more useful.
-              </p>
-            </article>
-
-            <article class="course-module">
-              <span class="tag">Generated data</span>
-              <h3>Governance applies to outputs as well as inputs</h3>
-              <p>
-                AI systems do not only consume institutional data. They can
-                also generate new data products: extracted fields from PDFs,
-                tagged records, structured summaries, classifications, and
-                draft workflow metadata. Once those outputs feed a dashboard,
-                a queue, a report, or a routing decision, they become governed
-                data too.
-              </p>
-            </article>
-
-            <article class="course-module">
-              <span class="tag">Decision aid</span>
-              <h3>What every institution should ask before adding context</h3>
-              <ul class="module-points">
-                <li>Where did this information come from, and can we prove its provenance? (The same question you ask when a dashboard number looks wrong.)</li>
-                <li>Who is allowed to access it, and under what conditions? (The same permissions logic behind your reporting access controls.)</li>
-                <li>How current, complete, and reliable is it? (The same data quality concern that drives your data dictionary work.)</li>
-                <li>Does it contain private, regulated, or institutionally sensitive material?</li>
-                <li>What human review is needed before the output is used operationally?</li>
-              </ul>
-            </article>
-          </div>
-
-          <article class="course-module module-full">
-            <span class="tag">Participant activity</span>
-            <h3>Run a fast context readiness audit</h3>
-            <ol class="module-points">
-              <li>Ask participants to choose one institutional source they would like to use in an AI workflow.</li>
-              <li>Have them mark whether the source is authoritative, current, permissioned, and explainable to another staff member.</li>
-              <li>Ask what could go wrong if the system used that source without review.</li>
-              <li>End by deciding whether the source is ready now, needs cleanup, or should stay outside the workflow.</li>
-            </ol>
-          </article>
-
-          <article class="course-module module-full">
-            <span class="tag">Suggested teaching flow</span>
-            <h3>A six-part sequence for presenting this idea</h3>
-            <ol class="module-points">
-              <li>Define context engineering as the design of what the model can see, use, and rely on.</li>
-              <li>Explain that every added source of context introduces governance questions, not just technical opportunity.</li>
-              <li>Show that AI can also generate new structured data, not just read existing data.</li>
-              <li>Show how bad governance creates confident but unsafe or institutionally invalid output.</li>
-              <li>Connect governance to provenance, permissions, quality, stewardship, and review boundaries for both inputs and generated outputs.</li>
-              <li>Bridge the concept: if you already govern data for a dashboard (ownership, refresh cadence, access controls, metric definitions), you already understand the core of AI governance — the difference is that AI can act on the data and produce new data, not just display it.</li>
-              <li>End by reframing governance as the operating system behind trustworthy AI workflows.</li>
-            </ol>
-          </article>
-
-          <div class="module-grid">
-            <article class="course-module">
-              <span class="tag">Research analytics lens</span>
-              <h3>Why this matters — you already govern data for dashboards</h3>
-              <p>
-                Research analytics teams already practice governance every
-                day: they decide which data source is authoritative for a
-                metric, how to version a KPI definition, who can see which
-                dashboard, and what happens when a source system changes
-                mid-reporting cycle. AI governance is the same discipline
-                applied to a new output. If an AI system is given incomplete
-                or ungoverned context, it may produce answers that sound
-                confident while quietly ignoring the most important
-                institutional constraints — the same failure mode as a
-                dashboard built on stale data.
-              </p>
-            </article>
-
-            <article class="course-module">
-              <span class="tag">Teaching takeaway</span>
-              <h3>Governance should shape what context enters the system.</h3>
-              <p>
-                A good workshop message is that context engineering is not only
-                about retrieval quality. It is also about stewardship:
-                permissions, quality standards, curation, traceability, and
-                clearly defined review boundaries. Those governance choices are
-                what make AI-assisted workflows trustworthy — and they are
-                also a form of data literacy that strengthens the institution's
-                ability to work with data in any context, not just AI.
-              </p>
-            </article>
-          </div>
-
-          <div class="module-grid">
-            <article class="course-module">
-              <span class="tag">Worked example</span>
-              <h3>A realistic workshop scenario</h3>
-              <p>
-                Imagine an institution wants an AI assistant to help answer
-                questions about proposal routing. The team connects policy
-                documents, old email guidance, a shared drive of forms, and a
-                few notes from experienced staff. The system now has more
-                context, but not necessarily better context.
-              </p>
-              <p class="module-follow">
-                If the policy PDF is current, the shared drive is out of date,
-                the email guidance reflects exceptions, and the notes are
-                informal local practice, the model may blend all of that into a
-                plausible answer that no one should trust without review.
-              </p>
-              <p class="module-follow">
-                Now push the example one step further: if the system extracts
-                deadlines, approver names, sponsor requirements, or routing
-                codes into a structured table, that generated table may look
-                like clean data for analytics or workflow automation. It still
-                needs provenance, validation, and ownership before people
-                should rely on it.
-              </p>
-            </article>
-
-            <article class="course-module">
-              <span class="tag">What to point out</span>
-              <h3>Where governance enters the scenario</h3>
-              <ul class="module-points">
-                <li>Which source is authoritative and who says so?</li>
-                <li>Which sources are only supplemental or historical?</li>
-                <li>Who is responsible for refreshing the materials?</li>
-                <li>What should the system cite back to the user?</li>
-                <li>When should the answer escalate to a human instead of completing the task?</li>
-                <li>If the AI extracts structured fields, who validates and owns that new dataset?</li>
-              </ul>
-            </article>
-          </div>
-
-          <article class="course-module module-full">
-            <span class="tag">Speaker notes</span>
-            <h3>Talking points for the presenter</h3>
-            <ul class="module-points">
-              <li>Do not present governance as bureaucracy; present it as the condition that makes automation safe.</li>
-              <li>Emphasize that context can increase error surface area when institutions do not know which data is authoritative.</li>
-              <li>Keep returning to the phrase “trustworthy context” rather than simply “more context.”</li>
-              <li>Make the consume-versus-generate distinction explicit: AI reads governed inputs, but it can also create new structured outputs that look authoritative if people do not stop to validate them.</li>
-              <li>Use local examples: policy manuals, sponsor guidance, routing workflows, HERD submissions, dashboard data sources, and institutional exceptions.</li>
-              <li>Connect to what they already do: governing data for dashboards and reports is the same muscle as governing data for AI — the stakes are just higher because AI acts on the data and may generate new data for downstream use.</li>
-              <li>Remind participants that governance decisions determine whether an AI system should answer, abstain, or escalate.</li>
-            </ul>
-          </article>
-
-          <article class="course-module module-full">
-            <span class="tag">Discussion prompt</span>
-            <h3>Questions to ask participants</h3>
-            <ul class="module-points">
-              <li>Which data sources in your institution are reliable enough to become AI context?</li>
-              <li>Which ones are too messy, sensitive, or incomplete to trust yet?</li>
-              <li>Where could AI-generated structured data enter your analytics or operational workflows, and how would you validate it?</li>
-              <li>Who currently decides what is authoritative in your workflow — and is it the same person who would govern AI context?</li>
-              <li>What governance work has to happen before retrieval or automation should expand?</li>
-              <li>How do you currently handle it when a source system changes and your dashboard breaks? How would that same change affect an AI workflow?</li>
-              <li>What governance practices from your reporting work (data dictionaries, refresh schedules, access controls) could transfer directly to AI governance?</li>
-            </ul>
-          </article>
-
-          <article class="course-module module-full">
-            <span class="tag">REACH sessions to highlight</span>
-            <h3>Complementary sessions on Monday and Tuesday</h3>
-            <p>
-              Point participants toward these sessions that extend and deepen
-              the governance ideas introduced here:
-            </p>
-            <ul class="module-points">
-              <li><strong>G2</strong> — Panel: Operationalizing Data Governance (Tue 11:15 AM, WEATHERLY). A full panel on making governance practical, not theoretical.</li>
-              <li><strong>G5</strong> — Beyond Compliance: Ethical and Epistemic Foundations of Research Analytics and Evaluation (Tue 11:15 AM, NEWPORT). Goes deeper into responsible evaluation.</li>
-              <li><strong>I4</strong> — Building Data Literacy as a Shared Language for Research Analytics (Tue 2:30 PM, ENTERPRISE). Connects governance to the broader data literacy conversation.</li>
-              <li><strong>H3</strong> — Automating Your Data Dictionary (Tue 1:30 PM, COLUMBIA). A concrete governance practice that directly supports trustworthy context.</li>
-            </ul>
-          </article>
-
-          <article class="course-module module-full">
-            <span class="tag">Bridge to future modules</span>
-            <h3>How this sets up the rest of the course content</h3>
-            <p>
-              This module should lead naturally into later sections on layers of
-              context engineering, structured data, RAG, synthetic corpora, and
-              response evaluation. The through-line is simple: every technical
-              layer becomes more useful when the institution knows what it is
-              allowed to trust, retrieve, expose, and act on.
-            </p>
-          </article>
-
-          <article class="course-module module-full">
-            <span class="tag">Presentation asset</span>
-            <h3>Slide version of this module</h3>
-            <p>
-              A Reveal.js slide outline based on this material is now available
-              for live delivery and iteration during workshop prep. It should
-              continue to summarize the lecture framing, explanation, example,
-              participant activity, and discussion prompts captured above.
-            </p>
-            <div class="hero-actions module-actions">
-              <a class="button" href="slides-governance.html">Launch the slide deck</a>
-              <a class="button-secondary" href="governance-checklist.html">
-                Open the checklist handout
-              </a>
+            <div class="cta-row">
+              <a class="button" href="slides.html">Browse slide decks</a>
+              <a class="button-secondary" href="index.html#agenda">View workshop flow</a>
             </div>
-          </article>
-        </section>
-
-        <section id="context-layers" class="content-block reveal">
-          <p class="eyebrow">Issue #2 module</p>
-          <h2 class="section-heading">
-            Your institutional data is already layered — context engineering
-            is how AI meets it where it is.
-          </h2>
-          <p class="section-copy">
-            Research analytics teams already work across fragmented systems:
-            HERD submissions live in one place, policy documents in another,
-            departmental spreadsheets somewhere else, and dashboards try to
-            pull it all together. Context engineering acknowledges this
-            reality. Instead of pretending the data is clean and unified,
-            it shows how to assemble the right combination of instructions,
-            files, tools, retrieved sources, and structured data so AI can
-            work with institutional information where it actually lives.
-          </p>
-          <div class="compact-grid">
-            <article class="content-card">
-              <span class="tag">Learning goal</span>
-              <h3>Help participants choose the right layer for the job</h3>
-              <p>
-                Participants should be able to describe the major context
-                layers, explain what each one adds, and decide when a workflow
-                needs retrieval, tools, templates, or human escalation.
-              </p>
-            </article>
-            <article class="content-card">
-              <span class="tag">In-room move</span>
-              <h3>Teach from familiar silo problems</h3>
-              <p>
-                Use dashboard integration work, policy lookups, and crosswalks
-                as the bridge to prompt layers, files, tools, and structured
-                retrieval.
-              </p>
-            </article>
-            <article class="content-card">
-              <span class="tag">Participant artifact</span>
-              <h3>A context stack map</h3>
-              <p>
-                The main reusable output is a simple map of the layers a real
-                workflow needs now, plus which ones are unsafe or unnecessary.
-              </p>
-            </article>
-            <article class="content-card">
-              <span class="tag">Derived assets</span>
-              <h3>Context layers slide deck and future worksheet</h3>
-              <p>
-                The current slide deck should be read as a condensed version of
-                this module's framing, stack definition, example, and activity.
-              </p>
-            </article>
           </div>
-
-          <article class="course-module module-full module-lead">
-            <span class="tag">Lecture framing</span>
-            <h3>Start with the data they already manage, not the magic.</h3>
-            <p>
-              A practical way to teach this module is to connect to what the
-              audience already knows: they spend their days integrating data
-              from siloed systems into dashboards and reports. Context
-              engineering is the same challenge applied to AI — assembling
-              the right information from multiple sources so the system can
-              produce trustworthy output. Each layer improves capability in
-              a different way, and each layer creates its own review and
-              design obligations.
-            </p>
-          </article>
-
-          <div class="module-grid">
-            <article class="course-module">
-              <span class="tag">Module explanation</span>
-              <h3>Each layer changes both capability and risk.</h3>
-              <p>
-                Adding a role prompt can improve tone and framing. Adding
-                examples can improve consistency. Adding files and retrieval can
-                improve grounding. Adding tools can make the workflow act on the
-                world. The important teaching point is that every new layer
-                expands both what the system can do and what the team must
-                validate.
-              </p>
-            </article>
-
-            <article class="course-module">
-              <span class="tag">The layers</span>
-              <h3>A context stack participants can remember</h3>
-              <ul class="module-points">
-                <li>System or role instructions that define the model's job and boundaries.</li>
-                <li>Task prompts that describe the immediate assignment.</li>
-                <li>Examples or templates that show the expected format and tone.</li>
-                <li>Files, images, or documents that provide direct reference material.</li>
-                <li>Tools and actions such as search, code, SQL, or workflow integrations.</li>
-                <li>Retrieved and structured institutional data that grounds answers in current sources.</li>
-              </ul>
-            </article>
-          </div>
-
-          <article class="course-module module-full">
-            <span class="tag">Suggested teaching flow</span>
-            <h3>A six-part sequence for presenting the stack</h3>
-            <ol class="module-points">
-              <li>Start with a plain-language definition: context is everything the model can rely on while doing the task.</li>
-              <li>Show that a prompt is only one layer in a broader design stack.</li>
-              <li>Walk through the major layers from lightest to heaviest, from instructions to tools and retrieval.</li>
-              <li>Explain what each layer is good at and where it starts to introduce new failure modes.</li>
-              <li>Emphasize that teams should use the thinnest layer that solves the problem reliably.</li>
-              <li>Close by connecting layered context to evaluation, governance, and human review.</li>
-            </ol>
-          </article>
-
-          <div class="module-grid">
-            <article class="course-module">
-              <span class="tag">Research analytics lens</span>
-              <h3>Why research analytics workflows benefit from layered context</h3>
-              <p>
-                Research analytics and administration work mixes policy
-                interpretation, institutional practice, sponsor rules,
-                dashboard data, HERD submissions, and local spreadsheets. A
-                single generic prompt will miss too much of that environment.
-                A layered approach lets teams decide whether the job needs
-                only better instructions, a trusted template, a policy
-                document, a SQL query, or an escalation path to a human —
-                the same kind of decision they already make when building a
-                dashboard.
-              </p>
-            </article>
-
-            <article class="course-module">
-              <span class="tag">Teaching takeaway</span>
-              <h3>Use the thinnest layer that gets the job done.</h3>
-              <p>
-                This is a strong practical takeaway for participants. If a
-                better prompt and a template produce reliable output, they may
-                not need retrieval. If a current policy PDF is enough, they may
-                not need a live database connection. If an answer depends on
-                institution-specific judgment, the right layer may be an
-                escalation rule instead of more automation.
-              </p>
-            </article>
-          </div>
-
-          <article class="course-module module-full">
-            <span class="tag">Decision aid</span>
-            <h3>A quick rule for choosing the next layer</h3>
-            <ul class="module-points">
-              <li>If the job is mostly wording and tone, start with instructions, examples, and templates.</li>
-              <li>If the job depends on a current policy or reference, add the smallest trusted file set that answers it.</li>
-              <li>If the job depends on live institutional facts, move to retrieval or SQL only after governance and permissions are clear.</li>
-              <li>If the job changes records, sends approvals, or creates risk, add a human gate before adding more automation.</li>
-            </ul>
-          </article>
-
-          <div class="module-grid">
-            <article class="course-module">
-              <span class="tag">Worked example</span>
-              <h3>Drafting a proposal routing response</h3>
-              <p>
-                Imagine a unit wants AI help answering a faculty member's
-                question about proposal routing deadlines and required internal
-                approvals. Today, that information might live in a Power BI
-                dashboard, a policy PDF, a departmental spreadsheet, and the
-                institutional knowledge of an experienced staff member. A
-                basic prompt can draft a friendly response, but it will miss
-                most of what matters.
-              </p>
-              <p class="module-follow">
-                With layered context, the workflow can combine role
-                instructions, a response template, the current routing policy
-                PDF, a SQL query against the deadline database, and a rule
-                that sends edge cases to an RA professional instead of
-                guessing — much like building a crosswalk between data
-                sources for a dashboard, but for an AI workflow.
-              </p>
-            </article>
-
-            <article class="course-module">
-              <span class="tag">What to point out</span>
-              <h3>What each layer contributes in the example</h3>
-              <ul class="module-points">
-                <li>The role instruction sets tone, caution, and escalation boundaries.</li>
-                <li>The task prompt defines the current question and desired output.</li>
-                <li>The template keeps the answer consistent across requests.</li>
-                <li>The policy document provides authoritative institutional grounding.</li>
-                <li>The retrieved deadline table adds current, specific operational detail.</li>
-                <li>The human-review rule protects cases where policy and local practice diverge.</li>
-              </ul>
-            </article>
-          </div>
-
-          <article class="course-module module-full">
-            <span class="tag">Hands-on exercise</span>
-            <h3>Ask participants to map their own context stack</h3>
-            <ol class="module-points">
-              <li>Choose a real workflow from your institution that people are tempted to automate.</li>
-              <li>Write the smallest prompt that describes the task.</li>
-              <li>List what other context the model would need to be genuinely useful.</li>
-              <li>Separate that context into layers: instructions, examples, files, tools, retrieval, and human escalation.</li>
-              <li>Decide which layers are available now, which ones are unsafe, and which ones need governance work first.</li>
-            </ol>
-          </article>
-
-          <article class="course-module module-full">
-            <span class="tag">Speaker notes</span>
-            <h3>Talking points for the presenter</h3>
-            <ul class="module-points">
-              <li>Keep reminding participants that prompting is not the whole system.</li>
-              <li>Use the phrase "thin layer first" to normalize incremental design.</li>
-              <li>Show that some workflows improve more from templates and examples than from more model sophistication.</li>
-              <li>Stress that tools and retrieval increase power, but also increase the need for permissions, logging, and review.</li>
-              <li>Connect every layer back to trust: what is this layer allowed to influence, and who owns it?</li>
-              <li>Remind participants this scales down: a small institution with a few policy PDFs and a spreadsheet can still use layered context effectively — you do not need an enterprise data warehouse to start.</li>
-            </ul>
-          </article>
-
-          <article class="course-module module-full">
-            <span class="tag">Discussion prompt</span>
-            <h3>Questions to ask participants</h3>
-            <ul class="module-points">
-              <li>Which workflows at your institution only need a better prompt or template?</li>
-              <li>Which ones need trusted files or retrieval before the output could be useful?</li>
-              <li>Which workflows would become risky the moment the system could take an action?</li>
-              <li>Where should a human remain part of the context stack rather than outside it?</li>
-              <li>When would AI add value beyond what your existing dashboard or SQL query already delivers?</li>
-              <li>How would you apply layered context at an institution without a dedicated analytics office or data warehouse?</li>
-            </ul>
-          </article>
-
-          <article class="course-module module-full">
-            <span class="tag">REACH sessions to highlight</span>
-            <h3>Complementary sessions on Monday and Tuesday</h3>
-            <p>
-              Point participants toward these sessions that build on the
-              context engineering and data integration ideas introduced here:
-            </p>
-            <ul class="module-points">
-              <li><strong>E5</strong> — Building a Crosswalk: A Practical Framework for Standardizing Messy Research Data (Mon 3:45 PM, NEWPORT). Exactly the data integration work that context layers formalize.</li>
-              <li><strong>C2</strong> — Bridging Data Silos in Academia: Smartsheet, Tableau, and Power BI as Catalysts (Mon 1:30 PM, WEATHERLY). The same silo problem approached through BI tooling.</li>
-              <li><strong>D3</strong> — Demystifying SQL: Interpreting and Building Queries for Beginners (Mon 2:30 PM, COLUMBIA). The structured data layer in practice.</li>
-              <li><strong>I3</strong> — From Manual Downloading to Automated Data Collection with APIs (Tue 2:30 PM, COLUMBIA). Automation of the data retrieval layer.</li>
-              <li><strong>H6</strong> — Building a Modern Research Analytics Ecosystem with Microsoft Fabric (Tue 1:30 PM, PORTSMOUTH). An enterprise approach to the layered data stack.</li>
-              <li><strong>F2</strong> — Can Prompt Engineering Turn General Questions into Actionable Research Intelligence? (Tue 10:15 AM, WEATHERLY). The prompting layer explored in depth.</li>
-              <li><strong>F1</strong> — Lessons Learned from Implementing AI Agents for Higher Ed Research Compliance (Tue 10:15 AM, FREEDOM). Presented by our own Nate Layman — AI agents as a context layer in practice.</li>
-            </ul>
-          </article>
-
-          <article class="course-module module-full">
-            <span class="tag">Bridge to future modules</span>
-            <h3>How this sets up later sections</h3>
-            <p>
-              This module creates a practical bridge into structured output,
-              evaluation, retrieval design, and workflow automation. Once
-              participants can see context as a layered stack — familiar from
-              the way they already integrate data sources for dashboards and
-              reports — it becomes much easier to ask which layers belong in
-              a given AI workflow, which ones are governed well enough to use,
-              and where human judgment still has to stay in the loop.
-            </p>
-          </article>
-
-          <article class="course-module module-full">
-            <span class="tag">Presentation asset</span>
-            <h3>Slide version of this module</h3>
-            <p>
-              A Reveal.js slide outline is now available for live delivery,
-              workshop rehearsal, and follow-up refinement. It should remain a
-              condensed version of the framing, layer map, worked example,
-              decision aid, and exercise documented here.
-            </p>
-            <div class="hero-actions module-actions">
-              <a class="button" href="slides-context-layers.html">Launch the slide deck</a>
-            </div>
-          </article>
         </section>
       </main>
 
@@ -776,16 +234,17 @@
             <ul class="footer-list">
               <li><a href="index.html">Home</a></li>
               <li><a href="course-content.html">Course Content</a></li>
-              <li><a href="slides-governance.html">Slides</a></li>
+              <li><a href="slides.html">Slides</a></li>
               <li><a href="presenters.html">Presenters</a></li>
               <li>Monday, April 20, 2026</li>
             </ul>
           </div>
           <div>
-            <p class="footer-heading">Current focus</p>
+            <p class="footer-heading">Modules</p>
             <ul class="footer-list">
-              <li><a href="#data-governance">Issue #1: Data governance</a></li>
-              <li><a href="#context-layers">Issue #2: Context layers</a></li>
+              <li><a href="module-data-governance.html">Data governance</a></li>
+              <li><a href="module-context-layers.html">Context layers</a></li>
+              <li><a href="governance-checklist.html">Governance checklist</a></li>
               <li><a href="slides-governance.html">Governance slide deck</a></li>
               <li><a href="slides-context-layers.html">Context layers slide deck</a></li>
             </ul>
