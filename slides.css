@@ -7,7 +7,7 @@
 }
 
 body.slides-page {
-  background: #111;
+  background: #ffffff;
 }
 
 .slides-home {
@@ -23,12 +23,13 @@ body.slides-page {
   min-height: 2.5rem;
   padding: 0.65rem 1rem;
   border-radius: 999px;
-  background: rgba(25, 25, 25, 0.88);
-  color: var(--white);
+  background: rgba(255, 255, 255, 0.94);
+  color: var(--ink);
   text-decoration: none;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   font-size: 0.95rem;
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(25, 25, 25, 0.14);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
 }
 
 .slides-home a:hover {
@@ -39,6 +40,7 @@ body.slides-page {
 .reveal {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   color: var(--ink);
+  background: var(--white);
 }
 
 .reveal .slides {
@@ -150,14 +152,14 @@ body.slides-page {
 }
 
 .slide-card.dark {
-  background: rgba(25, 25, 25, 0.9);
-  border-color: rgba(255, 255, 255, 0.08);
+  background: #f3f4f6;
+  border-color: rgba(25, 25, 25, 0.14);
 }
 
 .slide-card.dark h3,
 .slide-card.dark p,
 .slide-card.dark li {
-  color: var(--white);
+  color: var(--ink);
 }
 
 .slide-card.accent {
@@ -235,7 +237,7 @@ body.slides-page {
 
 .title-slide h1,
 .title-slide p {
-  color: var(--white);
+  color: var(--ink);
 }
 
 .slide-kicker-dark,
