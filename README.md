@@ -22,16 +22,15 @@ Help research administration professionals build safer, more relevant, and more 
 
 **What's the most important model? The data model.** AI models come and go, but the way an institution organizes, governs, and shares its data determines whether any of them are useful. Two themes run through the entire workshop: **reproducibility** (can someone else get the same answer?) and **data organization** (is the underlying data trustworthy enough to act on?). Each role approaches these themes from a different angle. Presenters: Barrie Robison, Nate Layman, Nathan Wiggins — assignments TBD.
 
-### Role 1 — AI and data science: what's what (1:00 – 1:50 PM)
+### Nathan Wiggins — Foundations: The Intersection Between AI and Data Science (1:05 – 1:50 PM)
 
-Sets the foundation. Research analytics professionals already work with data — this section clarifies how AI changes the picture, where data science methods remain the right tool, and where human expertise is non-negotiable.
+Provides a foundation for integrating AI into research analytics by introducing AI4RA, clarifying the relationship between data science and AI, and demonstrating how these concepts translate into practical tools, workflows, and frameworks.
 
-- **AI vs data science** — what each discipline actually contributes to research analytics, where they overlap, and where people conflate them
-- **How LLMs work** — demystifying the technology for an analytics audience; how models generate text, where they succeed, and where they fail
-- **Accuracy and its limits** — why LLM output is probabilistic, not deterministic; what that means for trust, verification, and when to rely on data science instead
-- **Reproducibility in an AI context** — how non-deterministic outputs challenge traditional reproducibility standards, and what disciplines help
-- **Where human expertise remains essential** — which analytic judgments resist automation and why that matters
-- **Distinguishing AI tasks from data science tasks** — practical guidance for deciding which method fits which problem
+- **AI4RA foundations and community** — Objectives, pillars (accuracy, reproducibility, flexibility, security), and the ecosystem of shared tools and projects enabling advanced research analytics  
+- **Intersection of data science and AI** — FAIR principles and the relationship between proactive and reactive data science practices  
+- **Operational workflows in practice** — Vandalizer demo highlighting interfaces, workflows, and real-world application of AI  
+- **Interactive engagement** — focused Q&A to explore implementation, usability, and practical considerations  
+- **Frameworks and future direction** — the shift from task differentiation to agentic workflows, the shift from prompt to intent engineering, and the importance of maintaining a strong data foundation  
 
 ### Role 2 — The data lakehouse and data organization (2:00 – 2:50 PM) — Nate Layman
 
@@ -61,7 +60,8 @@ Returns to the central questions: can you reproduce the result, can you verify t
 
 | Time | Role | Theme |
 |------|------|-------|
-| 1:00 – 1:50 PM | Role 1 | AI and data science: what's what |
+| 1:00 - 1:05 PM | Introduction
+| 1:05 – 1:50 PM | Nathan Wiggins | Foundations: The Intersection Between AI and Data Science |
 | 1:50 – 2:00 PM | — | Break |
 | 2:00 – 2:50 PM | Nate Layman | The data lakehouse and data organization |
 | 2:50 – 3:00 PM | — | Break |
@@ -74,6 +74,8 @@ Returns to the central questions: can you reproduce the result, can you verify t
 |------|---------|
 | `index.html` | Workshop home — objectives, agenda, topic threads, session details |
 | `course-content.html` | Teaching modules with lecture framing, worked examples, and speaker notes |
+| `module-foundational.html` | Foundational module guide for AI4RA framing, FAIR principles, and Vandalizer workflow |
+| `slides-foundational.html` | Reveal.js slide deck for the foundational module |
 | `slides-governance.html` | Reveal.js slide deck for the data governance module |
 | `slides-context-layers.html` | Reveal.js slide deck for the context layers module |
 | `presenters.html` | Presenter bios and credentials |
