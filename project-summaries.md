@@ -85,58 +85,88 @@ This is the concrete example of "the most important model is the data model." Th
 
 ---
 
-## Promptulus
+## Promptulus — The AI Literacy Companions
 
-**Repo:** `promptulus` | **Status:** Beta/Early Production | **Live:** [n8-layman.shinyapps.io/promptulus](https://n8-layman.shinyapps.io/promptulus/)
+**Repo:** `promptulus` | **Status:** Production | **Live:** [nate-layman.github.io/promptulus](https://nate-layman.github.io/promptulus/)
 
 ### What it is
 
-An interactive web app that teaches AI literacy and prompt engineering to research administration professionals. Features three AI-powered teaching characters that mentor users through different aspects of working with AI.
+An interactive web platform that teaches AI literacy through 9 steampunk characters, each coaching a different discipline of working with AI. The unifying concept: **your AI has a page limit** — everything competes for finite context window space, and these characters teach you to use that space well.
 
 ### Tech stack
 
-- **Framework:** R Shiny
-- **AI backend:** Google Gemini API (free tier) via the `ellmer` R package
-- **UI:** bslib (Bootstrap for Shiny)
-- **Hosting:** shinyapps.io (primary), Shinylive browser-based version in `/docs`
-- **Discussion:** Giscus (GitHub Discussions integration)
+Two parallel implementations:
 
-### The three characters
+- **Static site** (production, `docs/`) — vanilla HTML/JS/CSS, served via GitHub Pages. Feature-complete with interactive context window slider.
+- **Shiny app** (`app/`) — R Shiny port with Google Gemini API (free tier) via the `ellmer` R package. All 9 characters wired up; slider not yet ported.
 
-| Character | Role | Rating scale | Teaches |
-|-----------|------|-------------|---------|
-| Promptulus the Owl | Prompt engineering coach | 1–5 mice | How to structure prompts for reliable output |
-| Modulus the Crab | Task decomposition expert | 1–5 shrimp | How to break complex jobs into automatable tasks |
-| Dichotra the Squirrel | Task classification specialist | LLM / Data Science / Hybrid | When to use AI vs data science vs both |
+### The 9 characters
+
+Organized in three phases:
+
+**Before AI — Should you use AI for this?**
+
+| Character | Animal | Discipline | Teaches |
+|-----------|--------|-----------|---------|
+| Sequita | Squirrel | Auditability | Whether a task needs a clear paper trail or just a good answer |
+| Modulus | Crab | Task decomposition | How to break complex jobs into AI-manageable pieces |
+
+**During AI — The context window balance**
+
+These four map directly to the four components competing for context window space:
+
+| Character | Animal | Discipline | Context window component |
+|-----------|--------|-----------|------------------------|
+| Telosa | Turtle | Intent engineering | Intent — purpose, accountability, escape hatches |
+| Promptulus | Owl | Prompt engineering | Instructions — role, format, constraints |
+| Mnemos | Elephant | Context engineering | Information — documents, data, retrieved knowledge |
+| Dialogos | Parrot | Conversation management | Conversation — turn management, resets, focus |
+
+**After AI — Was the output good enough?**
+
+| Character | Animal | Discipline | Teaches |
+|-----------|--------|-----------|---------|
+| Vitrea | Glass frog | AI transparency | How AI actually works — tokenization, training, inference, environmental impact |
+| Veridex | Raccoon | Output evaluation | How to catch hallucinations, verify facts, and assess trustworthiness |
+| Clarion | Whale | Reporting and accountability | How to document AI-assisted work so others can understand and reproduce it |
+
+### Interactive context window slider
+
+The landing page features a single horizontal bar divided into four colored regions (intent, instructions, information, conversation) with three draggable divider handles. Growing one region shrinks its neighbors — total always sums to 100%.
+
+Preset buttons snap the bar to common task-type balances:
+
+| Preset | Intent | Information | Instructions | Conversation |
+|--------|--------|-------------|-------------|--------------|
+| Compliance review | 40% | 30% | 20% | 10% |
+| Draft a description | 10% | 50% | 25% | 15% |
+| Iterative editing | 10% | 20% | 15% | 55% |
+| New task scoping | 50% | 20% | 15% | 15% |
+
+Clicking a character highlights its region in the bar — showing which part of the context window that character teaches you to optimize.
 
 ### How it works
 
-1. User selects a character
-2. Types a prompt or task description
-3. Character responds with a rating, strengths, and one specific principle to improve
-4. User refines and resubmits — iterative learning loop
-5. Sidebar shows full principle framework for reference
-
-### Principle frameworks
-
-- **Prompting** (Promptulus) — 21 principles across 5 levels: Core Clarity → Structure → Reasoning → Refinement → Meta-Thinking
-- **Modularization** (Modulus) — 17 principles across 5 levels: Framing → Chaining → Execution → Review → Meta-Learning
-- **Task categorization** (Dichotra) — 18 principles across 5 levels: Task Nature → Complexity → Hybrid Indicators → Constraints → Strategy
-
-56 total principles across all three systems.
+1. Landing page introduces the context window concept with the interactive slider
+2. User selects a character from one of the three phases
+3. Types a prompt or task description
+4. Character responds with a rating, strengths, and one specific principle to improve
+5. User refines and resubmits — iterative learning loop
+6. Sidebar shows the full principle framework for that character
 
 ### Workshop relevance
 
 Promptulus is the live demo in Nate's Role 2 section. Participants use it to:
-- Compare prompt strategies and see how structure changes output quality
-- Experience iterative prompt refinement with immediate feedback
-- Understand the difference between LLM tasks and data science tasks (via Dichotra)
-- Practice task decomposition for research administration workflows (via Modulus)
+- Visualize how intent, instructions, information, and conversation compete for context window space
+- Practice prompt engineering with immediate AI feedback
+- Assess whether their tasks need auditability before using AI (Sequita)
+- Define intent clearly before starting an AI workflow (Telosa)
+- Learn to evaluate and document AI output (Veridex, Clarion)
+- Understand how AI works at a conceptual level (Vitrea)
 
 ### Current state
 
-- All three characters functional and deployed
-- 820 lines of R code in main app file
-- 3 deployment options (local, shinyapps.io, Shinylive)
+- All 9 characters implemented with system prompts and principle frameworks
+- Static site (GitHub Pages) is feature-complete with interactive slider
+- Shiny app has all characters but slider not yet ported from JS
 - Free tier Gemini API (15 req/min, 1,500 req/day) — may need attention for 24 concurrent workshop participants
-- Recent development: Modulus and Dichotra characters added, UI refinements, discussion integration
