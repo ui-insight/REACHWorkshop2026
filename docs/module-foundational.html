@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#191919" />
     <title>Foundational Module | AI4RA Workshop</title>
     <meta
       name="description"
@@ -11,14 +12,19 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div class="page-shell">
+    <div class="page-frame">
       <header class="site-header">
-        <div class="shell header-inner">
-          <a class="brand" href="index.html">AI4RA Workshop</a>
-          <nav class="site-nav" aria-label="Primary navigation">
-            <ul>
+        <div class="shell">
+          <div class="brand-lockup">
+            <a class="brand-home" href="index.html">
+              <img class="brand-logo" src="img/logos/ai4ra-logo.png" alt="AI4RA logo" />
+              <span class="brand-line">AI4RA workshop companion for REACH 2026</span>
+            </a>
+          </div>
+          <nav aria-label="Primary">
+            <ul class="nav-list">
               <li><a class="nav-link" href="index.html">Home</a></li>
-              <li><a class="nav-link" href="course-content.html">Course Content</a></li>
+              <li><a class="nav-link is-active" href="course-content.html">Course Content</a></li>
               <li><a class="nav-link" href="slides.html">Slides</a></li>
               <li><a class="nav-link" href="presenters.html">Presenters</a></li>
               <li><a class="nav-link" href="index.html#details">Workshop Details</a></li>
@@ -30,7 +36,7 @@
       <main>
         <section class="page-intro reveal">
           <div class="page-intro-panel">
-            <p class="eyebrow">Module 1</p>
+            <p class="eyebrow">Module 1 — Led by Nathan Wiggins</p>
             <h1>Foundational framing for AI4RA and institutional AI practice.</h1>
             <p class="section-copy">
               This opening module gives participants shared language and a
@@ -118,6 +124,21 @@
           </div>
         </section>
 
+        <section id="bridge" class="content-block reveal">
+          <p class="eyebrow">Facilitation support</p>
+          <h2 class="section-heading">Bridge to Session 2</h2>
+          <article class="course-module module-full">
+            <span class="tag">Demo handoff</span>
+            <h3>Promptulus demo closes this session</h3>
+            <p>
+              End with a live Promptulus demo showing how prompt structure
+              affects output quality. Then pose the bridge question:
+              "But what about the data underneath?" — handing off directly
+              to Nathan Layman's session on data organization.
+            </p>
+          </article>
+        </section>
+
         <section id="assets" class="content-block reveal">
           <h2 class="section-heading">Slides for this module</h2>
           <article class="course-module module-full">
@@ -128,7 +149,8 @@
               including timing guidance for each part of the module.
             </p>
             <div class="hero-actions module-actions">
-              <a class="button" href="slides-foundational.html">Launch the slide deck</a>
+              <a class="button" href="slides-foundational.html">Launch Session 1 deck</a>
+              <a class="button-secondary" href="slides-workshop.html">Full workshop deck</a>
               <a class="button-secondary" href="module-data-governance.html">Next module</a>
             </div>
           </article>

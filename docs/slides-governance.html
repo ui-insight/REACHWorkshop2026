@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f1b300" />
+    <title>Session 2: Data Lakehouse and Organization | AI4RA Workshop</title>
+    <meta
+      name="description"
+      content="Session 2 slide deck: The data lakehouse and data organization. Led by Nathan Layman."
+    />
+    <link rel="stylesheet" href="reveal/dist/reveal.css" />
+    <link rel="stylesheet" href="reveal/dist/theme/white.css" />
+    <link rel="stylesheet" href="slides.css" />
+  </head>
+  <body class="slides-page">
+    <div class="slides-home">
+      <a href="slides.html">Back to Slides</a>
+    </div>
+
+    <div class="reveal">
+      <div class="slides">
+
+        <!-- TITLE -->
+        <section class="title-slide" data-background-color="#f1b300">
+          <p class="slide-kicker slide-kicker-dark">Session 2 | 2:00–2:50 PM</p>
+          <h1>The data lakehouse and data organization</h1>
+          <p class="slide-lede slide-dark">Led by Nathan Layman</p>
+          <p class="slide-dark" style="margin-top:0.5rem; font-size:1rem;">The most important model is the data model.</p>
+        </section>
+
+        <!-- QUIZ: What is the most important model? -->
+        <section>
+          <p class="slide-kicker">Workshop thesis</p>
+          <h1>What is the most important model?</h1>
+          <div class="quiz-options" id="quiz-model" style="margin-top:1rem;">
+            <label class="quiz-option">
+              <span class="quiz-letter">A</span>
+              <span class="quiz-text">Large Language Model</span>
+              <span class="quiz-desc">A neural network trained on massive text corpora to predict and generate human-like language.</span>
+            </label>
+            <label class="quiz-option">
+              <span class="quiz-letter">B</span>
+              <span class="quiz-text">Generative Pre-trained Transformer</span>
+              <span class="quiz-desc">The architecture behind GPT — uses self-attention to process sequences and generate text token by token.</span>
+            </label>
+            <label class="quiz-option">
+              <span class="quiz-letter">C</span>
+              <span class="quiz-text">Convolutional Neural Network (CNN)</span>
+              <span class="quiz-desc">Specialized for image and spatial data — uses filters to detect patterns like edges, shapes, and objects in images.</span>
+            </label>
+            <label class="quiz-option">
+              <span class="quiz-letter">D</span>
+              <span class="quiz-text">Generative Adversarial Network (GAN)</span>
+              <span class="quiz-desc">Two neural networks compete — one generates fakes, the other detects them — producing increasingly realistic synthetic data.</span>
+            </label>
+            <label class="quiz-option">
+              <span class="quiz-letter">E</span>
+              <span class="quiz-text">Diffusion Model (DALL-E, Stable Diffusion)</span>
+              <span class="quiz-desc">Learns to generate images by gradually removing noise — the engine behind modern AI image and video generation.</span>
+            </label>
+            <label class="quiz-option">
+              <span class="quiz-letter">F</span>
+              <span class="quiz-text">Recurrent Neural Network (RNN/LSTM)</span>
+              <span class="quiz-desc">Processes sequences by maintaining memory of previous inputs — used for time series, early language models, and speech recognition.</span>
+            </label>
+            <label class="quiz-option">
+              <span class="quiz-letter">G</span>
+              <span class="quiz-text">BERT / Encoder Model</span>
+              <span class="quiz-desc">Reads text bidirectionally to understand meaning and context — used for classifying text, not generating it.</span>
+            </label>
+            <label class="quiz-option">
+              <span class="quiz-letter">H</span>
+              <span class="quiz-text">Reinforcement Learning (RL)</span>
+              <span class="quiz-desc">Learns by trial and error with rewards — powers game-playing AI like AlphaGo and robotic control systems.</span>
+            </label>
+            <label class="quiz-option">
+              <span class="quiz-letter">I</span>
+              <span class="quiz-text">Random Forest / Decision Tree</span>
+              <span class="quiz-desc">Classic machine learning — builds decision rules from data features. Very common in research for classification and prediction.</span>
+            </label>
+            <label class="quiz-option">
+              <span class="quiz-letter">J</span>
+              <span class="quiz-text">Support Vector Machine (SVM)</span>
+              <span class="quiz-desc">Finds the optimal boundary between categories in data — a traditional classification workhorse in science and engineering.</span>
+            </label>
+            <label class="quiz-option">
+              <span class="quiz-letter">K</span>
+              <span class="quiz-text">Variational Autoencoder (VAE)</span>
+              <span class="quiz-desc">Compresses data into a compact representation and generates new samples from it — used in drug discovery and anomaly detection.</span>
+            </label>
+            <label class="quiz-option">
+              <span class="quiz-letter">L</span>
+              <span class="quiz-text">Graph Neural Network (GNN)</span>
+              <span class="quiz-desc">Learns from relationships between entities — used for social networks, molecular structures, and knowledge graphs.</span>
+            </label>
+          </div>
+        </section>
+
+        <!-- WRONG! Reveal -->
+        <section>
+          <p class="slide-kicker">The answer</p>
+          <h1 style="color:#ef4444; font-size:5rem;">Wrong!</h1>
+          <div class="slide-split">
+            <div class="split-img">
+              <img src="img/diagrams/data-model.png" alt="Data model diagram" />
+            </div>
+            <div class="split-text">
+              <p class="slide-quote" style="margin-top:0;">The most important model is <strong>your data model.</strong></p>
+              <p style="margin-top:0.6rem; font-size:1rem; color:var(--muted);">
+                AI models come and go, but the way an institution organizes, governs,
+                and shares its data determines whether any of them are useful.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- DATA LAKEHOUSE DEFINITION (from workshop deck) -->
+        <section>
+          <p class="slide-kicker">Infrastructure</p>
+          <h2>What is a data lakehouse?</h2>
+          <ul>
+            <li><strong>Data warehouse:</strong> structured, governed, fast queries — but rigid schemas, expensive to change</li>
+            <li><strong>Data lake:</strong> flexible, raw storage — but becomes a "data swamp" without governance</li>
+            <li><strong>Data lakehouse:</strong> combines both — flexible storage with structured governance layers on top</li>
+          </ul>
+        </section>
+
+        <!-- MEDALLION ARCHITECTURE (from workshop deck) -->
+        <section>
+          <p class="slide-kicker">Architecture</p>
+          <h2>The medallion layers</h2>
+          <div class="medallion-diagram">
+            <div class="medallion-layer" style="background:#8B6914; border-radius:8px 0 0 8px;">
+              Bronze
+              <div class="layer-label">Raw data as received</div>
+            </div>
+            <span class="medallion-arrow">&rarr;</span>
+            <div class="medallion-layer" style="background:#9CA3AF;">
+              Silver
+              <div class="layer-label">Mapped to UDM</div>
+            </div>
+            <span class="medallion-arrow">&rarr;</span>
+            <div class="medallion-layer" style="background:#D4A017;">
+              Gold
+              <div class="layer-label">Deduplicated union</div>
+            </div>
+            <span class="medallion-arrow">&rarr;</span>
+            <div class="medallion-layer" style="background:#7C8B9A; border-radius:0 8px 8px 0;">
+              Platinum
+              <div class="layer-label">App-specific views</div>
+            </div>
+          </div>
+          <ul style="margin-top:1rem;">
+            <li>Each layer adds structure, governance, and trust</li>
+            <li>Raw snapshots are never modified — always reproducible</li>
+          </ul>
+        </section>
+
+        <!-- UDM (from workshop deck) -->
+        <section>
+          <p class="slide-kicker">Shared standards</p>
+          <h2>The Unified Data Model</h2>
+          <ul>
+            <li>A shared schema for research administration across the GRANTED network</li>
+            <li>Makes institutional data interoperable and AI-ready</li>
+            <li>Silver views map source columns to UDM names and types</li>
+            <li>Gold views provide a single deduplicated answer across all sources</li>
+          </ul>
+          <div class="slide-callout">
+            Same question, same schema, same answer — regardless of which institution asks.
+          </div>
+        </section>
+
+        <!-- LAKEHOUSE VS SWAMP (from workshop deck) -->
+        <section>
+          <p class="slide-kicker">Contrast</p>
+          <h1>The data lakehouse vs the data swamp</h1>
+          <p class="slide-lede" style="margin-top:1rem;">
+            Same query. Same task. Two very different outcomes.
+          </p>
+        </section>
+
+        <section>
+          <p class="slide-kicker">Lakehouse</p>
+          <h2>Well-organized data</h2>
+          <ul>
+            <li>Answer comes back fast, accurate, reproducible</li>
+            <li>You can trace where every number came from</li>
+            <li>The AI gets trustworthy context — output is grounded</li>
+            <li>Same query tomorrow gives the same answer</li>
+          </ul>
+        </section>
+
+        <section>
+          <p class="slide-kicker">Data swamp</p>
+          <h2>Poorly organized data</h2>
+          <ul>
+            <li>Duplicate records, missing fields, stale sources</li>
+            <li>No way to tell which version is authoritative</li>
+            <li>The AI blends conflicting information into a plausible-sounding answer</li>
+            <li>Different answer every time — and no way to tell which is right</li>
+          </ul>
+        </section>
+
+        <!-- DATA GOVERNANCE AS PREREQUISITE (from workshop deck) -->
+        <section>
+          <p class="slide-kicker">Governance</p>
+          <h2>Data governance as prerequisite</h2>
+          <div class="slide-split">
+            <div class="split-img">
+              <img src="https://ai4ra.uidaho.edu/wp-content/uploads/2025/07/4Pillars.png" alt="Four pillars of data governance" />
+            </div>
+            <div class="split-text">
+              <ul>
+                <li>Provenance, permissions, and quality determine whether AI is safe to use</li>
+                <li>Ungoverned data + AI = confident-sounding wrong answers</li>
+                <li>Governance is not bureaucracy — it's the condition that makes automation safe</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- OPENING MOVE — DASHBOARD BRIDGE (from existing module) -->
+        <section>
+          <p class="slide-kicker">Opening move</p>
+          <h2>Start with the governance work they already do</h2>
+          <div class="slide-grid">
+            <article class="slide-card">
+              <span class="slide-label">Already familiar</span>
+              <h3>Dashboard governance</h3>
+              <ul>
+                <li>Which source is authoritative for a metric?</li>
+                <li>Who can access which dashboard?</li>
+                <li>How often is the data refreshed?</li>
+                <li>What happens when a source changes mid-cycle?</li>
+              </ul>
+            </article>
+            <article class="slide-card accent">
+              <span class="slide-label">Bridge to AI</span>
+              <h3>Same muscles, higher stakes</h3>
+              <p>
+                AI governance uses the same institutional judgment, but the
+                system can now synthesize, classify, extract, and route work,
+                not just display information on a screen.
+              </p>
+            </article>
+          </div>
+          <p class="slide-note">A useful opening line: retrieval quality is downstream from governance quality.</p>
+        </section>
+
+        <!-- CONTEXT ENGINEERING DEFINITION (from existing module) -->
+        <section>
+          <p class="slide-kicker">Definition</p>
+          <h2>What do we mean by context engineering?</h2>
+          <div class="slide-grid tight">
+            <article class="slide-card">
+              <h3>Design what the model can see</h3>
+              <p>Policies, files, tables, forms, notes, prompts, and tools.</p>
+            </article>
+            <article class="slide-card">
+              <h3>Design what the model can use</h3>
+              <p>Which sources are authoritative enough to influence the answer.</p>
+            </article>
+            <article class="slide-card">
+              <h3>Design what the model should rely on</h3>
+              <p>What must be cited, refreshed, validated, or constrained.</p>
+            </article>
+            <article class="slide-card">
+              <h3>Design when the model must stop</h3>
+              <p>Abstain, defer, or escalate when the workflow leaves safe bounds.</p>
+            </article>
+          </div>
+        </section>
+
+        <!-- CORE THESIS (from existing module) -->
+        <section>
+          <p class="slide-kicker">Core thesis</p>
+          <h2>Better context is only useful if it is governed</h2>
+          <div class="slide-grid">
+            <article class="slide-card">
+              <span class="slide-label">What teams often do</span>
+              <p>
+                Add more documents, more retrieval, more system access, and
+                more files in hopes that the answer becomes better.
+              </p>
+            </article>
+            <article class="slide-card dark">
+              <span class="slide-label">What can actually happen</span>
+              <p>
+                If the data is outdated, poorly permissioned, ambiguous, or
+                untraceable, the answer may sound more confident while becoming
+                less safe and less institutionally valid.
+              </p>
+            </article>
+          </div>
+          <div class="slide-callout">
+            Ungoverned context increases the error surface area. It does not just increase capability.
+          </div>
+        </section>
+
+        <!-- INPUTS VS OUTPUTS (from existing module) -->
+        <section>
+          <p class="slide-kicker">Key distinction</p>
+          <h2>AI consumes governed data and generates new governed data</h2>
+          <div class="slide-grid">
+            <article class="slide-card">
+              <span class="slide-label">Inputs</span>
+              <h3>What the workflow reads</h3>
+              <ul>
+                <li>Policy PDFs</li>
+                <li>Tables and spreadsheets</li>
+                <li>Shared-drive forms</li>
+                <li>Dashboard sources</li>
+                <li>Operational guidance documents</li>
+              </ul>
+            </article>
+            <article class="slide-card accent">
+              <span class="slide-label">Outputs</span>
+              <h3>What the workflow may create</h3>
+              <ul>
+                <li>Extracted fields from PDFs</li>
+                <li>Tags and classifications</li>
+                <li>Structured summaries</li>
+                <li>Routing metadata</li>
+                <li>Draft operational records</li>
+              </ul>
+            </article>
+          </div>
+          <p class="slide-note">Once those outputs feed a queue, dashboard, report, or decision, governance applies to them too.</p>
+        </section>
+
+        <!-- GOVERNANCE LENS (from existing module) -->
+        <section>
+          <p class="slide-kicker">Governance lens</p>
+          <h2>Every new context source should trigger these questions</h2>
+          <div class="slide-grid tight">
+            <article class="slide-card">
+              <h3>Provenance</h3>
+              <p>Where did this information come from, and can we prove it?</p>
+            </article>
+            <article class="slide-card">
+              <h3>Permissions</h3>
+              <p>Who is allowed to access it, transform it, or expose it?</p>
+            </article>
+            <article class="slide-card">
+              <h3>Quality</h3>
+              <p>How current, complete, reliable, and explainable is it?</p>
+            </article>
+            <article class="slide-card">
+              <h3>Sensitivity</h3>
+              <p>Does it contain private, regulated, or institutionally sensitive material?</p>
+            </article>
+            <article class="slide-card">
+              <h3>Stewardship</h3>
+              <p>Who owns refresh, correction, and validation over time?</p>
+            </article>
+            <article class="slide-card">
+              <h3>Human review</h3>
+              <p>When should the system answer, cite and defer, or escalate?</p>
+            </article>
+          </div>
+        </section>
+
+        <!-- OBSERVABILITY (from workshop deck) -->
+        <section>
+          <p class="slide-kicker">Observability</p>
+          <h2>Can you see what your data is doing?</h2>
+          <ul>
+            <li>Where did this data come from? (provenance)</li>
+            <li>When was it last updated? (freshness)</li>
+            <li>Who is allowed to access it? (permissions)</li>
+            <li>Has it changed since the last time we used it? (versioning)</li>
+            <li>If you can't answer these, your AI can't either.</li>
+          </ul>
+        </section>
+
+        <!-- WORKED EXAMPLE (from existing module) -->
+        <section>
+          <p class="slide-kicker">Worked example</p>
+          <h2>A proposal routing assistant with mixed sources</h2>
+          <div class="slide-grid">
+            <article class="slide-card">
+              <span class="slide-label">Scenario</span>
+              <p>
+                A unit wants an AI assistant to answer questions about proposal
+                routing deadlines and internal approvals.
+              </p>
+              <p class="slide-micro">
+                The team connects a current policy PDF, old shared-drive forms,
+                exception-heavy email guidance, and a few notes from
+                experienced staff.
+              </p>
+            </article>
+            <article class="slide-card dark">
+              <span class="slide-label">Teaching point</span>
+              <h3>More context is not automatically better context</h3>
+              <p>
+                Those sources do not carry the same authority, freshness, or
+                interpretive weight. The model may blend them into a plausible
+                answer that no one should trust without review.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <!-- SOURCE MAP (from existing module) -->
+        <section>
+          <p class="slide-kicker">Source map</p>
+          <h2>Show participants how source quality diverges inside one workflow</h2>
+          <div class="slide-grid tight">
+            <article class="slide-card accent">
+              <span class="slide-label">Current policy PDF</span>
+              <h3>Likely authoritative</h3>
+              <p>Good candidate for grounding if the version is current and owned.</p>
+            </article>
+            <article class="slide-card">
+              <span class="slide-label">Shared-drive forms</span>
+              <h3>Possibly stale</h3>
+              <p>Useful reference, but dangerous if staff do not know which copy is current.</p>
+            </article>
+            <article class="slide-card">
+              <span class="slide-label">Email guidance</span>
+              <h3>Exception-heavy</h3>
+              <p>May reflect edge cases that should not be generalized into a default answer.</p>
+            </article>
+            <article class="slide-card">
+              <span class="slide-label">Staff notes</span>
+              <h3>Local practice</h3>
+              <p>Helpful for context, but often hard to defend as institutional policy.</p>
+            </article>
+          </div>
+        </section>
+
+        <!-- GENERATED OUTPUTS (from existing module) -->
+        <section>
+          <p class="slide-kicker">Generated outputs</p>
+          <h2>Extraction creates governed data too</h2>
+          <div class="slide-grid">
+            <article class="slide-card">
+              <p>
+                If the assistant extracts deadlines, approver names, sponsor
+                requirements, or routing codes into a structured table, that
+                output starts to look like clean operational data.
+              </p>
+            </article>
+            <article class="slide-card accent">
+              <h3>New governance questions</h3>
+              <ul>
+                <li>Who validates the extracted fields?</li>
+                <li>Who owns the resulting table?</li>
+                <li>Can it be reused in dashboards or workflow routing?</li>
+                <li>What audit trail ties it back to the source?</li>
+              </ul>
+            </article>
+          </div>
+        </section>
+
+        <!-- DECISION AID (from existing module) -->
+        <section>
+          <p class="slide-kicker">Decision aid</p>
+          <h2>Use a fast context readiness checklist</h2>
+          <div class="slide-grid tight">
+            <article class="slide-card">
+              <h3>Ready now</h3>
+              <p>Authoritative, current, permissioned, explainable, and clearly owned.</p>
+            </article>
+            <article class="slide-card">
+              <h3>Needs cleanup</h3>
+              <p>Potentially useful, but freshness, ownership, access, or provenance is still unclear.</p>
+            </article>
+            <article class="slide-card dark">
+              <h3>Keep out</h3>
+              <p>Too sensitive, too ambiguous, or too unreliable for operational use.</p>
+            </article>
+            <article class="slide-card accent">
+              <h3>Ask before acting</h3>
+              <p>Would you trust this source in a dashboard, audit trail, or official workflow decision?</p>
+            </article>
+          </div>
+        </section>
+
+        <!-- ACTIVITY (from existing module) -->
+        <section>
+          <p class="slide-kicker">Activity</p>
+          <h2>Run a 4-minute readiness audit in the room</h2>
+          <ol>
+            <li>Choose one local source your team wants to use in an AI workflow.</li>
+            <li>Mark whether it is authoritative, current, permissioned, and explainable.</li>
+            <li>Name the biggest failure mode if the system uses it uncritically.</li>
+            <li>Decide: ready now, needs cleanup, or keep it out of the workflow.</li>
+          </ol>
+          <p class="slide-note">If time allows, ask two people to share why they made different decisions about source readiness.</p>
+        </section>
+
+        <!-- FROM MESSY TO STRUCTURED (from workshop deck) -->
+        <section>
+          <p class="slide-kicker">From messy to structured</p>
+          <h2>The work that makes AI possible</h2>
+          <ul>
+            <li>Cleaning, curating, and organizing institutional data</li>
+            <li>Deciding what's authoritative and who says so</li>
+            <li>Building shared schemas so data can travel between systems</li>
+            <li>This is the work that earns reproducibility</li>
+          </ul>
+        </section>
+
+        <!-- REPRODUCIBILITY (from workshop deck) -->
+        <section>
+          <p class="slide-kicker">Reproducibility</p>
+          <h2>Reproducibility through organization</h2>
+          <ul>
+            <li>Shared schemas: everyone speaks the same language</li>
+            <li>Versioned data: you can go back and see what changed</li>
+            <li>Governed pipelines: transforms are documented, not ad-hoc</li>
+            <li>Same query, same data, same answer — across institutions and over time</li>
+          </ul>
+        </section>
+
+        <!-- DISCUSSION (from existing module) -->
+        <section>
+          <p class="slide-kicker">Discussion</p>
+          <h2>Questions for participants</h2>
+          <ul>
+            <li>Which local data sources are reliable enough to become AI context?</li>
+            <li>Which ones are too messy, sensitive, or incomplete to trust yet?</li>
+            <li>Where could AI-generated structured data enter your analytics or operational workflows?</li>
+            <li>Who currently defines what is authoritative in your workflow?</li>
+            <li>What governance work has to happen before retrieval or automation expands?</li>
+          </ul>
+        </section>
+
+        <!-- REACH CROSS-REFERENCES (from existing module) -->
+        <section>
+          <p class="slide-kicker">Continue the conversation</p>
+          <h2>REACH sessions that extend these ideas</h2>
+          <div class="slide-grid tight">
+            <article class="slide-card">
+              <h3>G2</h3>
+              <p>Operationalizing Data Governance<br />Tue 11:15 AM, WEATHERLY</p>
+            </article>
+            <article class="slide-card">
+              <h3>G5</h3>
+              <p>Ethical and Epistemic Foundations<br />Tue 11:15 AM, NEWPORT</p>
+            </article>
+            <article class="slide-card">
+              <h3>I4</h3>
+              <p>Building Data Literacy as a Shared Language<br />Tue 2:30 PM, ENTERPRISE</p>
+            </article>
+            <article class="slide-card">
+              <h3>H3</h3>
+              <p>Automating Your Data Dictionary<br />Tue 1:30 PM, COLUMBIA</p>
+            </article>
+          </div>
+        </section>
+
+        <!-- VANDALIZER DEMO -->
+        <section>
+          <p class="slide-kicker">Live demo</p>
+          <h2>Vandalizer</h2>
+          <div class="slide-split">
+            <div class="split-img">
+              <img src="https://ai4ra.uidaho.edu/wp-content/uploads/2025/10/cartoon.png" alt="Vandalizer — AI-assisted research administration" />
+            </div>
+            <div class="split-text">
+              <ul>
+                <li>AI-powered tool for streamlining research administration workflows</li>
+                <li>Shows how well-organized institutional data enables real RA tasks</li>
+                <li>The lakehouse provides the data; Vandalizer provides the workflow</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- BRIDGE FORWARD -->
+        <section data-background-color="#f1b300">
+          <p class="slide-kicker slide-kicker-dark">Bridge forward</p>
+          <h2 class="slide-dark">Session 3: Reproducibility, accuracy, and putting it to work</h2>
+          <p class="slide-dark">
+            Led by Barrie Robison — how do you measure accuracy,
+            ensure reproducibility, and decide what to deploy?
+          </p>
+          <p class="slide-dark">
+            <a href="slides-context-layers.html">Open Session 3 deck</a>
+          </p>
+        </section>
+      </div>
+    </div>
+
+    <script src="reveal/dist/reveal.js"></script>
+    <script>
+      Reveal.initialize({
+        hash: true,
+        controls: true,
+        progress: true,
+        center: true,
+        slideNumber: true,
+        transition: "slide"
+      });
+
+      /* Quiz interaction */
+      (function () {
+        document.querySelectorAll('.quiz-options').forEach(function (quiz) {
+          quiz.querySelectorAll('.quiz-option').forEach(function (opt) {
+            opt.addEventListener('click', function () {
+              var wasSelected = opt.classList.contains('selected');
+              quiz.querySelectorAll('.quiz-option').forEach(function (o) {
+                o.classList.remove('selected');
+              });
+              if (!wasSelected) opt.classList.add('selected');
+            });
+          });
+        });
+      })();
+    </script>
+  </body>
+</html>

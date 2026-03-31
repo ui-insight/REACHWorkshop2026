@@ -8,9 +8,21 @@ Every time this file is sourced (i.e., at the start of every new conversation), 
 
 ## Project
 
-This is the companion site for the REACH 2026 workshop: **AI4RA — The Intersection Between AI and Data** (April 20, 2026).
+This is the companion site for the REACH 2026 workshop: **AI4RA — The Intersection Between AI and Data** (April 20, 2026, 1:00–4:00 PM, Room BRISTOL).
 
 ## Repo boundaries
 
 - You may edit code in **this repo only** (REACHWorkshop2026).
 - Sibling repos (data-lakehouse, promptulus, vandalizer, AI4RA-UDM, etc.) are **read-only for context**. If changes are needed in those repos, raise a GitHub issue instead.
+
+## Repo layout
+
+- `docs/` — GitHub Pages source (all site HTML, CSS, JS, images, Reveal.js)
+- `resources/` — reference materials not served by the site
+- Root — only CLAUDE.md, README.md, .gitignore
+
+## Local preview
+
+```bash
+python3 -m http.server 4173 -d docs
+```

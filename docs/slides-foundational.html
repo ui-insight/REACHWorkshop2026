@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f1b300" />
+    <title>Session 1: AI and Data Science | AI4RA Workshop</title>
+    <meta
+      name="description"
+      content="Session 1 slide deck: AI and data science — what's what. Led by Nathan Wiggins."
+    />
+    <link rel="stylesheet" href="reveal/dist/reveal.css" />
+    <link rel="stylesheet" href="reveal/dist/theme/white.css" />
+    <link rel="stylesheet" href="slides.css" />
+  </head>
+  <body class="slides-page">
+    <div class="slides-home">
+      <a href="slides.html">Back to Slides</a>
+    </div>
+
+    <div class="reveal">
+      <div class="slides">
+
+        <!-- TITLE -->
+        <section class="title-slide" data-background-color="#f1b300">
+          <p class="slide-kicker slide-kicker-dark">Session 1 | 1:00–1:50 PM</p>
+          <h1>AI and data science: what's what</h1>
+          <p class="slide-lede slide-dark">Led by Nathan Wiggins</p>
+        </section>
+
+        <!-- TWO THEMES -->
+        <section>
+          <p class="slide-kicker">Two themes</p>
+          <h2>Reproducibility and data organization</h2>
+          <ul>
+            <li><strong>Reproducibility</strong> — Can someone else get the same answer?</li>
+            <li><strong>Data organization</strong> — Is the underlying data trustworthy enough to act on?</li>
+          </ul>
+        </section>
+
+        <!-- AI4RA INTRODUCTION (from existing module) -->
+        <section>
+          <p class="slide-kicker">Part 1 · AI4RA Introduction</p>
+          <h2>AI4RA: Framing AI for research administration</h2>
+          <ul>
+            <li>Objectives, PIs, and project framing</li>
+            <li>Pillars: Accuracy, Reproducibility, Flexibility, Security</li>
+            <li>Community of Practice: Vandalizer, Data Lake, and other projects</li>
+            <li>Bridge to research analytics and strategic analysis capacity</li>
+          </ul>
+        </section>
+
+        <!-- FAIR PRINCIPLES (from existing module) -->
+        <section>
+          <p class="slide-kicker">Part 2 · Data Science and AI</p>
+          <h2>Intersection of Data Science and Artificial Intelligence</h2>
+          <div class="slide-grid">
+            <article class="slide-card">
+              <h3>FAIR principles</h3>
+              <p>Findable, Accessible, Interoperable, and Reusable data as the basis for trustworthy AI.</p>
+            </article>
+            <article class="slide-card accent">
+              <h3>Two directional shifts</h3>
+              <ul>
+                <li>Proactive data science: shift in our reach</li>
+                <li>Reactive data science: shift in their values</li>
+              </ul>
+            </article>
+          </div>
+        </section>
+
+        <!-- AI VS DATA SCIENCE (from workshop deck) -->
+        <section>
+          <p class="slide-kicker">The landscape</p>
+          <h2>AI vs data science</h2>
+          <div class="slide-split">
+            <div class="split-img">
+              <img src="https://ai4ra.uidaho.edu/wp-content/uploads/2026/03/canAIBeUsed.png" alt="AI vs manual research administration" />
+            </div>
+            <div class="split-text">
+              <ul>
+                <li>Data science: structured analysis, statistics, reproducible pipelines, dashboards</li>
+                <li>AI / LLMs: language generation, pattern matching, unstructured data, probabilistic output</li>
+                <li>They complement each other — but people conflate them</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- HOW LLMS WORK (from workshop deck) -->
+        <section>
+          <p class="slide-kicker">Demystifying</p>
+          <h2>How LLMs actually work</h2>
+          <div class="slide-split">
+            <div class="split-img">
+              <img src="https://ai4ra.uidaho.edu/wp-content/uploads/2025/08/AIBrain.png" alt="AI Brain" />
+            </div>
+            <div class="split-text">
+              <ul>
+                <li>Predict the next token based on patterns in training data</li>
+                <li>No understanding, no memory, no intent of their own</li>
+                <li>Extremely capable at text generation, translation, summarization, extraction</li>
+                <li>Extremely unreliable at arithmetic, factual recall, and anything outside training data</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- ACCURACY (from workshop deck) -->
+        <section>
+          <p class="slide-kicker">Trust</p>
+          <h2>Accuracy and its limits</h2>
+          <ul>
+            <li>LLM output is probabilistic, not deterministic</li>
+            <li>The same prompt can produce different answers each time</li>
+            <li>Sounds confident even when wrong — "hallucination"</li>
+            <li>When accuracy matters: use data science. When flexibility matters: consider AI.</li>
+          </ul>
+        </section>
+
+        <!-- REPRODUCIBILITY (from workshop deck) -->
+        <section>
+          <p class="slide-kicker">Reproducibility</p>
+          <h2>The reproducibility challenge</h2>
+          <ul>
+            <li>Traditional analytics: same query, same data, same answer. Every time.</li>
+            <li>LLMs: same prompt, different answer. By design.</li>
+            <li>This isn't a bug — but it changes what you can rely on</li>
+            <li>Disciplines that help: structured output, temperature control, version pinning, human review</li>
+          </ul>
+        </section>
+
+        <!-- HUMAN JUDGMENT + IBM QUOTE (from workshop deck) -->
+        <section>
+          <p class="slide-kicker">Human judgment</p>
+          <h2>Where human expertise remains essential</h2>
+          <div class="slide-split">
+            <div class="split-text" style="flex: 0 0 45%;">
+              <div class="slide-callout" style="text-align:left;">
+                "A computer can never be held accountable; therefore a computer must never make a management decision." — IBM, 1979<br /><br />
+                AI has no integrity, no professional ethics, no accountability.
+                Someone with professional judgment must always own the final call.
+              </div>
+            </div>
+            <div class="split-text">
+              <ul>
+                <li>Policy interpretation and institutional context</li>
+                <li>Compliance determinations</li>
+                <li>Ethical judgment and risk assessment</li>
+                <li>Decisions that require accountability</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- DECISION FRAMEWORK (from workshop deck) -->
+        <section>
+          <p class="slide-kicker">Decision framework</p>
+          <h2>Distinguishing AI tasks from data science tasks</h2>
+          <ul>
+            <li><strong>AI fits when:</strong> the task involves language, generation, extraction from unstructured data, or flexible reasoning</li>
+            <li><strong>Data science fits when:</strong> the task requires exact numbers, reproducible pipelines, statistical inference, or audit trails — use R, Python, SQL</li>
+            <li><strong>Both together:</strong> AI extracts and organizes; data science validates and reports</li>
+          </ul>
+        </section>
+
+        <!-- THREE ZONES OF INTENT (from workshop deck) -->
+        <section>
+          <p class="slide-kicker">Three zones of intent</p>
+          <h2>Does it matter how the work got done?</h2>
+          <div class="slide-split img-wide">
+            <div class="split-img">
+              <img src="https://ai4ra.uidaho.edu/wp-content/uploads/2026/03/AIContinuum.jpg" alt="AI Appropriateness Continuum — process-critical to output-driven" />
+            </div>
+            <div class="split-text">
+              <ul>
+                <li><strong>Process-critical</strong> — Every step must be auditable. AI may assist, but a human owns the reasoning.</li>
+                <li><strong>Human-in-the-loop</strong> — AI prepares, a qualified person reviews and decides.</li>
+                <li><strong>Output-driven</strong> — Only the result matters. AI can lead; validate with spot-checks.</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- RA EXAMPLES (from workshop deck) -->
+        <section>
+          <p class="slide-kicker">In practice</p>
+          <h2>RA examples for each zone</h2>
+          <ul>
+            <li><strong>Process-critical:</strong> effort certifications, IRB/IACUC reviews, conflict-of-interest determinations, financial audits, research misconduct investigations</li>
+            <li><strong>Human-in-the-loop:</strong> pre-award budget reviews, compliance checks, subaward risk assessments, cost transfer justifications</li>
+            <li><strong>Output-driven:</strong> drafting facility descriptions, formatting budgets, generating biosketches, auto-populating sponsor forms</li>
+          </ul>
+        </section>
+
+        <!-- FRAMEWORKS AND MODELS (from existing module) -->
+        <section>
+          <p class="slide-kicker">Part 5 · Frameworks</p>
+          <h2>Frameworks and Models</h2>
+          <div class="slide-grid tight">
+            <article class="slide-card">
+              <h3>Task progression</h3>
+              <p>Data science and AI tasks can mature into agentic workflows.</p>
+            </article>
+            <article class="slide-card">
+              <h3>Framing progression</h3>
+              <p>Prompt engineering evolves into intent engineering.</p>
+            </article>
+            <article class="slide-card dark">
+              <h3>Durable constant</h3>
+              <p>Maintain a strong data foundation across every workflow.</p>
+            </article>
+          </div>
+        </section>
+
+        <!-- LEARNING OBJECTIVES (from workshop deck) -->
+        <section>
+          <p class="slide-kicker">Learning objectives</p>
+          <h2>What participants should leave able to do</h2>
+          <ul>
+            <li>Apply prompt engineering to improve AI output quality and consistency</li>
+            <li>Break complex RA tasks into AI-manageable components with review points</li>
+            <li>Develop AI-assisted workflows for common research administration processes</li>
+            <li>Evaluate which tasks are suitable for AI at their own institutions</li>
+          </ul>
+        </section>
+
+        <!-- PROMPTULUS LIVE DEMO -->
+        <section>
+          <p class="slide-kicker">Live demo</p>
+          <h2>Promptulus — The AI Literacy Companions</h2>
+          <div class="character-grid">
+            <div class="character-card">
+              <img src="img/promptulus/squirrel.png" alt="Sequita" />
+              <div class="char-name">Sequita</div>
+              <div class="char-role">Auditability</div>
+            </div>
+            <div class="character-card">
+              <img src="img/promptulus/crab.png" alt="Modulus" />
+              <div class="char-name">Modulus</div>
+              <div class="char-role">Decomposition</div>
+            </div>
+            <div class="character-card">
+              <img src="img/promptulus/turtle.png" alt="Telosa" />
+              <div class="char-name">Telosa</div>
+              <div class="char-role">Intent</div>
+            </div>
+            <div class="character-card">
+              <img src="img/promptulus/owl.png" alt="Promptulus" />
+              <div class="char-name">Promptulus</div>
+              <div class="char-role">Prompts</div>
+            </div>
+            <div class="character-card">
+              <img src="img/promptulus/elephant.png" alt="Mnemos" />
+              <div class="char-name">Mnemos</div>
+              <div class="char-role">Context</div>
+            </div>
+            <div class="character-card">
+              <img src="img/promptulus/parrot.png" alt="Dialogos" />
+              <div class="char-name">Dialogos</div>
+              <div class="char-role">Conversation</div>
+            </div>
+            <div class="character-card">
+              <img src="img/promptulus/frog.png" alt="Vitrea" />
+              <div class="char-name">Vitrea</div>
+              <div class="char-role">Transparency</div>
+            </div>
+            <div class="character-card">
+              <img src="img/promptulus/raccoon.png" alt="Veridex" />
+              <div class="char-name">Veridex</div>
+              <div class="char-role">Evaluation</div>
+            </div>
+            <div class="character-card">
+              <img src="img/promptulus/whale.png" alt="Clarion" />
+              <div class="char-name">Clarion</div>
+              <div class="char-role">Reporting</div>
+            </div>
+          </div>
+          <div class="slide-callout" style="margin-top:0.8rem;">
+            <a href="https://nate-layman.github.io/promptulus/" style="color:var(--ink);">
+              nate-layman.github.io/promptulus
+            </a>
+          </div>
+        </section>
+
+        <!-- BRIDGE FORWARD -->
+        <section data-background-color="#f1b300">
+          <p class="slide-kicker slide-kicker-dark">Bridge forward</p>
+          <h2 class="slide-dark">Session 2: The data lakehouse and data organization</h2>
+          <p class="slide-dark">
+            Led by Nathan Layman — how institutional data infrastructure
+            determines whether AI can be trusted.
+          </p>
+          <p class="slide-dark">
+            <a href="slides-governance.html">Open Session 2 deck</a>
+          </p>
+        </section>
+      </div>
+    </div>
+
+    <script src="reveal/dist/reveal.js"></script>
+    <script>
+      Reveal.initialize({
+        hash: true,
+        controls: true,
+        progress: true,
+        center: true,
+        slideNumber: true,
+        transition: "slide"
+      });
+
+    </script>
+  </body>
+</html>
