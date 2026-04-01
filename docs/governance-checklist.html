@@ -24,10 +24,10 @@
           <nav aria-label="Primary">
             <ul class="nav-list">
               <li><a class="nav-link" href="index.html">Home</a></li>
-              <li><a class="nav-link" href="course-content.html">Course Content</a></li>
-              <li><a class="nav-link" href="slides.html">Slides</a></li>
               <li><a class="nav-link" href="presenters.html">Presenters</a></li>
-              <li><a class="nav-link" href="index.html#details">Workshop Details</a></li>
+              <li><a class="nav-link" href="course-content.html">Sessions</a></li>
+              <li><a class="nav-link" href="resources.html">Resources</a></li>
+              <li><a class="nav-link" href="at-reach.html">At REACH</a></li>
             </ul>
           </nav>
         </div>
@@ -46,48 +46,71 @@
           <div class="hero-actions">
             <a class="button" href="module-data-governance.html">Open the full governance module</a>
             <a class="button-secondary" href="slides-governance.html">Open the slide deck</a>
-            <a class="button-secondary" href="index.html">Back to workshop home</a>
+            <a class="button-secondary" href="resources.html">Back to Resources</a>
           </div>
         </section>
 
         <section class="content-block reveal">
           <p class="eyebrow">How to use it</p>
           <h2 class="section-heading">Ask these questions before you trust the context.</h2>
-          <div class="card-grid">
-            <article class="content-card">
-              <span class="tag">1. Authority</span>
-              <h3>Is this source actually authoritative?</h3>
-              <p>
-                Decide whether this source is the one your institution would
-                trust in a dashboard, audit trail, policy interpretation, or
-                official workflow decision.
-              </p>
-            </article>
-            <article class="content-card">
-              <span class="tag">2. Currency</span>
-              <h3>Is it current enough to act on?</h3>
-              <p>
-                Check refresh cadence, version history, and whether someone can
-                explain when it was last updated and what changed.
-              </p>
-            </article>
-            <article class="content-card">
-              <span class="tag">3. Permissions</span>
-              <h3>Should the system even be allowed to use it?</h3>
-              <p>
-                Confirm access rules, sensitivity constraints, privacy concerns,
-                and whether the workflow is allowed to expose or transform this
-                information.
-              </p>
-            </article>
-            <article class="content-card">
-              <span class="tag">4. Explainability</span>
-              <h3>Can someone defend where the answer came from?</h3>
-              <p>
-                If the source cannot be cited, traced, or explained to another
-                colleague, it is not ready for trustworthy AI-assisted work.
-              </p>
-            </article>
+          <p class="section-copy" style="margin-bottom:1.5rem;">
+            Think of a specific data source — a policy PDF, spreadsheet, shared-drive folder,
+            or dashboard table — and check each criterion it meets.
+          </p>
+          <div class="checklist-standalone" id="checklist-standalone">
+            <label class="checklist-row">
+              <input type="checkbox" />
+              <span class="checklist-check"></span>
+              <span class="checklist-content">
+                <span class="tag">1. Authority</span>
+                <strong>Is this source actually authoritative?</strong>
+                <span class="checklist-detail">
+                  Decide whether this source is the one your institution would
+                  trust in a dashboard, audit trail, policy interpretation, or
+                  official workflow decision.
+                </span>
+              </span>
+            </label>
+            <label class="checklist-row">
+              <input type="checkbox" />
+              <span class="checklist-check"></span>
+              <span class="checklist-content">
+                <span class="tag">2. Currency</span>
+                <strong>Is it current enough to act on?</strong>
+                <span class="checklist-detail">
+                  Check refresh cadence, version history, and whether someone can
+                  explain when it was last updated and what changed.
+                </span>
+              </span>
+            </label>
+            <label class="checklist-row">
+              <input type="checkbox" />
+              <span class="checklist-check"></span>
+              <span class="checklist-content">
+                <span class="tag">3. Permissions</span>
+                <strong>Should the system even be allowed to use it?</strong>
+                <span class="checklist-detail">
+                  Confirm access rules, sensitivity constraints, privacy concerns,
+                  and whether the workflow is allowed to expose or transform this
+                  information.
+                </span>
+              </span>
+            </label>
+            <label class="checklist-row">
+              <input type="checkbox" />
+              <span class="checklist-check"></span>
+              <span class="checklist-content">
+                <span class="tag">4. Explainability</span>
+                <strong>Can someone defend where the answer came from?</strong>
+                <span class="checklist-detail">
+                  If the source cannot be cited, traced, or explained to another
+                  colleague, it is not ready for trustworthy AI-assisted work.
+                </span>
+              </span>
+            </label>
+          </div>
+          <div class="checklist-result" id="checklist-result">
+            Check the boxes above to see your verdict.
           </div>
         </section>
 
@@ -138,35 +161,41 @@
       </main>
 
       <footer class="site-footer">
-        <div class="shell footer-grid">
-          <div>
-            <p class="footer-kicker">AI4RA Community of Practice</p>
-            <p class="footer-copy">
-              Building open, trustworthy, practitioner-centered infrastructure
-              for research analytics and administration.
-            </p>
-          </div>
-          <div>
-            <p class="footer-heading">Module links</p>
-            <ul class="footer-list">
-              <li><a href="module-data-governance.html">Governance module</a></li>
-              <li><a href="slides-governance.html">Governance slide deck</a></li>
-              <li><a href="index.html">Workshop home</a></li>
-            </ul>
-          </div>
-          <div>
-            <p class="footer-heading">Use this for</p>
-            <ul class="footer-list">
-              <li>Policy collections</li>
-              <li>Shared-drive documents</li>
-              <li>Spreadsheet or dashboard sources</li>
-              <li>Retrieval and RAG planning</li>
-            </ul>
-          </div>
+        <div class="shell footer-simple">
+          <p class="footer-kicker">AI4RA Community of Practice</p>
+          <p class="footer-copy">Monday, April 20, 2026 · 1:00–4:00 PM · Room BRISTOL</p>
+          <p class="footer-copy"><a href="https://github.com/ui-insight/REACHWorkshop2026">Repository</a></p>
         </div>
       </footer>
     </div>
 
     <script src="app.js"></script>
+    <script>
+      (function () {
+        var checklist = document.getElementById('checklist-standalone');
+        var result = document.getElementById('checklist-result');
+        if (!checklist || !result) return;
+
+        var verdicts = [
+          { min: 0, max: 0, cls: '', text: 'Check the boxes above to see your verdict.' },
+          { min: 1, max: 1, cls: 'result-red', text: 'Keep out — too many gaps for operational use.' },
+          { min: 2, max: 2, cls: 'result-yellow', text: 'Needs cleanup — useful source, but governance gaps remain.' },
+          { min: 3, max: 3, cls: 'result-yellow', text: 'Almost ready — one criterion still needs attention.' },
+          { min: 4, max: 4, cls: 'result-green', text: 'Ready now — authoritative, current, permissioned, and explainable.' }
+        ];
+
+        checklist.addEventListener('change', function () {
+          var checked = checklist.querySelectorAll('input:checked').length;
+          result.className = 'checklist-result';
+          for (var i = verdicts.length - 1; i >= 0; i--) {
+            if (checked >= verdicts[i].min && checked <= verdicts[i].max) {
+              result.textContent = verdicts[i].text;
+              if (verdicts[i].cls) result.classList.add(verdicts[i].cls);
+              break;
+            }
+          }
+        });
+      })();
+    </script>
   </body>
 </html>

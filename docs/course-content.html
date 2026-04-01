@@ -4,10 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#191919" />
-    <title>Course Content | AI4RA Workshop</title>
+    <title>Sessions | AI4RA Workshop</title>
     <meta
       name="description"
-      content="Course hub and module directory for the AI4RA REACH 2026 workshop."
+      content="Workshop sessions, learning objectives, and module guides for the AI4RA REACH 2026 workshop."
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
@@ -24,10 +24,10 @@
           <nav aria-label="Primary">
             <ul class="nav-list">
               <li><a class="nav-link" href="index.html">Home</a></li>
-              <li><a class="nav-link is-active" href="course-content.html">Course Content</a></li>
-              <li><a class="nav-link" href="slides.html">Slides</a></li>
               <li><a class="nav-link" href="presenters.html">Presenters</a></li>
-              <li><a class="nav-link" href="index.html#details">Workshop Details</a></li>
+              <li><a class="nav-link is-active" href="course-content.html">Sessions</a></li>
+              <li><a class="nav-link" href="resources.html">Resources</a></li>
+              <li><a class="nav-link" href="at-reach.html">At REACH</a></li>
             </ul>
           </nav>
         </div>
@@ -36,75 +36,95 @@
       <main>
         <section class="page-intro reveal">
           <div class="page-intro-panel">
-            <p class="eyebrow">Course content</p>
-            <h1>Workshop modules, now organized as separate pages.</h1>
+            <p class="eyebrow">Sessions</p>
+            <h1>Three hours organized around decision quality.</h1>
             <p class="section-copy">
-              This page is now the course hub instead of one long facilitator
-              document. Use it to move between modules, slide decks, and
-              handouts without scrolling through the full workshop in a single
-              page.
+              Each session ends with a live demo that bridges into the next.
+              Promptulus closes Session 1 and leads into the data question;
+              Vandalizer closes Session 2 and leads into evaluation and accuracy.
             </p>
-            <div class="hero-actions">
-              <a class="button" href="#module-library">Browse module pages</a>
-              <a class="button-secondary" href="#module-template">Review the module template</a>
-              <a class="button-secondary" href="index.html">Back to workshop home</a>
-            </div>
           </div>
         </section>
 
-        <section id="course-workflow" class="content-block reveal">
-          <p class="eyebrow">How the site works</p>
-          <h2 class="section-heading section-heading-wide">A cleaner structure for workshop prep, delivery, and follow-up</h2>
-          <p class="section-copy">
-            The landing page introduces the workshop, this hub organizes the
-            teaching materials, and each module page holds the full
-            facilitator-ready version of one topic. That keeps the content
-            easier to navigate while preserving the detailed teaching notes.
-          </p>
-          <div class="card-grid">
+        <section id="objectives" class="content-block reveal">
+          <p class="eyebrow">Learning objectives</p>
+          <h2 class="section-heading section-heading-wide">What participants should leave able to do</h2>
+          <div class="compact-grid">
             <article class="content-card">
-              <span class="tag">Landing page</span>
-              <h3>Use the home page for workshop framing</h3>
+              <span class="tag">AI literacy</span>
+              <h3>Understand what AI can and cannot do for research analytics</h3>
               <p>
-                The home page now works as the front door: workshop purpose,
-                agenda, themes, and session details all stay there.
+                Explain how large language models work at a practical
+                level, apply FAIR principles as operational guardrails,
+                and distinguish AI capabilities from institutional
+                judgment.
               </p>
             </article>
             <article class="content-card">
-              <span class="tag">Course hub</span>
-              <h3>Use this page as the directory</h3>
+              <span class="tag">Prompt engineering</span>
+              <h3>Structure prompts that produce reliable, consistent output</h3>
               <p>
-                Start here when you want the module list, the shared template,
-                and quick links out to slides, handouts, and module pages.
+                Move from ad-hoc prompting to deliberate prompt design
+                using role instructions, examples, templates, and
+                constraints that improve quality and reduce drift.
               </p>
             </article>
             <article class="content-card">
-              <span class="tag">Module pages</span>
-              <h3>Keep the full teaching guide with the module</h3>
+              <span class="tag">Data readiness</span>
+              <h3>Evaluate whether institutional data is ready for AI</h3>
               <p>
-                Each module now gets its own page so presenters can focus on
-                one topic at a time without losing the full explanation,
-                exercise, and discussion flow.
+                Assess provenance, permissions, currency, and
+                explainability of data sources before connecting them to
+                AI workflows. Distinguish authoritative sources from
+                supplemental ones and identify governance gaps.
+              </p>
+            </article>
+            <article class="content-card">
+              <span class="tag">Data governance</span>
+              <h3>Govern AI inputs and outputs with the same rigor as dashboards</h3>
+              <p>
+                Recognize that AI both consumes governed data and
+                generates new data products. Apply stewardship,
+                permissioning, and traceability standards to both sides.
+              </p>
+            </article>
+            <article class="content-card">
+              <span class="tag">Context architecture</span>
+              <h3>Choose the right layer of context for the job</h3>
+              <p>
+                Map the context stack — instructions, templates, files,
+                tools, retrieval, and human escalation — and use the
+                thinnest layer that solves the problem reliably.
+              </p>
+            </article>
+            <article class="content-card">
+              <span class="tag">Evaluation</span>
+              <h3>Verify AI output before it enters a workflow</h3>
+              <p>
+                Apply reproducibility, accuracy, and trust checks to
+                AI-generated outputs. Decide when the system should
+                answer directly, cite and defer, or escalate to a
+                human before action is taken.
+              </p>
+            </article>
+            <article class="content-card">
+              <span class="tag">Adoption judgment</span>
+              <h3>Decide what to automate, augment, or leave alone</h3>
+              <p>
+                Classify institutional tasks by AI suitability.
+                Recognize when a well-designed query, dashboard, or
+                human process is the better answer — and when AI
+                adds genuine value beyond existing tools.
               </p>
             </article>
           </div>
-          <ul class="plain-list">
-            <li>Start on this hub when you are preparing the workshop or choosing what to revise next.</li>
-            <li>Open a module page when you need the full facilitator guide for one topic.</li>
-            <li>Use the slides page when you want the Reveal decks without hunting through the rest of the site.</li>
-          </ul>
         </section>
 
         <section id="module-library" class="split-block reveal">
           <div class="split-grid">
             <div>
               <p class="eyebrow">Module library</p>
-              <h2 class="section-heading">Choose a module, then open its dedicated page.</h2>
-              <p class="section-copy">
-                Each card below links to the full facilitator guide for that
-                module, along with its related slide deck and handout where
-                available.
-              </p>
+              <h2 class="section-heading">Choose a module to open its facilitator guide and slides.</h2>
             </div>
             <div class="card-grid compact-grid">
               <article class="content-card">
@@ -161,122 +181,13 @@
             </div>
           </div>
         </section>
-
-        <section id="module-template" class="content-block reveal">
-          <p class="eyebrow">Module template</p>
-          <h2 class="section-heading">Every module page should follow the same anatomy.</h2>
-          <p class="section-copy">
-            The completion standard stays the same even though the content is
-            now split across separate pages. That makes each module easier to
-            maintain and easier to turn into slides or participant materials.
-          </p>
-          <div class="card-grid">
-            <article class="content-card">
-              <span class="tag">1. Module brief</span>
-              <h3>State the learning goal and in-room use</h3>
-              <p>
-                Capture what participants should be able to do, how long the
-                module should take, and what judgment skill or artifact they
-                should leave with.
-              </p>
-            </article>
-            <article class="content-card">
-              <span class="tag">2. Explanation</span>
-              <h3>Include framing and core ideas</h3>
-              <p>
-                Give the presenter a practical opening, a clear explanation of
-                the concept, and a teaching flow that moves the topic forward in
-                sequence.
-              </p>
-            </article>
-            <article class="content-card">
-              <span class="tag">3. Example</span>
-              <h3>Show the idea in a real workflow</h3>
-              <p>
-                Use a research analytics or administration scenario that makes
-                the module concrete and worth discussing live.
-              </p>
-            </article>
-            <article class="content-card">
-              <span class="tag">4. Activity</span>
-              <h3>Ask participants to do something with it</h3>
-              <p>
-                Every module should include an exercise, discussion move, or
-                reflection prompt that helps participants test the idea against
-                their own institution.
-              </p>
-            </article>
-            <article class="content-card">
-              <span class="tag">5. Decision aid</span>
-              <h3>Leave them with a reusable tool</h3>
-              <p>
-                Checklists, rules of thumb, readiness questions, and quick
-                rubrics help the workshop travel beyond the room.
-              </p>
-            </article>
-            <article class="content-card">
-              <span class="tag">6. Derived assets</span>
-              <h3>Trace slides and handouts back to the source</h3>
-              <p>
-                The slide decks and downloads should point back to the module
-                page they summarize so future revisions keep a clear upstream
-                source of truth.
-              </p>
-            </article>
-          </div>
-        </section>
-
-        <section class="callout-band reveal">
-          <div class="callout-panel">
-            <p class="eyebrow">Build forward</p>
-            <h2 class="section-heading">
-              Add future modules here as cards, then give each one its own page.
-            </h2>
-            <p>
-              The site structure is now set up for growth: the landing page can
-              stay concise, the course hub can stay browseable, and new modules
-              can expand without turning the site back into a single long-scroll
-              document.
-            </p>
-            <div class="cta-row">
-              <a class="button" href="slides.html">Browse slide decks</a>
-              <a class="button-secondary" href="index.html#agenda">View workshop flow</a>
-            </div>
-          </div>
-        </section>
       </main>
 
       <footer class="site-footer">
-        <div class="shell footer-grid">
-          <div>
-            <p class="footer-kicker">AI4RA Community of Practice</p>
-            <p class="footer-copy">
-              Building open, trustworthy, practitioner-centered infrastructure
-              for research analytics and administration.
-            </p>
-          </div>
-          <div>
-            <p class="footer-heading">Workshop</p>
-            <ul class="footer-list">
-              <li><a href="index.html">Home</a></li>
-              <li><a href="course-content.html">Course Content</a></li>
-              <li><a href="slides.html">Slides</a></li>
-              <li><a href="presenters.html">Presenters</a></li>
-              <li>Monday, April 20, 2026</li>
-            </ul>
-          </div>
-          <div>
-            <p class="footer-heading">Modules</p>
-            <ul class="footer-list">
-              <li><a href="module-foundational.html">Foundational module</a></li>
-              <li><a href="module-data-governance.html">Data governance</a></li>
-              <li><a href="module-context-layers.html">Context layers</a></li>
-              <li><a href="governance-checklist.html">Governance checklist</a></li>
-              <li><a href="slides-foundational.html">Foundational slide deck</a></li>
-              <li><a href="slides-governance.html">Governance slide deck</a></li>
-              <li><a href="slides-context-layers.html">Context layers slide deck</a></li>
-            </ul>
-          </div>
+        <div class="shell footer-simple">
+          <p class="footer-kicker">AI4RA Community of Practice</p>
+          <p class="footer-copy">Monday, April 20, 2026 · 1:00–4:00 PM · Room BRISTOL</p>
+          <p class="footer-copy"><a href="https://github.com/ui-insight/REACHWorkshop2026">Repository</a></p>
         </div>
       </footer>
     </div>

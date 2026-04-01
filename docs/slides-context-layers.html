@@ -15,7 +15,7 @@
   </head>
   <body class="slides-page">
     <div class="slides-home">
-      <a href="slides.html">Back to Slides</a>
+      <a href="course-content.html">Back to Sessions</a>
     </div>
 
     <div class="reveal">
@@ -25,67 +25,8 @@
         <section class="title-slide" data-background-color="#f1b300">
           <p class="slide-kicker slide-kicker-dark">Session 3 | 3:00–3:50 PM</p>
           <h1>Reproducibility, accuracy, and putting it to work</h1>
+          <img src="img/presenters/barrie-robison.jpg" alt="Barrie Robison" style="width:120px; height:120px; border-radius:50%; object-fit:cover; border:3px solid #fff; margin:0.75rem auto 0;" />
           <p class="slide-lede slide-dark">Led by Barrie Robison</p>
-        </section>
-
-        <!-- CONTEXT WINDOW / FOUR DISCIPLINES (from workshop deck) -->
-        <section>
-          <p class="slide-kicker">Your AI has a page limit</p>
-          <h2>Four disciplines for AI interaction</h2>
-          <div class="context-slider" id="ctx-slider">
-            <div class="slider-bar">
-              <div class="slider-region" data-idx="0" style="width:10%; background:#5B8C3E;">
-                <span class="slider-pct">10%</span>
-                <span class="slider-label">Intent</span>
-              </div>
-              <div class="slider-handle" data-handle="0"></div>
-              <div class="slider-region" data-idx="1" style="width:50%; background:#C4960C;">
-                <span class="slider-pct">50%</span>
-                <span class="slider-label">Information</span>
-              </div>
-              <div class="slider-handle" data-handle="1"></div>
-              <div class="slider-region" data-idx="2" style="width:25%; background:#1B6B7A;">
-                <span class="slider-pct">25%</span>
-                <span class="slider-label">Instructions</span>
-              </div>
-              <div class="slider-handle" data-handle="2"></div>
-              <div class="slider-region" data-idx="3" style="width:15%; background:#2A9D8F;">
-                <span class="slider-pct">15%</span>
-                <span class="slider-label">Conversation</span>
-              </div>
-            </div>
-            <div class="slider-presets">
-              <button class="slider-preset active" data-preset="compliance">Compliance review</button>
-              <button class="slider-preset" data-preset="draft">Draft a description</button>
-              <button class="slider-preset" data-preset="iterative">Iterative editing</button>
-              <button class="slider-preset" data-preset="scoping">New task scoping</button>
-            </div>
-          </div>
-          <div class="character-grid character-grid-lg" style="margin-top:0.6rem;">
-            <div class="character-card">
-              <img src="img/promptulus/turtle.png" alt="Telosa" />
-              <div class="char-name">Intent</div>
-              <div class="char-role">Telosa</div>
-            </div>
-            <div class="character-card">
-              <img src="img/promptulus/elephant.png" alt="Mnemos" />
-              <div class="char-name">Information</div>
-              <div class="char-role">Mnemos</div>
-            </div>
-            <div class="character-card">
-              <img src="img/promptulus/owl.png" alt="Promptulus" />
-              <div class="char-name">Instructions</div>
-              <div class="char-role">Promptulus</div>
-            </div>
-            <div class="character-card">
-              <img src="img/promptulus/parrot.png" alt="Dialogos" />
-              <div class="char-name">Conversation</div>
-              <div class="char-role">Dialogos</div>
-            </div>
-          </div>
-          <div class="slide-callout" style="margin-top:0.5rem;">
-            All four compete for the same finite context window. Getting the balance right is the skill.
-          </div>
         </section>
 
         <!-- OPENING FRAME (from existing module) -->
@@ -287,7 +228,7 @@
           <img class="slide-qr" src="https://ai4ra.uidaho.edu/wp-content/uploads/2025/12/ai4raQR.jpg" alt="Scan to visit ai4ra.uidaho.edu" />
           <ul>
             <li>
-              <a href="https://nate-layman.github.io/promptulus/" style="color:var(--gold); text-decoration:underline;">Promptulus</a>
+              <a href="https://nate-layman.github.io/promptulus/" target="_blank" rel="noopener" style="color:var(--gold); text-decoration:underline;">Promptulus</a>
               — Practice AI literacy skills
             </li>
             <li>
@@ -318,91 +259,6 @@
         slideNumber: true,
         transition: "slide"
       });
-
-      /* Context-window slider: presets + drag handles */
-      (function () {
-        var presets = {
-          compliance: [10, 50, 25, 15],
-          draft:      [10, 40, 35, 15],
-          iterative:  [5,  15, 20, 60],
-          scoping:    [20, 25, 25, 30]
-        };
-        var slider = document.getElementById('ctx-slider');
-        if (!slider) return;
-        var bar = slider.querySelector('.slider-bar');
-        var regions = slider.querySelectorAll('.slider-region');
-        var handles = slider.querySelectorAll('.slider-handle');
-        var buttons = slider.querySelectorAll('.slider-preset');
-        var MIN_PCT = 5;
-
-        function setWidths(vals) {
-          regions.forEach(function (r, i) {
-            r.style.width = vals[i] + '%';
-            r.querySelector('.slider-pct').textContent = vals[i] + '%';
-          });
-        }
-
-        function getWidths() {
-          return Array.from(regions).map(function (r) {
-            return parseFloat(r.style.width);
-          });
-        }
-
-        /* Preset buttons */
-        buttons.forEach(function (btn) {
-          btn.addEventListener('click', function () {
-            setWidths(presets[btn.dataset.preset]);
-            buttons.forEach(function (b) { b.classList.remove('active'); });
-            btn.classList.add('active');
-          });
-        });
-
-        /* Drag handles */
-        handles.forEach(function (handle) {
-          handle.addEventListener('mousedown', startDrag);
-          handle.addEventListener('touchstart', startDrag, { passive: false });
-
-          function startDrag(e) {
-            e.preventDefault();
-            handle.classList.add('dragging');
-            var idx = parseInt(handle.dataset.handle);
-            var barRect = bar.getBoundingClientRect();
-            var barW = barRect.width;
-
-            function onMove(ev) {
-              var clientX = ev.touches ? ev.touches[0].clientX : ev.clientX;
-              var pct = ((clientX - barRect.left) / barW) * 100;
-              var vals = getWidths();
-              var before = 0;
-              for (var i = 0; i <= idx; i++) before += vals[i];
-              var delta = pct - before;
-              var newLeft = vals[idx] + delta;
-              var newRight = vals[idx + 1] - delta;
-              if (newLeft >= MIN_PCT && newRight >= MIN_PCT) {
-                vals[idx] = Math.round(newLeft);
-                vals[idx + 1] = Math.round(newRight);
-                var sum = vals.reduce(function (a, b) { return a + b; }, 0);
-                vals[idx + 1] += (100 - sum);
-                setWidths(vals);
-                buttons.forEach(function (b) { b.classList.remove('active'); });
-              }
-            }
-
-            function onEnd() {
-              handle.classList.remove('dragging');
-              document.removeEventListener('mousemove', onMove);
-              document.removeEventListener('mouseup', onEnd);
-              document.removeEventListener('touchmove', onMove);
-              document.removeEventListener('touchend', onEnd);
-            }
-
-            document.addEventListener('mousemove', onMove);
-            document.addEventListener('mouseup', onEnd);
-            document.addEventListener('touchmove', onMove, { passive: false });
-            document.addEventListener('touchend', onEnd);
-          }
-        });
-      })();
     </script>
   </body>
 </html>

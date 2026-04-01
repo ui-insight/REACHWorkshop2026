@@ -15,7 +15,7 @@
   </head>
   <body class="slides-page">
     <div class="slides-home">
-      <a href="slides.html">Back to Slides</a>
+      <a href="course-content.html">Back to Sessions</a>
     </div>
 
     <div class="reveal">
@@ -25,8 +25,8 @@
         <section class="title-slide" data-background-color="#f1b300">
           <p class="slide-kicker slide-kicker-dark">Session 2 | 2:00–2:50 PM</p>
           <h1>The data lakehouse and data organization</h1>
+          <img src="img/presenters/nathan-layman.jpeg" alt="Nathan Layman" style="width:120px; height:120px; border-radius:50%; object-fit:cover; border:3px solid #fff; margin:0.75rem auto 0;" />
           <p class="slide-lede slide-dark">Led by Nathan Layman</p>
-          <p class="slide-dark" style="margin-top:0.5rem; font-size:1rem;">The most important model is the data model.</p>
         </section>
 
         <!-- QUIZ: What is the most important model? -->
@@ -456,41 +456,53 @@
           </div>
         </section>
 
-        <!-- DECISION AID (from existing module) -->
-        <section>
-          <p class="slide-kicker">Decision aid</p>
-          <h2>Use a fast context readiness checklist</h2>
-          <div class="slide-grid tight">
-            <article class="slide-card">
-              <h3>Ready now</h3>
-              <p>Authoritative, current, permissioned, explainable, and clearly owned.</p>
-            </article>
-            <article class="slide-card">
-              <h3>Needs cleanup</h3>
-              <p>Potentially useful, but freshness, ownership, access, or provenance is still unclear.</p>
-            </article>
-            <article class="slide-card dark">
-              <h3>Keep out</h3>
-              <p>Too sensitive, too ambiguous, or too unreliable for operational use.</p>
-            </article>
-            <article class="slide-card accent">
-              <h3>Ask before acting</h3>
-              <p>Would you trust this source in a dashboard, audit trail, or official workflow decision?</p>
-            </article>
-          </div>
-        </section>
-
-        <!-- ACTIVITY (from existing module) -->
+        <!-- INTERACTIVE CONTEXT READINESS CHECKLIST -->
         <section>
           <p class="slide-kicker">Activity</p>
-          <h2>Run a 4-minute readiness audit in the room</h2>
-          <ol>
-            <li>Choose one local source your team wants to use in an AI workflow.</li>
-            <li>Mark whether it is authoritative, current, permissioned, and explainable.</li>
-            <li>Name the biggest failure mode if the system uses it uncritically.</li>
-            <li>Decide: ready now, needs cleanup, or keep it out of the workflow.</li>
-          </ol>
-          <p class="slide-note">If time allows, ask two people to share why they made different decisions about source readiness.</p>
+          <h2>Context readiness checklist</h2>
+          <p style="font-size:0.95rem; color:var(--muted); margin-bottom:1rem;">
+            Think of one data source you'd connect to an AI workflow. Check each criterion it meets.
+          </p>
+          <div class="checklist-grid" id="readiness-checklist">
+            <label class="checklist-item">
+              <input type="checkbox" />
+              <span class="checklist-box"></span>
+              <span class="checklist-label">
+                <strong>Authority</strong>
+                <span class="checklist-desc">Is this the source your institution would trust in an audit?</span>
+              </span>
+            </label>
+            <label class="checklist-item">
+              <input type="checkbox" />
+              <span class="checklist-box"></span>
+              <span class="checklist-label">
+                <strong>Currency</strong>
+                <span class="checklist-desc">Is it current enough to act on? Do you know when it was last updated?</span>
+              </span>
+            </label>
+            <label class="checklist-item">
+              <input type="checkbox" />
+              <span class="checklist-box"></span>
+              <span class="checklist-label">
+                <strong>Permissions</strong>
+                <span class="checklist-desc">Is the system allowed to use, transform, or expose this data?</span>
+              </span>
+            </label>
+            <label class="checklist-item">
+              <input type="checkbox" />
+              <span class="checklist-box"></span>
+              <span class="checklist-label">
+                <strong>Explainability</strong>
+                <span class="checklist-desc">Can someone trace and defend where the answer came from?</span>
+              </span>
+            </label>
+          </div>
+          <div class="checklist-verdict" id="checklist-verdict">
+            Check the boxes above to see your verdict.
+          </div>
+          <p class="slide-note">
+            Full take-home version: <a href="governance-checklist.html" style="color:var(--gold);">governance-checklist.html</a>
+          </p>
         </section>
 
         <!-- FROM MESSY TO STRUCTURED (from workshop deck) -->
@@ -610,6 +622,33 @@
               if (!wasSelected) opt.classList.add('selected');
             });
           });
+        });
+      })();
+
+      /* Context readiness checklist */
+      (function () {
+        var checklist = document.getElementById('readiness-checklist');
+        var verdict = document.getElementById('checklist-verdict');
+        if (!checklist || !verdict) return;
+
+        var verdicts = [
+          { min: 0, max: 0, cls: '', text: 'Check the boxes above to see your verdict.' },
+          { min: 1, max: 1, cls: 'verdict-red', text: 'Keep out — too many gaps for operational use.' },
+          { min: 2, max: 2, cls: 'verdict-yellow', text: 'Needs cleanup — useful source, but governance gaps remain.' },
+          { min: 3, max: 3, cls: 'verdict-yellow', text: 'Almost ready — one criterion still needs attention.' },
+          { min: 4, max: 4, cls: 'verdict-green', text: 'Ready now — authoritative, current, permissioned, and explainable.' }
+        ];
+
+        checklist.addEventListener('change', function () {
+          var checked = checklist.querySelectorAll('input:checked').length;
+          verdict.className = 'checklist-verdict';
+          for (var i = verdicts.length - 1; i >= 0; i--) {
+            if (checked >= verdicts[i].min && checked <= verdicts[i].max) {
+              verdict.textContent = verdicts[i].text;
+              if (verdicts[i].cls) verdict.classList.add(verdicts[i].cls);
+              break;
+            }
+          }
         });
       })();
     </script>
