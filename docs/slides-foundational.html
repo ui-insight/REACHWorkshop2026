@@ -4,10 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#f1b300" />
-    <title>Session 1: AI and Data Science | AI4RA Workshop</title>
+    <title>AI and Data Science | AI4RA Workshop</title>
     <meta
       name="description"
-      content="Session 1 slide deck: AI and data science — what's what. Led by Nathan Wiggins."
+      content="Slide deck: AI and data science — what's what. Led by Nathan Wiggins."
     />
     <link rel="stylesheet" href="reveal/dist/reveal.css" />
     <link rel="stylesheet" href="reveal/dist/theme/white.css" />
@@ -23,7 +23,7 @@
 
         <!-- TITLE -->
         <section class="title-slide" data-background-color="#f1b300">
-          <p class="slide-kicker slide-kicker-dark">Session 1 | 1:00–1:50 PM</p>
+          <p class="slide-kicker slide-kicker-dark">AI4RA Workshop</p>
           <h1>AI and data science: what's what</h1>
           <img src="img/presenters/nathan-wiggins.png" alt="Nathan Wiggins" style="width:120px; height:120px; border-radius:50%; object-fit:cover; border:3px solid #fff; margin:0.75rem auto 0;" />
           <p class="slide-lede slide-dark">Led by Nathan Wiggins</p>
@@ -88,6 +88,56 @@
           </div>
         </section>
 
+        <!-- AI/DS SPECTRUM — interactive -->
+        <section>
+          <p class="slide-kicker">Try it</p>
+          <h2>Where do these tasks sit?</h2>
+          <p style="font-size:0.8rem; color:var(--muted); margin-bottom:0.3rem;">Drag each slider. There are no wrong answers — the boundaries are blurry and shifting fast.</p>
+          <div class="spectrum-exercise">
+            <div class="spectrum-item">
+              <span class="spectrum-text">Summarize a 50-page sponsor policy</span>
+              <div class="spectrum-track">
+                <input type="range" min="0" max="100" value="50" class="spectrum-range" />
+              </div>
+            </div>
+            <div class="spectrum-item">
+              <span class="spectrum-text">Calculate time-to-award by department</span>
+              <div class="spectrum-track">
+                <input type="range" min="0" max="100" value="50" class="spectrum-range" />
+              </div>
+            </div>
+            <div class="spectrum-item">
+              <span class="spectrum-text">Extract PI names from unstructured emails</span>
+              <div class="spectrum-track">
+                <input type="range" min="0" max="100" value="50" class="spectrum-range" />
+              </div>
+            </div>
+            <div class="spectrum-item">
+              <span class="spectrum-text">Track proposal submission trends over 5 years</span>
+              <div class="spectrum-track">
+                <input type="range" min="0" max="100" value="50" class="spectrum-range" />
+              </div>
+            </div>
+            <div class="spectrum-item">
+              <span class="spectrum-text">Draft a facilities description from notes</span>
+              <div class="spectrum-track">
+                <input type="range" min="0" max="100" value="50" class="spectrum-range" />
+              </div>
+            </div>
+            <div class="spectrum-item">
+              <span class="spectrum-text">Classify incoming requests by sponsor type</span>
+              <div class="spectrum-track">
+                <input type="range" min="0" max="100" value="50" class="spectrum-range" />
+              </div>
+            </div>
+            <div class="spectrum-labels">
+              <span class="spectrum-label">Data Science</span>
+              <span class="spectrum-label spectrum-label-center">Both</span>
+              <span class="spectrum-label">AI</span>
+            </div>
+          </div>
+        </section>
+
         <!-- HOW LLMS WORK (from workshop deck) -->
         <section>
           <p class="slide-kicker">Demystifying</p>
@@ -101,10 +151,19 @@
                 <li>Predict the next token based on patterns in training data</li>
                 <li>No understanding, no memory, no intent of their own</li>
                 <li>Extremely capable at text generation, translation, summarization, extraction</li>
-                <li>Extremely unreliable at arithmetic, factual recall, and anything outside training data</li>
+                <li>Improving fast — but still prone to confident-sounding errors, especially on niche or rapidly changing facts</li>
               </ul>
             </div>
           </div>
+        </section>
+
+        <!-- NEXT-TOKEN BUILDER — interactive -->
+        <section>
+          <p class="slide-kicker">How it works</p>
+          <h2>Build a sentence one token at a time</h2>
+          <p style="font-size:0.8rem; color:var(--muted);">Click the next word — each choice shifts what comes next. Just like an LLM.</p>
+          <div class="token-builder" id="token-builder"></div>
+          <p class="slide-note">No right answer — only probabilities. This is why LLMs produce different output each time.</p>
         </section>
 
         <!-- ACCURACY (from workshop deck) -->
@@ -117,6 +176,24 @@
             <li>Sounds confident even when wrong — "hallucination"</li>
             <li>When accuracy matters: use data science. When flexibility matters: consider AI.</li>
           </ul>
+        </section>
+
+        <!-- SPOT THE HALLUCINATION — interactive -->
+        <section>
+          <p class="slide-kicker">Try it</p>
+          <h2>Spot the hallucination</h2>
+          <p style="font-size:0.8rem; color:var(--muted); margin-bottom:0.3rem;">This AI-generated paragraph contains three false statements. Click the sentences you think are wrong.</p>
+          <div class="hallucination-exercise">
+            <p class="h-paragraph">
+              <span class="h-sentence" data-real="true">The NIH requires R01 applications to include a biosketch for each senior/key personnel.</span>
+              <span class="h-sentence" data-real="true">Institutions must submit proposals through Grants.gov using the SF424 form set.</span>
+              <span class="h-sentence" data-real="false">The standard NIH modular budget threshold is $350,000 per year in direct costs.</span>
+              <span class="h-sentence" data-real="true">All proposals require institutional official sign-off before submission to the federal sponsor.</span>
+              <span class="h-sentence" data-real="false">NSF proposals must include a two-page project summary addressing intellectual merit and broader impacts.</span>
+              <span class="h-sentence" data-real="false">Indirect cost rates are renegotiated annually with each federal agency.</span>
+            </p>
+            <button class="sort-reveal">Reveal answers</button>
+          </div>
         </section>
 
         <!-- REPRODUCIBILITY (from workshop deck) -->
@@ -194,6 +271,63 @@
           </ul>
         </section>
 
+        <!-- ZONE CLASSIFIER — interactive -->
+        <section>
+          <p class="slide-kicker">Try it</p>
+          <h2>Classify these RA tasks</h2>
+          <div class="task-sorter">
+            <div class="sort-item" data-answer="process">
+              <span class="sort-text">Effort certification review</span>
+              <div class="sort-buttons">
+                <button class="sort-btn" data-zone="process">Process</button>
+                <button class="sort-btn" data-zone="human">Human-in-loop</button>
+                <button class="sort-btn" data-zone="output">Output</button>
+              </div>
+            </div>
+            <div class="sort-item" data-answer="output">
+              <span class="sort-text">Drafting a facilities description</span>
+              <div class="sort-buttons">
+                <button class="sort-btn" data-zone="process">Process</button>
+                <button class="sort-btn" data-zone="human">Human-in-loop</button>
+                <button class="sort-btn" data-zone="output">Output</button>
+              </div>
+            </div>
+            <div class="sort-item" data-answer="human">
+              <span class="sort-text">Pre-award budget review</span>
+              <div class="sort-buttons">
+                <button class="sort-btn" data-zone="process">Process</button>
+                <button class="sort-btn" data-zone="human">Human-in-loop</button>
+                <button class="sort-btn" data-zone="output">Output</button>
+              </div>
+            </div>
+            <div class="sort-item" data-answer="process">
+              <span class="sort-text">IRB protocol compliance check</span>
+              <div class="sort-buttons">
+                <button class="sort-btn" data-zone="process">Process</button>
+                <button class="sort-btn" data-zone="human">Human-in-loop</button>
+                <button class="sort-btn" data-zone="output">Output</button>
+              </div>
+            </div>
+            <div class="sort-item" data-answer="output">
+              <span class="sort-text">Generating a biosketch draft</span>
+              <div class="sort-buttons">
+                <button class="sort-btn" data-zone="process">Process</button>
+                <button class="sort-btn" data-zone="human">Human-in-loop</button>
+                <button class="sort-btn" data-zone="output">Output</button>
+              </div>
+            </div>
+            <div class="sort-item" data-answer="human">
+              <span class="sort-text">Subaward risk assessment</span>
+              <div class="sort-buttons">
+                <button class="sort-btn" data-zone="process">Process</button>
+                <button class="sort-btn" data-zone="human">Human-in-loop</button>
+                <button class="sort-btn" data-zone="output">Output</button>
+              </div>
+            </div>
+            <button class="sort-reveal">Reveal answers</button>
+          </div>
+        </section>
+
         <!-- FRAMEWORKS AND MODELS (from existing module) -->
         <section>
           <p class="slide-kicker">Part 5 · Frameworks</p>
@@ -228,7 +362,7 @@
 
         <!-- CONTEXT WINDOW / FOUR DISCIPLINES -->
         <section>
-          <p class="slide-kicker">Your AI has a page limit</p>
+          <p class="slide-kicker">Your AI has a page limit — the context window</p>
           <h2>Four disciplines for AI interaction</h2>
           <div class="context-slider" id="ctx-slider">
             <div class="slider-bar">
@@ -282,56 +416,68 @@
             </div>
           </div>
           <div class="slide-callout" style="margin-top:0.5rem;">
-            All four compete for the same finite context window. Getting the balance right is the skill.
+            Every AI model has a context window — a fixed limit on how much it can read at once. All four disciplines compete for that space. Getting the balance right is the skill.
           </div>
+        </section>
+
+        <!-- PROMPT ENGINEERING -->
+        <section>
+          <p class="slide-kicker">Prompt engineering</p>
+          <h2>Structuring requests for reproducible output</h2>
+          <ul>
+            <li>Be specific about the task, role, audience, and output format</li>
+            <li>Provide examples of what good output looks like</li>
+            <li>Use structured output (JSON, tables, templates) to constrain responses</li>
+            <li>Layer context deliberately — system instructions, task prompts, reference material</li>
+          </ul>
         </section>
 
         <!-- PROMPTULUS LIVE DEMO -->
         <section>
           <p class="slide-kicker">Live demo</p>
-          <h2>Promptulus — The AI Literacy Companions</h2>
+          <h2>The AI Literacy Companions</h2>
           <div class="character-grid">
-            <div class="character-card">
+            <div class="character-card" data-tip="Helps determine whether tasks require auditability or if a good answer is sufficient.">
               <img src="img/promptulus/squirrel.png" alt="Sequita" />
               <div class="char-name">Sequita</div>
               <div class="char-role">Auditability</div>
             </div>
-            <div class="character-card">
+            <div class="character-card" data-tip="Breaks down complex prompts into manageable, modular workflows and task components.">
               <img src="img/promptulus/crab.png" alt="Modulus" />
               <div class="char-name">Modulus</div>
               <div class="char-role">Decomposition</div>
             </div>
-            <div class="character-card">
+            <div class="character-card" data-tip="Clarifies purpose, accountability, and safety boundaries before using AI.">
               <img src="img/promptulus/turtle.png" alt="Telosa" />
               <div class="char-name">Telosa</div>
               <div class="char-role">Intent</div>
             </div>
-            <div class="character-card">
+            <div class="character-card" data-tip="Identifies strengths and weaknesses in AI prompts and coaches better prompt design.">
               <img src="img/promptulus/owl.png" alt="Promptulus" />
               <div class="char-name">Promptulus</div>
               <div class="char-role">Prompts</div>
             </div>
-            <div class="character-card">
+            <div class="character-card" data-tip="Helps select, organize, and format information for the AI context window.">
               <img src="img/promptulus/elephant.png" alt="Mnemos" />
               <div class="char-name">Mnemos</div>
               <div class="char-role">Context</div>
             </div>
-            <div class="character-card">
+            <div class="character-card" data-tip="Keeps multi-turn AI interactions focused, productive, and free of distracting noise.">
               <img src="img/promptulus/parrot.png" alt="Dialogos" />
               <div class="char-name">Dialogos</div>
               <div class="char-role">Conversation</div>
             </div>
-            <div class="character-card">
+            <div class="character-card" data-tip="Makes AI concepts and inner workings visible to non-technical audiences.">
               <img src="img/promptulus/frog.png" alt="Vitrea" />
               <div class="char-name">Vitrea</div>
               <div class="char-role">Transparency</div>
             </div>
-            <div class="character-card">
+            <div class="character-card" data-tip="Helps assess whether AI output is accurate, reliable, and trustworthy.">
               <img src="img/promptulus/raccoon.png" alt="Veridex" />
               <div class="char-name">Veridex</div>
               <div class="char-role">Evaluation</div>
             </div>
-            <div class="character-card">
+            <div class="character-card" data-tip="Helps record and communicate AI-assisted work so others can understand and reproduce it.">
               <img src="img/promptulus/whale.png" alt="Clarion" />
               <div class="char-name">Clarion</div>
               <div class="char-role">Reporting</div>
@@ -344,22 +490,18 @@
           </div>
         </section>
 
-        <!-- BRIDGE FORWARD -->
         <section data-background-color="#f1b300">
-          <p class="slide-kicker slide-kicker-dark">Bridge forward</p>
-          <h2 class="slide-dark">Session 2: The data lakehouse and data organization</h2>
+          <p class="slide-kicker slide-kicker-dark">End of module</p>
+          <h2 class="slide-dark">Back to Sessions</h2>
           <p class="slide-dark">
-            Led by Nathan Layman — how institutional data infrastructure
-            determines whether AI can be trusted.
-          </p>
-          <p class="slide-dark">
-            <a href="slides-governance.html">Open Session 2 deck</a>
+            <a href="course-content.html" style="color:var(--ink); text-decoration:underline;">Return to session list</a>
           </p>
         </section>
       </div>
     </div>
 
     <script src="reveal/dist/reveal.js"></script>
+    <script src="slides-interactive.js"></script>
     <script>
       Reveal.initialize({
         hash: true,

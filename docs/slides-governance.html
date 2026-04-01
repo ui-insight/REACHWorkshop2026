@@ -4,10 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#f1b300" />
-    <title>Session 2: Data Lakehouse and Organization | AI4RA Workshop</title>
+    <title>Data Lakehouse and Organization | AI4RA Workshop</title>
     <meta
       name="description"
-      content="Session 2 slide deck: The data lakehouse and data organization. Led by Nathan Layman."
+      content="Slide deck: The data lakehouse and data organization. Led by Nathan Layman."
     />
     <link rel="stylesheet" href="reveal/dist/reveal.css" />
     <link rel="stylesheet" href="reveal/dist/theme/white.css" />
@@ -23,7 +23,7 @@
 
         <!-- TITLE -->
         <section class="title-slide" data-background-color="#f1b300">
-          <p class="slide-kicker slide-kicker-dark">Session 2 | 2:00–2:50 PM</p>
+          <p class="slide-kicker slide-kicker-dark">AI4RA Workshop</p>
           <h1>The data lakehouse and data organization</h1>
           <img src="img/presenters/nathan-layman.jpeg" alt="Nathan Layman" style="width:120px; height:120px; border-radius:50%; object-fit:cover; border:3px solid #fff; margin:0.75rem auto 0;" />
           <p class="slide-lede slide-dark">Led by Nathan Layman</p>
@@ -130,31 +130,44 @@
         <section>
           <p class="slide-kicker">Architecture</p>
           <h2>The medallion layers</h2>
+          <p style="font-size:0.8rem; color:var(--muted); margin-bottom:0.3rem;">Click a layer to see example data at that stage.</p>
           <div class="medallion-diagram">
-            <div class="medallion-layer" style="background:#8B6914; border-radius:8px 0 0 8px;">
+            <div class="medallion-layer expandable" data-detail="detail-bronze" style="background:#8B6914; border-radius:8px 0 0 8px;">
               Bronze
               <div class="layer-label">Raw data as received</div>
             </div>
             <span class="medallion-arrow">&rarr;</span>
-            <div class="medallion-layer" style="background:#9CA3AF;">
+            <div class="medallion-layer expandable" data-detail="detail-silver" style="background:#9CA3AF;">
               Silver
               <div class="layer-label">Mapped to UDM</div>
             </div>
             <span class="medallion-arrow">&rarr;</span>
-            <div class="medallion-layer" style="background:#D4A017;">
+            <div class="medallion-layer expandable" data-detail="detail-gold" style="background:#D4A017;">
               Gold
               <div class="layer-label">Deduplicated union</div>
             </div>
             <span class="medallion-arrow">&rarr;</span>
-            <div class="medallion-layer" style="background:#7C8B9A; border-radius:0 8px 8px 0;">
+            <div class="medallion-layer expandable" data-detail="detail-platinum" style="background:#7C8B9A; border-radius:0 8px 8px 0;">
               Platinum
               <div class="layer-label">App-specific views</div>
             </div>
           </div>
-          <ul style="margin-top:1rem;">
-            <li>Each layer adds structure, governance, and trust</li>
-            <li>Raw snapshots are never modified — always reproducible</li>
-          </ul>
+          <div class="medallion-detail" id="detail-bronze">
+            <strong>Bronze:</strong> <code>emp_id, name, dept_code, fte_pct, grant_id, load_date</code><br />
+            Raw CSV or API snapshot — no transformations, no deduplication. Preserved exactly as received.
+          </div>
+          <div class="medallion-detail" id="detail-silver">
+            <strong>Silver:</strong> <code>person_id, full_name, department, effort_fraction, source_system, snapshot_date</code><br />
+            Column names mapped to the Unified Data Model. Types standardized. Source tracked.
+          </div>
+          <div class="medallion-detail" id="detail-gold">
+            <strong>Gold:</strong> One record per person with current effort allocation across all active grants.<br />
+            Duplicates resolved. Conflicts flagged. Provenance chain maintained.
+          </div>
+          <div class="medallion-detail" id="detail-platinum">
+            <strong>Platinum:</strong> PI effort dashboard view — filtered for active awards, joined with sponsor data, formatted for reporting.<br />
+            App-specific, access-controlled, ready for consumption.
+          </div>
         </section>
 
         <!-- UDM (from workshop deck) -->
@@ -181,26 +194,34 @@
           </p>
         </section>
 
+        <!-- LAKEHOUSE VS SWAMP TOGGLE — interactive -->
         <section>
-          <p class="slide-kicker">Lakehouse</p>
-          <h2>Well-organized data</h2>
-          <ul>
-            <li>Answer comes back fast, accurate, reproducible</li>
-            <li>You can trace where every number came from</li>
-            <li>The AI gets trustworthy context — output is grounded</li>
-            <li>Same query tomorrow gives the same answer</li>
-          </ul>
-        </section>
-
-        <section>
-          <p class="slide-kicker">Data swamp</p>
-          <h2>Poorly organized data</h2>
-          <ul>
-            <li>Duplicate records, missing fields, stale sources</li>
-            <li>No way to tell which version is authoritative</li>
-            <li>The AI blends conflicting information into a plausible-sounding answer</li>
-            <li>Different answer every time — and no way to tell which is right</li>
-          </ul>
+          <p class="slide-kicker">Same query, different infrastructure</p>
+          <h2>"What is PI Smith's current effort allocation?"</h2>
+          <div class="toggle-compare">
+            <div class="toggle-header">
+              <button class="toggle-btn active" data-panel="lakehouse">Lakehouse</button>
+              <button class="toggle-btn" data-panel="swamp">Data Swamp</button>
+            </div>
+            <div class="toggle-panel active" data-panel="lakehouse">
+              <ul>
+                <li><strong>Dr. Smith:</strong> 40% NSF-2345678, 35% NIH R01-AI123456, 25% DOE-SC0012345</li>
+                <li><strong>Source:</strong> Gold layer, snapshot 2026-04-01</li>
+                <li><strong>Reconciled:</strong> 2026-03-15 — matches HR and Grants Office</li>
+                <li>Same query tomorrow returns the same answer</li>
+              </ul>
+              <div class="slide-callout">Traceable, reproducible, auditable. Ready for AI context.</div>
+            </div>
+            <div class="toggle-panel" data-panel="swamp">
+              <ul>
+                <li>HR spreadsheet says 100% state-funded</li>
+                <li>Grants Office spreadsheet says 75% sponsored</li>
+                <li>Department chair's email says "about half and half"</li>
+                <li>No way to tell which version is current or authoritative</li>
+              </ul>
+              <div class="slide-callout" style="border-left-color:#ef4444; background:rgba(239,68,68,0.08);">AI blends these into a confident-sounding wrong answer.</div>
+            </div>
+          </div>
         </section>
 
         <!-- DATA GOVERNANCE AS PREREQUISITE (from workshop deck) -->
@@ -330,35 +351,48 @@
           <p class="slide-note">Once those outputs feed a queue, dashboard, report, or decision, governance applies to them too.</p>
         </section>
 
-        <!-- GOVERNANCE LENS (from existing module) -->
+        <!-- GOVERNANCE LENS — card flip interactive -->
         <section>
           <p class="slide-kicker">Governance lens</p>
           <h2>Every new context source should trigger these questions</h2>
-          <div class="slide-grid tight">
-            <article class="slide-card">
-              <h3>Provenance</h3>
-              <p>Where did this information come from, and can we prove it?</p>
-            </article>
-            <article class="slide-card">
-              <h3>Permissions</h3>
-              <p>Who is allowed to access it, transform it, or expose it?</p>
-            </article>
-            <article class="slide-card">
-              <h3>Quality</h3>
-              <p>How current, complete, reliable, and explainable is it?</p>
-            </article>
-            <article class="slide-card">
-              <h3>Sensitivity</h3>
-              <p>Does it contain private, regulated, or institutionally sensitive material?</p>
-            </article>
-            <article class="slide-card">
-              <h3>Stewardship</h3>
-              <p>Who owns refresh, correction, and validation over time?</p>
-            </article>
-            <article class="slide-card">
-              <h3>Human review</h3>
-              <p>When should the system answer, cite and defer, or escalate?</p>
-            </article>
+          <p style="font-size:0.8rem; color:var(--muted); margin-bottom:0.2rem;">Click a card to reveal the question.</p>
+          <div class="flip-grid">
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <div class="flip-card-front"><h3>Provenance</h3></div>
+                <div class="flip-card-back"><p>Where did this information come from, and can we prove it?</p></div>
+              </div>
+            </div>
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <div class="flip-card-front"><h3>Permissions</h3></div>
+                <div class="flip-card-back"><p>Who is allowed to access it, transform it, or expose it?</p></div>
+              </div>
+            </div>
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <div class="flip-card-front"><h3>Quality</h3></div>
+                <div class="flip-card-back"><p>How current, complete, reliable, and explainable is it?</p></div>
+              </div>
+            </div>
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <div class="flip-card-front"><h3>Sensitivity</h3></div>
+                <div class="flip-card-back"><p>Does it contain private, regulated, or institutionally sensitive material?</p></div>
+              </div>
+            </div>
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <div class="flip-card-front"><h3>Stewardship</h3></div>
+                <div class="flip-card-back"><p>Who owns refresh, correction, and validation over time?</p></div>
+              </div>
+            </div>
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <div class="flip-card-front"><h3>Human review</h3></div>
+                <div class="flip-card-back"><p>When should the system answer, cite and defer, or escalate?</p></div>
+              </div>
+            </div>
           </div>
         </section>
 
@@ -404,31 +438,52 @@
           </div>
         </section>
 
-        <!-- SOURCE MAP (from existing module) -->
+        <!-- SOURCE TRUST RATER — interactive -->
         <section>
           <p class="slide-kicker">Source map</p>
-          <h2>Show participants how source quality diverges inside one workflow</h2>
-          <div class="slide-grid tight">
-            <article class="slide-card accent">
+          <h2>Rate each source on the governance criteria</h2>
+          <p style="font-size:0.8rem; color:var(--muted); margin-bottom:0.2rem;">Click each criterion to cycle: neutral → green → yellow → red.</p>
+          <div class="trust-rater">
+            <div class="trust-source">
               <span class="slide-label">Current policy PDF</span>
               <h3>Likely authoritative</h3>
-              <p>Good candidate for grounding if the version is current and owned.</p>
-            </article>
-            <article class="slide-card">
+              <div class="trust-criteria">
+                <button class="traffic-btn">Authority</button>
+                <button class="traffic-btn">Currency</button>
+                <button class="traffic-btn">Permissions</button>
+                <button class="traffic-btn">Explainability</button>
+              </div>
+            </div>
+            <div class="trust-source">
               <span class="slide-label">Shared-drive forms</span>
               <h3>Possibly stale</h3>
-              <p>Useful reference, but dangerous if staff do not know which copy is current.</p>
-            </article>
-            <article class="slide-card">
+              <div class="trust-criteria">
+                <button class="traffic-btn">Authority</button>
+                <button class="traffic-btn">Currency</button>
+                <button class="traffic-btn">Permissions</button>
+                <button class="traffic-btn">Explainability</button>
+              </div>
+            </div>
+            <div class="trust-source">
               <span class="slide-label">Email guidance</span>
               <h3>Exception-heavy</h3>
-              <p>May reflect edge cases that should not be generalized into a default answer.</p>
-            </article>
-            <article class="slide-card">
+              <div class="trust-criteria">
+                <button class="traffic-btn">Authority</button>
+                <button class="traffic-btn">Currency</button>
+                <button class="traffic-btn">Permissions</button>
+                <button class="traffic-btn">Explainability</button>
+              </div>
+            </div>
+            <div class="trust-source">
               <span class="slide-label">Staff notes</span>
               <h3>Local practice</h3>
-              <p>Helpful for context, but often hard to defend as institutional policy.</p>
-            </article>
+              <div class="trust-criteria">
+                <button class="traffic-btn">Authority</button>
+                <button class="traffic-btn">Currency</button>
+                <button class="traffic-btn">Permissions</button>
+                <button class="traffic-btn">Explainability</button>
+              </div>
+            </div>
           </div>
         </section>
 
@@ -584,22 +639,18 @@
           </div>
         </section>
 
-        <!-- BRIDGE FORWARD -->
         <section data-background-color="#f1b300">
-          <p class="slide-kicker slide-kicker-dark">Bridge forward</p>
-          <h2 class="slide-dark">Session 3: Reproducibility, accuracy, and putting it to work</h2>
+          <p class="slide-kicker slide-kicker-dark">End of module</p>
+          <h2 class="slide-dark">Back to Sessions</h2>
           <p class="slide-dark">
-            Led by Barrie Robison — how do you measure accuracy,
-            ensure reproducibility, and decide what to deploy?
-          </p>
-          <p class="slide-dark">
-            <a href="slides-context-layers.html">Open Session 3 deck</a>
+            <a href="course-content.html" style="color:var(--ink); text-decoration:underline;">Return to session list</a>
           </p>
         </section>
       </div>
     </div>
 
     <script src="reveal/dist/reveal.js"></script>
+    <script src="slides-interactive.js"></script>
     <script>
       Reveal.initialize({
         hash: true,
