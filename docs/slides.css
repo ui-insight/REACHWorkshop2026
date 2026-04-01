@@ -1698,3 +1698,61 @@ body.slides-page {
 .domain-detail.visible {
   display: block;
 }
+
+/* --- UDM translation table --- */
+.udm-translate {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  max-width: 38rem;
+  margin: 0 auto;
+}
+.udm-row {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: 0.4rem;
+  background: rgba(25, 25, 25, 0.03);
+  border: 1px solid rgba(25, 25, 25, 0.08);
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+}
+.udm-row:hover,
+.udm-row.active {
+  background: rgba(241, 179, 0, 0.1);
+  border-color: var(--gold);
+}
+.udm-source {
+  flex: 1;
+  text-align: right;
+  font-size: 0.75rem;
+  color: #8B6914;
+}
+.udm-arrow {
+  flex-shrink: 0;
+  font-size: 1rem;
+  color: var(--muted);
+}
+.udm-target {
+  flex: 1;
+  text-align: left;
+  font-size: 0.75rem;
+  color: #2563eb;
+}
+.udm-detail {
+  display: none;
+  margin-top: 0.25rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: 0.4rem;
+  background: rgba(25, 25, 25, 0.04);
+  font-size: 0.65rem;
+  text-align: center;
+  line-height: 1.5;
+  max-width: 38rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+.udm-detail.visible {
+  display: block;
+}

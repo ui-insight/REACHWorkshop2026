@@ -115,37 +115,83 @@
           </div>
         </section>
 
-        <!-- 4. UDM DEEP DIVE (NEW) -->
+        <!-- 4a. WHAT IS A UDM? -->
         <section>
           <p class="slide-kicker">Shared standards</p>
-          <h2>The AI4RA Universal Data Model</h2>
-          <p style="font-size:0.75rem; color:var(--muted); margin-bottom:0.3rem;">Click a domain to see its tables.</p>
-          <div class="domain-grid" id="udm-domains">
-            <div class="domain-chip" data-domain="reference">Reference</div>
-            <div class="domain-chip" data-domain="core">Core</div>
-            <div class="domain-chip" data-domain="preaward">Pre-Award</div>
-            <div class="domain-chip" data-domain="postaward">Post-Award</div>
-            <div class="domain-chip" data-domain="financial">Financial</div>
-            <div class="domain-chip" data-domain="personnel">Personnel</div>
-            <div class="domain-chip" data-domain="faculty">Faculty Dev</div>
-            <div class="domain-chip" data-domain="operations">Operations</div>
-            <div class="domain-chip" data-domain="compliance">Compliance</div>
-            <div class="domain-chip" data-domain="system">System</div>
+          <h2>What is a Universal Data Model?</h2>
+          <div class="slide-grid">
+            <article class="slide-card">
+              <span class="slide-label">The problem</span>
+              <h3>Every institution speaks a different data language</h3>
+              <p>
+                VERAS calls it <code>AGENCY_NAME</code>. Banner calls it
+                <code>SPRIDEN_LAST_NAME</code>. Your spreadsheet calls it "Sponsor."
+                Same concept, different names, different formats, different systems.
+              </p>
+            </article>
+            <article class="slide-card accent">
+              <span class="slide-label">The solution</span>
+              <h3>A universal translator for research data</h3>
+              <p>
+                The UDM is a shared schema. A specification, not a database.
+                34 tables across 10 domains of research administration.
+                A predictable ontology: <code>PascalCase</code> tables,
+                <code>Snake_Case</code> columns, standard suffixes like
+                <code>_ID</code>, <code>_Date</code>, <code>_Status</code>, <code>_Amount</code>.
+              </p>
+            </article>
           </div>
-          <div id="domain-detail-reference" class="domain-detail"><strong>Reference:</strong> Organization, AllowedValues, BudgetCategory</div>
-          <div id="domain-detail-core" class="domain-detail"><strong>Core:</strong> Personnel, ContactDetails, Project</div>
-          <div id="domain-detail-preaward" class="domain-detail"><strong>Pre-Award:</strong> RFA, RFARequirement, Proposal, ProposalBudget</div>
-          <div id="domain-detail-postaward" class="domain-detail"><strong>Post-Award:</strong> Award, Modification, Terms, AwardBudgetPeriod, AwardBudget, Subaward, CostShare, AwardDeliverable</div>
-          <div id="domain-detail-financial" class="domain-detail"><strong>Financial:</strong> Fund, Account, FinanceCode, Transaction, IndirectRate, Invoice</div>
-          <div id="domain-detail-personnel" class="domain-detail"><strong>Personnel &amp; Effort:</strong> ProjectRole, Effort</div>
-          <div id="domain-detail-faculty" class="domain-detail"><strong>Faculty Development:</strong> ProjectCohort, CohortParticipation</div>
-          <div id="domain-detail-operations" class="domain-detail"><strong>Operations:</strong> ApplicationSystem, ServiceRequest</div>
-          <div id="domain-detail-compliance" class="domain-detail"><strong>Compliance:</strong> ComplianceRequirement, ConflictOfInterest</div>
-          <div id="domain-detail-system" class="domain-detail"><strong>System:</strong> Document, ActivityLog</div>
           <div class="slide-callout" style="margin-top:0.5rem;">
-            34 tables &middot; 10 domains &middot; 86 relationships &middot; database-agnostic &middot;
+            Same question, same schema, same answer. Regardless of which institution asks or which system stores the data.
+            <br />
+            <a href="https://ui-insight.github.io/AI4RA-UDM/" target="_blank" rel="noopener" style="color:var(--gold);">Explore the UDM dashboard</a>
+            &middot;
             <a href="https://github.com/ui-insight/AI4RA-UDM" target="_blank" rel="noopener" style="color:var(--gold);">View on GitHub</a>
           </div>
+        </section>
+
+        <!-- 4b. UDM TRANSLATION TABLE -->
+        <section>
+          <p class="slide-kicker">Shared standards</p>
+          <h2>How source data maps to the UDM</h2>
+          <p style="font-size:0.75rem; color:var(--muted); margin-bottom:0.3rem;">Click a row to see how the value is transformed.</p>
+          <div class="udm-translate" id="udm-translate">
+            <div class="udm-row" data-field="id">
+              <div class="udm-source"><code>BUSINESS_ASSOCIATE_ID</code></div>
+              <div class="udm-arrow">&rarr;</div>
+              <div class="udm-target"><code>Organization_ID</code></div>
+            </div>
+            <div class="udm-row" data-field="name">
+              <div class="udm-source"><code>AGENCY_NAME</code></div>
+              <div class="udm-arrow">&rarr;</div>
+              <div class="udm-target"><code>Organization_Name</code></div>
+            </div>
+            <div class="udm-row" data-field="type">
+              <div class="udm-source"><code>AGENCY_TYPE</code></div>
+              <div class="udm-arrow">&rarr;</div>
+              <div class="udm-target"><code>Organization_Type</code></div>
+            </div>
+            <div class="udm-row" data-field="uei">
+              <div class="udm-source"><code>DUNS</code></div>
+              <div class="udm-arrow">&rarr;</div>
+              <div class="udm-target"><code>UEI</code></div>
+            </div>
+          </div>
+          <div class="udm-detail" id="udm-detail-id">
+            <strong>Cast:</strong> <code>FLOAT &rarr; VARCHAR(50)</code>. The source stores IDs as floating-point numbers. The UDM expects a string.
+          </div>
+          <div class="udm-detail" id="udm-detail-name">
+            <strong>Direct rename.</strong> No transformation needed. The value passes through unchanged.
+          </div>
+          <div class="udm-detail" id="udm-detail-type">
+            <strong>CASE mapping:</strong> 'Federal' &rarr; Sponsor &middot; 'University' &rarr; Subrecipient &middot; 'UI Internal' &rarr; Department &middot; 'Private Industry' &rarr; Vendor
+          </div>
+          <div class="udm-detail" id="udm-detail-uei">
+            <strong>Best effort:</strong> VERAS stores the deprecated DUNS number. The UDM expects a 12-character UEI. Most values are NULL until the source system migrates.
+          </div>
+          <p class="slide-note" style="margin-top:0.4rem;">
+            Source: VERAS (University of Idaho legacy post-award system) &rarr; Silver.VERAS.Organization
+          </p>
         </section>
 
         <!-- 5. THREE APPROACHES: Warehouse vs Lake vs Lakehouse (REPLACE) -->
@@ -282,6 +328,34 @@
           </div>
         </section>
 
+        <!-- 7b. OPEN TECHNOLOGY & INFRASTRUCTURE PATTERNS -->
+        <section>
+          <p class="slide-kicker">Infrastructure</p>
+          <h2>Open technology, interchangeable parts</h2>
+          <div class="slide-grid">
+            <article class="slide-card">
+              <span class="slide-label">Technology choices</span>
+              <h3>Every layer is replaceable</h3>
+              <ul>
+                <li><strong>Ingestion:</strong> Airbyte, Fivetran, custom scripts, or Shipyard</li>
+                <li><strong>Storage:</strong> MinIO, AWS S3, PostgreSQL, or Snowflake</li>
+                <li><strong>Query:</strong> Trino, DuckDB, Spark, or Dremio</li>
+                <li><strong>Applications:</strong> Tableau, Power BI, LLM agents, or custom apps</li>
+              </ul>
+              <p class="slide-micro">Open table formats (Apache Iceberg) mean no vendor lock-in. Swap any component without rewriting the stack.</p>
+            </article>
+            <article class="slide-card accent">
+              <span class="slide-label">Implementation patterns</span>
+              <h3>Two paths to a governed data layer</h3>
+              <ul>
+                <li><strong>Medallion (recommended):</strong> Full Bronze &rarr; Silver &rarr; Gold &rarr; Platinum pipeline. Best for multi-source, multi-institution use cases.</li>
+                <li><strong>Direct database:</strong> Connect existing databases and map tables directly to UDM views. Faster to start, but harder to govern at scale.</li>
+              </ul>
+              <p class="slide-micro">The UDM schema is machine-readable JSON. LLMs can consume it to auto-suggest adapter mappings.</p>
+            </article>
+          </div>
+        </section>
+
         <!-- 8. MEDALLION LAYERS (ENHANCED) -->
         <section>
           <p class="slide-kicker">Architecture</p>
@@ -352,7 +426,36 @@
           </div>
         </section>
 
-        <!-- 10. LAKEHOUSE VS SWAMP header -->
+        <!-- 10. VIEWS AND DATA ACCESS -->
+        <section>
+          <p class="slide-kicker">Access</p>
+          <h2>From organized data to governed access</h2>
+          <div class="slide-grid">
+            <article class="slide-card">
+              <span class="slide-label">Views</span>
+              <h3>Creating a report is creating a view</h3>
+              <ul>
+                <li>A Platinum view is a SQL query saved in the catalog</li>
+                <li>Joins Gold tables, filters, aggregates, flattens</li>
+                <li>8 pre-built UDM views: Active Awards, Budget Comparison, Overdue Deliverables, and more</li>
+                <li>Need a new report? Write a view, assign access. Done.</li>
+              </ul>
+            </article>
+            <article class="slide-card accent">
+              <span class="slide-label">Access control</span>
+              <h3>Fine-grained, application-level RBAC</h3>
+              <ul>
+                <li>Each application gets a JWT identity with an <code>allowed_tables</code> list</li>
+                <li>Marina enforces table-level access on every request</li>
+                <li>No raw SQL accepted. Clients specify table name, filters, and limit.</li>
+                <li>Every query is audited: who asked, what table, when</li>
+              </ul>
+            </article>
+          </div>
+          <p class="slide-note">Internal services (Trino, MinIO, Polaris, Shipyard) are never exposed. Marina is the only door.</p>
+        </section>
+
+        <!-- 11. LAKEHOUSE VS SWAMP header -->
         <section>
           <p class="slide-kicker">Contrast</p>
           <h1>The data lakehouse vs the data swamp</h1>
@@ -759,19 +862,19 @@
         });
       })();
 
-      /* UDM domain grid expand */
+      /* UDM translation table */
       (function () {
-        var grid = document.getElementById('udm-domains');
-        if (!grid) return;
-        grid.querySelectorAll('.domain-chip').forEach(function (chip) {
-          chip.addEventListener('click', function () {
-            var domain = chip.dataset.domain;
-            var detail = document.getElementById('domain-detail-' + domain);
-            var wasActive = chip.classList.contains('active');
-            grid.querySelectorAll('.domain-chip').forEach(function (c) { c.classList.remove('active'); });
-            document.querySelectorAll('.domain-detail').forEach(function (d) { d.classList.remove('visible'); });
+        var table = document.getElementById('udm-translate');
+        if (!table) return;
+        table.querySelectorAll('.udm-row').forEach(function (row) {
+          row.addEventListener('click', function () {
+            var field = row.dataset.field;
+            var detail = document.getElementById('udm-detail-' + field);
+            var wasActive = row.classList.contains('active');
+            table.querySelectorAll('.udm-row').forEach(function (r) { r.classList.remove('active'); });
+            document.querySelectorAll('.udm-detail').forEach(function (d) { d.classList.remove('visible'); });
             if (!wasActive && detail) {
-              chip.classList.add('active');
+              row.classList.add('active');
               detail.classList.add('visible');
             }
           });
