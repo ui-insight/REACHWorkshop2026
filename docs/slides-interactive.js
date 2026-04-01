@@ -49,13 +49,19 @@
     var revealBtn = ex.querySelector('.sort-reveal');
     if (revealBtn) {
       revealBtn.addEventListener('click', function () {
-        ex.classList.add('revealed');
-        ex.querySelectorAll('.h-sentence').forEach(function (s) {
-          s.classList.remove('flagged');
-        });
-        revealBtn.textContent = 'Answers revealed';
-        revealBtn.style.pointerEvents = 'none';
-        revealBtn.style.opacity = '0.5';
+        if (ex.classList.contains('revealed')) {
+          ex.classList.remove('revealed');
+          ex.querySelectorAll('.h-sentence').forEach(function (s) {
+            s.classList.remove('flagged');
+          });
+          revealBtn.textContent = 'Reveal answers';
+        } else {
+          ex.classList.add('revealed');
+          ex.querySelectorAll('.h-sentence').forEach(function (s) {
+            s.classList.remove('flagged');
+          });
+          revealBtn.textContent = 'Try again';
+        }
       });
     }
   });

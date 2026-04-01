@@ -51,6 +51,26 @@
           </ul>
         </section>
 
+        <!-- FRAMEWORKS AND MODELS -->
+        <section>
+          <p class="slide-kicker">Frameworks</p>
+          <h2>Frameworks and Models</h2>
+          <div class="slide-grid tight">
+            <article class="slide-card">
+              <h3>Task progression</h3>
+              <p>Data science and AI tasks can mature into agentic workflows.</p>
+            </article>
+            <article class="slide-card">
+              <h3>Framing progression</h3>
+              <p>Prompt engineering evolves into intent engineering.</p>
+            </article>
+            <article class="slide-card dark">
+              <h3>Durable constant</h3>
+              <p>Maintain a strong data foundation across every workflow.</p>
+            </article>
+          </div>
+        </section>
+
         <!-- FAIR PRINCIPLES (from existing module) -->
         <section>
           <p class="slide-kicker">Part 2 · Data Science and AI</p>
@@ -88,56 +108,6 @@
           </div>
         </section>
 
-        <!-- AI/DS SPECTRUM — interactive -->
-        <section>
-          <p class="slide-kicker">Try it</p>
-          <h2>Where do these tasks sit?</h2>
-          <p style="font-size:0.8rem; color:var(--muted); margin-bottom:0.3rem;">Drag each slider. There are no wrong answers — the boundaries are blurry and shifting fast.</p>
-          <div class="spectrum-exercise">
-            <div class="spectrum-item">
-              <span class="spectrum-text">Summarize a 50-page sponsor policy</span>
-              <div class="spectrum-track">
-                <input type="range" min="0" max="100" value="50" class="spectrum-range" />
-              </div>
-            </div>
-            <div class="spectrum-item">
-              <span class="spectrum-text">Calculate time-to-award by department</span>
-              <div class="spectrum-track">
-                <input type="range" min="0" max="100" value="50" class="spectrum-range" />
-              </div>
-            </div>
-            <div class="spectrum-item">
-              <span class="spectrum-text">Extract PI names from unstructured emails</span>
-              <div class="spectrum-track">
-                <input type="range" min="0" max="100" value="50" class="spectrum-range" />
-              </div>
-            </div>
-            <div class="spectrum-item">
-              <span class="spectrum-text">Track proposal submission trends over 5 years</span>
-              <div class="spectrum-track">
-                <input type="range" min="0" max="100" value="50" class="spectrum-range" />
-              </div>
-            </div>
-            <div class="spectrum-item">
-              <span class="spectrum-text">Draft a facilities description from notes</span>
-              <div class="spectrum-track">
-                <input type="range" min="0" max="100" value="50" class="spectrum-range" />
-              </div>
-            </div>
-            <div class="spectrum-item">
-              <span class="spectrum-text">Classify incoming requests by sponsor type</span>
-              <div class="spectrum-track">
-                <input type="range" min="0" max="100" value="50" class="spectrum-range" />
-              </div>
-            </div>
-            <div class="spectrum-labels">
-              <span class="spectrum-label">Data Science</span>
-              <span class="spectrum-label spectrum-label-center">Both</span>
-              <span class="spectrum-label">AI</span>
-            </div>
-          </div>
-        </section>
-
         <!-- HOW LLMS WORK (from workshop deck) -->
         <section>
           <p class="slide-kicker">Demystifying</p>
@@ -161,9 +131,9 @@
         <section>
           <p class="slide-kicker">How it works</p>
           <h2>Build a sentence one token at a time</h2>
-          <p style="font-size:0.8rem; color:var(--muted);">Click the next word — each choice shifts what comes next. Just like an LLM.</p>
+          <p style="font-size:0.8rem; color:var(--muted);">Click the next word. Each choice shifts what comes next, just like an LLM.</p>
           <div class="token-builder" id="token-builder"></div>
-          <p class="slide-note">No right answer — only probabilities. This is why LLMs produce different output each time.</p>
+          <p class="slide-note">No right answer, only probabilities. This is why LLMs produce different output each time.</p>
         </section>
 
         <!-- ACCURACY (from workshop deck) -->
@@ -174,12 +144,12 @@
             <li>LLM output is probabilistic, not deterministic</li>
             <li>The same prompt can produce different answers each time</li>
             <li>Sounds confident even when wrong — "hallucination"</li>
-            <li>When accuracy matters: use data science. When flexibility matters: consider AI.</li>
+            <li>When auditability matters: use data science. When flexibility matters: consider AI.</li>
           </ul>
         </section>
 
         <!-- SPOT THE HALLUCINATION — interactive -->
-        <section>
+        <section style="text-align:center;">
           <p class="slide-kicker">Try it</p>
           <h2>Spot the hallucination</h2>
           <p style="font-size:0.8rem; color:var(--muted); margin-bottom:0.3rem;">This AI-generated paragraph contains three false statements. Click the sentences you think are wrong.</p>
@@ -212,12 +182,11 @@
         <section>
           <p class="slide-kicker">Human judgment</p>
           <h2>Where human expertise remains essential</h2>
+          <p style="font-weight:600; margin-bottom:2rem;">AI has no integrity, no professional ethics, no accountability. Someone with professional judgment must always own the final call.</p>
           <div class="slide-split">
             <div class="split-text" style="flex: 0 0 45%;">
               <div class="slide-callout" style="text-align:left;">
-                "A computer can never be held accountable; therefore a computer must never make a management decision." — IBM, 1979<br /><br />
-                AI has no integrity, no professional ethics, no accountability.
-                Someone with professional judgment must always own the final call.
+                "A computer can never be held accountable; therefore a computer must never make a management decision." — IBM, 1979
               </div>
             </div>
             <div class="split-text">
@@ -231,17 +200,6 @@
           </div>
         </section>
 
-        <!-- DECISION FRAMEWORK (from workshop deck) -->
-        <section>
-          <p class="slide-kicker">Decision framework</p>
-          <h2>Distinguishing AI tasks from data science tasks</h2>
-          <ul>
-            <li><strong>AI fits when:</strong> the task involves language, generation, extraction from unstructured data, or flexible reasoning</li>
-            <li><strong>Data science fits when:</strong> the task requires exact numbers, reproducible pipelines, statistical inference, or audit trails — use R, Python, SQL</li>
-            <li><strong>Both together:</strong> AI extracts and organizes; data science validates and reports</li>
-          </ul>
-        </section>
-
         <!-- THREE ZONES OF INTENT (from workshop deck) -->
         <section>
           <p class="slide-kicker">Three zones of intent</p>
@@ -252,9 +210,9 @@
             </div>
             <div class="split-text">
               <ul>
-                <li><strong>Process-critical</strong> — Every step must be auditable. AI may assist, but a human owns the reasoning.</li>
-                <li><strong>Human-in-the-loop</strong> — AI prepares, a qualified person reviews and decides.</li>
-                <li><strong>Output-driven</strong> — Only the result matters. AI can lead; validate with spot-checks.</li>
+                <li><strong>Human leads</strong> — Every step must be auditable. AI may assist, but a human owns the reasoning.</li>
+                <li><strong>Human in the loop</strong> — AI prepares, a qualified person reviews and decides.</li>
+                <li><strong>AI leads</strong> — Only the result matters. AI can lead; validate with spot-checks.</li>
               </ul>
             </div>
           </div>
@@ -265,9 +223,9 @@
           <p class="slide-kicker">In practice</p>
           <h2>RA examples for each zone</h2>
           <ul>
-            <li><strong>Process-critical:</strong> effort certifications, IRB/IACUC reviews, conflict-of-interest determinations, financial audits, research misconduct investigations</li>
-            <li><strong>Human-in-the-loop:</strong> pre-award budget reviews, compliance checks, subaward risk assessments, cost transfer justifications</li>
-            <li><strong>Output-driven:</strong> drafting facility descriptions, formatting budgets, generating biosketches, auto-populating sponsor forms</li>
+            <li><strong>Human leads:</strong> effort certifications, IRB/IACUC reviews, conflict-of-interest determinations, financial audits, research misconduct investigations</li>
+            <li><strong>Human in the loop:</strong> pre-award budget reviews, compliance checks, subaward risk assessments, cost transfer justifications</li>
+            <li><strong>AI leads:</strong> drafting facility descriptions, formatting budgets, generating biosketches, auto-populating sponsor forms</li>
           </ul>
         </section>
 
@@ -275,89 +233,50 @@
         <section>
           <p class="slide-kicker">Try it</p>
           <h2>Classify these RA tasks</h2>
-          <div class="task-sorter">
-            <div class="sort-item" data-answer="process">
-              <span class="sort-text">Effort certification review</span>
-              <div class="sort-buttons">
-                <button class="sort-btn" data-zone="process">Process</button>
-                <button class="sort-btn" data-zone="human">Human-in-loop</button>
-                <button class="sort-btn" data-zone="output">Output</button>
+          <p style="font-size:0.8rem; color:var(--muted); margin-bottom:0.3rem;">Drag each slider. What do you think?</p>
+          <div class="spectrum-exercise">
+            <div class="spectrum-item">
+              <span class="spectrum-text">Effort certification review</span>
+              <div class="spectrum-track">
+                <input type="range" min="0" max="100" value="50" class="spectrum-range" />
               </div>
             </div>
-            <div class="sort-item" data-answer="output">
-              <span class="sort-text">Drafting a facilities description</span>
-              <div class="sort-buttons">
-                <button class="sort-btn" data-zone="process">Process</button>
-                <button class="sort-btn" data-zone="human">Human-in-loop</button>
-                <button class="sort-btn" data-zone="output">Output</button>
+            <div class="spectrum-item">
+              <span class="spectrum-text">Drafting a facilities description</span>
+              <div class="spectrum-track">
+                <input type="range" min="0" max="100" value="50" class="spectrum-range" />
               </div>
             </div>
-            <div class="sort-item" data-answer="human">
-              <span class="sort-text">Pre-award budget review</span>
-              <div class="sort-buttons">
-                <button class="sort-btn" data-zone="process">Process</button>
-                <button class="sort-btn" data-zone="human">Human-in-loop</button>
-                <button class="sort-btn" data-zone="output">Output</button>
+            <div class="spectrum-item">
+              <span class="spectrum-text">Pre-award budget review</span>
+              <div class="spectrum-track">
+                <input type="range" min="0" max="100" value="50" class="spectrum-range" />
               </div>
             </div>
-            <div class="sort-item" data-answer="process">
-              <span class="sort-text">IRB protocol compliance check</span>
-              <div class="sort-buttons">
-                <button class="sort-btn" data-zone="process">Process</button>
-                <button class="sort-btn" data-zone="human">Human-in-loop</button>
-                <button class="sort-btn" data-zone="output">Output</button>
+            <div class="spectrum-item">
+              <span class="spectrum-text">IRB protocol compliance check</span>
+              <div class="spectrum-track">
+                <input type="range" min="0" max="100" value="50" class="spectrum-range" />
               </div>
             </div>
-            <div class="sort-item" data-answer="output">
-              <span class="sort-text">Generating a biosketch draft</span>
-              <div class="sort-buttons">
-                <button class="sort-btn" data-zone="process">Process</button>
-                <button class="sort-btn" data-zone="human">Human-in-loop</button>
-                <button class="sort-btn" data-zone="output">Output</button>
+            <div class="spectrum-item">
+              <span class="spectrum-text">Generating a biosketch draft</span>
+              <div class="spectrum-track">
+                <input type="range" min="0" max="100" value="50" class="spectrum-range" />
               </div>
             </div>
-            <div class="sort-item" data-answer="human">
-              <span class="sort-text">Subaward risk assessment</span>
-              <div class="sort-buttons">
-                <button class="sort-btn" data-zone="process">Process</button>
-                <button class="sort-btn" data-zone="human">Human-in-loop</button>
-                <button class="sort-btn" data-zone="output">Output</button>
+            <div class="spectrum-item">
+              <span class="spectrum-text">Subaward risk assessment</span>
+              <div class="spectrum-track">
+                <input type="range" min="0" max="100" value="50" class="spectrum-range" />
               </div>
             </div>
-            <button class="sort-reveal">Reveal answers</button>
+            <div class="spectrum-labels">
+              <span class="spectrum-label">Human Leads</span>
+              <span class="spectrum-label spectrum-label-center">Human in the Loop</span>
+              <span class="spectrum-label">AI Leads</span>
+            </div>
           </div>
-        </section>
-
-        <!-- FRAMEWORKS AND MODELS (from existing module) -->
-        <section>
-          <p class="slide-kicker">Part 5 · Frameworks</p>
-          <h2>Frameworks and Models</h2>
-          <div class="slide-grid tight">
-            <article class="slide-card">
-              <h3>Task progression</h3>
-              <p>Data science and AI tasks can mature into agentic workflows.</p>
-            </article>
-            <article class="slide-card">
-              <h3>Framing progression</h3>
-              <p>Prompt engineering evolves into intent engineering.</p>
-            </article>
-            <article class="slide-card dark">
-              <h3>Durable constant</h3>
-              <p>Maintain a strong data foundation across every workflow.</p>
-            </article>
-          </div>
-        </section>
-
-        <!-- LEARNING OBJECTIVES (from workshop deck) -->
-        <section>
-          <p class="slide-kicker">Learning objectives</p>
-          <h2>What participants should leave able to do</h2>
-          <ul>
-            <li>Apply prompt engineering to improve AI output quality and consistency</li>
-            <li>Break complex RA tasks into AI-manageable components with review points</li>
-            <li>Develop AI-assisted workflows for common research administration processes</li>
-            <li>Evaluate which tasks are suitable for AI at their own institutions</li>
-          </ul>
         </section>
 
         <!-- CONTEXT WINDOW / FOUR DISCIPLINES -->
@@ -418,18 +337,6 @@
           <div class="slide-callout" style="margin-top:0.5rem;">
             Every AI model has a context window — a fixed limit on how much it can read at once. All four disciplines compete for that space. Getting the balance right is the skill.
           </div>
-        </section>
-
-        <!-- PROMPT ENGINEERING -->
-        <section>
-          <p class="slide-kicker">Prompt engineering</p>
-          <h2>Structuring requests for reproducible output</h2>
-          <ul>
-            <li>Be specific about the task, role, audience, and output format</li>
-            <li>Provide examples of what good output looks like</li>
-            <li>Use structured output (JSON, tables, templates) to constrain responses</li>
-            <li>Layer context deliberately — system instructions, task prompts, reference material</li>
-          </ul>
         </section>
 
         <!-- PROMPTULUS LIVE DEMO -->
