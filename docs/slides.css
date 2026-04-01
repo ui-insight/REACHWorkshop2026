@@ -332,11 +332,11 @@ body.slides-page {
 }
 
 .slide-split.img-wide .split-img {
-  flex: 0 0 60%;
+  flex: 0 0 65%;
 }
 
 .reveal .slide-split.img-wide .split-img img {
-  max-height: 18em;
+  max-height: 24em;
 }
 
 .character-grid {
@@ -1571,4 +1571,130 @@ body.slides-page {
   line-height: 1.4 !important;
   color: var(--ink) !important;
   margin: 0 !important;
+}
+
+/* --- 4-column flip grid (lakehouse capabilities) --- */
+.flip-grid-4col {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.4rem;
+  margin-top: 0.5rem;
+}
+.flip-grid-4col .flip-card { height: 5rem; }
+
+/* --- Pipeline flow diagram --- */
+.pipeline-flow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+.pipeline-node {
+  padding: 0.35rem 1rem;
+  border-radius: 8px;
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.75rem;
+  text-align: center;
+  min-width: 14rem;
+}
+.pipeline-arrow {
+  font-size: 1rem;
+  color: var(--muted);
+  line-height: 1.1;
+}
+.pipeline-legend {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  text-align: left;
+  font-size: 0.65rem;
+}
+.pipeline-legend-item {
+  padding: 0.3rem 0.6rem;
+  border-radius: 0.3rem;
+  background: rgba(25, 25, 25, 0.04);
+  border-left: 3px solid var(--gold);
+}
+.pipeline-legend-item strong {
+  display: block;
+  font-size: 0.7rem;
+}
+
+/* --- Level cards (AI assistance tiers) --- */
+.level-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  max-width: 42rem;
+  margin: 0.5rem auto 0;
+}
+.level-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.8rem;
+  padding: 0.5rem 0.8rem;
+  border-radius: 0.5rem;
+  border: 1px solid rgba(25, 25, 25, 0.1);
+  background: rgba(25, 25, 25, 0.03);
+  text-align: left;
+}
+.level-number {
+  flex-shrink: 0;
+  width: 1.8rem;
+  height: 1.8rem;
+  border-radius: 50%;
+  background: var(--gold);
+  color: #fff;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+}
+.level-card h3 {
+  font-size: 0.8rem !important;
+  margin: 0 0 0.15rem 0 !important;
+}
+.level-card p {
+  font-size: 0.7rem !important;
+  margin: 0 !important;
+  color: var(--muted) !important;
+  line-height: 1.4 !important;
+}
+
+/* --- Domain grid (UDM) --- */
+.domain-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.3rem;
+  margin-top: 0.3rem;
+}
+.domain-chip {
+  padding: 0.3rem 0.4rem;
+  border-radius: 0.3rem;
+  background: rgba(241, 179, 0, 0.1);
+  border: 1px solid rgba(241, 179, 0, 0.25);
+  font-size: 0.6rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+}
+.domain-chip:hover,
+.domain-chip.active {
+  background: rgba(241, 179, 0, 0.25);
+  border-color: var(--gold);
+}
+.domain-detail {
+  display: none;
+  margin-top: 0.4rem;
+  padding: 0.4rem 0.6rem;
+  border-radius: 0.4rem;
+  background: rgba(25, 25, 25, 0.04);
+  font-size: 0.6rem;
+  text-align: left;
+  line-height: 1.5;
+}
+.domain-detail.visible {
+  display: block;
 }
