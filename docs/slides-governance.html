@@ -124,29 +124,42 @@
               <span class="slide-label">The problem</span>
               <h3>Every institution speaks a different data language</h3>
               <p>
-                VERAS calls it <code>AGENCY_NAME</code>. Banner calls it
-                <code>SPRIDEN_LAST_NAME</code>. Your spreadsheet calls it "Sponsor."
-                Same concept, different names, different formats, different systems.
+                Your post-award system calls it <code>AGENCY_NAME</code>. Your ERP
+                calls it <code>VENDOR_DESC</code>. Your spreadsheet calls it "Sponsor."
+                Every system stores the same concept differently — and every integration
+                has to reconcile them from scratch.
               </p>
             </article>
             <article class="slide-card accent">
               <span class="slide-label">The solution</span>
-              <h3>A universal translator for research data</h3>
+              <h3>A shared vocabulary across institutions</h3>
               <p>
-                The UDM is a shared schema. A specification, not a database.
-                34 tables across 10 domains of research administration.
-                A predictable ontology: <code>PascalCase</code> tables,
-                <code>Snake_Case</code> columns, standard suffixes like
-                <code>_ID</code>, <code>_Date</code>, <code>_Status</code>, <code>_Amount</code>.
+                A UDM is a specification, not a database. It defines a common set
+                of tables and columns so that every institution's data can be
+                translated into one shared language. Ask the same question at any
+                institution, get a comparable answer.
               </p>
             </article>
           </div>
-          <div class="slide-callout" style="margin-top:0.5rem;">
-            Same question, same schema, same answer. Regardless of which institution asks or which system stores the data.
-            <br />
-            <a href="https://ui-insight.github.io/AI4RA-UDM/" target="_blank" rel="noopener" style="color:var(--gold);">Explore the UDM dashboard</a>
-            &middot;
-            <a href="https://github.com/ui-insight/AI4RA-UDM" target="_blank" rel="noopener" style="color:var(--gold);">View on GitHub</a>
+          <div class="slide-grid" style="margin-top:0.4rem;">
+            <article class="slide-card">
+              <span class="slide-label">Why it matters</span>
+              <ul>
+                <li>Cross-institutional comparison and benchmarking become possible</li>
+                <li>AI tools learn one schema instead of one per institution</li>
+                <li>Applications built on the UDM work at every institution that adopts it</li>
+                <li>Get your data into UDM shape once, and the entire tool ecosystem opens up</li>
+              </ul>
+            </article>
+            <article class="slide-card">
+              <span class="slide-label">How it works</span>
+              <ul>
+                <li>A specification — it defines the shape, not where data lives</li>
+                <li>Institutions keep their own systems and translate into the shared schema</li>
+                <li>Map each source once to the UDM instead of building N-to-N integrations</li>
+                <li>New reports and dashboards come from the shared layer, not new plumbing</li>
+              </ul>
+            </article>
           </div>
         </section>
 
@@ -235,6 +248,14 @@
               <div class="slide-callout">The architecture the GRANTED project chose for university research data.</div>
             </div>
           </div>
+        </section>
+
+        <!-- 5b. DATA ARCHITECTURES COMPARISON -->
+        <section>
+          <p class="slide-kicker">Infrastructure</p>
+          <h2>Four patterns for institutional data</h2>
+          <img src="img/diagrams/data-architectures.png" alt="Data Warehouse vs Data Lake vs Data Lakehouse vs Data Mesh" style="max-height:420px; border-radius:8px;" />
+          <p class="slide-note">The lakehouse combines the governance of a warehouse with the flexibility of a lake.</p>
         </section>
 
         <!-- 6. EIGHT CAPABILITIES (NEW) -->
@@ -353,51 +374,6 @@
               </ul>
               <p class="slide-micro">The UDM schema is machine-readable JSON. LLMs can consume it to auto-suggest adapter mappings.</p>
             </article>
-          </div>
-        </section>
-
-        <!-- 8. MEDALLION LAYERS (ENHANCED) -->
-        <section>
-          <p class="slide-kicker">Architecture</p>
-          <h2>The medallion layers</h2>
-          <p style="font-size:0.75rem; color:var(--muted); margin-bottom:0.3rem;">Click a layer to see how data looks at that stage.</p>
-          <div class="medallion-diagram">
-            <div class="medallion-layer expandable" data-detail="detail-bronze" style="background:#8B6914; border-radius:8px 0 0 8px;">
-              Bronze
-              <div class="layer-label">Raw data as received</div>
-            </div>
-            <span class="medallion-arrow">&rarr;</span>
-            <div class="medallion-layer expandable" data-detail="detail-silver" style="background:#9CA3AF;">
-              Silver
-              <div class="layer-label">Mapped to UDM</div>
-            </div>
-            <span class="medallion-arrow">&rarr;</span>
-            <div class="medallion-layer expandable" data-detail="detail-gold" style="background:#D4A017;">
-              Gold
-              <div class="layer-label">Deduplicated union</div>
-            </div>
-            <span class="medallion-arrow">&rarr;</span>
-            <div class="medallion-layer expandable" data-detail="detail-platinum" style="background:#7C8B9A; border-radius:0 8px 8px 0;">
-              Platinum
-              <div class="layer-label">App-specific views</div>
-            </div>
-          </div>
-          <div class="medallion-detail" id="detail-bronze">
-            <strong>Bronze:</strong> <code>BUSINESS_ASSOCIATE_ID, AGENCY_NAME, AGENCY_TYPE, DUNS, _ingested_at</code><br />
-            Raw API snapshot or CSV. No transformations, no deduplication. Every row stamped with <code>_ingested_at</code> timestamp. Stored as Iceberg tables in MinIO. Retains all historical records including soft-deleted rows.
-          </div>
-          <div class="medallion-detail" id="detail-silver">
-            <strong>Silver:</strong> <code>Organization_ID, Organization_Name, Organization_Type, UEI, _updated_at, _deleted</code><br />
-            Per-source translation to UDM. One view per source per table. CASE WHEN maps source values to UDM enums. Adds system columns (<code>_updated_at</code>, <code>_deleted</code>, <code>mapping_mode</code>). Never joins across sources.
-          </div>
-          <div class="medallion-detail" id="detail-gold">
-            <strong>Gold:</strong> UNION ALL across all Silver sources for each UDM table. Deduplicated by primary key using source priority + recency. Soft-deleted rows filtered out. Auto-generated by Shipyard when an adapter is deployed.<br />
-            <code>SELECT Organization_ID, Organization_Name, ... FROM Silver.VERAS.Organization UNION ALL Silver.Banner.Organization</code>
-          </div>
-          <div class="medallion-detail" id="detail-platinum">
-            <strong>Platinum:</strong> Application-specific views with joins, aggregations, and filters.<br />
-            <code>SELECT s.Subaward_ID, o.Organization_Name FROM Gold.UDM.Subaward s JOIN Gold.UDM.Organization o ON ...</code><br />
-            Access-controlled per application. Created through the Shipyard catalog UI.
           </div>
         </section>
 
@@ -786,45 +762,7 @@
           </p>
         </section>
 
-        <!-- 21. DATA LAKEHOUSE DEMO (NEW) -->
-        <section>
-          <p class="slide-kicker">Live demo</p>
-          <h2>Data lakehouse demo</h2>
-          <div class="slide-grid">
-            <article class="slide-card">
-              <span class="slide-label">Shipyard</span>
-              <h3>Admin UI and sync engine</h3>
-              <ul>
-                <li>Register a data source</li>
-                <li>Run a sync job</li>
-                <li>Build an adapter with AI-assisted field mapping</li>
-                <li>Deploy and see Silver/Gold views auto-generate</li>
-              </ul>
-            </article>
-            <article class="slide-card accent">
-              <span class="slide-label">Marina</span>
-              <h3>Governed API gateway</h3>
-              <ul>
-                <li>Authenticate with JWT</li>
-                <li>Query Platinum views by table name</li>
-                <li>See query auditing and rate limiting in action</li>
-                <li>The only externally exposed service</li>
-              </ul>
-            </article>
-          </div>
-          <p class="slide-note">If time permits</p>
-        </section>
-
-        <!-- 22. CONTINUE THE CONVERSATION -->
-        <section>
-          <p class="slide-kicker">Continue the conversation</p>
-          <h2>REACH sessions that extend these ideas</h2>
-          <p style="margin-top:1rem; font-size:1rem;">
-            <a href="at-reach.html" style="color:var(--gold); text-decoration:underline; font-weight:600;">View all complementary sessions &rarr;</a>
-          </p>
-        </section>
-
-        <!-- 23. END OF MODULE -->
+        <!-- END OF MODULE -->
         <section data-background-color="#f1b300">
           <p class="slide-kicker slide-kicker-dark">End of module</p>
           <h2 class="slide-dark">Back to Sessions</h2>
