@@ -269,3 +269,62 @@ body.slides-page {
     grid-template-columns: 1fr;
   }
 }
+
+.pillar-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.9rem;
+  margin-top: 0.9rem;
+}
+
+.process-flow {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  flex-wrap: wrap;
+  margin: 1rem 0 0.85rem;
+}
+
+.process-flow.compact {
+  margin-top: 0.9rem;
+}
+
+.flow-node {
+  padding: 0.45rem 0.75rem;
+  border-radius: 999px;
+  background: rgba(25, 25, 25, 0.06);
+  border: 1px solid rgba(25, 25, 25, 0.14);
+  color: var(--ink);
+  font-size: 0.92rem;
+  font-weight: 700;
+}
+
+.flow-arrow {
+  color: #9a7300;
+  font-size: 1rem;
+  font-weight: 800;
+}
+
+.icon-strip {
+  display: flex;
+  gap: 0.65rem;
+  margin-top: 0.8rem;
+}
+
+.icon-strip span {
+  width: 2.35rem;
+  height: 2.35rem;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(241, 179, 0, 0.14);
+  border: 1px solid rgba(241, 179, 0, 0.32);
+  font-size: 1.05rem;
+}
+
+@media (max-width: 720px) {
+  .pillar-grid {
+    grid-template-columns: 1fr;
+  }
+}
