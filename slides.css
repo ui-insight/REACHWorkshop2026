@@ -323,8 +323,23 @@ body.slides-page {
   font-size: 1.05rem;
 }
 
+.community-card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.community-card {
+  min-height: 12rem;
+}
+
 @media (max-width: 720px) {
   .pillar-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .community-card-grid {
     grid-template-columns: 1fr;
   }
 }
