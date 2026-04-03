@@ -111,19 +111,24 @@ body.slides-page {
 }
 
 .section-heading-with-logo {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
+  display: block;
 }
 
 .section-heading-with-logo h2 {
   margin-bottom: 0;
+  max-width: calc(100% - 8.5rem);
+}
+
+.logo-corner-slide {
+  position: relative;
 }
 
 .section-logo {
-  width: 5.5rem;
-  max-width: 18%;
+  position: absolute;
+  top: 0.2rem;
+  right: 0;
+  width: 7rem;
+  max-width: 22%;
   height: auto;
   object-fit: contain;
 }
@@ -393,13 +398,17 @@ body.slides-page {
   }
 
   .section-heading-with-logo {
-    flex-direction: column;
-    align-items: flex-start;
+    display: block;
+  }
+
+  .section-heading-with-logo h2 {
+    max-width: calc(100% - 6rem);
   }
 
   .section-logo {
-    width: 4.2rem;
-    max-width: none;
+    top: 0.1rem;
+    width: 5.2rem;
+    max-width: 30%;
   }
 }
 
@@ -492,14 +501,14 @@ body.slides-page {
 
 .community-card-icon-image {
   margin-top: auto;
-  width: 4.5rem;
+  width: 5.8rem;
   height: auto;
   object-fit: contain;
 }
 
 .community-card-icon {
   margin-top: auto;
-  font-size: 2.5rem;
+  font-size: 3.2rem;
   line-height: 1;
 }
 
