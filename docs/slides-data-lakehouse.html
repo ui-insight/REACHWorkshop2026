@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f1b300" />
+    <title>Data Lakehouse and Organization | AI4RA Workshop</title>
+    <meta
+      name="description"
+      content="Slide deck: The data lakehouse and data organization. Led by Nathan Layman."
+    />
+    <link rel="stylesheet" href="reveal/dist/reveal.css" />
+    <link rel="stylesheet" href="reveal/dist/theme/white.css" />
+    <link rel="stylesheet" href="slides.css" />
+  </head>
+  <body class="slides-page">
+    <div class="slides-home">
+      <a href="course-content.html">Back to Sessions</a>
+    </div>
+
+    <div class="reveal">
+      <div class="slides">
+
+        <!-- 1. TITLE -->
+        <section class="title-slide" data-background-color="#f1b300">
+          <p class="slide-kicker slide-kicker-dark">AI4RA Workshop</p>
+          <h1>The data lakehouse and data organization</h1>
+          <img src="img/presenters/nathan-layman.jpeg" alt="Nathan Layman" style="width:120px; height:120px; border-radius:50%; object-fit:cover; border:3px solid #fff; margin:0.75rem auto 0;" />
+          <p class="slide-lede slide-dark">Led by Nathan Layman</p>
+        </section>
+
+        <!-- 2. QUIZ: What is the most important model? -->
+        <section>
+          <p class="slide-kicker">Workshop thesis</p>
+          <h1>What is the most important model?</h1>
+          <div class="quiz-options" id="quiz-model" style="margin-top:1rem;">
+            <label class="quiz-option">
+              <span class="quiz-letter">A</span>
+              <span class="quiz-text">Large Language Model</span>
+              <span class="quiz-desc">A neural network trained on massive text corpora to predict and generate human-like language.</span>
+            </label>
+            <label class="quiz-option">
+              <span class="quiz-letter">B</span>
+              <span class="quiz-text">Generative Pre-trained Transformer</span>
+              <span class="quiz-desc">The architecture behind GPT. Uses self-attention to process sequences and generate text token by token.</span>
+            </label>
+            <label class="quiz-option">
+              <span class="quiz-letter">C</span>
+              <span class="quiz-text">Convolutional Neural Network (CNN)</span>
+              <span class="quiz-desc">Specialized for image and spatial data. Uses filters to detect patterns like edges, shapes, and objects in images.</span>
+            </label>
+            <label class="quiz-option">
+              <span class="quiz-letter">D</span>
+              <span class="quiz-text">Generative Adversarial Network (GAN)</span>
+              <span class="quiz-desc">Two neural networks compete. One generates fakes, the other detects them, producing increasingly realistic synthetic data.</span>
+            </label>
+            <label class="quiz-option">
+              <span class="quiz-letter">E</span>
+              <span class="quiz-text">Diffusion Model (DALL-E, Stable Diffusion)</span>
+              <span class="quiz-desc">Learns to generate images by gradually removing noise. The engine behind modern AI image and video generation.</span>
+            </label>
+            <label class="quiz-option">
+              <span class="quiz-letter">F</span>
+              <span class="quiz-text">Recurrent Neural Network (RNN/LSTM)</span>
+              <span class="quiz-desc">Processes sequences by maintaining memory of previous inputs. Used for time series, early language models, and speech recognition.</span>
+            </label>
+            <label class="quiz-option">
+              <span class="quiz-letter">G</span>
+              <span class="quiz-text">BERT / Encoder Model</span>
+              <span class="quiz-desc">Reads text bidirectionally to understand meaning and context. Used for classifying text, not generating it.</span>
+            </label>
+            <label class="quiz-option">
+              <span class="quiz-letter">H</span>
+              <span class="quiz-text">Reinforcement Learning (RL)</span>
+              <span class="quiz-desc">Learns by trial and error with rewards. Powers game-playing AI like AlphaGo and robotic control systems.</span>
+            </label>
+            <label class="quiz-option">
+              <span class="quiz-letter">I</span>
+              <span class="quiz-text">Random Forest / Decision Tree</span>
+              <span class="quiz-desc">Classic machine learning. Builds decision rules from data features. Very common in research for classification and prediction.</span>
+            </label>
+            <label class="quiz-option">
+              <span class="quiz-letter">J</span>
+              <span class="quiz-text">Support Vector Machine (SVM)</span>
+              <span class="quiz-desc">Finds the optimal boundary between categories in data. A traditional classification workhorse in science and engineering.</span>
+            </label>
+            <label class="quiz-option">
+              <span class="quiz-letter">K</span>
+              <span class="quiz-text">Variational Autoencoder (VAE)</span>
+              <span class="quiz-desc">Compresses data into a compact representation and generates new samples from it. Used in drug discovery and anomaly detection.</span>
+            </label>
+            <label class="quiz-option">
+              <span class="quiz-letter">L</span>
+              <span class="quiz-text">Graph Neural Network (GNN)</span>
+              <span class="quiz-desc">Learns from relationships between entities. Used for social networks, molecular structures, and knowledge graphs.</span>
+            </label>
+          </div>
+        </section>
+
+        <!-- 3. WRONG! Your data model -->
+        <section>
+          <p class="slide-kicker">The answer</p>
+          <h1 style="color:#ef4444; font-size:5rem;">Wrong!</h1>
+          <div class="slide-split">
+            <div class="split-img">
+              <img src="img/diagrams/data-model.png" alt="Data model diagram" />
+            </div>
+            <div class="split-text">
+              <p class="slide-quote" style="margin-top:0;">The most important model is <strong>your data model.</strong></p>
+              <p style="margin-top:0.6rem; font-size:1rem; color:var(--muted);">
+                AI models come and go, but the way an institution organizes, governs,
+                and shares its data determines whether any of them are useful.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- 4a. WHAT IS A UDM? -->
+        <section>
+          <p class="slide-kicker">Shared standards</p>
+          <h2>What is a Universal Data Model?</h2>
+          <div class="slide-grid">
+            <article class="slide-card">
+              <span class="slide-label">The problem</span>
+              <h3>Every institution speaks a different data language</h3>
+              <p>
+                Your post-award system calls it <code>AGENCY_NAME</code>. Your ERP
+                calls it <code>VENDOR_DESC</code>. Your spreadsheet calls it "Sponsor."
+                Every system stores the same concept differently — and every integration
+                has to reconcile them from scratch.
+              </p>
+            </article>
+            <article class="slide-card accent">
+              <span class="slide-label">The solution</span>
+              <h3>A shared vocabulary across institutions</h3>
+              <p>
+                A UDM is a specification, not a database. It defines a common set
+                of tables and columns so that every institution's data can be
+                translated into one shared language. Ask the same question at any
+                institution, get a comparable answer.
+              </p>
+            </article>
+          </div>
+          <div class="slide-grid" style="margin-top:0.4rem;">
+            <article class="slide-card">
+              <span class="slide-label">Why it matters</span>
+              <ul>
+                <li>Cross-institutional comparison and benchmarking become possible</li>
+                <li>AI tools learn one schema instead of one per institution</li>
+                <li>Applications built on the UDM work at every institution that adopts it</li>
+                <li>Get your data into UDM shape once, and the entire tool ecosystem opens up</li>
+              </ul>
+            </article>
+            <article class="slide-card">
+              <span class="slide-label">How it works</span>
+              <ul>
+                <li>A specification — it defines the shape, not where data lives</li>
+                <li>Institutions keep their own systems and translate into the shared schema</li>
+                <li>Map each source once to the UDM instead of building N-to-N integrations</li>
+                <li>New reports and dashboards come from the shared layer, not new plumbing</li>
+              </ul>
+            </article>
+          </div>
+        </section>
+
+        <!-- 4b. UDM TRANSLATION TABLE -->
+        <section>
+          <p class="slide-kicker">Shared standards</p>
+          <h2>How source data maps to the UDM</h2>
+          <p style="font-size:0.75rem; color:var(--muted); margin-bottom:0.3rem;">Click a row to see how the value is transformed.</p>
+          <div class="udm-translate" id="udm-translate">
+            <div class="udm-row" data-field="id">
+              <div class="udm-source"><code>BUSINESS_ASSOCIATE_ID</code></div>
+              <div class="udm-arrow">&rarr;</div>
+              <div class="udm-target"><code>Organization_ID</code></div>
+            </div>
+            <div class="udm-row" data-field="name">
+              <div class="udm-source"><code>AGENCY_NAME</code></div>
+              <div class="udm-arrow">&rarr;</div>
+              <div class="udm-target"><code>Organization_Name</code></div>
+            </div>
+            <div class="udm-row" data-field="type">
+              <div class="udm-source"><code>AGENCY_TYPE</code></div>
+              <div class="udm-arrow">&rarr;</div>
+              <div class="udm-target"><code>Organization_Type</code></div>
+            </div>
+            <div class="udm-row" data-field="uei">
+              <div class="udm-source"><code>DUNS</code></div>
+              <div class="udm-arrow">&rarr;</div>
+              <div class="udm-target"><code>UEI</code></div>
+            </div>
+          </div>
+          <div class="udm-detail" id="udm-detail-id">
+            <strong>Cast:</strong> <code>FLOAT &rarr; VARCHAR(50)</code>. The source stores IDs as floating-point numbers. The UDM expects a string.
+          </div>
+          <div class="udm-detail" id="udm-detail-name">
+            <strong>Direct rename.</strong> No transformation needed. The value passes through unchanged.
+          </div>
+          <div class="udm-detail" id="udm-detail-type">
+            <strong>CASE mapping:</strong> 'Federal' &rarr; Sponsor &middot; 'University' &rarr; Subrecipient &middot; 'UI Internal' &rarr; Department &middot; 'Private Industry' &rarr; Vendor
+          </div>
+          <div class="udm-detail" id="udm-detail-uei">
+            <strong>Best effort:</strong> VERAS stores the deprecated DUNS number. The UDM expects a 12-character UEI. Most values are NULL until the source system migrates.
+          </div>
+          <p class="slide-note" style="margin-top:0.4rem;">
+            Source: VERAS (University of Idaho legacy post-award system) &rarr; Silver.VERAS.Organization
+          </p>
+        </section>
+
+        <!-- 5. THREE APPROACHES: Warehouse vs Lake vs Lakehouse (REPLACE) -->
+        <section>
+          <p class="slide-kicker">Infrastructure</p>
+          <h2>Three approaches to institutional data</h2>
+          <div class="toggle-compare">
+            <div class="toggle-header">
+              <button class="toggle-btn active" data-panel="warehouse">Warehouse</button>
+              <button class="toggle-btn" data-panel="lake">Data Lake</button>
+              <button class="toggle-btn" data-panel="lakehouse">Lakehouse</button>
+            </div>
+            <div class="toggle-panel active" data-panel="warehouse">
+              <ul>
+                <li><strong>Structured, governed, fast queries</strong></li>
+                <li>Pre-defined schemas enforce data quality</li>
+                <li>Great for reporting dashboards and compliance queries</li>
+                <li>Rigid schemas are expensive and slow to change</li>
+                <li>Cannot handle unstructured data (PDFs, images, JSON)</li>
+              </ul>
+              <div class="slide-callout">Best for: stable reporting needs with predictable schemas.</div>
+            </div>
+            <div class="toggle-panel" data-panel="lake">
+              <ul>
+                <li><strong>Flexible raw storage, any format, cheap</strong></li>
+                <li>Store everything first, decide structure later</li>
+                <li>Great for archiving raw files and ML training data</li>
+                <li>No schema enforcement or query optimization</li>
+                <li>Without governance, becomes a "data swamp"</li>
+              </ul>
+              <div class="slide-callout" style="border-left-color:#ef4444; background:rgba(239,68,68,0.08);">Risk: nobody knows what's in there or whether to trust it.</div>
+            </div>
+            <div class="toggle-panel" data-panel="lakehouse">
+              <ul>
+                <li><strong>Flexible storage + structured governance layers on top</strong></li>
+                <li>Open table formats (Iceberg) enable ACID transactions and schema evolution</li>
+                <li>Medallion architecture transforms raw data into governed views</li>
+                <li>Separation of storage and compute keeps costs down</li>
+                <li>Works for structured, semi-structured, and unstructured data</li>
+              </ul>
+              <div class="slide-callout">The architecture the GRANTED project chose for university research data.</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 5b. DATA ARCHITECTURES COMPARISON -->
+        <section>
+          <p class="slide-kicker">Infrastructure</p>
+          <h2>Four patterns for institutional data</h2>
+          <img src="img/diagrams/data-architectures.png" alt="Data Warehouse vs Data Lake vs Data Lakehouse vs Data Mesh" style="max-height:420px; border-radius:8px;" />
+          <p class="slide-note">The lakehouse combines the governance of a warehouse with the flexibility of a lake.</p>
+        </section>
+
+        <!-- 6. EIGHT CAPABILITIES (NEW) -->
+        <section>
+          <p class="slide-kicker">Why a lakehouse</p>
+          <h2>Eight capabilities of a data lakehouse</h2>
+          <p style="font-size:0.75rem; color:var(--muted); margin-bottom:0.2rem;">Click a card to reveal the key question.</p>
+          <div class="flip-grid-4col">
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <div class="flip-card-front"><h3>Trust &amp; Governance</h3></div>
+                <div class="flip-card-back"><p>Can you prove who changed what, when, and why?</p></div>
+              </div>
+            </div>
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <div class="flip-card-front"><h3>Data Quality</h3></div>
+                <div class="flip-card-back"><p>Are schemas enforced, anomalies detected, and freshness monitored?</p></div>
+              </div>
+            </div>
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <div class="flip-card-front"><h3>Reliability</h3></div>
+                <div class="flip-card-back"><p>Is there automatic failover, backup, and point-in-time recovery?</p></div>
+              </div>
+            </div>
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <div class="flip-card-front"><h3>Scalability</h3></div>
+                <div class="flip-card-back"><p>Can storage and compute scale independently as needs grow?</p></div>
+              </div>
+            </div>
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <div class="flip-card-front"><h3>Openness</h3></div>
+                <div class="flip-card-back"><p>Are formats open and engines interchangeable with no vendor lock-in?</p></div>
+              </div>
+            </div>
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <div class="flip-card-front"><h3>Multi-Modal</h3></div>
+                <div class="flip-card-back"><p>Can you handle structured, semi-structured, and unstructured data in one platform?</p></div>
+              </div>
+            </div>
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <div class="flip-card-front"><h3>Simplicity</h3></div>
+                <div class="flip-card-back"><p>Can a small team operate this without a dedicated platform engineering group?</p></div>
+              </div>
+            </div>
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <div class="flip-card-front"><h3>Cost Efficiency</h3></div>
+                <div class="flip-card-back"><p>Does it eliminate redundant copies and scale compute to actual workload?</p></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 7. ARCHITECTURE OVERVIEW (NEW) -->
+        <section>
+          <p class="slide-kicker">Architecture</p>
+          <h2>The GRANTED data lakehouse</h2>
+          <div class="slide-split">
+            <div class="split-text" style="flex: 0 0 50%;">
+              <div class="pipeline-flow">
+                <div class="pipeline-node" style="background:#555;">Institutional Sources (VERAS, Banner, TDX)</div>
+                <div class="pipeline-arrow">&darr;</div>
+                <div class="pipeline-node" style="background:#8B6914;">Shipyard Sync &rarr; MinIO (Bronze)</div>
+                <div class="pipeline-arrow">&darr;</div>
+                <div class="pipeline-node" style="background:#9CA3AF;">Trino &middot; Silver Views</div>
+                <div class="pipeline-arrow">&darr;</div>
+                <div class="pipeline-node" style="background:#D4A017; color:#191919;">Trino &middot; Gold Views (UDM)</div>
+                <div class="pipeline-arrow">&darr;</div>
+                <div class="pipeline-node" style="background:#7C8B9A;">Trino &middot; Platinum Views</div>
+                <div class="pipeline-arrow">&darr;</div>
+                <div class="pipeline-node" style="background:var(--gold); color:#191919;">Marina API Gateway</div>
+                <div class="pipeline-arrow">&darr;</div>
+                <div class="pipeline-node" style="background:#555;">Your Application</div>
+              </div>
+            </div>
+            <div class="split-text" style="flex: 1;">
+              <div class="pipeline-legend">
+                <div class="pipeline-legend-item"><strong>Shipyard</strong> Admin UI and sync engine. Manages sources, adapters, and the catalog.</div>
+                <div class="pipeline-legend-item"><strong>Marina</strong> API gateway. The only externally exposed service. JWT auth, rate limiting, query auditing.</div>
+                <div class="pipeline-legend-item"><strong>MinIO</strong> S3-compatible object storage. Stores Iceberg tables and unstructured files.</div>
+                <div class="pipeline-legend-item"><strong>Polaris</strong> Apache Iceberg REST catalog. Manages table metadata and namespaces.</div>
+                <div class="pipeline-legend-item"><strong>Trino</strong> Distributed SQL engine. Queries Iceberg tables across all medallion layers.</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 7b. OPEN TECHNOLOGY & INFRASTRUCTURE PATTERNS -->
+        <section>
+          <p class="slide-kicker">Infrastructure</p>
+          <h2>Open technology, interchangeable parts</h2>
+          <div class="slide-grid">
+            <article class="slide-card">
+              <span class="slide-label">Technology choices</span>
+              <h3>Every layer is replaceable</h3>
+              <ul>
+                <li><strong>Ingestion:</strong> Airbyte, Fivetran, custom scripts, or Shipyard</li>
+                <li><strong>Storage:</strong> MinIO, AWS S3, PostgreSQL, or Snowflake</li>
+                <li><strong>Query:</strong> Trino, DuckDB, Spark, or Dremio</li>
+                <li><strong>Applications:</strong> Tableau, Power BI, LLM agents, or custom apps</li>
+              </ul>
+              <p class="slide-micro">Open table formats (Apache Iceberg) mean no vendor lock-in. Swap any component without rewriting the stack.</p>
+            </article>
+            <article class="slide-card accent">
+              <span class="slide-label">Implementation patterns</span>
+              <h3>Two paths to a governed data layer</h3>
+              <ul>
+                <li><strong>Medallion (recommended):</strong> Full Bronze &rarr; Silver &rarr; Gold &rarr; Platinum pipeline. Best for multi-source, multi-institution use cases.</li>
+                <li><strong>Direct database:</strong> Connect existing databases and map tables directly to UDM views. Faster to start, but harder to govern at scale.</li>
+              </ul>
+              <p class="slide-micro">The UDM schema is machine-readable JSON. LLMs can consume it to auto-suggest adapter mappings.</p>
+            </article>
+          </div>
+        </section>
+
+        <!-- 9. FOLLOWING DATA THROUGH THE LAYERS (NEW) -->
+        <section>
+          <p class="slide-kicker">Worked example</p>
+          <h2>Following data through the layers</h2>
+          <p style="font-size:0.75rem; color:var(--muted); margin-bottom:0.3rem;">Tracing VERAS <code>AGENCY_TYPE</code> from source to application.</p>
+          <div class="slide-grid tight">
+            <article class="slide-card" style="border-left: 3px solid #8B6914;">
+              <span class="slide-label">Bronze</span>
+              <p><code>AGENCY_TYPE = 'Federal'</code><br />Raw, exactly as received from the VERAS API. No transformation.</p>
+            </article>
+            <article class="slide-card" style="border-left: 3px solid #9CA3AF;">
+              <span class="slide-label">Silver</span>
+              <p><code>Organization_Type = 'Sponsor'</code><br />CASE WHEN maps 'Federal' to UDM enum 'Sponsor'. Column renamed to UDM standard.</p>
+            </article>
+            <article class="slide-card" style="border-left: 3px solid #D4A017;">
+              <span class="slide-label">Gold</span>
+              <p>Same value, now part of <code>Gold.UDM.Organization</code>. If Banner also provides this org, dedup picks the higher-priority source.</p>
+            </article>
+            <article class="slide-card" style="border-left: 3px solid #7C8B9A;">
+              <span class="slide-label">Platinum</span>
+              <p>Joined with Award data: "All active awards from Federal sponsors." Flat, access-controlled, ready for a dashboard or AI workflow.</p>
+            </article>
+          </div>
+        </section>
+
+        <!-- 10. VIEWS AND DATA ACCESS -->
+        <section>
+          <p class="slide-kicker">Access</p>
+          <h2>From organized data to governed access</h2>
+          <div class="slide-grid">
+            <article class="slide-card">
+              <span class="slide-label">Views</span>
+              <h3>Creating a report is creating a view</h3>
+              <ul>
+                <li>A Platinum view is a SQL query saved in the catalog</li>
+                <li>Joins Gold tables, filters, aggregates, flattens</li>
+                <li>8 pre-built UDM views: Active Awards, Budget Comparison, Overdue Deliverables, and more</li>
+                <li>Need a new report? Write a view, assign access. Done.</li>
+              </ul>
+            </article>
+            <article class="slide-card accent">
+              <span class="slide-label">Access control</span>
+              <h3>Fine-grained, application-level RBAC</h3>
+              <ul>
+                <li>Each application gets a JWT identity with an <code>allowed_tables</code> list</li>
+                <li>Marina enforces table-level access on every request</li>
+                <li>No raw SQL accepted. Clients specify table name, filters, and limit.</li>
+                <li>Every query is audited: who asked, what table, when</li>
+              </ul>
+            </article>
+          </div>
+          <p class="slide-note">Internal services (Trino, MinIO, Polaris, Shipyard) are never exposed. Marina is the only door.</p>
+        </section>
+
+        <!-- 11. LAKEHOUSE VS SWAMP header -->
+        <section>
+          <p class="slide-kicker">Contrast</p>
+          <h1>The data lakehouse vs the data swamp</h1>
+          <p class="slide-lede" style="margin-top:1rem;">
+            Same query. Same task. Two very different outcomes.
+          </p>
+        </section>
+
+        <!-- 11. LAKEHOUSE VS SWAMP TOGGLE -->
+        <section>
+          <p class="slide-kicker">Same query, different infrastructure</p>
+          <h2>"What is PI Smith's current effort allocation?"</h2>
+          <div class="toggle-compare">
+            <div class="toggle-header">
+              <button class="toggle-btn active" data-panel="lakehouse2">Lakehouse</button>
+              <button class="toggle-btn" data-panel="swamp2">Data Swamp</button>
+            </div>
+            <div class="toggle-panel active" data-panel="lakehouse2">
+              <ul>
+                <li><strong>Dr. Smith:</strong> 40% NSF-2345678, 35% NIH R01-AI123456, 25% DOE-SC0012345</li>
+                <li><strong>Source:</strong> Gold layer, snapshot 2026-04-01</li>
+                <li><strong>Reconciled:</strong> 2026-03-15. Matches HR and Grants Office.</li>
+                <li>Same query tomorrow returns the same answer</li>
+              </ul>
+              <div class="slide-callout">Traceable, reproducible, auditable. Ready for AI context.</div>
+            </div>
+            <div class="toggle-panel" data-panel="swamp2">
+              <ul>
+                <li>HR spreadsheet says 100% state-funded</li>
+                <li>Grants Office spreadsheet says 75% sponsored</li>
+                <li>Department chair's email says "about half and half"</li>
+                <li>No way to tell which version is current or authoritative</li>
+              </ul>
+              <div class="slide-callout" style="border-left-color:#ef4444; background:rgba(239,68,68,0.08);">AI blends these into a confident-sounding wrong answer.</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 12. AI-ASSISTED DATA INGESTION (NEW) -->
+        <section>
+          <p class="slide-kicker">AI + Data</p>
+          <h2>AI-assisted data ingestion</h2>
+          <div class="slide-split">
+            <div class="split-text">
+              <ul>
+                <li>The hardest part of a lakehouse is <strong>mapping source data to the shared schema</strong></li>
+                <li>Shipyard uses LLM assistance to accelerate adapter creation</li>
+                <li>Three step types: <strong>Convert</strong> (change a value), <strong>Shape</strong> (change structure), <strong>Map</strong> (assign to UDM column)</li>
+                <li>Silver layer only: no business logic, only data standardization</li>
+              </ul>
+            </div>
+            <div class="split-text" style="flex: 0 0 40%;">
+              <div class="pipeline-flow" style="margin-top:0.5rem;">
+                <div class="pipeline-node" style="background:#8B6914; font-size:0.65rem;">Source Columns<br /><span style="font-weight:400; font-size:0.55rem;">AGENCY_TYPE, DUNS, ...</span></div>
+                <div class="pipeline-arrow">&darr;</div>
+                <div class="pipeline-node" style="background:var(--gold); color:#191919; font-size:0.65rem;">AI Adapter<br /><span style="font-weight:400; font-size:0.55rem;">Convert &middot; Shape &middot; Map</span></div>
+                <div class="pipeline-arrow">&darr;</div>
+                <div class="pipeline-node" style="background:#9CA3AF; font-size:0.65rem;">UDM Columns<br /><span style="font-weight:400; font-size:0.55rem;">Organization_Type, UEI, ...</span></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 13. THREE LEVELS OF AI ASSISTANCE (NEW) -->
+        <section>
+          <p class="slide-kicker">AI + Data</p>
+          <h2>Three levels of AI-assisted mapping</h2>
+          <div class="level-cards">
+            <div class="level-card">
+              <div class="level-number">1</div>
+              <div>
+                <h3>Suggest All</h3>
+                <p>LLM reads the Bronze schema and UDM schema, then generates a complete function list mapping every source column to its UDM target. "Show me what the full mapping should be."</p>
+              </div>
+            </div>
+            <div class="level-card">
+              <div class="level-number">2</div>
+              <div>
+                <h3>Fill Tree</h3>
+                <p>Given specific inputs and a target UDM column, LLM populates the Convert and Shape steps. "I know what goes where. Help me figure out how to transform it."</p>
+              </div>
+            </div>
+            <div class="level-card">
+              <div class="level-number">3</div>
+              <div>
+                <h3>Write SQL</h3>
+                <p>For complex transforms that exceed the tree builder, LLM writes DuckDB-compatible SQL expressions directly. "This is too complex for the visual editor. Write me the SQL."</p>
+              </div>
+            </div>
+          </div>
+          <div class="slide-callout" style="margin-top:0.6rem;">AI is a bonus, not integral. Every adapter works without AI configured.</div>
+        </section>
+
+        <!-- 14. DATA GOVERNANCE AS PREREQUISITE (KEEP + merge) -->
+        <section>
+          <p class="slide-kicker">Governance</p>
+          <h2>Data governance as prerequisite</h2>
+          <div class="slide-split">
+            <div class="split-img">
+              <img src="https://ai4ra.uidaho.edu/wp-content/uploads/2025/07/4Pillars.png" alt="Four pillars of data governance" />
+            </div>
+            <div class="split-text">
+              <ul>
+                <li>Provenance, permissions, and quality determine whether AI is safe to use</li>
+                <li>Ungoverned data + AI = confident-sounding wrong answers</li>
+                <li>Governance is not bureaucracy. It is the condition that makes automation safe</li>
+                <li>Better context is only useful if it is governed</li>
+                <li>Ungoverned context increases the error surface area, not just capability</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- 15. OBSERVABILITY (KEEP, refined) -->
+        <section>
+          <p class="slide-kicker">Observability</p>
+          <h2>Can you see what your data is doing?</h2>
+          <ul>
+            <li>Where did this data come from? (provenance)</li>
+            <li>When was it last updated? (freshness)</li>
+            <li>Who is allowed to access it? (permissions)</li>
+            <li>Has it changed since the last time we used it? (versioning)</li>
+            <li>Are producers and consumers bound by data contracts?</li>
+            <li>If you can't answer these, your AI can't either</li>
+          </ul>
+        </section>
+
+        <!-- 16. AI INPUTS AND OUTPUTS (KEEP) -->
+        <section>
+          <p class="slide-kicker">Key distinction</p>
+          <h2>AI consumes governed data and generates new governed data</h2>
+          <div class="slide-grid">
+            <article class="slide-card">
+              <span class="slide-label">Inputs</span>
+              <h3>What the workflow reads</h3>
+              <ul>
+                <li>Policy PDFs</li>
+                <li>Tables and spreadsheets</li>
+                <li>Shared-drive forms</li>
+                <li>Dashboard sources</li>
+                <li>Operational guidance documents</li>
+              </ul>
+            </article>
+            <article class="slide-card accent">
+              <span class="slide-label">Outputs</span>
+              <h3>What the workflow may create</h3>
+              <ul>
+                <li>Extracted fields from PDFs</li>
+                <li>Tags and classifications</li>
+                <li>Structured summaries</li>
+                <li>Routing metadata</li>
+                <li>Draft operational records</li>
+              </ul>
+            </article>
+          </div>
+          <p class="slide-note">Once those outputs feed a queue, dashboard, report, or decision, governance applies to them too.</p>
+        </section>
+
+        <!-- 17. GOVERNANCE LENS flip cards (KEEP) -->
+        <section>
+          <p class="slide-kicker">Governance lens</p>
+          <h2>Every new context source should trigger these questions</h2>
+          <p style="font-size:0.75rem; color:var(--muted); margin-bottom:0.2rem;">Click a card to reveal the question.</p>
+          <div class="flip-grid">
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <div class="flip-card-front"><h3>Provenance</h3></div>
+                <div class="flip-card-back"><p>Where did this information come from, and can we prove it?</p></div>
+              </div>
+            </div>
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <div class="flip-card-front"><h3>Permissions</h3></div>
+                <div class="flip-card-back"><p>Who is allowed to access it, transform it, or expose it?</p></div>
+              </div>
+            </div>
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <div class="flip-card-front"><h3>Quality</h3></div>
+                <div class="flip-card-back"><p>How current, complete, reliable, and explainable is it?</p></div>
+              </div>
+            </div>
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <div class="flip-card-front"><h3>Sensitivity</h3></div>
+                <div class="flip-card-back"><p>Does it contain private, regulated, or institutionally sensitive material?</p></div>
+              </div>
+            </div>
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <div class="flip-card-front"><h3>Stewardship</h3></div>
+                <div class="flip-card-back"><p>Who owns refresh, correction, and validation over time?</p></div>
+              </div>
+            </div>
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <div class="flip-card-front"><h3>Human review</h3></div>
+                <div class="flip-card-back"><p>When should the system answer, cite and defer, or escalate?</p></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 18. WORKED EXAMPLE: Proposal routing (KEEP) -->
+        <section>
+          <p class="slide-kicker">Worked example</p>
+          <h2>A proposal routing assistant with mixed sources</h2>
+          <div class="slide-grid">
+            <article class="slide-card">
+              <span class="slide-label">Scenario</span>
+              <p>
+                A unit wants an AI assistant to answer questions about proposal
+                routing deadlines and internal approvals.
+              </p>
+              <p class="slide-micro">
+                The team connects a current policy PDF, old shared-drive forms,
+                exception-heavy email guidance, and a few notes from
+                experienced staff.
+              </p>
+            </article>
+            <article class="slide-card dark">
+              <span class="slide-label">Teaching point</span>
+              <h3>More context is not automatically better context</h3>
+              <p>
+                Those sources do not carry the same authority, freshness, or
+                interpretive weight. The model may blend them into a plausible
+                answer that no one should trust without review.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <!-- 19. SOURCE TRUST RATER (KEEP) -->
+        <section>
+          <p class="slide-kicker">Source map</p>
+          <h2>Rate each source on the governance criteria</h2>
+          <p style="font-size:0.75rem; color:var(--muted); margin-bottom:0.2rem;">Click each criterion to cycle: neutral &rarr; green &rarr; yellow &rarr; red.</p>
+          <div class="trust-rater">
+            <div class="trust-source">
+              <span class="slide-label">Current policy PDF</span>
+              <h3>Likely authoritative</h3>
+              <div class="trust-criteria">
+                <button class="traffic-btn">Authority</button>
+                <button class="traffic-btn">Currency</button>
+                <button class="traffic-btn">Permissions</button>
+                <button class="traffic-btn">Explainability</button>
+              </div>
+            </div>
+            <div class="trust-source">
+              <span class="slide-label">Shared-drive forms</span>
+              <h3>Possibly stale</h3>
+              <div class="trust-criteria">
+                <button class="traffic-btn">Authority</button>
+                <button class="traffic-btn">Currency</button>
+                <button class="traffic-btn">Permissions</button>
+                <button class="traffic-btn">Explainability</button>
+              </div>
+            </div>
+            <div class="trust-source">
+              <span class="slide-label">Email guidance</span>
+              <h3>Exception-heavy</h3>
+              <div class="trust-criteria">
+                <button class="traffic-btn">Authority</button>
+                <button class="traffic-btn">Currency</button>
+                <button class="traffic-btn">Permissions</button>
+                <button class="traffic-btn">Explainability</button>
+              </div>
+            </div>
+            <div class="trust-source">
+              <span class="slide-label">Staff notes</span>
+              <h3>Local practice</h3>
+              <div class="trust-criteria">
+                <button class="traffic-btn">Authority</button>
+                <button class="traffic-btn">Currency</button>
+                <button class="traffic-btn">Permissions</button>
+                <button class="traffic-btn">Explainability</button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 20. CONTEXT READINESS CHECKLIST (KEEP) -->
+        <section>
+          <p class="slide-kicker">Activity</p>
+          <h2>Context readiness checklist</h2>
+          <p style="font-size:0.85rem; color:var(--muted); margin-bottom:0.8rem;">
+            Think of one data source you'd connect to an AI workflow. Check each criterion it meets.
+          </p>
+          <div class="checklist-grid" id="readiness-checklist">
+            <label class="checklist-item">
+              <input type="checkbox" />
+              <span class="checklist-box"></span>
+              <span class="checklist-label">
+                <strong>Authority</strong>
+                <span class="checklist-desc">Is this the source your institution would trust in an audit?</span>
+              </span>
+            </label>
+            <label class="checklist-item">
+              <input type="checkbox" />
+              <span class="checklist-box"></span>
+              <span class="checklist-label">
+                <strong>Currency</strong>
+                <span class="checklist-desc">Is it current enough to act on? Do you know when it was last updated?</span>
+              </span>
+            </label>
+            <label class="checklist-item">
+              <input type="checkbox" />
+              <span class="checklist-box"></span>
+              <span class="checklist-label">
+                <strong>Permissions</strong>
+                <span class="checklist-desc">Is the system allowed to use, transform, or expose this data?</span>
+              </span>
+            </label>
+            <label class="checklist-item">
+              <input type="checkbox" />
+              <span class="checklist-box"></span>
+              <span class="checklist-label">
+                <strong>Explainability</strong>
+                <span class="checklist-desc">Can someone trace and defend where the answer came from?</span>
+              </span>
+            </label>
+          </div>
+          <div class="checklist-verdict" id="checklist-verdict">
+            Check the boxes above to see your verdict.
+          </div>
+          <p class="slide-note">
+            Full take-home version: <a href="governance-checklist.html" style="color:var(--gold);">governance-checklist.html</a>
+          </p>
+        </section>
+
+        <!-- END OF MODULE -->
+        <section data-background-color="#f1b300">
+          <p class="slide-kicker slide-kicker-dark">End of module</p>
+          <h2 class="slide-dark">Back to Sessions</h2>
+          <p class="slide-dark">
+            <a href="course-content.html" style="color:var(--ink); text-decoration:underline;">Return to session list</a>
+          </p>
+        </section>
+      </div>
+    </div>
+
+    <script src="reveal/dist/reveal.js"></script>
+    <script src="slides-interactive.js"></script>
+    <script>
+      Reveal.initialize({
+        hash: true,
+        controls: true,
+        progress: true,
+        center: true,
+        slideNumber: true,
+        transition: "slide"
+      });
+
+      /* Quiz interaction */
+      (function () {
+        document.querySelectorAll('.quiz-options').forEach(function (quiz) {
+          quiz.querySelectorAll('.quiz-option').forEach(function (opt) {
+            opt.addEventListener('click', function () {
+              var wasSelected = opt.classList.contains('selected');
+              quiz.querySelectorAll('.quiz-option').forEach(function (o) {
+                o.classList.remove('selected');
+              });
+              if (!wasSelected) opt.classList.add('selected');
+            });
+          });
+        });
+      })();
+
+      /* UDM translation table */
+      (function () {
+        var table = document.getElementById('udm-translate');
+        if (!table) return;
+        table.querySelectorAll('.udm-row').forEach(function (row) {
+          row.addEventListener('click', function () {
+            var field = row.dataset.field;
+            var detail = document.getElementById('udm-detail-' + field);
+            var wasActive = row.classList.contains('active');
+            table.querySelectorAll('.udm-row').forEach(function (r) { r.classList.remove('active'); });
+            document.querySelectorAll('.udm-detail').forEach(function (d) { d.classList.remove('visible'); });
+            if (!wasActive && detail) {
+              row.classList.add('active');
+              detail.classList.add('visible');
+            }
+          });
+        });
+      })();
+
+      /* Context readiness checklist */
+      (function () {
+        var checklist = document.getElementById('readiness-checklist');
+        var verdict = document.getElementById('checklist-verdict');
+        if (!checklist || !verdict) return;
+
+        var verdicts = [
+          { min: 0, max: 0, cls: '', text: 'Check the boxes above to see your verdict.' },
+          { min: 1, max: 1, cls: 'verdict-red', text: 'Keep out. Too many gaps for operational use.' },
+          { min: 2, max: 2, cls: 'verdict-yellow', text: 'Needs cleanup. Useful source, but governance gaps remain.' },
+          { min: 3, max: 3, cls: 'verdict-yellow', text: 'Almost ready. One criterion still needs attention.' },
+          { min: 4, max: 4, cls: 'verdict-green', text: 'Ready now. Authoritative, current, permissioned, and explainable.' }
+        ];
+
+        checklist.addEventListener('change', function () {
+          var checked = checklist.querySelectorAll('input:checked').length;
+          verdict.className = 'checklist-verdict';
+          for (var i = verdicts.length - 1; i >= 0; i--) {
+            if (checked >= verdicts[i].min && checked <= verdicts[i].max) {
+              verdict.textContent = verdicts[i].text;
+              if (verdicts[i].cls) verdict.classList.add(verdicts[i].cls);
+              break;
+            }
+          }
+        });
+      })();
+    </script>
+  </body>
+</html>

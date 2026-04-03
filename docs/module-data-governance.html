@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#191919" />
+    <title>Data Governance Module | AI4RA Workshop</title>
+    <meta
+      name="description"
+      content="Facilitator quick reference for the data governance and context engineering module."
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-frame">
+      <header class="site-header">
+        <div class="shell">
+          <div class="brand-lockup">
+            <a class="brand-home" href="index.html">
+              <img class="brand-logo" src="img/logos/ai4ra-logo.png" alt="AI4RA logo" />
+              <span class="brand-line">AI4RA workshop companion for REACH 2026</span>
+            </a>
+          </div>
+          <nav aria-label="Primary">
+            <ul class="nav-list">
+              <li><a class="nav-link" href="index.html">Home</a></li>
+              <li><a class="nav-link" href="presenters.html">Presenters</a></li>
+              <li><a class="nav-link is-active" href="course-content.html">Sessions</a></li>
+              <li><a class="nav-link" href="resources.html">Resources</a></li>
+              <li><a class="nav-link" href="at-reach.html">At REACH</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+
+      <main>
+        <section class="page-intro reveal">
+          <div class="page-intro-panel">
+            <img class="module-headshot" src="img/presenters/nathan-layman.jpeg" alt="Nathan Layman" />
+            <p class="eyebrow">Led by Nathan Layman</p>
+            <h1>The data lakehouse and data organization</h1>
+            <p class="section-copy">
+              Data governance is the foundation for context engineering.
+              This session covers the data lakehouse, medallion architecture,
+              the Unified Data Model, and why governance determines whether
+              AI context is trustworthy enough to use.
+            </p>
+            <div class="hero-actions">
+              <a class="button" href="slides-data-lakehouse.html">Launch slide deck</a>
+              <a class="button-secondary" href="governance-checklist.html">Checklist handout</a>
+              <a class="button-secondary" href="course-content.html">Back to sessions</a>
+            </div>
+          </div>
+        </section>
+
+        <section class="content-block reveal">
+          <p class="eyebrow">Module brief</p>
+          <h2 class="section-heading section-heading-wide">Quick reference for the presenter</h2>
+          <div class="compact-grid">
+            <article class="content-card">
+              <span class="tag">Learning goal</span>
+              <h3>Evaluate context before using it</h3>
+              <p>
+                Participants should leave able to explain why provenance,
+                permissions, quality, and stewardship determine whether context
+                is safe enough to use in an AI workflow.
+              </p>
+            </article>
+            <article class="content-card">
+              <span class="tag">In-room move</span>
+              <h3>Open with a dashboard analogy</h3>
+              <p>
+                Start from the governance work they already do for dashboards,
+                then show that AI context uses the same institutional muscles
+                under higher stakes.
+              </p>
+            </article>
+            <article class="content-card">
+              <span class="tag">Key distinction</span>
+              <h3>AI both consumes data and generates new data</h3>
+              <p>
+                The system reads governed inputs but can also produce new
+                structured outputs — extracted fields, classifications,
+                summaries — that enter downstream workflows and need
+                governance too.
+              </p>
+            </article>
+            <article class="content-card">
+              <span class="tag">Participant artifact</span>
+              <h3>A context readiness checklist</h3>
+              <p>
+                Participants use the
+                <a href="governance-checklist.html">checklist handout</a>
+                to judge whether a data source is ready for AI-assisted work.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section class="content-block reveal">
+          <p class="eyebrow">Facilitation</p>
+          <h2 class="section-heading section-heading-wide">Speaker notes and session close</h2>
+          <article class="course-module module-full">
+            <span class="tag">Talking points</span>
+            <h3>Key messages to reinforce</h3>
+            <ul class="module-points">
+              <li>Present governance as the condition that makes automation safe, not as bureaucracy.</li>
+              <li>More context can increase error surface area when institutions don't know which data is authoritative.</li>
+              <li>Keep returning to "trustworthy context" rather than "more context."</li>
+              <li>Make the consume-versus-generate distinction explicit: AI can create structured outputs that look authoritative if no one validates them.</li>
+              <li>Connect to what they already do: governing data for dashboards is the same muscle as governing data for AI.</li>
+            </ul>
+          </article>
+
+          <article class="course-module module-full">
+            <span class="tag">Demo handoff</span>
+            <h3>Vandalizer demo closes this session</h3>
+            <p>
+              Barrie Robison leads a live Vandalizer demo showing how
+              well-organized, governed data powers real RA workflows. Then
+              pose the bridge question: "Can you trust the output?" —
+              handing off directly to the reproducibility module on
+              evaluation, and accuracy.
+            </p>
+          </article>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <div class="shell footer-simple">
+          <p class="footer-kicker">AI4RA Community of Practice</p>
+          <p class="footer-copy">Monday, April 20, 2026 · 1:00–4:00 PM · Room BRISTOL</p>
+          <p class="footer-copy"><a href="https://github.com/ui-insight/REACHWorkshop2026">Repository</a></p>
+        </div>
+      </footer>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

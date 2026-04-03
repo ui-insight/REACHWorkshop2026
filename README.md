@@ -18,76 +18,64 @@ Help research administration professionals build safer, more relevant, and more 
 - Develop complete AI-assisted workflows for common research administration processes
 - Evaluate which tasks and workflows are suitable for AI deployment at participants' own institutions
 
-## Workshop roles — AI-enhanced data observability and analytics
+## Workshop sessions
 
-**What's the most important model? The data model.** AI models come and go, but the way an institution organizes, governs, and shares its data determines whether any of them are useful. Two themes run through the entire workshop: **reproducibility** (can someone else get the same answer?) and **data organization** (is the underlying data trustworthy enough to act on?). Each role approaches these themes from a different angle. Presenters: Barrie Robison, Nate Layman, Nathan Wiggins — assignments TBD.
+**What's the most important model? The data model.** Two themes run through the entire workshop: **reproducibility** (can someone else get the same answer?) and **data organization** (is the underlying data trustworthy enough to act on?).
 
-### Nathan Wiggins — Foundations: The Intersection Between AI and Data Science (1:05 – 1:50 PM)
+| Time | Session | Presenter |
+|------|---------|-----------|
+| 1:00 – 1:50 PM | Session 1: AI and data science — what's what | Nathan Wiggins |
+| 2:00 – 2:50 PM | Session 2: The data lakehouse and data organization | Nathan Layman |
+| 3:00 – 3:50 PM | Session 3: Reproducibility, accuracy, and putting it to work | Barrie Robison |
 
-Provides a foundation for integrating AI into research analytics by introducing AI4RA, clarifying the relationship between data science and AI, and demonstrating how these concepts translate into practical tools, workflows, and frameworks.
+**Session 1 — AI and data science: what's what (Nathan Wiggins)**
+Broad overview of AI for research administration. Introduces AI4RA, clarifies where data science ends and AI begins, shows how LLMs work, and frames the spectrum from prompt engineering to automation. Covers why human judgment stays in the loop and where AI fits institutional work. Closes with a **Promptulus demo** showing how prompt structure affects output quality — leading participants directly into Session 2's question: what about the data underneath?
 
-- **AI4RA foundations and community** — Objectives, pillars (accuracy, reproducibility, flexibility, security), and the ecosystem of shared tools and projects enabling advanced research analytics  
-- **Intersection of data science and AI** — FAIR principles and the relationship between proactive and reactive data science practices  
-- **Operational workflows in practice** — Vandalizer demo highlighting interfaces, workflows, and real-world application of AI  
-- **Interactive engagement** — focused Q&A to explore implementation, usability, and practical considerations  
-- **Frameworks and future direction** — the shift from task differentiation to agentic workflows, the shift from prompt to intent engineering, and the importance of maintaining a strong data foundation  
+**Session 2 — The data lakehouse and data organization (Nathan Layman)**
+Opens with the interactive quiz — "What is the most important model?" — and reveals the answer: the data model. Builds the case that AI is only as good as the data infrastructure underneath it. Covers data lakehouses, medallion architecture, the Unified Data Model, governance, and context readiness. Closes with a **Vandalizer demo** (led by Barrie Robison) showing how well-organized data powers real RA workflows — bridging into Session 3.
 
-### Role 2 — The data lakehouse and data organization (2:00 – 2:50 PM) — Nate Layman
+**Session 3 — Reproducibility, accuracy, and putting it to work (Barrie Robison)**
+Picks up from the Vandalizer demo and asks: can you trust the output? Covers context engineering layers, evaluation and accuracy verification, prompt engineering techniques, and lessons from the GRANTED project. Ends with the practical adoption decision — what to automate, what to augment, and what to leave alone — plus discussion, REACH cross-references, and workshop wrap-up.
 
-Shows how institutional data becomes observable, governed, and AI-ready. Good data organization is the prerequisite for both reproducible analytics and trustworthy AI — this section covers the infrastructure and shared standards that make it possible.
+## Repo structure
 
-- **The data lakehouse** — what it is, how it differs from traditional warehouses and data lakes, and why it matters for research analytics
-- **The Unified Data Model** — a shared schema for research administration that makes institutional data interoperable and AI-ready across the GRANTED network
-- **Data observability** — making institutional data visible, traceable, and auditable so analytics teams and AI systems can trust what they're working with
-- **Data governance as prerequisite** — why provenance, permissions, and quality determine whether AI is safe to use on your data
-- **From messy to structured** — cleaning, curating, and organizing institutional data so it can serve as trustworthy context for both analytics and AI workflows
-- **Reproducibility through organization** — how shared schemas, versioned data, and governed pipelines make analytics reproducible across institutions and over time
-- **Live demo: Promptulus** — participants compare prompt strategies and see how structure changes output quality and reproducibility
-
-### Role 3 — Reproducibility, accuracy, and putting it to work (3:00 – 3:50 PM)
-
-Returns to the central questions: can you reproduce the result, can you verify the accuracy, and should you deploy it? Combines hands-on AI skills with the practical judgment needed to adopt these ideas at your own institution.
-
-- **Prompt engineering and context** — structuring requests and layering context to get reproducible, reviewable output from AI models
-- **Evaluating accuracy** — practical methods for judging whether AI output is correct, consistent, and safe to act on
-- **From data to action** — how observable, governed data connects to analytics pipelines, reporting, and AI-assisted decision-making
-- **Adoption and institutional fit** — a decision framework for what to automate, what to augment, and what still needs a human
-- **Live demo: Vandalizer** — participants use the AI-powered tool to see how well-organized institutional data enables streamlined RA workflows
-- **Lessons from the GRANTED project** — what the AI4RA NSF project revealed about deploying AI and shared data infrastructure across institutions
-- **Discussion and feedback** — what participants need at their institutions, and what governance work has to happen before expanding AI or automation
-
-### Timeline
-
-| Time | Role | Theme |
-|------|------|-------|
-| 1:00 - 1:05 PM | Introduction
-| 1:05 – 1:50 PM | Nathan Wiggins | Foundations: The Intersection Between AI and Data Science |
-| 1:50 – 2:00 PM | — | Break |
-| 2:00 – 2:50 PM | Nate Layman | The data lakehouse and data organization |
-| 2:50 – 3:00 PM | — | Break |
-| 3:00 – 3:50 PM | Role 3 | Reproducibility, accuracy, and putting it to work |
-| 3:50 – 4:00 PM | All | Wrap-up and Q&A |
-
-## Site structure
-
-| File | Purpose |
-|------|---------|
-| `index.html` | Workshop home — objectives, agenda, topic threads, session details |
-| `course-content.html` | Teaching modules with lecture framing, worked examples, and speaker notes |
-| `module-foundational.html` | Foundational module guide for AI4RA framing, FAIR principles, and Vandalizer workflow |
-| `slides-foundational.html` | Reveal.js slide deck for the foundational module |
-| `slides-governance.html` | Reveal.js slide deck for the data governance module |
-| `slides-context-layers.html` | Reveal.js slide deck for the context layers module |
-| `presenters.html` | Presenter bios and credentials |
+```
+REACHWorkshop2026/
+  CLAUDE.md              Project instructions for Claude Code
+  README.md              This file
+  docs/                  GitHub Pages source — the live site
+    index.html           Workshop home page
+    course-content.html  Course hub and module directory
+    slides.html          Slide deck directory
+    presenters.html      Presenter bios and credentials
+    governance-checklist.html  Context readiness checklist handout
+    module-foundational.html       Module 1 facilitator guide
+    module-data-governance.html    Module 2 facilitator guide
+    module-context-layers.html     Module 3 facilitator guide
+    slides-workshop.html           Full 3-hour Reveal.js deck
+    slides-foundational.html       Session 1 Reveal.js deck
+    slides-governance.html         Session 2 Reveal.js deck
+    slides-context-layers.html     Session 3 Reveal.js deck
+    styles.css             Site stylesheet
+    slides.css             Slide deck theme
+    app.js                 Scroll animation observer
+    img/
+      logos/              AI4RA logo, NSF, UI, SUU logos
+      promptulus/         Promptulus animal mascot icons
+      presenters/         Presenter headshots
+      diagrams/           Data model diagram
+    reveal/dist/          Reveal.js library
+  resources/             Reference materials (not served)
+```
 
 ## Local preview
 
 ```bash
-python3 -m http.server 4173
+python3 -m http.server 4173 -d docs
 ```
 
 Then open `http://127.0.0.1:4173`.
 
 ## Deployment
 
-This site is designed for branch-based GitHub Pages deployment from the root of the `main` branch. Add `.nojekyll` to keep GitHub Pages from trying to process the site with Jekyll.
+GitHub Pages, served from the `docs/` folder on the `main` branch. Configure in repo settings: Settings → Pages → Source → `/docs`.

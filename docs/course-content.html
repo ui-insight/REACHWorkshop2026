@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#191919" />
+    <title>Sessions | AI4RA Workshop</title>
+    <meta
+      name="description"
+      content="Workshop sessions, learning objectives, and module guides for the AI4RA REACH 2026 workshop."
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-frame">
+      <header class="site-header">
+        <div class="shell">
+          <div class="brand-lockup">
+            <a class="brand-home" href="index.html">
+              <img class="brand-logo" src="img/logos/ai4ra-logo.png" alt="AI4RA logo" />
+              <span class="brand-line">AI4RA workshop companion for REACH 2026</span>
+            </a>
+          </div>
+          <nav aria-label="Primary">
+            <ul class="nav-list">
+              <li><a class="nav-link" href="index.html">Home</a></li>
+              <li><a class="nav-link" href="presenters.html">Presenters</a></li>
+              <li><a class="nav-link is-active" href="course-content.html">Sessions</a></li>
+              <li><a class="nav-link" href="resources.html">Resources</a></li>
+              <li><a class="nav-link" href="at-reach.html">At REACH</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+
+      <main>
+        <section class="page-intro reveal">
+          <div class="page-intro-panel">
+            <p class="eyebrow">Sessions</p>
+            <h1>Three hours organized around decision quality.</h1>
+            <p class="section-copy">
+              Three standalone modules, each with a live demo.
+              Run them in any order or pick the ones that fit your audience.
+            </p>
+          </div>
+        </section>
+
+        <section id="objectives" class="content-block reveal">
+          <p class="eyebrow">Learning objectives</p>
+          <h2 class="section-heading section-heading-wide">What participants should leave able to do</h2>
+          <div class="compact-grid">
+            <article class="content-card">
+              <span class="tag">AI literacy</span>
+              <h3>Understand what AI can and cannot do for research analytics</h3>
+              <p>
+                Explain how large language models work at a practical
+                level, apply FAIR principles as operational guardrails,
+                and distinguish AI capabilities from institutional
+                judgment.
+              </p>
+            </article>
+            <article class="content-card">
+              <span class="tag">Prompt engineering</span>
+              <h3>Structure prompts that produce reliable, consistent output</h3>
+              <p>
+                Move from ad-hoc prompting to deliberate prompt design
+                using role instructions, examples, templates, and
+                constraints that improve quality and reduce drift.
+              </p>
+            </article>
+            <article class="content-card">
+              <span class="tag">Data readiness</span>
+              <h3>Evaluate whether institutional data is ready for AI</h3>
+              <p>
+                Assess provenance, permissions, currency, and
+                explainability of data sources before connecting them to
+                AI workflows. Distinguish authoritative sources from
+                supplemental ones and identify governance gaps.
+              </p>
+            </article>
+            <article class="content-card">
+              <span class="tag">Data governance</span>
+              <h3>Govern AI inputs and outputs with the same rigor as dashboards</h3>
+              <p>
+                Recognize that AI both consumes governed data and
+                generates new data products. Apply stewardship,
+                permissioning, and traceability standards to both sides.
+              </p>
+            </article>
+            <article class="content-card">
+              <span class="tag">Context architecture</span>
+              <h3>Choose the right layer of context for the job</h3>
+              <p>
+                Map the context stack — instructions, templates, files,
+                tools, retrieval, and human escalation — and use the
+                thinnest layer that solves the problem reliably.
+              </p>
+            </article>
+            <article class="content-card">
+              <span class="tag">Evaluation</span>
+              <h3>Verify AI output before it enters a workflow</h3>
+              <p>
+                Apply reproducibility, accuracy, and trust checks to
+                AI-generated outputs. Decide when the system should
+                answer directly, cite and defer, or escalate to a
+                human before action is taken.
+              </p>
+            </article>
+            <article class="content-card">
+              <span class="tag">Adoption judgment</span>
+              <h3>Decide what to automate, augment, or leave alone</h3>
+              <p>
+                Classify institutional tasks by AI suitability.
+                Recognize when a well-designed query, dashboard, or
+                human process is the better answer — and when AI
+                adds genuine value beyond existing tools.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section id="module-library" class="content-block reveal">
+          <p class="eyebrow">Module library</p>
+          <h2 class="section-heading section-heading-wide">Choose a module to open its facilitator guide and slides.</h2>
+          <div class="compact-grid">
+              <article class="content-card">
+                <span class="tag">Nathan Wiggins</span>
+                <h3>AI and data science: what's what</h3>
+                <p>
+                  AI4RA introduction, FAIR principles, how LLMs work,
+                  accuracy vs. flexibility, the Vandalizer workflow,
+                  and the three zones of intent.
+                </p>
+                <div class="card-actions">
+                  <a class="button" href="slides-ai-literacy.html">Open module</a>
+                  <a class="button-secondary" href="module-foundational.html">Module guide</a>
+                </div>
+              </article>
+              <article class="content-card">
+                <span class="tag">Nathan Layman</span>
+                <h3>The data lakehouse and data organization</h3>
+                <p>
+                  Data lakehouse vs. data swamp, medallion architecture,
+                  the Unified Data Model, data governance, and context
+                  readiness for AI.
+                </p>
+                <div class="card-actions">
+                  <a class="button" href="slides-data-lakehouse.html">Open module</a>
+                  <a class="button-secondary" href="module-data-governance.html">Module guide</a>
+                </div>
+              </article>
+              <article class="content-card">
+                <span class="tag">Barrie Robison</span>
+                <h3>Reproducibility, accuracy, and putting it to work</h3>
+                <p>
+                  Context engineering, Promptulus and Vandalizer demos,
+                  evaluation, and deciding what to automate, augment,
+                  or leave alone.
+                </p>
+                <div class="card-actions">
+                  <a class="button" href="slides-putting-it-to-work.html">Open module</a>
+                  <a class="button-secondary" href="module-context-layers.html">Module guide</a>
+                </div>
+              </article>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <div class="shell footer-simple">
+          <p class="footer-kicker">AI4RA Community of Practice</p>
+          <p class="footer-copy">Monday, April 20, 2026 · 1:00–4:00 PM · Room BRISTOL</p>
+          <p class="footer-copy"><a href="https://github.com/ui-insight/REACHWorkshop2026">Repository</a></p>
+        </div>
+      </footer>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
