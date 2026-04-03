@@ -21,7 +21,7 @@
     <div class="reveal">
       <div class="slides">
 
-        <!-- TITLE -->
+        <!-- 1. TITLE -->
         <section class="title-slide" data-background-color="#f1b300">
           <p class="slide-kicker slide-kicker-dark">AI4RA Workshop</p>
           <h1>AI and data science: what's what</h1>
@@ -29,68 +29,33 @@
           <p class="slide-lede slide-dark">Led by Nathan Wiggins</p>
         </section>
 
-        <!-- TWO THEMES -->
+        <!-- 2. AI4RA INTRODUCTION -->
         <section>
-          <p class="slide-kicker">Two themes</p>
-          <h2>Reproducibility and data organization</h2>
-          <ul>
-            <li><strong>Reproducibility</strong> — Can someone else get the same answer?</li>
-            <li><strong>Data organization</strong> — Is the underlying data trustworthy enough to act on?</li>
-          </ul>
-        </section>
-
-        <!-- AI4RA INTRODUCTION (from existing module) -->
-        <section>
-          <p class="slide-kicker">Part 1 · AI4RA Introduction</p>
-          <h2>AI4RA: Framing AI for research administration</h2>
+          <p class="slide-kicker">AI4RA</p>
+          <h2>Framing AI for research administration</h2>
           <ul>
             <li>Objectives, PIs, and project framing</li>
             <li>Pillars: Accuracy, Reproducibility, Flexibility, Security</li>
-            <li>Community of Practice: Vandalizer, Data Lake, and other projects</li>
+            <li>Community of Practice: Vandalizer, Data Lakehouse, Promptulus, and more</li>
             <li>Bridge to research analytics and strategic analysis capacity</li>
           </ul>
         </section>
 
-        <!-- FRAMEWORKS AND MODELS -->
+        <!-- 3. TWO THEMES -->
         <section>
-          <p class="slide-kicker">Frameworks</p>
-          <h2>Frameworks and Models</h2>
-          <div class="slide-grid tight">
-            <article class="slide-card">
-              <h3>Task progression</h3>
-              <p>Data science and AI tasks can mature into agentic workflows.</p>
-            </article>
-            <article class="slide-card">
-              <h3>Framing progression</h3>
-              <p>Prompt engineering evolves into intent engineering.</p>
-            </article>
-            <article class="slide-card dark">
-              <h3>Durable constant</h3>
-              <p>Maintain a strong data foundation across every workflow.</p>
-            </article>
-          </div>
+          <p class="slide-kicker">This module</p>
+          <h2>AI literacy and decision frameworks</h2>
+          <ul>
+            <li><strong>AI literacy</strong> — How do LLMs actually work, where do they fail, and what can you trust?</li>
+            <li><strong>Decision frameworks</strong> — When should AI lead, assist, or stay out of the way?</li>
+          </ul>
         </section>
 
-        <!-- FAIR PRINCIPLES (from existing module) -->
-        <section>
-          <p class="slide-kicker">Part 2 · Data Science and AI</p>
-          <h2>Intersection of Data Science and Artificial Intelligence</h2>
-          <div class="slide-grid">
-            <article class="slide-card">
-              <h3>FAIR principles</h3>
-              <p>Findable, Accessible, Interoperable, and Reusable data as the basis for trustworthy AI.</p>
-            </article>
-            <article class="slide-card accent">
-              <h3>Two directional shifts</h3>
-              <ul>
-                <li>Proactive data science: shift in our reach</li>
-                <li>Reactive data science: shift in their values</li>
-              </ul>
-            </article>
-          </div>
-        </section>
+        <!-- ═══════════════════════════════════════════
+             ARC 1: AI LITERACY
+             ═══════════════════════════════════════════ -->
 
-        <!-- AI VS DATA SCIENCE (from workshop deck) -->
+        <!-- 4. AI VS DATA SCIENCE -->
         <section>
           <p class="slide-kicker">The landscape</p>
           <h2>AI vs data science</h2>
@@ -108,7 +73,33 @@
           </div>
         </section>
 
-        <!-- HOW LLMS WORK (from workshop deck) -->
+        <!-- 5. AI TOOL LANDSCAPE -->
+        <section>
+          <p class="slide-kicker">The tools</p>
+          <h2>AI tools: what's available and what's different</h2>
+          <div class="slide-grid">
+            <article class="slide-card">
+              <span class="slide-label">Categories</span>
+              <ul>
+                <li><strong>Chatbots</strong> — ChatGPT, Claude, Gemini. General-purpose conversation and generation.</li>
+                <li><strong>Writing assistants</strong> — Grammarly, Copilot. Embedded in your workflow.</li>
+                <li><strong>Coding assistants</strong> — GitHub Copilot, Cursor. Code generation and debugging.</li>
+                <li><strong>Specialized tools</strong> — Research discovery, grant matching, compliance screening.</li>
+              </ul>
+            </article>
+            <article class="slide-card accent">
+              <span class="slide-label">Consumer vs institutional</span>
+              <ul>
+                <li><strong>Consumer (free/personal)</strong> — your data may train the model, limited privacy controls, no institutional audit trail</li>
+                <li><strong>Enterprise / institutional</strong> — data stays in your tenant, admin controls, audit logging, compliance certifications</li>
+                <li>The same product name can mean very different data handling depending on the license tier</li>
+              </ul>
+              <p class="slide-micro">Check with your IT office: what tools does your institution license, and what are the terms?</p>
+            </article>
+          </div>
+        </section>
+
+        <!-- 6. HOW LLMS WORK -->
         <section>
           <p class="slide-kicker">Demystifying</p>
           <h2>How LLMs actually work</h2>
@@ -127,7 +118,7 @@
           </div>
         </section>
 
-        <!-- NEXT-TOKEN BUILDER — interactive -->
+        <!-- 6. NEXT-TOKEN BUILDER — interactive -->
         <section>
           <p class="slide-kicker">How it works</p>
           <h2>Build a sentence one token at a time</h2>
@@ -136,7 +127,7 @@
           <p class="slide-note">No right answer, only probabilities. This is why LLMs produce different output each time.</p>
         </section>
 
-        <!-- ACCURACY (from workshop deck) -->
+        <!-- 7. ACCURACY -->
         <section>
           <p class="slide-kicker">Trust</p>
           <h2>Accuracy and its limits</h2>
@@ -144,11 +135,11 @@
             <li>LLM output is probabilistic, not deterministic</li>
             <li>The same prompt can produce different answers each time</li>
             <li>Sounds confident even when wrong — "hallucination"</li>
-            <li>When auditability matters: use data science. When flexibility matters: consider AI.</li>
+            <li>The more niche or recent the fact, the more likely the model is guessing</li>
           </ul>
         </section>
 
-        <!-- SPOT THE HALLUCINATION — interactive -->
+        <!-- 8. SPOT THE HALLUCINATION — interactive -->
         <section style="text-align:center;">
           <p class="slide-kicker">Try it</p>
           <h2>Spot the hallucination</h2>
@@ -166,7 +157,129 @@
           </div>
         </section>
 
-        <!-- REPRODUCIBILITY (from workshop deck) -->
+        <!-- 9. BIAS IN AI OUTPUTS -->
+        <section>
+          <p class="slide-kicker">Bias</p>
+          <h2>AI outputs carry hidden biases</h2>
+          <ul>
+            <li>LLMs learn from training data that reflects historical and societal biases</li>
+            <li>AI-drafted broader impacts, DEI narratives, and personnel descriptions can default to stereotypical framing without anyone noticing</li>
+            <li>Budget justifications may reflect geographic or institutional size assumptions baked into training data</li>
+            <li>Bias is harder to spot than hallucination — the output reads as reasonable, it's just skewed</li>
+          </ul>
+          <div class="slide-grid" style="margin-top:0.5rem;">
+            <article class="slide-card">
+              <span class="slide-label">What to watch for</span>
+              <ul style="font-size:0.7rem;">
+                <li>Gendered language in role descriptions</li>
+                <li>Assumptions about institution type or size</li>
+                <li>Missing perspectives or communities</li>
+                <li>Default "prestige" framing (R1 bias)</li>
+              </ul>
+            </article>
+            <article class="slide-card accent">
+              <span class="slide-label">What to do</span>
+              <ul style="font-size:0.7rem;">
+                <li>Ask AI to check its own output for bias</li>
+                <li>Have a second reader review AI-drafted text</li>
+                <li>Compare output against your institutional values</li>
+                <li>Treat AI drafts as starting points, not final copy</li>
+              </ul>
+            </article>
+          </div>
+        </section>
+
+        <!-- 10. DATA PRIVACY & SECURITY -->
+        <section>
+          <p class="slide-kicker">Security</p>
+          <h2>What you share with AI matters</h2>
+          <div class="slide-split">
+            <div class="split-text">
+              <ul>
+                <li><strong>Commercial AI tools are not your institution's systems.</strong> Data you paste into ChatGPT, Copilot, or Claude may be logged, used for training, or stored outside your control.</li>
+                <li>Research administrators handle FERPA records, pre-decisional budgets, personnel actions, export-controlled data, and PI conflicts of interest</li>
+                <li>Even "anonymized" data can be re-identified when combined with other context</li>
+                <li>Institutional AI policies vary — know yours before you paste</li>
+              </ul>
+              <div class="slide-callout" style="border-left-color:#ef4444; background:rgba(239,68,68,0.08);">
+                If you wouldn't email it to a stranger, don't paste it into a commercial AI.
+              </div>
+            </div>
+            <div class="split-text" style="flex: 0 0 38%;">
+              <div class="slide-card dark" style="margin-top:0;">
+                <span class="slide-label">Never share with commercial AI</span>
+                <ul style="font-size:0.7rem;">
+                  <li>Student records (FERPA)</li>
+                  <li>Personnel / salary data</li>
+                  <li>Export-controlled research (ITAR/EAR)</li>
+                  <li>CUI / controlled unclassified info</li>
+                  <li>Pre-decisional budget narratives</li>
+                  <li>Conflict-of-interest disclosures</li>
+                  <li>IRB/IACUC protocol details</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 11. FEDERAL SPONSOR AI POLICIES -->
+        <section>
+          <p class="slide-kicker">Sponsor rules</p>
+          <h2>Federal sponsors are setting AI rules — now</h2>
+          <div class="slide-grid">
+            <article class="slide-card" style="border-left: 3px solid #005693;">
+              <span class="slide-label">NIH</span>
+              <h3>NOT-OD-25-132</h3>
+              <ul style="font-size:0.7rem;">
+                <li>Applications "substantially developed by AI" will not be considered</li>
+                <li>NIH is actively using AI detection tools on submissions</li>
+                <li>Biosketches, specific aims, and research strategies are high-scrutiny areas</li>
+                <li>AI may assist — but a human must meaningfully develop the scientific content</li>
+              </ul>
+            </article>
+            <article class="slide-card" style="border-left: 3px solid #005693;">
+              <span class="slide-label">NSF</span>
+              <h3>AI use in merit review</h3>
+              <ul style="font-size:0.7rem;">
+                <li>Reviewers are prohibited from uploading proposals to non-approved AI tools</li>
+                <li>PIs should indicate AI use in project descriptions where applicable</li>
+                <li>Program officers are being trained to identify AI-generated content</li>
+              </ul>
+            </article>
+          </div>
+          <div class="slide-callout" style="margin-top:0.5rem;">
+            These policies are evolving rapidly. Check sponsor guidelines before every submission cycle.
+          </div>
+        </section>
+
+        <!-- 12. IP AND COPYRIGHT -->
+        <section>
+          <p class="slide-kicker">Ownership</p>
+          <h2>Who owns AI-generated content?</h2>
+          <div class="slide-split">
+            <div class="split-text">
+              <ul>
+                <li><strong>US Copyright Office:</strong> AI-generated content without significant human authorship is not copyrightable</li>
+                <li>"Meaningful human contribution" is the standard — but the line is still being drawn</li>
+                <li>If AI writes your proposal narrative and you submit it unchanged, you may not own it</li>
+                <li>Training data raises separate IP questions: models learn from copyrighted material, but the legal landscape is unsettled</li>
+              </ul>
+            </div>
+            <div class="split-text" style="flex: 0 0 40%;">
+              <div class="slide-card dark" style="margin-top:0;">
+                <span class="slide-label">For research administrators</span>
+                <ul style="font-size:0.7rem;">
+                  <li>AI-assisted drafts need substantial human editing to establish authorship</li>
+                  <li>AI-generated figures and data visualizations are especially murky</li>
+                  <li>Institutional IP policies may not yet address AI — flag this gap</li>
+                  <li>Sponsor terms of award may add additional constraints</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 13. REPRODUCIBILITY -->
         <section>
           <p class="slide-kicker">Reproducibility</p>
           <h2>The reproducibility challenge</h2>
@@ -178,7 +291,11 @@
           </ul>
         </section>
 
-        <!-- HUMAN JUDGMENT + IBM QUOTE (from workshop deck) -->
+        <!-- ═══════════════════════════════════════════
+             ARC 2: DECISION FRAMEWORKS
+             ═══════════════════════════════════════════ -->
+
+        <!-- 10. HUMAN JUDGMENT -->
         <section>
           <p class="slide-kicker">Human judgment</p>
           <h2>Where human expertise remains essential</h2>
@@ -200,7 +317,7 @@
           </div>
         </section>
 
-        <!-- THREE ZONES OF INTENT (from workshop deck) -->
+        <!-- 11. THREE ZONES OF INTENT -->
         <section>
           <p class="slide-kicker">Three zones of intent</p>
           <h2>Does it matter how the work got done?</h2>
@@ -218,7 +335,7 @@
           </div>
         </section>
 
-        <!-- RA EXAMPLES (from workshop deck) -->
+        <!-- 12. RA EXAMPLES -->
         <section>
           <p class="slide-kicker">In practice</p>
           <h2>RA examples for each zone</h2>
@@ -229,7 +346,7 @@
           </ul>
         </section>
 
-        <!-- ZONE CLASSIFIER — interactive -->
+        <!-- 13. ZONE CLASSIFIER — interactive -->
         <section>
           <p class="slide-kicker">Try it</p>
           <h2>Classify these RA tasks</h2>
@@ -279,7 +396,11 @@
           </div>
         </section>
 
-        <!-- CONTEXT WINDOW / FOUR DISCIPLINES -->
+        <!-- ═══════════════════════════════════════════
+             ARC 3: CONTEXT ENGINEERING
+             ═══════════════════════════════════════════ -->
+
+        <!-- 14. CONTEXT WINDOW / FOUR DISCIPLINES -->
         <section>
           <p class="slide-kicker">Your AI has a page limit — the context window</p>
           <h2>Four disciplines for AI interaction</h2>
@@ -339,7 +460,7 @@
           </div>
         </section>
 
-        <!-- PROMPTULUS LIVE DEMO -->
+        <!-- 15. PROMPTULUS LIVE DEMO -->
         <section>
           <p class="slide-kicker">Live demo</p>
           <h2>The AI Literacy Companions</h2>
@@ -397,6 +518,7 @@
           </div>
         </section>
 
+        <!-- 16. END OF MODULE -->
         <section data-background-color="#f1b300">
           <p class="slide-kicker slide-kicker-dark">End of module</p>
           <h2 class="slide-dark">Back to Sessions</h2>
