@@ -133,6 +133,23 @@ body.slides-page {
   object-fit: contain;
 }
 
+
+.section-logo-large {
+  width: 10.5rem;
+  max-width: 30%;
+  top: -0.1rem;
+}
+
+.center-title-slide {
+  text-align: center;
+}
+
+.center-title-slide h2 {
+  margin-top: 24vh;
+  margin-bottom: 0;
+  font-size: 3.6rem;
+}
+
 .slide-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -409,6 +426,16 @@ body.slides-page {
     top: 0.1rem;
     width: 5.2rem;
     max-width: 30%;
+  }
+
+  .section-logo-large {
+    width: 7.2rem;
+    max-width: 34%;
+  }
+
+  .center-title-slide h2 {
+    margin-top: 30vh;
+    font-size: 2.6rem;
   }
 }
 
