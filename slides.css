@@ -624,6 +624,40 @@ body.slides-page {
   margin-top: 0.5rem;
 }
 
+.before-after-flow {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  gap: 0.8rem;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.before-after-card {
+  min-height: 8.5rem;
+}
+
+.before-after-label {
+  margin: 0 0 0.5rem;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: rgba(25, 25, 25, 0.75) !important;
+}
+
+.before-after-arrow {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 800;
+  color: #9a7300 !important;
+}
+
+.true-principle-card {
+  margin-top: 0.9rem;
+  border-color: rgba(241, 179, 0, 0.45) !important;
+  background: rgba(241, 179, 0, 0.12) !important;
+}
+
 @media (max-width: 720px) {
   .pillar-grid {
     grid-template-columns: 1fr;
@@ -640,6 +674,16 @@ body.slides-page {
 
   .shift-card-grid {
     grid-template-columns: 1fr;
+  }
+
+  .before-after-flow {
+    grid-template-columns: 1fr;
+    gap: 0.6rem;
+  }
+
+  .before-after-arrow {
+    transform: rotate(90deg);
+    justify-self: center;
   }
 
   .preview-flow {
