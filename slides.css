@@ -290,6 +290,8 @@ body.slides-page {
 
 .preview-step {
   position: relative;
+  display: flex;
+  flex-direction: column;
   padding: 0.8rem 0.7rem;
   border-radius: 0.9rem;
   border: 1px solid rgba(25, 25, 25, 0.12);
@@ -317,16 +319,30 @@ body.slides-page {
   font-size: 1.45rem !important;
 }
 
-.preview-step h3 {
-  margin: 0.45rem 0;
+.preview-part-number {
+  margin: 0.4rem 0 0;
+  font-size: 0.82rem !important;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #9a7300 !important;
+  font-weight: 800;
+}
+
+.preview-part-title {
+  margin: 0.32rem 0 0.25rem;
   font-size: 1rem;
   line-height: 1.2;
 }
 
-.preview-step p {
-  margin: 0;
+.preview-time {
+  margin-top: auto !important;
+  padding-top: 0.55rem;
   font-size: 0.9rem;
   color: #676767;
+}
+
+.preview-step p {
+  margin: 0;
 }
 
 .slide-kicker-dark,
