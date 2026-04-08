@@ -3,9 +3,11 @@
 **WA3 — REACH 2026 Workshop**
 Monday, April 20, 2026 · 1:00 PM – 4:00 PM · Room BRISTOL · 24 seats
 
+Live site: <https://ui-insight.github.io/REACHWorkshop2026/>
+
 ## Abstract
 
-Artificial intelligence and data science are transforming research administration and other fields in higher education, creating new opportunities for efficiency, insight, and strategic decision-making. "AI4RA – The Intersection Between AI and Data" is an engaging workshop designed to help participants understand how AI and data science work together to support actionable, human-centered applications—ranging from personal workflow improvements to institution-wide planning and strategy. The workshop will include a thorough exploration of the relationship between data science and AI, casting clarity on how each contributes to informed decision-making while also highlighting where human expertise remains essential. The session will also provide practical guidance for distinguishing between tasks best suited for AI-powered approaches versus those more effectively addressed through data science methods, and review lessons learned from the AI4RA NSF GRANTED project. To reinforce these concepts, attendees will have the opportunity to access and use a temporary demo version of Vandalizer, an AI-powered tool built to streamline and enhance research administration workflows.
+Artificial intelligence and data science are transforming research administration and other fields in higher education, creating new opportunities for efficiency, insight, and strategic decision-making. "AI4RA – The Intersection Between AI and Data" is an engaging workshop designed to help participants understand how AI and data science work together to support actionable, human-centered applications — ranging from personal workflow improvements to institution-wide planning and strategy. The workshop covers the relationship between data science and AI, clarifies how each contributes to informed decision-making while highlighting where human expertise remains essential, and provides practical guidance for distinguishing tasks best suited for AI-powered approaches versus data science methods. Lessons learned from the AI4RA NSF GRANTED project are woven throughout.
 
 ## Mission
 
@@ -13,60 +15,123 @@ Help research administration professionals build safer, more relevant, and more 
 
 ## Learning objectives
 
-- Apply prompt engineering fundamentals to improve quality, relevance, and consistency in AI responses
-- Break complex RA tasks into discrete, AI-manageable components with review points
-- Develop complete AI-assisted workflows for common research administration processes
-- Evaluate which tasks and workflows are suitable for AI deployment at participants' own institutions
+- Understand what AI can and cannot do for research analytics
+- Structure prompts that produce reliable, consistent output
+- Evaluate whether institutional data is ready for AI
+- Govern AI inputs and outputs with the same rigor as dashboards
+- Choose the right layer of context for the job
+- Verify AI output before it enters a workflow
+- Decide what to automate, augment, or leave alone
 
-## Workshop sessions
+## Workshop modules
 
-**What's the most important model? The data model.** Two themes run through the entire workshop: **reproducibility** (can someone else get the same answer?) and **data organization** (is the underlying data trustworthy enough to act on?).
+**Workshop thesis: "What's the most important model? Your data model."** Two themes run through all three modules: **reproducibility** (can someone else get the same answer?) and **data organization** (is the underlying data trustworthy enough to act on?).
 
-| Time | Session | Presenter |
-|------|---------|-----------|
-| 1:00 – 1:50 PM | Session 1: AI and data science — what's what | Nathan Wiggins |
-| 2:00 – 2:50 PM | Session 2: The data lakehouse and data organization | Nathan Layman |
-| 3:00 – 3:50 PM | Session 3: Reproducibility, accuracy, and putting it to work | Barrie Robison |
+| Time | Module | Presenter | Affiliation |
+|------|--------|-----------|-------------|
+| 1:00 – 1:50 PM | AI and data science: what's what | Nathan Wiggins | Southern Utah University |
+| 2:00 – 2:50 PM | The data lakehouse and data organization | Nathan Layman | University of Idaho |
+| 3:00 – 3:50 PM | Reproducibility, accuracy, and putting it to work | Barrie Robison | University of Idaho |
 
-**Session 1 — AI and data science: what's what (Nathan Wiggins)**
-Broad overview of AI for research administration. Introduces AI4RA, clarifies where data science ends and AI begins, shows how LLMs work, and frames the spectrum from prompt engineering to automation. Covers why human judgment stays in the loop and where AI fits institutional work. Closes with a **Promptulus demo** showing how prompt structure affects output quality — leading participants directly into Session 2's question: what about the data underneath?
+### Module 1 — AI and data science: what's what (Nathan Wiggins)
 
-**Session 2 — The data lakehouse and data organization (Nathan Layman)**
-Opens with the interactive quiz — "What is the most important model?" — and reveals the answer: the data model. Builds the case that AI is only as good as the data infrastructure underneath it. Covers data lakehouses, medallion architecture, the Unified Data Model, governance, and context readiness. Closes with a **Vandalizer demo** (led by Barrie Robison) showing how well-organized data powers real RA workflows — bridging into Session 3.
+Broad overview of AI for research administration. Introduces the AI4RA community of practice and its ecosystem (Vandalizer, Data Lakehouse, Promptulus). Covers how LLMs work at a practical level, FAIR data principles as operational guardrails, accuracy and reproducibility challenges, the three zones of AI appropriateness, and decision frameworks for when to use AI versus when human judgment must lead. Introduces prompt engineering and the shift toward context engineering. (~28 slides with interactive elements.)
 
-**Session 3 — Reproducibility, accuracy, and putting it to work (Barrie Robison)**
-Picks up from the Vandalizer demo and asks: can you trust the output? Covers context engineering layers, evaluation and accuracy verification, prompt engineering techniques, and lessons from the GRANTED project. Ends with the practical adoption decision — what to automate, what to augment, and what to leave alone — plus discussion, REACH cross-references, and workshop wrap-up.
+**Key topics:** AI4RA introduction, community of practice ecosystem, how LLMs actually work (token prediction, attention, next-token probability), FAIR principles, accuracy and hallucination, three zones of intent, prompt-to-intent engineering, context engineering fundamentals.
+
+**Demo:** Promptulus (interactive prompt engineering trainer with 9 animal characters).
+
+### Module 2 — The data lakehouse and data organization (Nathan Layman)
+
+Opens with the interactive quiz — "What is the most important model?" — and reveals the answer: the data model. Builds the case that AI is only as good as the data infrastructure underneath it. Introduces the Universal Data Model (UDM) for research administration and shows how source data maps to it. Covers data warehouse vs. data lake vs. data lakehouse architectures, the eight capabilities of a lakehouse, and the GRANTED project's open-source implementation (Shipyard, Marina, MinIO, Polaris, Trino). Walks through the medallion architecture (Bronze/Silver/Gold/Platinum) with a worked example tracing data from source to application. Covers AI-assisted data ingestion, data governance as a prerequisite for AI, observability, and context readiness. (~20 slides with interactive quiz, toggle comparisons, flip cards, UDM translation table, trust rater, and context readiness checklist.)
+
+**Key topics:** Universal Data Model, medallion architecture, eight lakehouse capabilities, GRANTED architecture, AI-assisted adapter mapping (Suggest All / Fill Tree / Write SQL), data governance, observability, source trust, context readiness.
+
+**Interactive activity:** Context readiness checklist (take-home handout at `governance-checklist.html`).
+
+### Module 3 — Reproducibility, accuracy, and putting it to work (Barrie Robison)
+
+Picks up from the data governance foundation and asks: can you trust the output? Covers the practical context stack, what each layer contributes, the "thinnest layer" decision rule, accuracy evaluation, detecting AI-generated content, and lessons from the GRANTED project. Includes a live Vandalizer demo where participants find AI-introduced errors in real RA content. Ends with the adoption decision framework (automate / augment / leave alone), a hands-on exercise mapping participants' own workflows, and workshop wrap-up. (~17 slides.)
+
+**Key topics:** Context engineering layers, evaluation and accuracy verification, AI content detection, Vandalizer demo, GRANTED lessons learned, adoption decision framework, "Monday morning" action items.
+
+**Demo:** Vandalizer (AI-powered document review — participants find planted errors in RA content).
+
+## Current status (as of April 2026)
+
+### What's done
+- [x] Companion site live on GitHub Pages (index, presenters, sessions, resources, at-reach pages)
+- [x] All three Reveal.js slide decks created and populated with content
+- [x] Module 1 (Wiggins): ~28 slides with community cards, FAIR icons, interactive elements, context engineering section
+- [x] Module 2 (Layman): ~20 slides with interactive quiz, UDM translation table, toggle comparisons, flip cards, pipeline diagrams, trust rater, context readiness checklist
+- [x] Module 3 (Robison): ~17 slides with context stack, Vandalizer demo, evaluation, adoption framework, wrap-up
+- [x] Facilitator guides for all three modules
+- [x] Presenter bios and headshots (Robison complete, Layman complete, Wiggins placeholder)
+- [x] Resources page with Promptulus, Vandalizer, AI4RA, Data Lakehouse, MindRouter cards
+- [x] Context readiness checklist handout (`governance-checklist.html`)
+- [x] Interactive slide JS (toggle panels, flip cards, quiz, traffic-light trust rater)
+- [x] Custom slide CSS theme with gold/ink palette
+
+### What's in progress
+- [ ] Nathan Wiggins: update presenter bio and credentials (#34)
+- [ ] Vandalizer demo access for workshop participants (#37)
+- [ ] Replace placeholder copy with real examples and activities (#27)
+- [ ] Final content readiness pass across all three decks (#26)
+
+### What's not started
+- [ ] Synthetic document corpus for workshop examples (#6)
+- [ ] Downloadable course content section (#8)
+- [ ] Align with Nate Jones materials (#5)
+- [ ] Update Promptulus for the workshop (#13)
+
+## Presenters
+
+| Name | Affiliation | Role | Module |
+|------|-------------|------|--------|
+| Nathan Wiggins | Southern Utah University | Data Scientist, SPARC Office | Module 1: AI literacy and foundations |
+| Nathan Layman | University of Idaho | Data Scientist, AI4RA project | Module 2: Data lakehouse and organization |
+| Barrie Robison | University of Idaho | Professor of Biology, Director IIDS | Module 3: Putting it to work |
 
 ## Repo structure
 
 ```
 REACHWorkshop2026/
-  CLAUDE.md              Project instructions for Claude Code
-  README.md              This file
-  docs/                  GitHub Pages source — the live site
-    index.html           Workshop home page
-    course-content.html  Course hub and module directory
-    slides.html          Slide deck directory
-    presenters.html      Presenter bios and credentials
-    governance-checklist.html  Context readiness checklist handout
+  CLAUDE.md                        Project instructions for Claude Code
+  README.md                        This file
+  docs/                            GitHub Pages source — the live site
+    index.html                     Workshop home page
+    course-content.html            Session hub and module directory
+    presenters.html                Presenter bios and credentials
+    resources.html                 Tools and resources page
+    at-reach.html                  REACH 2026 logistics
+    governance-checklist.html      Context readiness checklist handout
     module-foundational.html       Module 1 facilitator guide
     module-data-governance.html    Module 2 facilitator guide
     module-context-layers.html     Module 3 facilitator guide
-    slides-workshop.html           Full 3-hour Reveal.js deck
-    slides-foundational.html       Session 1 Reveal.js deck
-    slides-governance.html         Session 2 Reveal.js deck
-    slides-context-layers.html     Session 3 Reveal.js deck
-    styles.css             Site stylesheet
-    slides.css             Slide deck theme
-    app.js                 Scroll animation observer
+    slides-ai-literacy.html        Module 1 Reveal.js deck (Wiggins)
+    slides-data-lakehouse.html     Module 2 Reveal.js deck (Layman)
+    slides-putting-it-to-work.html Module 3 Reveal.js deck (Robison)
+    slides-interactive.js          Shared interactive slide behaviors
+    styles.css                     Site stylesheet
+    slides.css                     Slide deck theme
+    app.js                         Scroll animation observer
     img/
-      logos/              AI4RA logo, NSF, UI, SUU logos
-      promptulus/         Promptulus animal mascot icons
-      presenters/         Presenter headshots
-      diagrams/           Data model diagram
-    reveal/dist/          Reveal.js library
-  resources/             Reference materials (not served)
+      logos/                       AI4RA, NSF, UI, SUU, FAIR, data-lake logos
+      promptulus/                  Promptulus animal mascot icons
+      presenters/                  Presenter headshots
+      diagrams/                    Data model, architecture, FAIR diagrams
+    reveal/dist/                   Reveal.js library
+  resources/                       Reference materials (not served)
 ```
+
+## Related repos
+
+| Repo | Description |
+|------|-------------|
+| [ui-insight/lakehouse](https://github.com/ui-insight/lakehouse) | Open-source data lakehouse for research administration |
+| [ui-insight/vandalizer](https://github.com/ui-insight/vandalizer) | AI-powered document review workflow tool |
+| [nate-layman/promptulus](https://github.com/nate-layman/promptulus) | Interactive AI literacy and prompt engineering trainer |
+| [ai4ra.uidaho.edu](https://ai4ra.uidaho.edu) | AI4RA community of practice blog and resources |
 
 ## Local preview
 
