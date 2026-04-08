@@ -100,19 +100,19 @@
           </div>
           <div class="pillar-grid">
             <article class="slide-card">
-              <h3>&#x1F3AF; Accuracy</h3>
+              <h3>Accuracy</h3>
               <p>Evidence-based answers grounded in validated data sources.</p>
             </article>
             <article class="slide-card">
-              <h3>&#x1F501; Reproducibility</h3>
+              <h3>Reproducibility</h3>
               <p>Repeatable workflows with transparent prompts, data, and methods.</p>
             </article>
             <article class="slide-card">
-              <h3>&#x1F9E9; Flexibility</h3>
+              <h3>Flexibility</h3>
               <p>Support for multiple institutional contexts, teams, and use cases.</p>
             </article>
             <article class="slide-card">
-              <h3>&#x1F6E1;&#xFE0F; Security</h3>
+              <h3>Security</h3>
               <p>Policy-aligned controls for access, privacy, and operational risk.</p>
             </article>
           </div>
@@ -123,26 +123,26 @@
           <p class="slide-kicker">Part 1 &middot; AI4RA Introduction</p>
           <h2>Community of Practice Ecosystem</h2>
           <div class="community-card-grid">
-            <article class="slide-card community-card">
+            <a class="slide-card community-card" href="https://vandalizer.nkn.uidaho.edu" target="_blank" rel="noopener">
               <h3>Vandalizer</h3>
               <p>AI workflow interface for structured analysis and reproducible outputs.</p>
-              <span class="community-card-icon" aria-hidden="true">&#x1F916;</span>
-            </article>
-            <article class="slide-card community-card">
+              <img class="community-card-icon-image" src="https://vandalizer.nkn.uidaho.edu/static/images/joevandal.png" alt="Vandalizer" style="width:3.5rem;" />
+            </a>
+            <a class="slide-card community-card" href="https://github.com/ui-insight/lakehouse" target="_blank" rel="noopener">
               <h3>Data Lakehouse</h3>
               <p>Shared institutional data foundation to support trusted analytics at scale.</p>
-              <span class="community-card-icon" aria-hidden="true">&#x1F5C4;&#xFE0F;</span>
-            </article>
-            <article class="slide-card community-card">
+              <img class="community-card-icon-image" src="img/logos/data-lake.svg" alt="Data Lakehouse" style="width:5rem;" />
+            </a>
+            <a class="slide-card community-card" href="https://nate-layman.github.io/promptulus/" target="_blank" rel="noopener">
               <h3>AI Literacy Course</h3>
               <p>Frameworks and companions for building institutional AI fluency across research administration.</p>
-              <span class="community-card-icon" aria-hidden="true">&#x1F393;</span>
-            </article>
-            <article class="slide-card community-card">
+              <img class="community-card-icon-image" src="img/promptulus/owl.png" alt="AI Literacy Course" style="width:3.5rem;" />
+            </a>
+            <a class="slide-card community-card" href="https://ai4ra.uidaho.edu" target="_blank" rel="noopener">
               <h3>Other Projects</h3>
-              <p>Additional initiatives that extend and apply AI4RA methods to other core research needs.</p>
-              <span class="community-card-icon" aria-hidden="true">&#x1F4BB;</span>
-            </article>
+              <p>Blog, listserv, and additional initiatives that extend AI4RA methods across research administration.</p>
+              <img class="community-card-icon-image" src="img/ai4ra.png" alt="AI4RA" style="width:10.5rem; margin:-1.5rem 0;" />
+            </a>
           </div>
         </section>
 
@@ -236,7 +236,7 @@
           <p class="slide-note">No right answer, only probabilities. This is why LLMs produce different output each time.</p>
         </section>
 
-        <!-- 11. ACCURACY -->
+        <!-- 11. ACCURACY & REPRODUCIBILITY -->
         <section>
           <p class="slide-kicker">Part 2 &middot; AI Literacy</p>
           <h2>Accuracy and its limits</h2>
@@ -245,6 +245,8 @@
             <li>The same prompt can produce different answers each time</li>
             <li>Sounds confident even when wrong &mdash; &ldquo;hallucination&rdquo;</li>
             <li>The more niche or recent the fact, the more likely the model is guessing</li>
+            <li>Traditional analytics: same query, same data, same answer. LLMs: same prompt, different answer &mdash; by design.</li>
+            <li>Disciplines that help: structured output, temperature control, version pinning, human review</li>
           </ul>
         </section>
 
@@ -388,32 +390,22 @@
           </div>
         </section>
 
-        <!-- 17. REPRODUCIBILITY -->
-        <section>
-          <p class="slide-kicker">Part 2 &middot; AI Literacy</p>
-          <h2>The reproducibility challenge</h2>
-          <ul>
-            <li>Traditional analytics: same query, same data, same answer. Every time.</li>
-            <li>LLMs: same prompt, different answer. By design.</li>
-            <li>This isn't a bug &mdash; but it changes what you can rely on</li>
-            <li>Disciplines that help: structured output, temperature control, version pinning, human review</li>
-          </ul>
-        </section>
 
         <!-- 18. FAIR PRINCIPLES -->
         <section>
           <p class="slide-kicker">Part 2 &middot; AI Literacy</p>
           <h2>FAIR Principles as Operational Guardrails</h2>
           <div class="pillar-grid">
-            <article class="slide-card"><h3>F &middot; Findable</h3><p>Use persistent identifiers and searchable metadata.</p></article>
-            <article class="slide-card"><h3>A &middot; Accessible</h3><p>Provide clear retrieval pathways with governed permissions.</p></article>
-            <article class="slide-card"><h3>I &middot; Interoperable</h3><p>Adopt shared formats and vocabularies across systems.</p></article>
-            <article class="slide-card"><h3>R &middot; Reusable</h3><p>Document provenance, context, and usage constraints.</p></article>
+            <article class="slide-card" style="padding:0.4rem 0.8rem;"><img src="img/logos/FAIR_F.png" alt="Findable" style="width:4.5rem; margin:0.4rem 0 -1rem;" /><p>Use persistent identifiers and searchable metadata.</p></article>
+            <article class="slide-card" style="padding:0.4rem 0.8rem;"><img src="img/logos/FAIR_A.png" alt="Accessible" style="width:4.5rem; margin:0.4rem 0 -1rem;" /><p>Provide clear retrieval pathways with governed permissions.</p></article>
+            <article class="slide-card" style="padding:0.4rem 0.8rem;"><img src="img/logos/FAIR_I.png" alt="Interoperable" style="width:4.5rem; margin:0.4rem 0 -1rem;" /><p>Adopt shared formats and vocabularies across systems.</p></article>
+            <article class="slide-card" style="padding:0.4rem 0.8rem;"><img src="img/logos/FAIR_R.png" alt="Reusable" style="width:4.5rem; margin:0.4rem 0 -1rem;" /><p>Document provenance, context, and usage constraints.</p></article>
           </div>
           <p class="slide-note">
             FAIR source: Wilkinson, M. D., et al. (2016).
             &ldquo;The FAIR Guiding Principles for scientific data management and stewardship.&rdquo;
             <em>Scientific Data</em>, 3, 160018.
+            Graphic: <a href="https://cloud-span.york.ac.uk/blogs/what_is_fair_may22/" target="_blank" rel="noopener">Cloud-SPAN</a>.
           </p>
         </section>
 
@@ -503,26 +495,6 @@
           </article>
         </section>
 
-        <!-- 22. PROMPT ENGINEERING → INTENT ENGINEERING -->
-        <section>
-          <p class="slide-kicker">Part 4 &middot; Decision Frameworks</p>
-          <h2>From Prompt Engineering to Intent Engineering</h2>
-          <div class="before-after-flow">
-            <article class="slide-card before-after-card">
-              <p class="before-after-label">BEFORE</p>
-              <p>Significant emphasis placed on crafting effective prompts to optimize the output</p>
-            </article>
-            <p class="before-after-arrow" aria-hidden="true">&rarr;</p>
-            <article class="slide-card before-after-card">
-              <p class="before-after-label">AFTER</p>
-              <p>Better processes reduce the need for perfecting prompts with large, mainstream models</p>
-            </article>
-          </div>
-          <article class="slide-card true-principle-card">
-            <p class="before-after-label">TRUE PRINCIPLE</p>
-            <p>Prompt design helps users get output that aligns with their intent</p>
-          </article>
-        </section>
 
         <!-- 23. HUMAN JUDGMENT -->
         <section>
@@ -552,7 +524,7 @@
           <h2>Does it matter how the work got done?</h2>
           <div class="slide-split img-wide">
             <div class="split-img">
-              <img src="https://ai4ra.uidaho.edu/wp-content/uploads/2026/03/AIContinuum.jpg" alt="AI Appropriateness Continuum — process-critical to output-driven" />
+              <img src="https://ai4ra.uidaho.edu/wp-content/uploads/2026/03/AIContinuum.jpg" alt="AI Appropriateness Continuum — process-critical to output-driven" style="margin:0; padding:0;" />
             </div>
             <div class="split-text">
               <ul>
@@ -629,7 +601,28 @@
              SECTION 5 — CONTEXT ENGINEERING
              ═══════════════════════════════════════════ -->
 
-        <!-- 27. CONTEXT WINDOW / FOUR DISCIPLINES -->
+        <!-- PROMPT → INTENT (moved from Decision Frameworks) -->
+        <section>
+          <p class="slide-kicker">Part 5 &middot; Context Engineering</p>
+          <h2>From Prompt Engineering to Intent Engineering</h2>
+          <div class="before-after-flow">
+            <article class="slide-card before-after-card">
+              <p class="before-after-label">BEFORE</p>
+              <p>Significant emphasis placed on crafting effective prompts to optimize the output</p>
+            </article>
+            <p class="before-after-arrow" aria-hidden="true">&rarr;</p>
+            <article class="slide-card before-after-card">
+              <p class="before-after-label">AFTER</p>
+              <p>Better processes reduce the need for perfecting prompts with large, mainstream models</p>
+            </article>
+          </div>
+          <article class="slide-card true-principle-card">
+            <p class="before-after-label">TRUE PRINCIPLE</p>
+            <p>Prompt design helps users get output that aligns with their intent</p>
+          </article>
+        </section>
+
+        <!-- CONTEXT WINDOW / FOUR DISCIPLINES -->
         <section>
           <p class="slide-kicker">Part 5 &middot; Context Engineering</p>
           <h2>Four disciplines for AI interaction</h2>

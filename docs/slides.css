@@ -204,7 +204,11 @@ body.slides-page {
   margin-top: 0.75rem;
   font-size: 0.95rem !important;
   color: var(--ink) !important;
-  font-weight: 600;
+  font-weight: 400 !important;
+  max-width: 75%;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  text-align: center !important;
 }
 
 .slide-rule {
@@ -336,7 +340,7 @@ body.slides-page {
 }
 
 .reveal .slide-split.img-wide .split-img img {
-  max-height: 24em;
+  max-height: 14em;
 }
 
 .character-grid {
@@ -1025,27 +1029,31 @@ body.slides-page {
 }
 
 .community-card {
-  min-height: 6rem;
+  min-height: 0;
+  padding: 0.5rem 0.8rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
+  gap: 0.15rem;
 }
 
 .community-card h3,
 .community-card p {
   text-align: center;
+  margin: 0;
 }
 
 .community-card-icon-image {
-  margin-top: auto;
+  margin: 0;
+  padding: 0;
   width: 12.0rem;
   height: auto;
   object-fit: contain;
 }
 
 .community-card-icon {
-  margin-top: auto;
+  margin: 0;
   font-size: 2.2rem;
   line-height: 1;
 }
@@ -1075,7 +1083,7 @@ body.slides-page {
   margin: 0;
   padding: 0.35rem 0.55rem;
   border-radius: 0.7rem;
-  background: rgba(255, 255, 255, 0.72);
+  background: rgba(241, 179, 0, 0.12);
   color: var(--ink);
 }
 

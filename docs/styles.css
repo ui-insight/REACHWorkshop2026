@@ -298,6 +298,12 @@ p {
   background: var(--white);
   border: 1px solid var(--line);
   transition: border-color 140ms ease, box-shadow 140ms ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.content-card .card-actions {
+  margin-top: auto;
 }
 
 .stat-card:hover,
