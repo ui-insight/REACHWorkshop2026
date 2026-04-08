@@ -262,56 +262,15 @@
         <section>
           <p class="slide-kicker">Why a lakehouse</p>
           <h2>Eight capabilities of a data lakehouse</h2>
-          <p style="font-size:0.75rem; color:var(--muted); margin-bottom:0.2rem;">Click a card to reveal the key question.</p>
-          <div class="flip-grid-4col">
-            <div class="flip-card">
-              <div class="flip-card-inner">
-                <div class="flip-card-front"><h3>Trust &amp; Governance</h3></div>
-                <div class="flip-card-back"><p>Can you prove who changed what, when, and why?</p></div>
-              </div>
-            </div>
-            <div class="flip-card">
-              <div class="flip-card-inner">
-                <div class="flip-card-front"><h3>Data Quality</h3></div>
-                <div class="flip-card-back"><p>Are schemas enforced, anomalies detected, and freshness monitored?</p></div>
-              </div>
-            </div>
-            <div class="flip-card">
-              <div class="flip-card-inner">
-                <div class="flip-card-front"><h3>Reliability</h3></div>
-                <div class="flip-card-back"><p>Is there automatic failover, backup, and point-in-time recovery?</p></div>
-              </div>
-            </div>
-            <div class="flip-card">
-              <div class="flip-card-inner">
-                <div class="flip-card-front"><h3>Scalability</h3></div>
-                <div class="flip-card-back"><p>Can storage and compute scale independently as needs grow?</p></div>
-              </div>
-            </div>
-            <div class="flip-card">
-              <div class="flip-card-inner">
-                <div class="flip-card-front"><h3>Openness</h3></div>
-                <div class="flip-card-back"><p>Are formats open and engines interchangeable with no vendor lock-in?</p></div>
-              </div>
-            </div>
-            <div class="flip-card">
-              <div class="flip-card-inner">
-                <div class="flip-card-front"><h3>Multi-Modal</h3></div>
-                <div class="flip-card-back"><p>Can you handle structured, semi-structured, and unstructured data in one platform?</p></div>
-              </div>
-            </div>
-            <div class="flip-card">
-              <div class="flip-card-inner">
-                <div class="flip-card-front"><h3>Simplicity</h3></div>
-                <div class="flip-card-back"><p>Can a small team operate this without a dedicated platform engineering group?</p></div>
-              </div>
-            </div>
-            <div class="flip-card">
-              <div class="flip-card-inner">
-                <div class="flip-card-front"><h3>Cost Efficiency</h3></div>
-                <div class="flip-card-back"><p>Does it eliminate redundant copies and scale compute to actual workload?</p></div>
-              </div>
-            </div>
+          <div class="pillar-grid" style="font-size:0.75rem;">
+            <article class="slide-card"><h3>Trust &amp; Governance</h3><p>Can you prove who changed what, when, and why?</p></article>
+            <article class="slide-card"><h3>Data Quality</h3><p>Are schemas enforced, anomalies detected, and freshness monitored?</p></article>
+            <article class="slide-card"><h3>Reliability</h3><p>Is there automatic failover, backup, and point-in-time recovery?</p></article>
+            <article class="slide-card"><h3>Scalability</h3><p>Can storage and compute scale independently as needs grow?</p></article>
+            <article class="slide-card"><h3>Openness</h3><p>Are formats open and engines interchangeable with no vendor lock-in?</p></article>
+            <article class="slide-card"><h3>Multi-Modal</h3><p>Can you handle structured, semi-structured, and unstructured data in one platform?</p></article>
+            <article class="slide-card"><h3>Simplicity</h3><p>Can a small team operate this without a dedicated platform engineering group?</p></article>
+            <article class="slide-card"><h3>Cost Efficiency</h3><p>Does it eliminate redundant copies and scale compute to actual workload?</p></article>
           </div>
         </section>
 
@@ -531,7 +490,7 @@
           <h2>Data governance as prerequisite</h2>
           <div class="slide-split">
             <div class="split-img">
-              <img src="https://ai4ra.uidaho.edu/wp-content/uploads/2025/07/4Pillars.png" alt="Four pillars of data governance" />
+              <img src="img/diagrams/4pillars.png" alt="Four pillars of data governance" />
             </div>
             <div class="split-text">
               <ul>
@@ -594,44 +553,13 @@
         <section>
           <p class="slide-kicker">Governance lens</p>
           <h2>Every new context source should trigger these questions</h2>
-          <p style="font-size:0.75rem; color:var(--muted); margin-bottom:0.2rem;">Click a card to reveal the question.</p>
-          <div class="flip-grid">
-            <div class="flip-card">
-              <div class="flip-card-inner">
-                <div class="flip-card-front"><h3>Provenance</h3></div>
-                <div class="flip-card-back"><p>Where did this information come from, and can we prove it?</p></div>
-              </div>
-            </div>
-            <div class="flip-card">
-              <div class="flip-card-inner">
-                <div class="flip-card-front"><h3>Permissions</h3></div>
-                <div class="flip-card-back"><p>Who is allowed to access it, transform it, or expose it?</p></div>
-              </div>
-            </div>
-            <div class="flip-card">
-              <div class="flip-card-inner">
-                <div class="flip-card-front"><h3>Quality</h3></div>
-                <div class="flip-card-back"><p>How current, complete, reliable, and explainable is it?</p></div>
-              </div>
-            </div>
-            <div class="flip-card">
-              <div class="flip-card-inner">
-                <div class="flip-card-front"><h3>Sensitivity</h3></div>
-                <div class="flip-card-back"><p>Does it contain private, regulated, or institutionally sensitive material?</p></div>
-              </div>
-            </div>
-            <div class="flip-card">
-              <div class="flip-card-inner">
-                <div class="flip-card-front"><h3>Stewardship</h3></div>
-                <div class="flip-card-back"><p>Who owns refresh, correction, and validation over time?</p></div>
-              </div>
-            </div>
-            <div class="flip-card">
-              <div class="flip-card-inner">
-                <div class="flip-card-front"><h3>Human review</h3></div>
-                <div class="flip-card-back"><p>When should the system answer, cite and defer, or escalate?</p></div>
-              </div>
-            </div>
+          <div class="pillar-grid">
+            <article class="slide-card"><h3>Provenance</h3><p>Where did this information come from, and can we prove it?</p></article>
+            <article class="slide-card"><h3>Permissions</h3><p>Who is allowed to access it, transform it, or expose it?</p></article>
+            <article class="slide-card"><h3>Quality</h3><p>How current, complete, reliable, and explainable is it?</p></article>
+            <article class="slide-card"><h3>Sensitivity</h3><p>Does it contain private, regulated, or institutionally sensitive material?</p></article>
+            <article class="slide-card"><h3>Stewardship</h3><p>Who owns refresh, correction, and validation over time?</p></article>
+            <article class="slide-card"><h3>Human review</h3><p>When should the system answer, cite and defer, or escalate?</p></article>
           </div>
         </section>
 
