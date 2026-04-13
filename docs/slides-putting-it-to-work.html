@@ -127,6 +127,55 @@
           </div>
         </section>
 
+        <!-- MEASURING EXTRACTION ACCURACY -->
+        <section>
+          <p class="slide-kicker">Accuracy</p>
+          <h2>Measuring extraction accuracy</h2>
+          <div class="slide-split">
+            <div class="split-text">
+              <ul>
+                <li><strong>OCR is your ceiling.</strong> If the PDF is scanned, extraction quality can never exceed OCR quality. Dedicated OCR engines and multimodal vision models handle layouts that basic text extraction misses.</li>
+                <li><strong>The data model is your constraint.</strong> Building on Session 2 — defining the expected schema before extraction means structural errors are caught automatically. If the model expects a date and gets a dollar amount, that's a flag, not a guess.</li>
+              </ul>
+            </div>
+            <div class="split-text" style="flex: 0 0 40%;">
+              <div class="slide-card dark" style="margin-top:0;">
+                <span class="slide-label">Why this matters</span>
+                <ul style="font-size:0.7rem;">
+                  <li>Garbage in, garbage out — OCR errors propagate silently through every downstream step</li>
+                  <li>Without a schema, the model invents its own structure — and it will be different every time</li>
+                  <li>Both are problems you solve <em>before</em> you choose an LLM</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- CONSISTENCY THROUGH REPLICATION -->
+        <section>
+          <p class="slide-kicker">Reproducibility</p>
+          <h2>Consistency through replication</h2>
+          <div class="slide-split">
+            <div class="split-text">
+              <ul>
+                <li><strong>Structured outputs.</strong> Some models support a mode that forces output to conform to a JSON schema. This eliminates parsing failures and guarantees the shape of extracted data matches your data model.</li>
+                <li><strong>Multiple-pass consensus.</strong> Run the same extraction multiple times and compare results. Agreement across replicates increases confidence; disagreement flags items for human review.</li>
+              </ul>
+            </div>
+            <div class="split-text" style="flex: 0 0 40%;">
+              <div class="slide-card dark" style="margin-top:0;">
+                <span class="slide-label">What replication tells you</span>
+                <ul style="font-size:0.7rem;">
+                  <li>If three passes agree on a deadline, you can trust it</li>
+                  <li>If three passes disagree on a budget figure, a human should look</li>
+                  <li>Consistency across replicates is a direct measure of reproducibility</li>
+                  <li>This is the same logic as experimental replication — and this audience knows that</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
         <!-- DETECTING AI-GENERATED CONTENT -->
         <section>
           <p class="slide-kicker">Detection</p>
