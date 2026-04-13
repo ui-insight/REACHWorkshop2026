@@ -82,30 +82,57 @@
           </p>
         </section>
 
+        <!-- AI ACROSS THE DATA LIFECYCLE -->
+        <section>
+          <p class="slide-kicker">Framework</p>
+          <h2>AI across the data lifecycle</h2>
+          <p class="slide-note">AI adds value at every phase of the research analytics pipeline — but each phase has different accuracy risks and verification needs.</p>
+          <div class="slide-grid">
+            <article class="slide-card accent">
+              <span class="slide-label">Creation & extraction</span>
+              <p style="font-size:0.75rem;">OCR, document parsing, structured extraction from PDFs. Turning unstructured documents into data.</p>
+            </article>
+            <article class="slide-card accent">
+              <span class="slide-label">Cleaning & janitorial work</span>
+              <p style="font-size:0.75rem;">Deduplication, normalization, schema validation, fixing messy records. Making data consistent and trustworthy.</p>
+            </article>
+            <article class="slide-card accent">
+              <span class="slide-label">Searching & selecting</span>
+              <p style="font-size:0.75rem;">Natural language filtering, semantic search, embeddings, RAG. Finding what you need without writing queries.</p>
+            </article>
+            <article class="slide-card accent">
+              <span class="slide-label">Analysis & synthesis</span>
+              <p style="font-size:0.75rem;">Summarization, cross-document comparison, trend identification, reporting. Turning data into decisions.</p>
+            </article>
+          </div>
+        </section>
+
         <!-- EVALUATION (from workshop deck) -->
         <section>
           <p class="slide-kicker">Evaluation</p>
-          <h2>Evaluating accuracy</h2>
+          <h2>Can you trust the output?</h2>
           <ul>
-            <li>AI sounds confident even when wrong — your job is to verify</li>
-            <li>Check facts against authoritative sources, not against what sounds right</li>
-            <li>Look for common failure modes: hallucination, outdated info, subtle bias</li>
+            <li>Every lifecycle phase has different failure modes — extraction hallucinates fields, cleaning drops valid records, search misses relevant documents, synthesis fabricates trends</li>
+            <li>AI sounds confident even when wrong — your job is to verify at every phase</li>
+            <li>Check results against authoritative sources, not against what sounds right</li>
             <li>Design verification strategies proportional to the stakes</li>
           </ul>
+          <p class="slide-callout">
+            Next: we'll focus on the extraction phase and measure accuracy directly.
+          </p>
         </section>
 
-        <!-- VANDALIZER HANDS-ON -->
+        <!-- VANDALIZER + OPENERA EXERCISE -->
         <section>
           <p class="slide-kicker">Hands-on exercise</p>
-          <h2>The Vandalizer</h2>
+          <h2>Vandalizer + OpenERA</h2>
           <div class="slide-split">
             <div class="split-text">
               <ul>
-                <li>AI-powered document intelligence — <strong>upload a document and extract structured data from it</strong></li>
-                <li>Pull deadlines, budgets, compliance requirements, and PI details from PDFs into clean structured output</li>
-                <li>Chain extraction tasks into repeatable workflows with dependency resolution</li>
-                <li>Ask natural-language questions against your documents with citation-backed answers</li>
-                <li>Log in now — your accounts are ready</li>
+                <li><strong>The Vandalizer</strong> is an AI-powered document intelligence platform — upload documents and extract structured data with configurable LLM workflows</li>
+                <li><strong>OpenERA</strong> provides synthetic research administration data — proposals, budgets, RFAs — with <strong>known ground truth values</strong></li>
+                <li>Download the sample PDFs, upload them to your Vandalizer account, and run extractions</li>
+                <li>Because we know the right answers, we can <strong>measure accuracy directly</strong></li>
               </ul>
               <div class="slide-callout" style="margin-top:0.6rem;">
                 <a href="https://vandalizer.uidaho.edu" target="_blank" rel="noopener" style="color:var(--ink);">
@@ -115,21 +142,46 @@
             </div>
             <div class="split-text" style="flex: 0 0 38%;">
               <div class="slide-card dark" style="margin-top:0;">
-                <span class="slide-label">What it demonstrates</span>
+                <span class="slide-label">What you'll need</span>
                 <ul style="font-size:0.7rem;">
-                  <li>Context engineering in action — governed data powering AI extraction</li>
-                  <li>Structured output from unstructured documents</li>
-                  <li>RAG chat with citation-backed answers</li>
-                  <li>The difference between raw AI output and a governed workflow</li>
+                  <li>Your Vandalizer account (check your email for credentials)</li>
+                  <li>Sample OpenERA PDFs (link provided)</li>
+                  <li>The ground truth answer key</li>
+                  <li>~15 minutes for the exercise</li>
                 </ul>
               </div>
             </div>
           </div>
         </section>
 
+        <!-- THE EXPERIMENT -->
+        <section>
+          <p class="slide-kicker">The experiment</p>
+          <h2>Measuring what matters</h2>
+          <p class="slide-note">Vary one thing at a time and measure the effect — just like bench science.</p>
+          <div class="slide-grid">
+            <article class="slide-card dark">
+              <span class="slide-label">1. OCR quality</span>
+              <p style="font-size:0.7rem;">Extract from a clean digital PDF, then from a scanned version of the same document. Compare the results. How much accuracy did you lose?</p>
+            </article>
+            <article class="slide-card dark">
+              <span class="slide-label">2. Model comparison</span>
+              <p style="font-size:0.7rem;">Run the same extraction with different LLMs. Do they agree? Where do they diverge? Does a bigger model always win?</p>
+            </article>
+            <article class="slide-card dark">
+              <span class="slide-label">3. Structured outputs</span>
+              <p style="font-size:0.7rem;">Run with and without JSON schema enforcement. Does constraining the output shape reduce errors or introduce new ones?</p>
+            </article>
+            <article class="slide-card dark">
+              <span class="slide-label">4. Replicate consensus</span>
+              <p style="font-size:0.7rem;">Run the same extraction 3 times. Where do replicates agree? Where do they disagree? Consensus across replicates is a direct measure of reproducibility.</p>
+            </article>
+          </div>
+        </section>
+
         <!-- MEASURING EXTRACTION ACCURACY -->
         <section>
-          <p class="slide-kicker">Accuracy</p>
+          <p class="slide-kicker">Extraction accuracy</p>
           <h2>Measuring extraction accuracy</h2>
           <div class="slide-split">
             <div class="split-text">
@@ -153,7 +205,7 @@
 
         <!-- CONSISTENCY THROUGH REPLICATION -->
         <section>
-          <p class="slide-kicker">Reproducibility</p>
+          <p class="slide-kicker">Extraction reproducibility</p>
           <h2>Consistency through replication</h2>
           <div class="slide-split">
             <div class="split-text">
