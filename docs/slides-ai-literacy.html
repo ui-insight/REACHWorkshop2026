@@ -772,6 +772,11 @@
       </div>
     </div>
 
+    <script type="module">
+      import { readKeyFromURL, installLinkInterceptor } from './js/key-manager.js';
+      readKeyFromURL();
+      installLinkInterceptor();
+    </script>
     <script src="reveal/dist/reveal.js"></script>
     <script src="slides-interactive.js"></script>
     <script>
