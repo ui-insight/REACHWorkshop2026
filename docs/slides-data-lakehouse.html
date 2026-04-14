@@ -451,31 +451,47 @@
           </div>
         </section>
 
-        <!-- LIVE DEMO -->
-        <section data-background-color="#f1b300">
-          <p class="slide-kicker slide-kicker-dark">Live demo</p>
-          <img src="img/diagrams/data-lakehouse-logo.svg" alt="Data Lakehouse" style="width:5rem; height:5rem; margin:0 auto 0.5rem; display:block;" />
-          <h1 class="slide-dark">The GRANTED data lakehouse</h1>
-          <p class="slide-lede slide-dark" style="margin-top:1rem;">
-            An open-source data lakehouse we are building as part of this award.
-          </p>
-          <div style="display:grid; grid-template-columns:repeat(2, 1fr); gap:0.6rem; margin-top:1.2rem; font-size:0.75rem; text-align:left;">
-            <div style="background:rgba(255,255,255,0.15); padding:0.8rem 1rem; border-radius:8px;">
-              <strong style="color:#fff;">Register a data source</strong>
-              <p style="color:rgba(255,255,255,0.8); margin-top:0.2rem;">Connect to an institutional system and configure sync schedules.</p>
-            </div>
-            <div style="background:rgba(255,255,255,0.15); padding:0.8rem 1rem; border-radius:8px;">
-              <strong style="color:#fff;">Build an adapter</strong>
-              <p style="color:rgba(255,255,255,0.8); margin-top:0.2rem;">Map source columns to the UDM with AI-assisted suggestions.</p>
-            </div>
-            <div style="background:rgba(255,255,255,0.15); padding:0.8rem 1rem; border-radius:8px;">
-              <strong style="color:#fff;">Follow data through the layers</strong>
-              <p style="color:rgba(255,255,255,0.8); margin-top:0.2rem;">Bronze raw data through Silver, Gold, and Platinum views.</p>
-            </div>
-            <div style="background:rgba(255,255,255,0.15); padding:0.8rem 1rem; border-radius:8px;">
-              <strong style="color:#fff;">Query governed data</strong>
-              <p style="color:rgba(255,255,255,0.8); margin-top:0.2rem;">Access the API gateway that serves data to applications and AI workflows.</p>
-            </div>
+        <!-- ACTIVITY 1: AI-ASSISTED EDA (links out to Data Crawler Carl) -->
+        <section>
+          <p class="slide-kicker">Activity 1 · AI-Assisted EDA</p>
+          <h2>Data Crawler Carl</h2>
+          <div class="slide-grid single" style="max-width:36rem; margin:1rem auto 0;">
+            <article class="slide-card accent" style="text-align:center;">
+              <h3>Upload a CSV. Ask questions in plain English. Get SQL + charts back.</h3>
+              <p style="margin-top:0.6rem;">
+                Your data stays in your browser. Gemini writes SQL queries that run locally
+                via WebAssembly SQLite. Charts are rendered from safe JSON specs &mdash; no code execution.
+              </p>
+              <a href="https://ui-insight.github.io/data-crawler-carl/" target="_blank"
+                 style="display:inline-block; margin-top:1rem; padding:0.5rem 1.5rem; border-radius:999px; background:var(--gold); color:var(--ink); font-weight:800; font-size:1rem; text-decoration:none; border:2px solid var(--ink);">
+                Launch Data Crawler Carl &rarr;
+              </a>
+            </article>
+          </div>
+        </section>
+
+        <!-- ACTIVITY 1 DEBRIEF -->
+        <section>
+          <p class="slide-kicker">Activity 1</p>
+          <h2>What did the AI miss?</h2>
+          <div class="slide-grid">
+            <article class="slide-card" style="border-left:3px solid #ef4444;">
+              <span class="slide-label">Hidden data quality issues</span>
+              <ul>
+                <li>3 of 15 awards have <strong>no Department</strong></li>
+                <li>2 awards have <strong>no Sponsor</strong> at all</li>
+                <li>AW-012 has <strong>$0 amount</strong> with no sponsor</li>
+                <li>Every AI answer was delivered with <strong>equal confidence</strong></li>
+              </ul>
+            </article>
+            <article class="slide-card accent">
+              <span class="slide-label">The lesson</span>
+              <h3>AI analyzes what you give it</h3>
+              <p>Without data quality checks, AI will confidently analyze
+                incomplete data. A polished narrative can hide the same gaps
+                that a raw query would expose.</p>
+              <p style="margin-top:0.5rem; font-weight:600;">This is why governed data matters.</p>
+            </article>
           </div>
         </section>
 
@@ -521,6 +537,7 @@
       readKeyFromURL();
       installLinkInterceptor();
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script src="reveal/dist/reveal.js"></script>
     <script src="slides-interactive.js"></script>
     <script>
