@@ -22,6 +22,10 @@ This is the companion site for the REACH 2026 workshop: **AI4RA — The Intersec
 - `resources/` — reference materials not served by the site
 - Root — only CLAUDE.md, README.md, .gitignore
 
+## Writing style
+
+- Never use em dashes (—). Use commas, periods, or "and" instead.
+
 ## Local preview
 
 ```bash
