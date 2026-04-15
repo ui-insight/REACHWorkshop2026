@@ -74,6 +74,57 @@
           </div>
         </section>
 
+        <!-- CLOUD vs LOCAL AI -->
+        <section>
+          <p class="slide-kicker">Where does the AI run?</p>
+          <h2>Cloud vs. locally hosted models</h2>
+          <div class="toggle-compare">
+            <div class="toggle-header">
+              <button class="toggle-btn active" data-panel="cloud">Cloud</button>
+              <button class="toggle-btn" data-panel="local">Local</button>
+              <button class="toggle-btn" data-panel="hybrid">Hybrid</button>
+            </div>
+            <div class="toggle-panel active" data-panel="cloud">
+              <p style="font-weight:600; margin:0 0 0.4rem;">Vendor-hosted (Google, OpenAI, Anthropic&hellip;)</p>
+              <ul>
+                <li>Access to the largest, most capable models</li>
+                <li>No hardware to buy or maintain</li>
+                <li>Pay per use, scales up and down</li>
+              </ul>
+              <div class="slide-callout">
+                <strong>Security:</strong> Data leaves your network. Requires enterprise data agreements,
+                BAAs, or similar contracts. Some data (FERPA, HIPAA, export-controlled)
+                may not be allowed to leave your infrastructure at all.
+              </div>
+            </div>
+            <div class="toggle-panel" data-panel="local">
+              <p style="font-weight:600; margin:0 0 0.4rem;">Self-hosted (Llama, GPT-oss, Qwen&hellip;)</p>
+              <ul>
+                <li>Data never leaves your infrastructure</li>
+                <li>Full control over the model and its environment</li>
+                <li>Fixed cost with hardware investment up front</li>
+                <li>Tools like <strong>Ollama</strong> and <strong>vLLM</strong> make local deployment accessible</li>
+              </ul>
+              <div class="slide-callout">
+                <strong>Security:</strong> Data stays local, but requires security expertise,
+                infrastructure, and compute resources.
+              </div>
+            </div>
+            <div class="toggle-panel" data-panel="hybrid">
+              <p style="font-weight:600; margin:0 0 0.4rem;">Cloud for most work, local for sensitive data</p>
+              <ul>
+                <li>Use cloud AI for general tasks and high throughput</li>
+                <li>Small teams run desktop servers (NVIDIA DGX Spark, Mac Mini) for restricted data</li>
+                <li>Not built for heavy workloads, but keeps critical data on-site</li>
+              </ul>
+              <div class="slide-callout" style="border-left-color:#f1b300;">
+                <strong>Challenge:</strong> Governance complexity. You need clear policies about which
+                models are approved for which data sources, and who enforces that.
+              </div>
+            </div>
+          </div>
+        </section>
+
         <!-- THE MODEL BEHIND THE DEMO -->
         <section>
           <p class="slide-kicker">The model behind the demo</p>
@@ -87,59 +138,6 @@
                 and write working SQL in response, all without being explicitly programmed for your dataset.</p>
             </article>
           </div>
-        </section>
-
-        <!-- CLOUD vs LOCAL AI -->
-        <section>
-          <p class="slide-kicker">Where does the AI run?</p>
-          <h2>Cloud vs. locally hosted models</h2>
-          <div class="slide-grid">
-            <article class="slide-card">
-              <span class="slide-label">Cloud AI</span>
-              <h3>Vendor-hosted (Google, OpenAI, Anthropic&hellip;)</h3>
-              <ul>
-                <li>Access to the largest, most capable models</li>
-                <li>No hardware to buy or maintain</li>
-                <li>Pay per use, scales up and down</li>
-              </ul>
-              <p class="slide-micro" style="margin-top:0.5rem; border-top:1px solid #eee; padding-top:0.4rem;">
-                <strong>Security:</strong> Data leaves your network. Requires enterprise data agreements,
-                BAAs, or similar contracts. Some data (FERPA, HIPAA, export-controlled)
-                may not be allowed to leave your infrastructure at all.
-              </p>
-            </article>
-            <article class="slide-card accent">
-              <span class="slide-label">Local AI</span>
-              <h3>Self-hosted (Llama, GPT-oss, Qwen&hellip;)</h3>
-              <ul>
-                <li>Data never leaves your infrastructure</li>
-                <li>Full control over the model and its environment</li>
-                <li>Fixed cost with hardware investment up front</li>
-                <li>Tools like <strong>Ollama</strong> and <strong>vLLM</strong> make local deployment accessible</li>
-              </ul>
-              <p class="slide-micro" style="margin-top:0.5rem; border-top:1px solid #eee; padding-top:0.4rem;">
-                <strong>Security:</strong> Data stays local, but requires security expertise,
-                infrastructure, and compute resources.
-              </p>
-            </article>
-            <article class="slide-card dark">
-              <span class="slide-label">Hybrid</span>
-              <h3>Cloud for most work, local for sensitive data</h3>
-              <ul>
-                <li>Use cloud AI for general tasks and high throughput</li>
-                <li>Small teams run desktop servers (NVIDIA DGX Spark, Mac Mini) for restricted data</li>
-                <li>Not built for heavy workloads, but keeps critical data on-site</li>
-              </ul>
-              <p class="slide-micro" style="margin-top:0.5rem; border-top:1px solid #eee; padding-top:0.4rem;">
-                <strong>Challenge:</strong> Governance complexity. You need clear policies about which
-                models are approved for which data sources, and who enforces that.
-              </p>
-            </article>
-          </div>
-          <p style="text-align:center; margin-top:0.6rem; font-size:0.75rem; color:var(--muted);">
-            Gemini 2.5 Flash is an LLM, but there are <em>many</em> kinds of AI models.
-            Which do you think is the most important right now?
-          </p>
         </section>
 
         <!-- 2. QUIZ: What is the most important model? -->
