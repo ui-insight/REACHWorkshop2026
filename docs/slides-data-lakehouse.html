@@ -29,6 +29,104 @@
           <p class="slide-lede slide-dark">Led by Nathan Layman</p>
         </section>
 
+        <!-- ACTIVITY 1: AI-ASSISTED EDA (links out to Data Crawler Carl) -->
+        <section>
+          <p class="slide-kicker">Activity 1 · AI-Assisted EDA</p>
+          <h2>Data Crawler Carl</h2>
+          <div class="slide-grid single" style="max-width:36rem; margin:1rem auto 0;">
+            <article class="slide-card accent" style="text-align:center;">
+              <h3>Upload a CSV. Ask questions in plain English. Get SQL + charts back.</h3>
+              <p style="margin-top:0.6rem;">
+                Your data stays in your browser. Gemini writes SQL queries that run locally
+                via WebAssembly SQLite. Charts are rendered from safe JSON specs &mdash; no code execution.
+              </p>
+              <a href="https://ui-insight.github.io/data-crawler-carl/" target="_blank"
+                 style="display:inline-block; margin-top:1rem; padding:0.5rem 1.5rem; border-radius:999px; background:var(--gold); color:var(--ink); font-weight:800; font-size:1rem; text-decoration:none; border:2px solid var(--ink);">
+                Launch Data Crawler Carl &rarr;
+              </a>
+            </article>
+          </div>
+        </section>
+
+        <!-- ACTIVITY 1 DEBRIEF -->
+        <section>
+          <p class="slide-kicker">Activity 1 · Debrief</p>
+          <h2>What did you notice?</h2>
+          <div class="slide-grid">
+            <article class="slide-card" style="border-left:3px solid #ef4444;">
+              <span class="slide-label">Discussion</span>
+              <ul>
+                <li>Did the AI ever sound <strong>confident but wrong</strong>?</li>
+                <li>Were there <strong>missing values</strong> or gaps it glossed over?</li>
+                <li>Did you get different answers by <strong>rephrasing</strong> the same question?</li>
+                <li>Could you tell which results were <strong>trustworthy</strong> without checking?</li>
+                <li>If a colleague ran the same query, would they get the <strong>same answer</strong>?</li>
+              </ul>
+            </article>
+            <article class="slide-card accent">
+              <span class="slide-label">The takeaway</span>
+              <h3>AI analyzes what you give it</h3>
+              <p>AI will confidently analyze incomplete or messy data.
+                A polished narrative can hide the same gaps
+                that a manual review would catch.</p>
+              <p style="margin-top:0.5rem; font-weight:600;">This is why governed data &mdash; and reproducibility &mdash; matters.</p>
+            </article>
+          </div>
+        </section>
+
+        <!-- THE MODEL BEHIND THE DEMO -->
+        <section>
+          <p class="slide-kicker">The model behind the demo</p>
+          <h2>Gemini 2.5 Flash</h2>
+          <div class="slide-grid single" style="max-width:40rem; margin:0.8rem auto 0;">
+            <article class="slide-card accent" style="text-align:left;">
+              <p>The demo used Google's <strong>Gemini 2.5 Flash</strong> &mdash; a large language model (LLM).
+                Remember Nathan's earlier explanation: LLMs predict the next token based on patterns
+                in their training data. No understanding, no memory &mdash; just very capable pattern matching.</p>
+              <p style="margin-top:0.5rem;">That's how it could read your column names, understand your question in plain English,
+                and write working SQL in response &mdash; all without being explicitly programmed for your dataset.</p>
+            </article>
+          </div>
+        </section>
+
+        <!-- CLOUD vs LOCAL AI -->
+        <section>
+          <p class="slide-kicker">Where does the AI run?</p>
+          <h2>Cloud vs. locally hosted models</h2>
+          <div class="slide-grid">
+            <article class="slide-card">
+              <span class="slide-label">Cloud AI</span>
+              <h3>Vendor-hosted (Google, OpenAI, Anthropic&hellip;)</h3>
+              <ul>
+                <li>Access to the largest, most capable models</li>
+                <li>No hardware to buy or maintain</li>
+                <li>Pay per use &mdash; scales up and down</li>
+              </ul>
+              <p class="slide-micro" style="margin-top:0.5rem; border-top:1px solid #eee; padding-top:0.4rem;">
+                <strong>Security:</strong> Data leaves your network. Requires enterprise data agreements,
+                BAAs, or similar contracts before using with sensitive or regulated data.
+              </p>
+            </article>
+            <article class="slide-card accent">
+              <span class="slide-label">Local AI</span>
+              <h3>Self-hosted (Llama, Mistral, Phi&hellip;)</h3>
+              <ul>
+                <li>Data never leaves your infrastructure</li>
+                <li>Full control over the model and its environment</li>
+                <li>Fixed cost &mdash; hardware investment up front</li>
+              </ul>
+              <p class="slide-micro" style="margin-top:0.5rem; border-top:1px solid #eee; padding-top:0.4rem;">
+                <strong>Security:</strong> Data stays local, but you need security expertise
+                to properly silo access, patch vulnerabilities, and protect the model endpoint.
+              </p>
+            </article>
+          </div>
+          <p style="text-align:center; margin-top:0.6rem; font-size:0.75rem; color:var(--muted);">
+            Gemini 2.5 Flash is an LLM &mdash; but there are <em>many</em> kinds of AI models.
+            Which do you think is the most important right now?
+          </p>
+        </section>
+
         <!-- 2. QUIZ: What is the most important model? -->
         <section>
           <p class="slide-kicker">Workshop thesis</p>
@@ -447,51 +545,6 @@
             <article class="slide-card" style="border-left: 3px solid #7C8B9A;">
               <span class="slide-label">Platinum</span>
               <p>Joined with Award data: "All active awards from Federal sponsors." Flat, access-controlled, ready for a dashboard or AI workflow.</p>
-            </article>
-          </div>
-        </section>
-
-        <!-- ACTIVITY 1: AI-ASSISTED EDA (links out to Data Crawler Carl) -->
-        <section>
-          <p class="slide-kicker">Activity 1 · AI-Assisted EDA</p>
-          <h2>Data Crawler Carl</h2>
-          <div class="slide-grid single" style="max-width:36rem; margin:1rem auto 0;">
-            <article class="slide-card accent" style="text-align:center;">
-              <h3>Upload a CSV. Ask questions in plain English. Get SQL + charts back.</h3>
-              <p style="margin-top:0.6rem;">
-                Your data stays in your browser. Gemini writes SQL queries that run locally
-                via WebAssembly SQLite. Charts are rendered from safe JSON specs &mdash; no code execution.
-              </p>
-              <a href="https://ui-insight.github.io/data-crawler-carl/" target="_blank"
-                 style="display:inline-block; margin-top:1rem; padding:0.5rem 1.5rem; border-radius:999px; background:var(--gold); color:var(--ink); font-weight:800; font-size:1rem; text-decoration:none; border:2px solid var(--ink);">
-                Launch Data Crawler Carl &rarr;
-              </a>
-            </article>
-          </div>
-        </section>
-
-        <!-- ACTIVITY 1 DEBRIEF -->
-        <section>
-          <p class="slide-kicker">Activity 1 · Debrief</p>
-          <h2>What did you notice?</h2>
-          <div class="slide-grid">
-            <article class="slide-card" style="border-left:3px solid #ef4444;">
-              <span class="slide-label">Discussion</span>
-              <ul>
-                <li>Did the AI ever sound <strong>confident but wrong</strong>?</li>
-                <li>Were there <strong>missing values</strong> or gaps it glossed over?</li>
-                <li>Did you get different answers by <strong>rephrasing</strong> the same question?</li>
-                <li>Could you tell which results were <strong>trustworthy</strong> without checking?</li>
-                <li>If a colleague ran the same query, would they get the <strong>same answer</strong>?</li>
-              </ul>
-            </article>
-            <article class="slide-card accent">
-              <span class="slide-label">The takeaway</span>
-              <h3>AI analyzes what you give it</h3>
-              <p>AI will confidently analyze incomplete or messy data.
-                A polished narrative can hide the same gaps
-                that a manual review would catch.</p>
-              <p style="margin-top:0.5rem; font-weight:600;">This is why governed data &mdash; and reproducibility &mdash; matters.</p>
             </article>
           </div>
         </section>
