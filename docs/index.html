@@ -28,6 +28,7 @@
               <li><a class="nav-link" href="course-content.html">Sessions</a></li>
               <li><a class="nav-link" href="resources.html">Resources</a></li>
               <li><a class="nav-link" href="at-reach.html">At REACH</a></li>
+              <li><a class="nav-link" href="https://github.com/ui-insight/REACHWorkshop2026" target="_blank" aria-label="GitHub repository"><svg height="20" width="20" viewBox="0 0 16 16" fill="currentColor" style="vertical-align:middle;"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.63 7.63 0 0 1 2-.27c.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg></a></li>
             </ul>
           </nav>
         </div>
@@ -48,7 +49,12 @@
               <div class="hero-actions">
                 <a class="button" href="course-content.html">View sessions</a>
                 <a class="button-secondary" href="ai4ra-workshop.ics" download>Add to calendar</a>
+                <button class="button-secondary" id="open-apikey-modal">Enable interactive activities</button>
               </div>
+              <p class="funding-credit" style="display:flex; align-items:center; gap:0.5rem; margin-top:9rem; font-size:0.85rem; color:var(--muted);">
+                <img src="img/logos/nsf-logos.webp" alt="National Science Foundation logo" style="height:36px;" />
+                Funded by National Science Foundation grant <a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=2427549" target="_blank" style="color:var(--accent);">#2427549</a>
+              </p>
             </div>
             <div class="hero-aside">
               <article class="hero-art">
@@ -76,17 +82,90 @@
           </div>
         </section>
 
+        <!-- API Key Modal -->
+        <div id="apikey-modal" class="modal-overlay">
+          <div class="modal-dialog">
+            <h2>Gemini API Key</h2>
+            <p>Some workshop activities use Google's Gemini AI. Enter your key below
+              and it will be passed automatically to interactive pages.</p>
+            <div class="api-key-input-row">
+              <input type="password" id="api-key-input" placeholder="Paste your Gemini API key here...">
+              <span id="api-key-status"></span>
+            </div>
+            <details style="margin-top:1rem;">
+              <summary style="cursor:pointer; color:var(--accent); font-size:0.9rem;">Don't have a key? Get one free</summary>
+              <ol style="line-height:1.8; padding-left:1.2em; margin-top:0.5rem;">
+                <li>Visit <a href="https://aistudio.google.com/apikey" target="_blank" style="color:var(--accent);">Google AI Studio</a> and sign in with your Google account.</li>
+                <li>Click <strong>Create API Key</strong> and select a Google Cloud project (or let it create one).</li>
+                <li>Copy the generated key and paste it into the input field above.</li>
+              </ol>
+            </details>
+            <details style="margin-top:0.75rem;">
+              <summary style="cursor:pointer; color:var(--accent); font-size:0.9rem;">How is my key kept secure?</summary>
+              <ul style="line-height:1.8; padding-left:1.2em; margin-top:0.5rem; font-size:0.85rem; color:var(--muted);">
+                <li><strong>Tab-scoped storage.</strong> Your key is held in sessionStorage, which is scoped to this browser tab. It is automatically cleared when you close the tab and is never written to disk or shared across tabs.</li>
+                <li><strong>Static site.</strong> This page is served as a static file from GitHub Pages. There is no server that stores or has access to your key.</li>
+                <li><strong>HTTPS in transit.</strong> API calls to Google use HTTPS (TLS), so your key and prompts are encrypted between your browser and Google's servers.</li>
+                <li><strong>URL stripped.</strong> If the key is passed via <code>?key=</code>, it is read once and immediately removed from the address bar so it does not appear in browser history or bookmarks.</li>
+                <li><strong>Your key, your account.</strong> Each participant uses their own free-tier Gemini key. No shared credentials are stored anywhere.</li>
+              </ul>
+              <p style="font-size:0.85rem; color:var(--muted); margin-top:0.5rem;">
+                <strong>Note:</strong> As with any client-side application, your key is visible in browser developer tools while the page is open.
+                For a workshop setting with free-tier educational keys this is acceptable. Do not use a key attached to a paid production project.
+              </p>
+            </details>
+            <p style="margin-top:0.5rem; font-size:0.85rem; color:var(--muted);">
+              <strong>Facilitators:</strong> Pre-fill by sharing a link with <code>?key=YOUR_KEY</code> appended.
+            </p>
+            <button id="dismiss-apikey-modal" class="button" style="margin-top:1rem;">Done</button>
+          </div>
+        </div>
+
       </main>
 
-      <footer class="site-footer">
-        <div class="shell footer-simple">
-          <p class="footer-kicker">AI4RA Community of Practice</p>
-          <p class="footer-copy">Monday, April 20, 2026 · 1:00–4:00 PM · Room BRISTOL</p>
-          <p class="footer-copy"><a href="https://github.com/ui-insight/REACHWorkshop2026">Repository</a></p>
-        </div>
-      </footer>
     </div>
 
-    <script src="app.js"></script>
+    <script type="module" src="app.js"></script>
+    <script type="module">
+      import { initAPI } from './js/gemini-api.js';
+
+      const input = document.getElementById('api-key-input');
+      const status = document.getElementById('api-key-status');
+      const modal = document.getElementById('apikey-modal');
+      const km = window.__keyManager;
+
+      // Pre-fill if key came from URL
+      const existingKey = km.getKey();
+      if (existingKey) {
+        input.value = existingKey;
+        status.textContent = 'Key loaded';
+        initAPI(existingKey);
+        document.getElementById('open-apikey-modal').textContent = 'Interactive activities enabled';
+      }
+
+      input.addEventListener('input', () => {
+        const key = input.value.trim();
+        if (key) {
+          km.setKey(key);
+          initAPI(key);
+          status.textContent = 'Key entered';
+          document.getElementById('open-apikey-modal').textContent = 'Interactive activities enabled';
+        } else {
+          status.textContent = '';
+          document.getElementById('open-apikey-modal').textContent = 'Enable interactive activities';
+        }
+      });
+
+      // Open/close modal
+      document.getElementById('open-apikey-modal').addEventListener('click', () => {
+        modal.classList.add('visible');
+      });
+      document.getElementById('dismiss-apikey-modal').addEventListener('click', () => {
+        modal.classList.remove('visible');
+      });
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) modal.classList.remove('visible');
+      });
+    </script>
   </body>
 </html>

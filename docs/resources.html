@@ -28,7 +28,6 @@
               <li><a class="nav-link" href="course-content.html">Sessions</a></li>
               <li><a class="nav-link is-active" href="resources.html">Resources</a></li>
               <li><a class="nav-link" href="at-reach.html">At REACH</a></li>
-              <li><a class="nav-link" href="https://vandalizer.nkn.uidaho.edu" target="_blank" rel="noopener" style="background:var(--gold); color:#fff; border-radius:0.4rem; padding:0.3rem 0.8rem;">Launch Vandalizer</a></li>
             </ul>
           </nav>
         </div>
@@ -36,14 +35,24 @@
 
       <main>
         <section class="page-intro reveal">
-          <div class="page-intro-panel">
-            <p class="eyebrow">Resources</p>
-            <h1>Tools, demos, and references from the AI4RA ecosystem.</h1>
-            <p class="section-copy">
-              These are the tools and platforms built by the AI4RA community
-              of practice. Some are used live in the workshop; others support
-              the broader research analytics infrastructure.
-            </p>
+          <div class="page-intro-panel" style="display:flex; align-items:center; justify-content:space-between; gap:2rem;">
+            <div>
+              <p class="eyebrow">Resources</p>
+              <h1>Tools, demos, and references from the AI4RA ecosystem.</h1>
+              <p class="section-copy">
+                These are the tools and platforms built by the AI4RA community
+                of practice. Some are used live in the workshop; others support
+                the broader research analytics infrastructure.
+              </p>
+            </div>
+            <div style="text-align:center; flex-shrink:0; margin-left:auto;">
+              <a href="https://bit.ly/3NwQpTi" target="_blank">
+                <img src="img/evaluation_survey.png" alt="Workshop evaluation survey QR code" style="width:220px;" />
+              </a>
+              <p style="font-size:0.9rem; margin-top:0.5rem;">
+                <a href="https://bit.ly/3NwQpTi" target="_blank" style="color:var(--accent);">Workshop evaluation survey</a>
+              </p>
+            </div>
           </div>
         </section>
 
@@ -125,15 +134,8 @@
         </section>
       </main>
 
-      <footer class="site-footer">
-        <div class="shell footer-simple">
-          <p class="footer-kicker">AI4RA Community of Practice</p>
-          <p class="footer-copy">Monday, April 20, 2026 · 1:00–4:00 PM · Room BRISTOL</p>
-          <p class="footer-copy"><a href="https://github.com/ui-insight/REACHWorkshop2026">Repository</a></p>
-        </div>
-      </footer>
     </div>
 
-    <script src="app.js"></script>
+    <script type="module" src="app.js"></script>
   </body>
 </html>

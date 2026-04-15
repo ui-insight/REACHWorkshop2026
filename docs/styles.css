@@ -243,7 +243,10 @@ p {
   padding: 0.7rem 1.4rem;
   border-radius: 999px;
   border: 1px solid transparent;
+  font-family: inherit;
+  font-size: inherit;
   font-weight: 600;
+  cursor: pointer;
   transition:
     background-color 140ms ease,
     border-color 140ms ease,
@@ -833,4 +836,72 @@ p {
   .footer-list a {
     transition: none;
   }
+}
+
+/* ── API key input ─────────────────────────────────── */
+
+.api-key-input-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.api-key-input-row input {
+  flex: 1;
+  padding: 0.7rem 1rem;
+  font-size: 1rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  font-family: var(--mono);
+  background: var(--white);
+  color: var(--ink);
+}
+
+.api-key-input-row input:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--gold-dim);
+}
+
+#api-key-status {
+  font-size: 0.9rem;
+  color: #4caf50;
+  white-space: nowrap;
+  font-weight: 600;
+}
+
+.api-key-help-text {
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.api-key-help-text a {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+/* ── Modal overlay ─────────────────────────────────── */
+
+.modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.modal-overlay.visible {
+  display: grid;
+  place-items: center;
+}
+
+.modal-dialog {
+  background: var(--white);
+  padding: 2rem;
+  border-radius: var(--radius-lg);
+  max-width: 520px;
+  width: 90%;
+  box-shadow: var(--shadow);
 }
