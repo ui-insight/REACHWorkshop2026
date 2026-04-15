@@ -48,13 +48,13 @@
               <p class="preview-icon" aria-hidden="true">&#x1F9EA;</p>
               <p class="preview-part-number">Part 2</p>
               <h6 class="preview-part-title">Data Science &amp; AI Intersection</h6>
-              <p class="preview-time">10 min</p>
+              <p class="preview-time">20 min</p>
             </article>
             <article class="preview-step" role="listitem">
               <p class="preview-icon" aria-hidden="true">&#x1F9ED;</p>
               <p class="preview-part-number">Part 3</p>
               <h6 class="preview-part-title">Decision Frameworks</h6>
-              <p class="preview-time">10 min</p>
+              <p class="preview-time">20 min</p>
             </article>
           </div>
         </section>
@@ -80,7 +80,7 @@
         </section>
 
         <!-- 4. CORE PILLARS -->
-        <section class="logo-corner-slide">
+        <section class="logo-corner-slide" style="text-align:left;">
           <p class="slide-kicker">Part 1 &middot; AI4RA Introduction</p>
           <div class="section-heading-with-logo" style="justify-content:flex-start;">
             <h2>Core Pillars for AI4RA</h2>
@@ -152,70 +152,7 @@
              SECTION 2 — DATA SCIENCE & AI INTERSECTION
              ═══════════════════════════════════════════ -->
 
-        <!-- 7. AI VS DATA SCIENCE -->
-        <section hidden>
-          <p class="slide-kicker">Part 2 &middot; Data Science &amp; AI Intersection</p>
-          <h2>AI vs data science</h2>
-          <div class="slide-split">
-            <div class="split-img">
-              <img src="https://ai4ra.uidaho.edu/wp-content/uploads/2026/03/canAIBeUsed.png" alt="AI vs manual research administration" />
-            </div>
-            <div class="split-text">
-              <ul>
-                <li>Data science: structured analysis, statistics, reproducible pipelines, dashboards</li>
-                <li>AI / LLMs: language generation, pattern matching, unstructured data, probabilistic output</li>
-                <li>They complement each other &mdash; but people conflate them</li>
-              </ul>
-            </div>
-          </div>
-        </section>
-
-        <!-- 8. AI TOOL LANDSCAPE -->
-        <section hidden>
-          <p class="slide-kicker">Part 2 &middot; Data Science &amp; AI Intersection</p>
-          <h2>AI tools: what's available and what's different</h2>
-          <div class="slide-grid">
-            <article class="slide-card">
-              <span class="slide-label">Categories</span>
-              <ul>
-                <li><strong>Chatbots</strong> &mdash; ChatGPT, Claude, Gemini. General-purpose conversation and generation.</li>
-                <li><strong>Writing assistants</strong> &mdash; Grammarly, Copilot. Embedded in your workflow.</li>
-                <li><strong>Coding assistants</strong> &mdash; GitHub Copilot, Cursor. Code generation and debugging.</li>
-                <li><strong>Specialized tools</strong> &mdash; Research discovery, grant matching, compliance screening.</li>
-              </ul>
-            </article>
-            <article class="slide-card accent">
-              <span class="slide-label">Consumer vs institutional</span>
-              <ul>
-                <li><strong>Consumer (free/personal)</strong> &mdash; your data may train the model, limited privacy controls, no institutional audit trail</li>
-                <li><strong>Enterprise / institutional</strong> &mdash; data stays in your tenant, admin controls, audit logging, compliance certifications</li>
-                <li>The same product name can mean very different data handling depending on the license tier</li>
-              </ul>
-              <p class="slide-micro">Check with your IT office: what tools does your institution license, and what are the terms?</p>
-            </article>
-          </div>
-        </section>
-
-        <!-- 9. HOW LLMS WORK -->
-        <section hidden>
-          <p class="slide-kicker">Part 2 &middot; Data Science &amp; AI Intersection</p>
-          <h2>How LLMs actually work</h2>
-          <div class="slide-split">
-            <div class="split-img">
-              <img src="https://ai4ra.uidaho.edu/wp-content/uploads/2025/08/AIBrain.png" alt="AI Brain" />
-            </div>
-            <div class="split-text">
-              <ul>
-                <li>Predict the next token based on patterns in training data</li>
-                <li>No understanding, no memory, no intent of their own</li>
-                <li>Extremely capable at text generation, translation, summarization, extraction</li>
-                <li>Improving fast &mdash; but still prone to confident-sounding errors, especially on niche or rapidly changing facts</li>
-              </ul>
-            </div>
-          </div>
-        </section>
-
-        <!-- 10. NEXT-TOKEN BUILDER — interactive -->
+        <!--7. NEXT-TOKEN BUILDER — interactive -->
         <section>
           <p class="slide-kicker">Part 2 &middot; Data Science &amp; AI Intersection</p>
           <h2>Build a sentence one token at a time</h2>
@@ -224,134 +161,7 @@
           <p class="slide-note">No right answer, only probabilities. This is why LLMs produce different output each time.</p>
         </section>
 
-        <!-- 11. ACCURACY & REPRODUCIBILITY -->
-        <section hidden>
-          <p class="slide-kicker">Part 2 &middot; Data Science &amp; AI Intersection</p>
-          <h2>Accuracy and its limits</h2>
-          <ul>
-            <li>LLM output is probabilistic, not deterministic</li>
-            <li>The same prompt can produce different answers each time</li>
-            <li>Sounds confident even when wrong &mdash; &ldquo;hallucination&rdquo;</li>
-            <li>The more niche or recent the fact, the more likely the model is guessing</li>
-            <li>Traditional analytics: same query, same data, same answer. LLMs: same prompt, different answer &mdash; by design.</li>
-            <li>Disciplines that help: structured output, temperature control, version pinning, human review</li>
-          </ul>
-        </section>
-
-        <!-- 12. SPOT THE HALLUCINATION — interactive -->
-        <section hidden style="text-align:center;">
-          <p class="slide-kicker">Part 2 &middot; Data Science &amp; AI Intersection</p>
-          <h2>Spot the hallucination</h2>
-          <p style="font-size:0.8rem; color:var(--muted); margin-bottom:0.3rem;">This AI-generated paragraph contains three false statements. Click the sentences you think are wrong.</p>
-          <div class="hallucination-exercise">
-            <p class="h-paragraph">
-              <span class="h-sentence" data-real="true">The NIH requires R01 applications to include a biosketch for each senior/key personnel.</span>
-              <span class="h-sentence" data-real="true">Institutions must submit proposals through Grants.gov using the SF424 form set.</span>
-              <span class="h-sentence" data-real="false">The standard NIH modular budget threshold is $350,000 per year in direct costs.</span>
-              <span class="h-sentence" data-real="true">All proposals require institutional official sign-off before submission to the federal sponsor.</span>
-              <span class="h-sentence" data-real="false">NSF proposals must include a two-page project summary addressing intellectual merit and broader impacts.</span>
-              <span class="h-sentence" data-real="false">Indirect cost rates are renegotiated annually with each federal agency.</span>
-            </p>
-            <button class="sort-reveal">Reveal answers</button>
-          </div>
-        </section>
-
-        <!-- 13. BIAS IN AI OUTPUTS -->
-        <section hidden>
-          <p class="slide-kicker">Part 2 &middot; Data Science &amp; AI Intersection</p>
-          <h2>AI outputs carry hidden biases</h2>
-          <ul>
-            <li>LLMs learn from training data that reflects historical and societal biases</li>
-            <li>AI-drafted broader impacts, DEI narratives, and personnel descriptions can default to stereotypical framing without anyone noticing</li>
-            <li>Budget justifications may reflect geographic or institutional size assumptions baked into training data</li>
-            <li>Bias is harder to spot than hallucination &mdash; the output reads as reasonable, it's just skewed</li>
-          </ul>
-          <div class="slide-grid" style="margin-top:0.5rem;">
-            <article class="slide-card">
-              <span class="slide-label">What to watch for</span>
-              <ul style="font-size:0.7rem;">
-                <li>Gendered language in role descriptions</li>
-                <li>Assumptions about institution type or size</li>
-                <li>Missing perspectives or communities</li>
-                <li>Default &ldquo;prestige&rdquo; framing (R1 bias)</li>
-              </ul>
-            </article>
-            <article class="slide-card accent">
-              <span class="slide-label">What to do</span>
-              <ul style="font-size:0.7rem;">
-                <li>Ask AI to check its own output for bias</li>
-                <li>Have a second reader review AI-drafted text</li>
-                <li>Compare output against your institutional values</li>
-                <li>Treat AI drafts as starting points, not final copy</li>
-              </ul>
-            </article>
-          </div>
-        </section>
-
-        <!-- 14. DATA PRIVACY & SECURITY -->
-        <section hidden>
-          <p class="slide-kicker">Part 2 &middot; Data Science &amp; AI Intersection</p>
-          <h2>What you share with AI matters</h2>
-          <div class="slide-split">
-            <div class="split-text">
-              <ul>
-                <li><strong>Commercial AI tools are not your institution's systems.</strong> Data you paste into ChatGPT, Copilot, or Claude may be logged, used for training, or stored outside your control.</li>
-                <li>Research administrators handle FERPA records, pre-decisional budgets, personnel actions, export-controlled data, and PI conflicts of interest</li>
-                <li>Even &ldquo;anonymized&rdquo; data can be re-identified when combined with other context</li>
-                <li>Institutional AI policies vary &mdash; know yours before you paste</li>
-              </ul>
-              <div class="slide-callout" style="border-left-color:#ef4444; background:rgba(239,68,68,0.08);">
-                If you wouldn't email it to a stranger, don't paste it into a commercial AI.
-              </div>
-            </div>
-            <div class="split-text" style="flex: 0 0 38%;">
-              <div class="slide-card dark" style="margin-top:0;">
-                <span class="slide-label">Never share with commercial AI</span>
-                <ul style="font-size:0.7rem;">
-                  <li>Student records (FERPA)</li>
-                  <li>Personnel / salary data</li>
-                  <li>Export-controlled research (ITAR/EAR)</li>
-                  <li>CUI / controlled unclassified info</li>
-                  <li>Pre-decisional budget narratives</li>
-                  <li>Conflict-of-interest disclosures</li>
-                  <li>IRB/IACUC protocol details</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <!-- 15. FEDERAL SPONSOR AI POLICIES -->
-        <section hidden>
-          <p class="slide-kicker">Part 2 &middot; Data Science &amp; AI Intersection</p>
-          <h2>Federal sponsors are setting AI rules &mdash; now</h2>
-          <div class="slide-grid">
-            <article class="slide-card" style="border-left: 3px solid #005693;">
-              <span class="slide-label">NIH</span>
-              <h3>NOT-OD-25-132</h3>
-              <ul style="font-size:0.7rem;">
-                <li>Applications &ldquo;substantially developed by AI&rdquo; will not be considered</li>
-                <li>NIH is actively using AI detection tools on submissions</li>
-                <li>Biosketches, specific aims, and research strategies are high-scrutiny areas</li>
-                <li>AI may assist &mdash; but a human must meaningfully develop the scientific content</li>
-              </ul>
-            </article>
-            <article class="slide-card" style="border-left: 3px solid #005693;">
-              <span class="slide-label">NSF</span>
-              <h3>AI use in merit review</h3>
-              <ul style="font-size:0.7rem;">
-                <li>Reviewers are prohibited from uploading proposals to non-approved AI tools</li>
-                <li>PIs should indicate AI use in project descriptions where applicable</li>
-                <li>Program officers are being trained to identify AI-generated content</li>
-              </ul>
-            </article>
-          </div>
-          <div class="slide-callout" style="margin-top:0.5rem;">
-            These policies are evolving rapidly. Check sponsor guidelines before every submission cycle.
-          </div>
-        </section>
-
-        <!-- 16. IP AND COPYRIGHT -->
+        <!-- 8. IP AND COPYRIGHT -->
         <section>
           <p class="slide-kicker">Part 2 &middot; Data Science &amp; AI Intersection</p>
           <h2>Who owns AI-generated content?</h2>
@@ -379,7 +189,7 @@
         </section>
 
 
-        <!-- 17. FAIR PRINCIPLES -->
+        <!-- 9. FAIR PRINCIPLES -->
         <section>
           <p class="slide-kicker">Part 2 &middot; Data Science &amp; AI Intersection</p>
           <h2>FAIR Principles as Operational Guardrails</h2>
@@ -401,7 +211,7 @@
              SECTION 2 — DATA SCIENCE & AI INTERSECTION (continued)
              ═══════════════════════════════════════════ -->
 
-        <!-- 18. PROACTIVE DATA SCIENCE — Shift 1 -->
+        <!-- 10. PROACTIVE DATA SCIENCE — Shift 1 -->
         <section>
           <p class="slide-kicker">Part 2 &middot; Data Science &amp; AI Intersection</p>
           <h2>The Intersection of Data Science and Artificial Intelligence</h2>
@@ -431,7 +241,7 @@
           </p>
         </section>
 
-        <!-- 19. REACTIVE DATA SCIENCE — Shift 2 -->
+        <!-- 11. REACTIVE DATA SCIENCE — Shift 2 -->
         <section>
           <p class="slide-kicker">Part 2 &middot; Data Science &amp; AI Intersection</p>
           <h2>The Intersection of Data Science and Artificial Intelligence</h2>
@@ -462,7 +272,7 @@
              SECTION 3 — DECISION FRAMEWORKS
              ═══════════════════════════════════════════ -->
 
-        <!-- 20. DS TASKS VS AI TASKS: THEN AND NOW -->
+        <!-- 12. DS TASKS VS AI TASKS: THEN AND NOW -->
         <section>
           <p class="slide-kicker">Part 3 &middot; Decision Frameworks</p>
           <h2>Data Science Tasks vs. AI Tasks: Then and Now</h2>
@@ -484,7 +294,7 @@
         </section>
 
 
-        <!-- 21. HUMAN JUDGMENT -->
+        <!-- 13. HUMAN JUDGMENT -->
         <section hidden>
           <p class="slide-kicker">Part 3 &middot; Decision Frameworks</p>
           <h2>Where human expertise remains essential</h2>
@@ -506,7 +316,7 @@
           </div>
         </section>
 
-        <!-- 22. THREE ZONES OF INTENT -->
+        <!-- 14. THREE ZONES OF INTENT -->
         <section>
           <p class="slide-kicker">Part 3 &middot; Decision Frameworks</p>
           <h2>Does it matter how the work got done?</h2>
@@ -524,18 +334,7 @@
           </div>
         </section>
 
-        <!-- 23. RA EXAMPLES FOR EACH ZONE -->
-        <section>
-          <p class="slide-kicker">Part 3 &middot; Decision Frameworks</p>
-          <h2>RA examples for each zone</h2>
-          <ul>
-            <li><strong>Human leads:</strong> effort certifications, IRB/IACUC reviews, conflict-of-interest determinations, financial audits, research misconduct investigations</li>
-            <li><strong>Human in the loop:</strong> pre-award budget reviews, compliance checks, subaward risk assessments, cost transfer justifications</li>
-            <li><strong>AI leads:</strong> drafting facility descriptions, formatting budgets, generating biosketches, auto-populating sponsor forms</li>
-          </ul>
-        </section>
-
-        <!-- 24. ZONE CLASSIFIER — interactive -->
+        <!-- 15. ZONE CLASSIFIER — interactive -->
         <section>
           <p class="slide-kicker">Part 3 &middot; Decision Frameworks</p>
           <h2>Classify these RA tasks</h2>
@@ -589,7 +388,7 @@
              SECTION 3 — DECISION FRAMEWORKS (continued)
              ═══════════════════════════════════════════ -->
 
-        <!-- PROMPT → INTENT (moved from Decision Frameworks) -->
+        <!-- 16. PROMPT → INTENT (moved from Decision Frameworks) -->
         <section>
           <p class="slide-kicker">Part 3 &middot; Decision Frameworks</p>
           <h2>From Prompt Engineering to Intent Engineering</h2>
@@ -610,7 +409,7 @@
           </article>
         </section>
 
-        <!-- CONTEXT WINDOW / FOUR DISCIPLINES -->
+        <!-- 17. CONTEXT WINDOW / FOUR DISCIPLINES -->
         <section>
           <p class="slide-kicker">Part 3 &middot; Decision Frameworks</p>
           <h2>Four disciplines for AI interaction</h2>
@@ -671,7 +470,7 @@
           </div>
         </section>
 
-        <!-- 25. PROMPTULUS LIVE DEMO -->
+        <!-- 18. PROMPTULUS LIVE DEMO -->
         <section>
           <p class="slide-kicker">Part 3 &middot; Decision Frameworks</p>
           <h2>The AI Literacy Companions</h2>
@@ -733,7 +532,7 @@
              SECTION 3 — DECISION FRAMEWORKS (closing)
              ═══════════════════════════════════════════ -->
 
-        <!-- 26. DATA FOUNDATIONS -->
+        <!-- 19. DATA FOUNDATIONS -->
         <section>
           <p class="slide-kicker">Closing</p>
           <h2>Amid Constant Change, Data Foundations Stay Essential</h2>
@@ -745,7 +544,7 @@
           </div>
         </section>
 
-        <!-- 27. BRIDGE TO MODULE 2 -->
+        <!-- 20. BRIDGE TO MODULE 2 -->
         <section data-background-color="#f1b300">
           <p class="slide-kicker slide-kicker-dark">Bridge forward</p>
           <h2 class="slide-dark">Module 2 builds governance depth</h2>
