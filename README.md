@@ -29,11 +29,11 @@ Help research administration professionals build safer, more relevant, and more 
 
 | Time | Module | Presenter | Affiliation |
 |------|--------|-----------|-------------|
-| 1:00 – 1:50 PM | AI and data science: what's what | Nathan Wiggins | Southern Utah University |
+| 1:00 – 1:50 PM | The intersection between AI and data science | Nathan Wiggins | Southern Utah University |
 | 2:00 – 2:50 PM | The data lakehouse and data organization | Nathan Layman | University of Idaho |
 | 3:00 – 3:50 PM | Reproducibility, accuracy, and putting it to work | Barrie Robison | University of Idaho |
 
-### Module 1 — AI and data science: what's what (Nathan Wiggins)
+### Module 1 — The intersection between AI and data science (Nathan Wiggins)
 
 Broad overview of AI for research administration. Introduces the AI4RA community of practice and its ecosystem (Vandalizer, Data Lakehouse, Promptulus). Covers how LLMs work at a practical level, FAIR data principles as operational guardrails, accuracy and reproducibility challenges, the three zones of AI appropriateness, and decision frameworks for when to use AI versus when human judgment must lead. Introduces prompt engineering and the shift toward context engineering. (~28 slides with interactive elements.)
 
@@ -88,7 +88,7 @@ Picks up from the data governance foundation and asks: can you trust the output?
 
 | Name | Affiliation | Role | Module |
 |------|-------------|------|--------|
-| Nathan Wiggins | Southern Utah University | Data Scientist, SPARC Office | Module 1: AI literacy and foundations |
+| Nathan Wiggins | Southern Utah University | Data Scientist, SPARC Office | Module 1: The intersection between AI and data science |
 | Nathan Layman | University of Idaho | Data Scientist, AI4RA project | Module 2: Data lakehouse and organization |
 | Barrie Robison | University of Idaho | Professor of Biology, Director IIDS | Module 3: Putting it to work |
 

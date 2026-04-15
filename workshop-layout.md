@@ -12,9 +12,9 @@ index.html ─── Workshop home (agenda, themes, session details)
   │
   ├── slides.html ─── Slide deck directory
   │     ├── slides-workshop.html ──── Full 3-hour deck (continuous)
-  │     ├── slides-foundational.html ─ Session 1 deck
-  │     ├── slides-governance.html ─── Session 2 deck
-  │     └── slides-context-layers.html Session 3 deck
+  │     ├── slides-ai-literacy.html ─ Session 1 deck
+  │     ├── slides-data-lakehouse.html ─── Session 2 deck
+  │     └── slides-putting-it-to-work.html Session 3 deck
   │
   ├── presenters.html ─── Presenter bios and credentials
   └── governance-checklist.html ─── Context readiness checklist handout
@@ -24,13 +24,13 @@ index.html ─── Workshop home (agenda, themes, session details)
 
 | Time | Session | Presenter | Module page | Slide deck |
 |------|---------|-----------|-------------|------------|
-| 1:00–1:50 | AI and data science: what's what | Nathan Wiggins | module-foundational.html | slides-foundational.html |
-| 2:00–2:50 | The data lakehouse and data organization | Nathan Layman | module-data-governance.html | slides-governance.html |
-| 3:00–3:50 | Reproducibility, accuracy, and putting it to work | Barrie Robison | module-context-layers.html | slides-context-layers.html |
+| 1:00–1:50 | The intersection between AI and data science | Nathan Wiggins | module-foundational.html | slides-ai-literacy.html |
+| 2:00–2:50 | The data lakehouse and data organization | Nathan Layman | module-data-governance.html | slides-data-lakehouse.html |
+| 3:00–3:50 | Reproducibility, accuracy, and putting it to work | Barrie Robison | module-context-layers.html | slides-putting-it-to-work.html |
 
 ## Session flow and handoffs
 
-### Session 1 — AI and data science: what's what (Nathan Wiggins)
+### Session 1 — The intersection between AI and data science (Nathan Wiggins)
 
 Broad overview of AI for research administration. Introduces AI4RA, clarifies where data science ends and AI begins, shows how LLMs work, and frames the spectrum from prompt engineering to automation. Covers why human judgment stays in the loop and where AI fits institutional work. Closes with a **Promptulus demo** showing how prompt structure affects output quality — leading participants directly into Session 2's question: what about the data underneath?
 
@@ -75,6 +75,6 @@ img/
 
 ## Interactive elements
 
-- **Quiz** (slides-governance, slides-workshop) — "What is the most important model?" with 12 AI/ML model types. Single-select toggle, all wrong, reveals "The data model!"
-- **Context slider** (slides-context-layers, slides-workshop) — Draggable slider showing context window capacity across 4 disciplines, with preset buttons
-- **Promptulus character grid** (slides-foundational, slides-workshop) — 9 mascots representing tools in the AI4RA ecosystem
+- **Quiz** (slides-data-lakehouse, slides-workshop) — "What is the most important model?" with 12 AI/ML model types. Single-select toggle, all wrong, reveals "The data model!"
+- **Context slider** (slides-putting-it-to-work, slides-workshop) — Draggable slider showing context window capacity across 4 disciplines, with preset buttons
+- **Promptulus character grid** (slides-ai-literacy, slides-workshop) — 9 mascots representing tools in the AI4RA ecosystem
