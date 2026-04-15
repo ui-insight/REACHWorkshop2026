@@ -37,8 +37,8 @@
             <article class="slide-card accent" style="text-align:center;">
               <h3>Upload a CSV. Ask questions in plain English. Get SQL + charts back.</h3>
               <p style="margin-top:0.6rem;">
-                Your data stays in your browser. Gemini writes SQL queries that run locally
-                via WebAssembly SQLite. Charts are rendered from safe JSON specs &mdash; no code execution.
+                Your data stays in your browser. AI writes SQL queries that run locally
+                against your dataset. Charts are generated automatically from the results.
               </p>
               <a href="https://ui-insight.github.io/data-crawler-carl/" target="_blank"
                  style="display:inline-block; margin-top:1rem; padding:0.5rem 1.5rem; border-radius:999px; background:var(--gold); color:var(--ink); font-weight:800; font-size:1rem; text-decoration:none; border:2px solid var(--ink);">
@@ -69,7 +69,7 @@
               <p>AI will confidently analyze incomplete or messy data.
                 A polished narrative can hide the same gaps
                 that a manual review would catch.</p>
-              <p style="margin-top:0.5rem; font-weight:600;">This is why governed data &mdash; and reproducibility &mdash; matters.</p>
+              <p style="margin-top:0.5rem; font-weight:600;">This is why governed data, and reproducibility, matters.</p>
             </article>
           </div>
         </section>
@@ -80,11 +80,11 @@
           <h2>Gemini 2.5 Flash</h2>
           <div class="slide-grid single" style="max-width:40rem; margin:0.8rem auto 0;">
             <article class="slide-card accent" style="text-align:left;">
-              <p>The demo used Google's <strong>Gemini 2.5 Flash</strong> &mdash; a large language model (LLM).
+              <p>The demo used Google's <strong>Gemini 2.5 Flash</strong>, a cloud-hosted large language model (LLM).
                 Remember Nathan's earlier explanation: LLMs predict the next token based on patterns
-                in their training data. No understanding, no memory &mdash; just very capable pattern matching.</p>
+                in their training data. No understanding, no memory. Just very capable pattern matching.</p>
               <p style="margin-top:0.5rem;">That's how it could read your column names, understand your question in plain English,
-                and write working SQL in response &mdash; all without being explicitly programmed for your dataset.</p>
+                and write working SQL in response, all without being explicitly programmed for your dataset.</p>
             </article>
           </div>
         </section>
@@ -100,37 +100,52 @@
               <ul>
                 <li>Access to the largest, most capable models</li>
                 <li>No hardware to buy or maintain</li>
-                <li>Pay per use &mdash; scales up and down</li>
+                <li>Pay per use, scales up and down</li>
               </ul>
               <p class="slide-micro" style="margin-top:0.5rem; border-top:1px solid #eee; padding-top:0.4rem;">
                 <strong>Security:</strong> Data leaves your network. Requires enterprise data agreements,
-                BAAs, or similar contracts before using with sensitive or regulated data.
+                BAAs, or similar contracts. Some data (FERPA, HIPAA, export-controlled)
+                may not be allowed to leave your infrastructure at all.
               </p>
             </article>
             <article class="slide-card accent">
               <span class="slide-label">Local AI</span>
-              <h3>Self-hosted (Llama, Mistral, Phi&hellip;)</h3>
+              <h3>Self-hosted (Llama, GPT-oss, Qwen&hellip;)</h3>
               <ul>
                 <li>Data never leaves your infrastructure</li>
                 <li>Full control over the model and its environment</li>
-                <li>Fixed cost &mdash; hardware investment up front</li>
+                <li>Fixed cost with hardware investment up front</li>
+                <li>Tools like <strong>Ollama</strong> and <strong>vLLM</strong> make local deployment accessible</li>
               </ul>
               <p class="slide-micro" style="margin-top:0.5rem; border-top:1px solid #eee; padding-top:0.4rem;">
-                <strong>Security:</strong> Data stays local, but you need security expertise
-                to properly silo access, patch vulnerabilities, and protect the model endpoint.
+                <strong>Security:</strong> Data stays local, but requires security expertise,
+                infrastructure, and compute resources.
+              </p>
+            </article>
+            <article class="slide-card dark">
+              <span class="slide-label">Hybrid</span>
+              <h3>Cloud for most work, local for sensitive data</h3>
+              <ul>
+                <li>Use cloud AI for general tasks and high throughput</li>
+                <li>Small teams run desktop servers (NVIDIA DGX Spark, Mac Mini) for restricted data</li>
+                <li>Not built for heavy workloads, but keeps critical data on-site</li>
+              </ul>
+              <p class="slide-micro" style="margin-top:0.5rem; border-top:1px solid #eee; padding-top:0.4rem;">
+                <strong>Challenge:</strong> Governance complexity. You need clear policies about which
+                models are approved for which data sources, and who enforces that.
               </p>
             </article>
           </div>
           <p style="text-align:center; margin-top:0.6rem; font-size:0.75rem; color:var(--muted);">
-            Gemini 2.5 Flash is an LLM &mdash; but there are <em>many</em> kinds of AI models.
+            Gemini 2.5 Flash is an LLM, but there are <em>many</em> kinds of AI models.
             Which do you think is the most important right now?
           </p>
         </section>
 
         <!-- 2. QUIZ: What is the most important model? -->
         <section>
-          <p class="slide-kicker">Workshop thesis</p>
-          <h1>What is the most important model?</h1>
+          <p class="slide-kicker">There are a lot of AI models, but</p>
+          <h1>Which is the most important one?</h1>
           <div class="quiz-options" id="quiz-model" style="margin-top:1rem;">
             <label class="quiz-option">
               <span class="quiz-letter">A</span>
@@ -197,7 +212,7 @@
 
         <!-- 3. WRONG! Your data model -->
         <section>
-          <p class="slide-kicker">The answer</p>
+          <p class="slide-kicker">&nbsp;</p>
           <h1 style="color:#ef4444; font-size:5rem;">Wrong!</h1>
           <div class="slide-split">
             <div class="split-img">
