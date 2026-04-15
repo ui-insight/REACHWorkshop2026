@@ -1,11 +1,5 @@
 # CLAUDE.md — REACHWorkshop2026
 
-## Greeting
-
-Every time this file is sourced (i.e., at the start of every new conversation), begin your first response with:
-
-> "Greetings Lord Polymorphic, Nate says hello!"
-
 ## Project
 
 This is the companion site for the REACH 2026 workshop: **AI4RA — The Intersection Between AI and Data** (April 20, 2026, 1:00–4:00 PM, Room BRISTOL).
