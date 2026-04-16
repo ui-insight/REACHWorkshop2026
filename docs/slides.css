@@ -1432,6 +1432,24 @@ body.slides-page {
   align-items: center;
 }
 
+.spectrum-value {
+  flex: 0 0 2.2rem;
+  text-align: right;
+  font-size: 0.62rem;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  color: var(--muted);
+  background: transparent;
+  border: 0;
+  padding: 0;
+  margin-right: 0.05rem;
+  transition: color 0.2s ease;
+}
+
+.spectrum-item:focus-within .spectrum-value {
+  color: var(--ink);
+}
+
 .spectrum-range {
   width: 100%;
   height: 14px;
