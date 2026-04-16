@@ -373,53 +373,6 @@
           </div>
         </section>
 
-        <!-- DETECTING AI-GENERATED CONTENT -->
-        <section>
-          <p class="slide-kicker">Detection</p>
-          <h2>Can you tell if AI wrote it?</h2>
-          <div class="slide-split">
-            <div class="split-text">
-              <ul>
-                <li>NIH is actively using AI detection tools on grant applications</li>
-                <li>Detection tools (GPTZero, Originality.ai, Turnitin) are improving but imperfect — false positives happen</li>
-                <li>Stylistic markers: unnaturally even tone, hedging phrases ("It's important to note that..."), lack of specific institutional voice</li>
-                <li>The best defense isn't evading detection — it's genuine human authorship with AI assistance</li>
-              </ul>
-            </div>
-            <div class="split-text" style="flex: 0 0 40%;">
-              <div class="slide-card dark" style="margin-top:0;">
-                <span class="slide-label">When you're the reviewer</span>
-                <ul style="font-size:0.7rem;">
-                  <li>Subcontractor deliverables and consultant reports</li>
-                  <li>Student-submitted progress reports</li>
-                  <li>Subawardee compliance documentation</li>
-                  <li>Letters of support and collaboration statements</li>
-                </ul>
-                <p style="font-size:0.65rem; color:var(--muted); margin-top:0.3rem;">If it reads too smooth and says nothing specific, ask questions.</p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <!-- GRANTED LESSONS (from workshop deck) -->
-        <section>
-          <p class="slide-kicker">Lessons learned</p>
-          <h2>The GRANTED project</h2>
-          <div class="slide-split">
-            <div class="split-img">
-              <img src="https://ai4ra.uidaho.edu/wp-content/uploads/2025/11/partnership.png" alt="GRANTED partnership — University of Idaho and Southern Utah University" />
-            </div>
-            <div class="split-text">
-              <ul>
-                <li>What the AI4RA NSF project revealed about deploying AI across institutions</li>
-                <li>Shared data infrastructure matters more than model choice</li>
-                <li>Governance work has to precede automation work</li>
-                <li>Cross-institutional interoperability requires shared schemas, not just shared tools</li>
-              </ul>
-            </div>
-          </div>
-        </section>
-
         <!-- WORKED EXAMPLE (from existing module) -->
         <section>
           <p class="slide-kicker">Worked example</p>
@@ -436,70 +389,134 @@
           </p>
         </section>
 
-        <!-- OPENING FRAME (from existing module) -->
+        <!-- CONTEXT FOR TRUST -->
         <section>
-          <p class="slide-kicker">Opening frame</p>
-          <h2>Your data is already layered — context engineering makes it explicit</h2>
-          <p>
-            HERD data in one system, publication metrics in another, eRA
-            records somewhere else, and BI dashboards pulling it together.
-            Context engineering is how AI works with institutional data where
-            it actually lives — the same integration challenge you already
-            solve for analytics and reporting.
-          </p>
+          <p class="slide-kicker">Before you send it</p>
+          <h2>What context makes a summary safer?</h2>
+          <div class="slide-split">
+            <div class="split-text">
+              <ul>
+                <li>Define the reporting period and metric rules so the model does not invent them.</li>
+                <li>Give the model the actual source table or query output, not a vague request for a narrative.</li>
+                <li>Use a template that separates directly supported facts from interpretation.</li>
+                <li>Keep a human review step for attribution, causality, anomalies, and edge cases.</li>
+              </ul>
+            </div>
+            <div class="split-text" style="flex: 0 0 40%;">
+              <div class="slide-card dark" style="margin-top:0;">
+                <span class="slide-label">What context should do</span>
+                <ul style="font-size:0.7rem;">
+                  <li>Reduce ambiguity about definitions</li>
+                  <li>Expose the source behind each number</li>
+                  <li>Make each claim easier to check</li>
+                  <li>Set clear escalation boundaries</li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </section>
 
-        <!-- CONTEXT STACK (from existing module) -->
-        <section>
-          <p class="slide-kicker">The stack</p>
-          <h2>A practical context stack</h2>
-          <ul>
-            <li>System or role instructions</li>
-            <li>Task prompt</li>
-            <li>Examples and templates</li>
-            <li>Files and documents</li>
-            <li>Tools and actions</li>
-            <li>Retrieved and structured institutional data</li>
-          </ul>
-        </section>
-
-        <!-- WHAT EACH LAYER CONTRIBUTES (from existing module) -->
-        <section>
-          <p class="slide-kicker">What to teach</p>
-          <h2>What each layer contributes</h2>
-          <ul>
-            <li>Instructions set tone, caution, and escalation boundaries</li>
-            <li>The prompt defines the current task and output</li>
-            <li>Templates keep responses consistent</li>
-            <li>Policy documents provide institutional authority</li>
-            <li>Retrieved tables add current operational detail</li>
-            <li>Human review protects edge cases and exceptions</li>
-          </ul>
-        </section>
-
-        <!-- DECISION RULE (from existing module) -->
+        <!-- DECISION RULE -->
         <section>
           <p class="slide-kicker">Decision rule</p>
-          <h2>Use the thinnest layer that gets the job done</h2>
-          <p>
-            If a template and a clearer prompt solve the problem, stop there.
-            If a trusted PDF is enough, do not jump straight to retrieval. If
-            the task depends on local judgment, the right layer may be human
-            escalation instead of more automation.
+          <h2>Use the thinnest context that preserves traceability</h2>
+          <ul>
+            <li>If a claim is directly visible in a trusted table, AI can help draft the wording.</li>
+            <li>If a claim depends on joins, business rules, or interpretation, show the sources and keep a human in the loop.</li>
+            <li>If a claim cannot be traced to a source, it is not ready to send.</li>
+            <li>Context is useful only when it makes the output more defensible.</li>
+          </ul>
+          <p class="slide-callout">
+            That is the test in the next exercise: which claims survive once
+            you ask for evidence?
           </p>
         </section>
 
-        <!-- EXERCISE (from existing module) -->
+        <!-- FINAL ANALYTICS DEMO -->
         <section>
-          <p class="slide-kicker">Exercise</p>
-          <h2>Have participants map their own stack</h2>
-          <ul>
-            <li>Pick one workflow people want to automate</li>
-            <li>Write the smallest useful prompt</li>
-            <li>List the other context needed for trust</li>
-            <li>Sort it into layers</li>
-            <li>Mark what is ready now and what still needs governance work</li>
-          </ul>
+          <p class="slide-kicker">Final demo</p>
+          <h2>Can you defend this number?</h2>
+          <div class="slide-split">
+            <div class="split-text">
+              <div class="slide-card" style="margin-top:0;">
+                <span class="slide-label">Mini reporting table</span>
+                <p style="font-size:0.68rem; margin:0.3rem 0 0.55rem;">
+                  Prompt: "Write a 3-sentence leadership summary from this
+                  table."
+                </p>
+                <table style="width:100%; border-collapse:collapse; font-size:0.68rem;">
+                  <thead>
+                    <tr>
+                      <th style="text-align:left; border-bottom:1px solid rgba(25,25,25,0.18); padding:0.35rem 0.35rem 0.35rem 0;">Metric</th>
+                      <th style="text-align:right; border-bottom:1px solid rgba(25,25,25,0.18); padding:0.35rem;">FY2023</th>
+                      <th style="text-align:right; border-bottom:1px solid rgba(25,25,25,0.18); padding:0.35rem 0;">FY2024</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td style="padding:0.35rem 0.35rem 0.35rem 0; border-bottom:1px solid rgba(25,25,25,0.08);">Proposals submitted</td>
+                      <td style="text-align:right; padding:0.35rem; border-bottom:1px solid rgba(25,25,25,0.08);">108</td>
+                      <td style="text-align:right; padding:0.35rem 0; border-bottom:1px solid rgba(25,25,25,0.08);">128</td>
+                    </tr>
+                    <tr>
+                      <td style="padding:0.35rem 0.35rem 0.35rem 0; border-bottom:1px solid rgba(25,25,25,0.08);">Awards received</td>
+                      <td style="text-align:right; padding:0.35rem; border-bottom:1px solid rgba(25,25,25,0.08);">39</td>
+                      <td style="text-align:right; padding:0.35rem 0; border-bottom:1px solid rgba(25,25,25,0.08);">41</td>
+                    </tr>
+                    <tr>
+                      <td style="padding:0.35rem 0.35rem 0.35rem 0; border-bottom:1px solid rgba(25,25,25,0.08);">Award dollars</td>
+                      <td style="text-align:right; padding:0.35rem; border-bottom:1px solid rgba(25,25,25,0.08);">$10.8M</td>
+                      <td style="text-align:right; padding:0.35rem 0; border-bottom:1px solid rgba(25,25,25,0.08);">$12.4M</td>
+                    </tr>
+                    <tr>
+                      <td style="padding:0.35rem 0.35rem 0.35rem 0;">Publications linked to awards</td>
+                      <td style="text-align:right; padding:0.35rem;">61</td>
+                      <td style="text-align:right; padding:0.35rem 0;">67</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="split-text" style="flex: 0 0 46%;">
+              <div class="slide-card dark" style="margin-top:0;">
+                <span class="slide-label">Audience prompt</span>
+                <p style="font-size:0.7rem; margin-top:0.3rem;">
+                  Which claims would you feel safe sending to leadership right
+                  now?
+                </p>
+                <ol style="font-size:0.68rem; margin:0.45rem 0 0; padding-left:1.1rem;">
+                  <li style="margin-bottom:0.4rem;">
+                    Proposal volume grew 18.5% year over year.
+                    <span class="fragment" style="display:block; color:#9be564; margin-top:0.12rem;">Supported: 128 vs 108.</span>
+                  </li>
+                  <li style="margin-bottom:0.4rem;">
+                    Award dollars rose 14.8%, from $10.8M to $12.4M.
+                    <span class="fragment" style="display:block; color:#9be564; margin-top:0.12rem;">Supported: both values are visible in the table.</span>
+                  </li>
+                  <li style="margin-bottom:0.4rem;">
+                    The stronger proposal pipeline improved the award conversion rate.
+                    <span class="fragment" style="display:block; color:#ff9e80; margin-top:0.12rem;">Not supported: the conversion rate fell from 36.1% to 32.0%.</span>
+                  </li>
+                  <li>
+                    Engineering drove most of the growth.
+                    <span class="fragment" style="display:block; color:#ffd54f; margin-top:0.12rem;">No provenance: nothing here identifies discipline or source breakdown.</span>
+                  </li>
+                </ol>
+              </div>
+            </div>
+          </div>
+          <p class="slide-callout fragment">
+            Only claims 1 and 2 are defensible from the visible evidence. The
+            rest need either correction or additional source traceability.
+          </p>
+          <aside class="notes">
+            Five-minute run:
+            1. Say: "Pretend this is the last slide before a leadership update and AI drafted the narrative for you."
+            2. Ask the room to vote, by hand, on which claims they would send as written.
+            3. Reveal the fragments one by one and make them justify their choices from the visible evidence.
+            4. Ask what evidence they would need before approving claims 3 and 4.
+            5. Bridge to the next slide: if a human still needs to validate and defend the summary, that is augment. If you cannot trace the claim at all, leave it alone.
+          </aside>
         </section>
 
         <!-- FROM DATA TO ACTION (from workshop deck) -->
@@ -532,11 +549,11 @@
           <p class="slide-kicker">Discussion</p>
           <h2>What do you need at your institution?</h2>
           <ul>
-            <li>Which analytics or reporting workflows only need better prompts or templates?</li>
-            <li>Which ones need trusted data sources or retrieval before they are useful?</li>
-            <li>Which become risky once the system can write to production or send a report?</li>
-            <li>Where should an analyst remain part of the context stack?</li>
-            <li>When would AI add value beyond what your existing BI dashboard or SQL query already delivers?</li>
+            <li>Which dashboard claims at your institution would you send to leadership without manual checking?</li>
+            <li>What counts as ground truth in one of your real analytics workflows?</li>
+            <li>Where would reruns, sampling, or automated consistency checks add confidence?</li>
+            <li>Which outputs need source traceability before staff can act on them?</li>
+            <li>Which tasks are best framed as automate, augment, or leave alone?</li>
           </ul>
         </section>
 
