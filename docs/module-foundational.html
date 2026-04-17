@@ -7,9 +7,59 @@
     <title>The intersection between AI and data science | AI4RA Workshop</title>
     <meta
       name="description"
-      content="Facilitator-ready module guide for The intersection between AI and data science, covering AI4RA framing, FAIR principles, and Vandalizer workflow orientation."
+      content="Workshop recap companion for The intersection between AI and data science. Summaries aligned to each section of the AI literacy presentation."
     />
     <link rel="stylesheet" href="styles.css" />
+    <style>
+      .summary-hero {
+        background: radial-gradient(circle at top right, rgba(241, 179, 0, 0.28), transparent 48%), #ffffff;
+      }
+
+      .summary-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 1rem;
+        margin-top: 1.35rem;
+      }
+
+      .summary-card {
+        min-height: 100%;
+        background: linear-gradient(180deg, #fff 0%, rgba(241, 179, 0, 0.06) 100%);
+        border: 1px solid rgba(25, 25, 25, 0.12);
+        box-shadow: 0 16px 40px rgba(0, 0, 0, 0.07);
+      }
+
+      .summary-card h3 {
+        line-height: 1.22;
+        margin-bottom: 0.5rem;
+        font-size: 1.08rem;
+      }
+
+      .summary-card p {
+        color: var(--muted);
+        font-size: 0.95rem;
+      }
+
+      .summary-card-link {
+        text-decoration: none;
+        transition: transform 120ms ease, box-shadow 120ms ease, border-color 120ms ease;
+      }
+
+      .summary-card-link:hover,
+      .summary-card-link:focus-visible {
+        transform: translateY(-2px);
+        box-shadow: 0 18px 42px rgba(0, 0, 0, 0.1);
+        border-color: rgba(241, 179, 0, 0.45);
+      }
+
+      .section-band {
+        padding: 1.25rem;
+        border-radius: var(--radius-md);
+        background: linear-gradient(120deg, rgba(241, 179, 0, 0.16), rgba(255, 255, 255, 0.65));
+        border: 1px solid rgba(241, 179, 0, 0.35);
+        margin: 0.95rem 0 0.25rem;
+      }
+    </style>
   </head>
   <body>
     <div class="page-frame">
@@ -35,127 +85,177 @@
 
       <main>
         <section class="page-intro reveal">
-          <div class="page-intro-panel">
+          <div class="page-intro-panel summary-hero">
             <img class="module-headshot" src="img/presenters/nathan-wiggins.png" alt="Nathan Wiggins" />
-            <p class="eyebrow">Module 1 — Led by Nathan Wiggins</p>
-            <h1>The intersection between AI and data science.</h1>
+            <p class="eyebrow">Workshop recap companion</p>
+            <h1>The intersection between AI and data science</h1>
             <p class="section-copy">
-              This opening module gives participants shared language and a
-              practical baseline before deeper technical modules. It connects
-              AI4RA project goals, FAIR principles, Vandalizer workflows, and
-              model framing choices to real research analytics work.
+              Artificial intelligence and data science are transforming research analytics.
+              This session unpacks how artificial intelligence and data science intersect to
+              support actionable applications for analysts, admins, and leadership.
             </p>
             <div class="hero-actions">
               <a class="button" href="course-content.html">Back to course hub</a>
-              <a class="button-secondary" href="slides-ai-literacy.html">Launch slide deck</a>
+              <a class="button-secondary" href="slides-ai-literacy.html">Open full slide deck</a>
             </div>
           </div>
         </section>
 
-        <section id="overview" class="content-block reveal">
-          <p class="eyebrow">Module brief</p>
-          <h2 class="section-heading section-heading-wide">Establish shared foundations before advanced implementation.</h2>
-          <div class="compact-grid">
-            <article class="content-card">
-              <span class="tag">Lead</span>
-              <h3>Nathan Wiggins</h3>
-              <p>SPARC Data Scientist, Southern Utah University</p>
-            </article>
-            <article class="content-card">
-              <span class="tag">Duration</span>
-              <h3>50 minutes</h3>
-              <p>Three parts: AI4RA Introduction, The Intersection of Data Science and Artificial Intelligence, and Decision Frameworks.</p>
-            </article>
-            <article class="content-card">
-              <span class="tag">Outcome</span>
-              <h3>Shared language and orientation</h3>
-              <p>Participants can map institutional needs to AI4RA framing and identify opportunities to apply data science and artificial intelligence tools to solving business problems.</p>
-            </article>
-            <article class="content-card">
-              <span class="tag">Learning objectives</span>
-              <h3>What participants should leave able to do</h3>
-              <ul class="module-points">
-                <li>Understand the evolving reach of data science in research analytics, apply FAIR principles as operational guardrails, and determine appropriate levels of human-in-the-loop intervention.</li>
-                <li>Apply frameworks based on foundational principles to make decisions in one's own institutional context regarding the implementation of emerging technologies.</li>
-              </ul>
-            </article>
+        <section class="content-block reveal">
+          <p class="eyebrow">Section 1</p>
+          <h2 class="section-heading section-heading-wide">AI4RA Introduction</h2>
+          <div class="section-band">
+            This section introduces the AI4RA mission, operating principles, and ecosystem tools that connect workshop practice
+            to institutional research analytics needs.
+          </div>
+          <div class="summary-grid">
+            <a class="content-card summary-card summary-card-link" href="slides-ai-literacy.html#/2">
+              <span class="tag">Slide focus</span>
+              <h3>AI4RA Objectives</h3>
+              <p>Highlights three goals: open-source workflows, trustworthy AI tools, and partner-site implementation and impact assessment.</p>
+            </a>
+            <a class="content-card summary-card summary-card-link" href="slides-ai-literacy.html#/3">
+              <span class="tag">Slide focus</span>
+              <h3>Core Pillars for AI4RA</h3>
+              <p>Defines accuracy, reproducibility, flexibility, and security as the foundation for responsible AI-enabled analytics.</p>
+            </a>
+            <a class="content-card summary-card summary-card-link" href="slides-ai-literacy.html#/4">
+              <span class="tag">Slide focus</span>
+              <h3>Community of Practice Ecosystem</h3>
+              <p>Maps the ecosystem: Vandalizer, Data Lakehouse, AI Literacy Course, and additional AI4RA projects.</p>
+            </a>
+            <a class="content-card summary-card summary-card-link" href="slides-ai-literacy.html#/5">
+              <span class="tag">Slide focus</span>
+              <h3>Bridge to Research Analytics</h3>
+              <p>Frames AI4RA as a path to remove analysis barriers, address stakeholder expectations, and sustain governance practices.</p>
+            </a>
           </div>
         </section>
 
-        <section id="teaching-flow" class="content-block reveal">
-          <p class="eyebrow">Teaching flow</p>
-          <h2 class="section-heading">Module parts and facilitation sequence</h2>
-          <div class="module-grid">
-            <article class="course-module">
-              <span class="tag">Part 1 · 10 minutes</span>
-              <h3>AI4RA Introduction</h3>
-              <ul class="module-points">
-                <li>Objectives, principal investigators, and pillars: accuracy, reproducibility, flexibility, security.</li>
-                <li>Community of practice orientation: Vandalizer, Data Lake, and related projects.</li>
-                <li>Bridge to research analytics: reducing barriers to high-level strategic analysis.</li>
-              </ul>
-            </article>
-            <article class="course-module">
-              <span class="tag">Part 2 · 10 minutes</span>
-              <h3>Intersection of Data Science and Artificial Intelligence</h3>
-              <ul class="module-points">
-                <li>FAIR principles as operational guardrails for AI-enabled workflows.</li>
-                <li>Transparent FAIR citation: Wilkinson et al., <em>Scientific Data</em> (2016), https://doi.org/10.1038/sdata.2016.18.</li>
-                <li>Proactive data science: shift in our reach.</li>
-                <li>Reactive data science: shift in their values.</li>
-              </ul>
-            </article>
-            <article class="course-module">
-              <span class="tag">Part 3 · 10 minutes</span>
-              <h3>Vandalizer</h3>
-              <ul class="module-points">
-                <li>Introduce Vandalizer and its purpose in AI4RA practice.</li>
-                <li>Explain how it is built for user needs versus typical AI interfaces.</li>
-                <li>Transition directly into a focused Vandalizer demo.</li>
-              </ul>
-            </article>
-            <article class="course-module">
-              <span class="tag">Part 4 · 5 minutes</span>
-              <h3>Vandalizer Questions</h3>
-              <ul class="module-points">
-                <li>Use a single “Vandalizer Questions” slide to open participant Q&amp;A.</li>
-              </ul>
-            </article>
-            <article class="course-module module-full">
-              <span class="tag">Part 5 · 10 minutes</span>
-              <h3>Frameworks and Models</h3>
-              <ul class="module-points">
-                <li>Data science vs. AI task differentiation still matters, but less so with agentic workflows.</li>
-                <li>Prompt engineering remains useful, while intent engineering becomes the stronger focus.</li>
-                <li>Across constant change, a strong and trustworthy data foundation remains the anchor.</li>
-              </ul>
-            </article>
+        <section class="content-block reveal">
+          <p class="eyebrow">Section 2</p>
+          <h2 class="section-heading section-heading-wide">Data Science &amp; AI Intersection</h2>
+          <div class="section-band">
+            This section explains how AI changes both what teams can build and what stakeholders expect, then offers a practical
+            approach for implementation.
+          </div>
+          <div class="summary-grid">
+            <a class="content-card summary-card summary-card-link" href="slides-ai-literacy.html#/6">
+              <span class="tag">Slide focus</span>
+              <h3>FAIR Principles as Guardrails</h3>
+              <p>Uses Findable, Accessible, Interoperable, and Reusable principles as operational constraints for AI-supported data work.</p>
+            </a>
+            <a class="content-card summary-card summary-card-link" href="slides-ai-literacy.html#/7">
+              <span class="tag">Slide focus</span>
+              <h3>Shift 1: Proactive Data Science</h3>
+              <p>Notes faster system building, strong alignment with data science skills, and risk of overload from too many pathways.</p>
+            </a>
+            <a class="content-card summary-card summary-card-link" href="slides-ai-literacy.html#/8">
+              <span class="tag">Slide focus</span>
+              <h3>Shift 2: Reactive Data Science</h3>
+              <p>Describes growing demand for faster AI-enabled outputs, competitive pressure, and preference shifts toward chatbot interfaces.</p>
+            </a>
+            <a class="content-card summary-card summary-card-link" href="slides-ai-literacy.html#/9">
+              <span class="tag">Slide focus</span>
+              <h3>Token-by-Token Generation Exercise</h3>
+              <p>Demonstrates that LLM outputs vary because generation is probability-based rather than fixed.</p>
+            </a>
+            <a class="content-card summary-card summary-card-link" href="slides-ai-literacy.html#/10">
+              <span class="tag">Slide focus</span>
+              <h3>Simplify the Approach</h3>
+              <p>Presents a three-step flow: identify bottlenecks, classify automation/collaboration fit, and build a simpler solution.</p>
+            </a>
           </div>
         </section>
 
-        <section id="bridge" class="content-block reveal">
-          <p class="eyebrow">Facilitation support</p>
-          <h2 class="section-heading">Closing the module</h2>
-          <article class="course-module module-full">
-            <span class="tag">Demo handoff</span>
-            <h3>Promptulus demo closes this session</h3>
-            <p>
-              End with a live Promptulus demo showing how prompt structure
-              affects output quality. Then pose the bridge question:
-              "But what about the data underneath?" — handing off directly
-              to Nathan Layman's session on data organization.
-            </p>
-          </article>
+        <section class="content-block reveal">
+          <p class="eyebrow">Section 3</p>
+          <h2 class="section-heading section-heading-wide">Sandbox Time</h2>
+          <div class="section-band">
+            This section moves into hands-on practice in Vandalizer through three structured exercises focused on extraction and
+            cross-document checking.
+          </div>
+          <div class="hero-actions">
+            <a class="button" href="https://vandalizer.uidaho.edu" target="_blank" rel="noopener">Open Vandalizer</a>
+          </div>
+          <div class="summary-grid">
+            <a class="content-card summary-card summary-card-link" href="slides-ai-literacy.html#/11">
+              <span class="tag">Slide focus</span>
+              <h3>Stepping Into the Vandalizer</h3>
+              <p>Introduces the prompt workspace and emphasizes quick iteration for applied workshop tasks.</p>
+            </a>
+            <a class="content-card summary-card summary-card-link" href="slides-ai-literacy.html#/12">
+              <span class="tag">Slide focus</span>
+              <h3>Exercise 1: Simple Extraction</h3>
+              <p>Works with one NOFO document to build extraction terms, auto-generate terms, and export results.</p>
+            </a>
+            <a class="content-card summary-card summary-card-link" href="slides-ai-literacy.html#/13">
+              <span class="tag">Slide focus</span>
+              <h3>Exercise 2: Repeated Extractions</h3>
+              <p>Runs a pre-built NSF extraction process across multiple award notices and tests a known-missing term.</p>
+            </a>
+            <a class="content-card summary-card summary-card-link" href="slides-ai-literacy.html#/14">
+              <span class="tag">Slide focus</span>
+              <h3>Exercise 3: Multi-Document Interactions</h3>
+              <p>Compares budget documents, identifies inaccuracies, and checks alignment after adding research strategy context.</p>
+            </a>
+          </div>
         </section>
 
-        <section id="assets" class="content-block reveal">
-          <h2 class="section-heading">Slides for this module</h2>
+        <section class="content-block reveal">
+          <p class="eyebrow">Section 4</p>
+          <h2 class="section-heading section-heading-wide">Decision Frameworks</h2>
+          <div class="section-band">
+            This section focuses on ownership, accountability, task fit, and interaction discipline for trustworthy AI use in
+            research administration contexts.
+          </div>
+          <div class="summary-grid">
+            <a class="content-card summary-card summary-card-link" href="slides-ai-literacy.html#/15">
+              <span class="tag">Slide focus</span>
+              <h3>Who Owns AI-Generated Content?</h3>
+              <p>Summarizes copyright and authorship concerns, including meaningful human contribution and institutional policy gaps.</p>
+            </a>
+            <a class="content-card summary-card summary-card-link" href="slides-ai-literacy.html#/17">
+              <span class="tag">Slide focus</span>
+              <h3>Human ↔ AI Continuum</h3>
+              <p>Positions work in three zones: human leads, human in the loop, and AI leads with validation checks.</p>
+            </a>
+            <a class="content-card summary-card summary-card-link" href="slides-ai-literacy.html#/18">
+              <span class="tag">Slide focus</span>
+              <h3>Task Classifier Activity</h3>
+              <p>Invites participants to classify example analytics tasks along the continuum to surface decision criteria.</p>
+            </a>
+            <a class="content-card summary-card summary-card-link" href="slides-ai-literacy.html#/19">
+              <span class="tag">Slide focus</span>
+              <h3>Then and Now: Task Fit</h3>
+              <p>Contrasts earlier DS-vs-AI distinctions with agentic workflows while preserving the principle that task fit matters.</p>
+            </a>
+            <a class="content-card summary-card summary-card-link" href="slides-ai-literacy.html#/20">
+              <span class="tag">Slide focus</span>
+              <h3>Prompt Engineering to Intent Engineering</h3>
+              <p>Shifts emphasis from perfect prompts toward better processes while keeping prompts aligned with user intent.</p>
+            </a>
+            <a class="content-card summary-card summary-card-link" href="slides-ai-literacy.html#/21">
+              <span class="tag">Slide focus</span>
+              <h3>Four Disciplines for AI Interaction</h3>
+              <p>Balances context-window use across intent, information, instructions, and conversation.</p>
+            </a>
+            <a class="content-card summary-card summary-card-link" href="slides-ai-literacy.html#/22">
+              <span class="tag">Slide focus</span>
+              <h3>AI Literacy Companions</h3>
+              <p>Introduces companion roles (e.g., auditability, decomposition, intent, prompts, context, and evaluation support).</p>
+            </a>
+          </div>
+        </section>
+
+        <section id="next-steps" class="content-block reveal">
+          <h2 class="section-heading">Continue with the session materials</h2>
           <article class="course-module module-full">
-            <span class="tag">Module asset</span>
-            <h3>The intersection between AI and data science (Module 1)</h3>
+            <span class="tag">Module assets</span>
+            <h3>Slides + next module</h3>
             <p>
-              Use this deck for the full 45-minute facilitation sequence,
-              including timing guidance for each part of the module.
+              Reopen the full deck for interactive elements, then move to the data governance module to continue building your
+              operational AI foundation.
             </p>
             <div class="hero-actions module-actions">
               <a class="button" href="slides-ai-literacy.html">Launch deck</a>
@@ -164,7 +264,6 @@
           </article>
         </section>
       </main>
-
     </div>
 
     <script type="module" src="app.js"></script>
