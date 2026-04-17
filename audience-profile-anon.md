@@ -1,13 +1,13 @@
 # Workshop Audience Profile (Anonymized)
 
-22 registered participants + 3 presenters. April 2026.
+24 registered participants + 3 presenters. April 2026. Updated from WA3 registrant list.
 
 ## Audience at a glance
 
-- Senior research administration professionals from US research institutions
+- Research analytics and data systems professionals from US research institutions
 - Mostly R1 universities, a few regional universities, a couple of research institutes, one consulting firm, one Canadian institution
 - Broad geographic spread across the US
-- Mix of directors, analysts, coordinators, and senior leadership
+- Mix of directors, analysts, coordinators, and senior leadership — skewing toward analytics and systems roles
 
 ## By function
 
@@ -47,6 +47,7 @@ Works on research enterprise software for universities.
 
 1. **They already manage data systems.** Don't oversell the problem. Frame the UDM and medallion architecture as solutions to problems they already have, not novel concepts.
 2. **Some are already building with AI.** Pitch context engineering and governance as the missing discipline, not AI itself.
-3. **Mix of technical depth.** Range from grant analysts to data scientists to institute directors. Content needs to land for both ends.
-4. **Strong systems orientation.** Many manage eRA platforms, IT infrastructure, and data pipelines. The architecture and capabilities content will resonate.
-5. **Governance is their daily work.** They already govern data for dashboards and compliance. Frame AI governance as an extension of what they do, not a new burden.
+3. **Mix of technical depth.** Range from grant analysts to data scientists to institute directors. Content needs to land for both ends — but the center of gravity is analytics, not pre/post-award.
+4. **Strong systems orientation.** Many manage eRA platforms, research information services, BI tools, and data pipelines. Architecture and data integration content will resonate most.
+5. **Governance is their daily work.** They already govern data for dashboards, metrics, and compliance reporting. Frame AI governance as an extension of what they do, not a new burden.
+6. **Analytics workflows are their frame of reference.** Use examples from reporting, metrics, data reconciliation, and cross-system integration rather than proposal routing and grant compliance.

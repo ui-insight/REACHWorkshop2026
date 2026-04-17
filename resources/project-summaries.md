@@ -58,7 +58,7 @@ Applications and dashboards
 
 ### UDM integration
 
-Both the data lakehouse and OpenERA use the [AI4RA-UDM](https://github.com/ui-insight/AI4RA-UDM) canonical schema. Silver views map source columns to UDM column names and types. Gold views provide a single deduplicated view per UDM table across all sources.
+The data lakehouse uses the [AI4RA-UDM](https://github.com/ui-insight/AI4RA-UDM) canonical schema. Silver views map source columns to UDM column names and types. Gold views provide a single deduplicated view per UDM table across all sources.
 
 ### Security model
 
@@ -80,7 +80,7 @@ This is the concrete example of "the most important model is the data model." Th
 
 - Feature branch: `feature/openmetadata` (catalog redesign + CAS file browser)
 - Near-term: HTTPS/TLS, CI/automated testing, data freshness monitoring
-- Medium-term: OpenERA integration, LLM-assisted adapter mapping, schema evolution detection
+- Medium-term: LLM-assisted adapter mapping, schema evolution detection
 - Long-term: End-to-end data lineage, PII tagging, multi-institution deployment
 
 ---

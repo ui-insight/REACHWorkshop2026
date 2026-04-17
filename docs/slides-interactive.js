@@ -66,6 +66,31 @@
     }
   });
 
+  /* --- Spectrum sliders (0-10 score display) --- */
+  function updateSpectrumReadout(range) {
+    if (!range) return;
+    var item = range.closest('.spectrum-item');
+    var readout = item ? item.querySelector('.spectrum-value') : null;
+    if (!readout) return;
+    readout.textContent = Number(range.value).toFixed(1);
+  }
+
+  document.querySelectorAll('.spectrum-range').forEach(function (range) {
+    updateSpectrumReadout(range);
+  });
+
+  document.addEventListener('input', function (evt) {
+    if (evt.target && evt.target.classList.contains('spectrum-range')) {
+      updateSpectrumReadout(evt.target);
+    }
+  });
+
+  document.addEventListener('change', function (evt) {
+    if (evt.target && evt.target.classList.contains('spectrum-range')) {
+      updateSpectrumReadout(evt.target);
+    }
+  });
+
   /* --- Token builder (branching predictor with drag, chart, attention) --- */
   (function () {
     var el = document.getElementById('token-builder');
