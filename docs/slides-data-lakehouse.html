@@ -58,6 +58,14 @@
               </div>
               <p class="preview-time">15 min</p>
             </article>
+            <article class="preview-step" role="listitem">
+              <p class="preview-icon" aria-hidden="true">&#x2615;</p>
+              <div class="preview-content">
+                <p class="preview-part-number">&nbsp;</p>
+                <h6 class="preview-part-title">Break</h6>
+              </div>
+              <p class="preview-time">10 min</p>
+            </article>
           </div>
         </section>
 
@@ -71,10 +79,16 @@
                 Upload a CSV, ask questions in plain English, and see what
                 the AI gets right and what it gets wrong.
               </p>
-              <a href="https://ui-insight.github.io/data-crawler-carl/" target="_blank"
-                 style="display:inline-block; margin-top:1rem; padding:0.5rem 1.5rem; border-radius:999px; background:var(--gold); color:var(--ink); font-weight:800; font-size:1rem; text-decoration:none; border:2px solid var(--ink);">
-                Launch demo &rarr;
-              </a>
+              <div style="display:flex; gap:0.75rem; justify-content:center; flex-wrap:wrap; margin-top:1rem;">
+                <a href="https://ui-insight.github.io/data-crawler-carl/" target="_blank"
+                   style="display:inline-block; padding:0.5rem 1.5rem; border-radius:999px; background:var(--gold); color:var(--ink); font-weight:800; font-size:1rem; text-decoration:none; border:2px solid var(--ink);">
+                  Launch demo &rarr;
+                </a>
+                <button onclick="document.getElementById('dataset-modal').classList.add('open')"
+                   style="padding:0.5rem 1.5rem; border-radius:999px; background:#fff; color:var(--ink); font-weight:700; font-size:1rem; border:2px solid var(--ink); cursor:pointer;">
+                  Sample datasets &#x2193;
+                </button>
+              </div>
             </article>
           </div>
         </section>
@@ -347,11 +361,11 @@
             <article class="slide-card">
               <span class="slide-label">Naming conventions</span>
               <ul>
-                <li><strong>Tables:</strong> PascalCase &mdash; <code>ProjectRole</code>, <code>AwardBudgetPeriod</code></li>
-                <li><strong>Columns:</strong> Snake_Case &mdash; <code>Award_Number</code>, <code>Start_Date</code></li>
-                <li><strong>Primary keys:</strong> <code>TableName_ID</code> &mdash; <code>Award_ID</code>, <code>Personnel_ID</code></li>
-                <li><strong>Foreign keys:</strong> Named by role &mdash; <code>Sponsor_Organization_ID</code>, not just <code>Organization_ID</code></li>
-                <li><strong>Booleans:</strong> <code>Is_</code> prefix &mdash; <code>Is_Active</code>, <code>Is_Primary</code></li>
+                <li><strong>Tables:</strong> PascalCase e.g. <code>ProjectRole</code>, <code>AwardBudgetPeriod</code></li>
+                <li><strong>Columns:</strong> Snake_Case e.g. <code>Award_Number</code>, <code>Start_Date</code></li>
+                <li><strong>Primary keys:</strong> <code>TableName_ID</code> e.g. <code>Award_ID</code>, <code>Personnel_ID</code></li>
+                <li><strong>Foreign keys:</strong> Named by role e.g. <code>Sponsor_Organization_ID</code>, not just <code>Organization_ID</code></li>
+                <li><strong>Booleans:</strong> <code>Is_</code> prefix e.g. <code>Is_Active</code>, <code>Is_Primary</code></li>
               </ul>
             </article>
             <article class="slide-card accent">
@@ -630,6 +644,70 @@
       </div>
     </div>
 
+    <!-- DATASET DOWNLOAD MODAL -->
+    <div id="dataset-modal" onclick="if(event.target===this)this.classList.remove('open')">
+      <div class="dataset-modal-content">
+        <button class="dataset-modal-close" onclick="document.getElementById('dataset-modal').classList.remove('open')" aria-label="Close">&times;</button>
+        <h3>Sample datasets for Data Crawler Carl</h3>
+        <p style="font-size:0.8rem; color:var(--muted); margin:0.25rem 0 1rem;">Download a CSV and upload it to the demo. These are synthetic research administration records.</p>
+        <div class="dataset-cards">
+          <a class="dataset-card" href="files/synthetic_proposals.csv" download="synthetic_proposals.csv">
+            <span class="dataset-icon" aria-hidden="true">&#x1F4DD;</span>
+            <div>
+              <strong>Proposals</strong>
+              <p>18 synthetic proposal records with sponsors, budgets, compliance flags, and team info.</p>
+            </div>
+          </a>
+          <a class="dataset-card" href="files/synthetic_awards.csv" download="synthetic_awards.csv">
+            <span class="dataset-icon" aria-hidden="true">&#x1F3C6;</span>
+            <div>
+              <strong>Awards</strong>
+              <p>8 award records with budget periods, transactions, F&amp;A rates, and cost sharing terms.</p>
+            </div>
+          </a>
+          <a class="dataset-card" href="files/synthetic_publications.csv" download="synthetic_publications.csv">
+            <span class="dataset-icon" aria-hidden="true">&#x1F4DA;</span>
+            <div>
+              <strong>Publications</strong>
+              <p>39 publication records with authors, journals, keywords, and linked award IDs.</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+    <style>
+      #dataset-modal {
+        display:none; position:fixed; inset:0; background:rgba(0,0,0,0.7);
+        z-index:9999; align-items:center; justify-content:center; padding:2rem;
+      }
+      #dataset-modal.open { display:flex; }
+      .dataset-modal-content {
+        background:#fff; border-radius:0.75rem; max-width:38rem; width:100%;
+        padding:1.5rem 1.75rem; position:relative;
+        box-shadow:0 20px 60px rgba(0,0,0,0.3);
+      }
+      .dataset-modal-content h3 { margin:0 0 0.25rem; font-size:1.15rem; }
+      .dataset-modal-close {
+        position:absolute; top:0.5rem; right:0.75rem; background:transparent;
+        border:none; font-size:1.75rem; cursor:pointer; color:#555; padding:0.25rem 0.5rem;
+      }
+      .dataset-modal-close:hover { color:#d71920; }
+      .dataset-cards { display:flex; flex-direction:column; gap:0.6rem; }
+      .dataset-card {
+        display:flex; align-items:center; gap:0.75rem; padding:0.75rem 1rem;
+        border:1px solid rgba(25,25,25,0.12); border-radius:0.5rem;
+        text-decoration:none; color:var(--ink);
+        transition:transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+      }
+      .dataset-card:hover {
+        transform:translateY(-2px); box-shadow:0 4px 12px rgba(0,0,0,0.1);
+        border-color:var(--gold);
+      }
+      .dataset-card strong { display:block; font-size:0.95rem; }
+      .dataset-card p { font-size:0.75rem; color:var(--muted); margin:0.15rem 0 0; }
+      .dataset-icon { font-size:1.6rem; flex-shrink:0; }
+    </style>
+
     <script type="module">
       import { readKeyFromURL, installLinkInterceptor } from './js/key-manager.js';
       readKeyFromURL();
@@ -646,6 +724,11 @@
         center: true,
         slideNumber: true,
         transition: "slide"
+      });
+
+      /* Close dataset modal on Escape */
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') document.getElementById('dataset-modal').classList.remove('open');
       });
 
       /* Quiz interaction */
