@@ -4,10 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#191919" />
-    <title>Data Governance Module | AI4RA Workshop</title>
+    <title>Data Lakehouse Module | AI4RA Workshop</title>
     <meta
       name="description"
-      content="Facilitator quick reference for the data governance and context engineering module."
+      content="Facilitator quick reference for the data lakehouse and data organization module."
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
@@ -37,13 +37,12 @@
         <section class="page-intro reveal">
           <div class="page-intro-panel">
             <img class="module-headshot" src="img/presenters/nathan-layman.jpeg" alt="Nathan Layman" />
-            <p class="eyebrow">Led by Nathan Layman</p>
+            <p class="eyebrow">Module 2 — Led by Nathan Layman</p>
             <h1>The data lakehouse and data organization</h1>
             <p class="section-copy">
-              Data governance is the foundation for context engineering.
-              This session covers the data lakehouse, medallion architecture,
-              the Unified Data Model, and why governance determines whether
-              AI context is trustworthy enough to use.
+              Hands-on data exploration, the Universal Data Model, and the
+              lakehouse architecture that makes AI tools work across
+              institutions.
             </p>
             <div class="hero-actions">
               <a class="button" href="slides-data-lakehouse.html">Launch slide deck</a>
@@ -58,48 +57,43 @@
           <h2 class="section-heading section-heading-wide">Quick reference for the presenter</h2>
           <div class="compact-grid">
             <article class="content-card">
-              <span class="tag">Learning goal</span>
-              <h3>Evaluate context before using it</h3>
+              <span class="tag">Part 1 — 15 min</span>
+              <h3>AI-Assisted EDA</h3>
               <p>
-                Participants should leave able to explain why provenance,
-                permissions, quality, and stewardship determine whether context
-                is safe enough to use in an AI workflow.
+                Open with a live Data Crawler Carl demo. Participants upload
+                a CSV, ask questions in plain English, and observe where the
+                AI gets it right and where it fails. Debrief surfaces data
+                quality issues: missing values, inconsistent answers, false
+                confidence.
               </p>
             </article>
             <article class="content-card">
-              <span class="tag">In-room move</span>
-              <h3>Open with a dashboard analogy</h3>
+              <span class="tag">Part 2 — 20 min</span>
+              <h3>Data Models and the UDM</h3>
               <p>
-                Start from the governance work they already do for dashboards,
-                then show that AI context uses the same institutional muscles
-                under higher stakes.
+                The "most important model" quiz reveals that data models
+                matter more than AI models. Introduce the Universal Data Model,
+                walk through its domains and naming conventions, then show how
+                AI can serve as a universal adapter for schema mapping.
               </p>
             </article>
             <article class="content-card">
-              <span class="tag">Key distinction</span>
-              <h3>AI both consumes data and generates new data</h3>
+              <span class="tag">Part 3 — 15 min</span>
+              <h3>The Data Lakehouse</h3>
               <p>
-                The system reads governed inputs but can also produce new
-                structured outputs — extracted fields, classifications,
-                summaries — that enter downstream workflows and need
-                governance too.
-              </p>
-            </article>
-            <article class="content-card">
-              <span class="tag">Participant artifact</span>
-              <h3>A context readiness checklist</h3>
-              <p>
-                Participants use the
-                <a href="governance-checklist.html">checklist handout</a>
-                to judge whether a data source is ready for AI-assisted work.
+                Compare four approaches to institutional data (warehouse, lake,
+                lakehouse, swamp). Walk through medallion layers with a worked
+                example tracing a field from raw source to application view.
+                Close with what well-organized data makes possible.
               </p>
             </article>
             <article class="content-card">
               <span class="tag">Learning objectives</span>
               <h3>What participants should leave able to do</h3>
               <ul class="module-points">
-                <li>Evaluate whether institutional data is ready for AI — assess provenance, permissions, currency, and explainability of data sources before connecting them to AI workflows.</li>
-                <li>Govern AI inputs and outputs with the same rigor as dashboards — recognize that AI both consumes governed data and generates new data products that need stewardship and traceability.</li>
+                <li>Experience AI-assisted exploratory data analysis firsthand</li>
+                <li>Explain why a shared data model matters more than any AI model</li>
+                <li>Describe how the medallion architecture organizes institutional data</li>
               </ul>
             </article>
           </div>
@@ -112,23 +106,22 @@
             <span class="tag">Talking points</span>
             <h3>Key messages to reinforce</h3>
             <ul class="module-points">
-              <li>Present governance as the condition that makes automation safe, not as bureaucracy.</li>
-              <li>More context can increase error surface area when institutions don't know which data is authoritative.</li>
-              <li>Keep returning to "trustworthy context" rather than "more context."</li>
-              <li>Make the consume-versus-generate distinction explicit: AI can create structured outputs that look authoritative if no one validates them.</li>
-              <li>Connect to what they already do: governing data for dashboards is the same muscle as governing data for AI.</li>
+              <li>AI will confidently analyze incomplete or messy data. A polished narrative can hide gaps that a manual review would catch.</li>
+              <li>The most important model is the data model, not the AI model. AI models change constantly, but well-organized data stays useful.</li>
+              <li>A Universal Data Model lets you build a tool once and deploy it at any institution that maps to the same schema.</li>
+              <li>The medallion architecture (Bronze, Silver, Gold, Platinum) turns raw data into governed, queryable views without losing the original.</li>
+              <li>AI can accelerate schema mapping, but humans review and approve. The UDM works with or without AI.</li>
             </ul>
           </article>
 
           <article class="course-module module-full">
-            <span class="tag">Demo handoff</span>
-            <h3>Vandalizer demo closes this session</h3>
+            <span class="tag">Bridge forward</span>
+            <h3>Handoff to Module 3</h3>
             <p>
-              Barrie Robison leads a live Vandalizer demo showing how
-              well-organized, governed data powers real RA workflows. Then
-              pose the bridge question: "Can you trust the output?" —
-              handing off directly to the reproducibility module on
-              evaluation, and accuracy.
+              Close by asking: "We've organized the data and built the
+              infrastructure. Now how do we know the outputs are accurate?"
+              This hands off to Module 3 on reproducibility, evaluation,
+              and putting it to work.
             </p>
           </article>
         </section>
