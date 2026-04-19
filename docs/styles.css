@@ -582,6 +582,20 @@ p {
   font-weight: 600;
 }
 
+.presenter-contact {
+  font-size: 0.9rem;
+  margin: 0.15rem 0 0.5rem;
+}
+
+.presenter-contact a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.presenter-contact a:hover {
+  text-decoration: underline;
+}
+
 .presenter-meta {
   display: grid;
   gap: 0.35rem;
