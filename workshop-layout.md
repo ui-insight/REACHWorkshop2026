@@ -10,15 +10,16 @@ index.html ─── Workshop home (agenda, themes, session details)
   │     ├── module-data-governance.html ── Module 2 facilitator guide
   │     └── module-context-layers.html ── Module 3 facilitator guide
   │
-  ├── slides.html ─── Slide deck directory
-  │     ├── slides-workshop.html ──── Full 3-hour deck (continuous)
-  │     ├── slides-ai-literacy.html ─ Session 1 deck
-  │     ├── slides-data-lakehouse.html ─── Session 2 deck
-  │     └── slides-putting-it-to-work.html Session 3 deck
+  ├── slides-ai-literacy.html ─── Module 1 deck (Wiggins)
+  ├── slides-data-lakehouse.html ── Module 2 deck (Layman)
+  ├── slides-putting-it-to-work.html ─ Module 3 deck (Robison)
   │
   ├── presenters.html ─── Presenter bios and credentials
-  └── governance-checklist.html ─── Context readiness checklist handout
+  ├── resources.html ─── Tools and external resources
+  └── at-reach.html ─── REACH 2026 logistics
 ```
+
+The workshop runs as three separate Reveal.js decks, not a continuous combined deck.
 
 ## Session schedule
 
@@ -40,7 +41,7 @@ Opens with the interactive quiz — "What is the most important model?" — and 
 
 ### Session 3 — Reproducibility, accuracy, and putting it to work (Barrie Robison)
 
-Picks up from the Vandalizer demo and asks: can you trust the output? Covers context engineering layers, evaluation and accuracy verification, prompt engineering techniques, and lessons from the GRANTED project. Ends with the practical adoption decision — what to automate, what to augment, and what to leave alone — plus discussion, REACH cross-references, and workshop wrap-up.
+Picks up from the data governance foundation and asks: can you trust the output? Frames AI across the data lifecycle and the "human verification doesn't scale" problem (batch extraction, autonomous agents, continuous compliance triage). Four hands-on Vandalizer experiments on a canonical NSF Award Notice extraction prompt explore OCR quality as a tool property, cross-tool comparison, structured output enforcement, and replicate consensus, each backed by synthetic sponsor documents with ground truth. Follows with a provenance exercise on a real NSF solicitation, a context-layers decision rule, and a "Can you defend this number?" exercise whose reporting table traces every cell to a JSON field in a synthetic sponsored-research corpus. Closes with the adoption decision — automate, augment, or leave alone — plus REACH cross-references and workshop wrap-up.
 
 ### Demo handoff pattern
 
@@ -65,16 +66,19 @@ Each slide deck is a condensed version of its module page, not a separate source
 
 ```
 img/
-  logos/       ai4ra-logo.png, nsf-logos.webp, ui-full-color.webp, suu-birdhead.webp
+  logos/       AI4RA, NSF, UI, SUU, FAIR, data-lake logos
   promptulus/  9 animal mascot icons (turtle, elephant, owl, parrot, etc.)
   presenters/  barrie-robison.jpg, nathan-layman.jpeg, nathan-wiggins.png
-  diagrams/    data-model.png
+  diagrams/    Data model, architecture, and FAIR diagrams
+  vandalizer/  Screenshots for the Module 3 Vandalizer exercise lightboxes
+  (root)       ai4ra.png, workshop_QR_code.png, evaluation_survey.png
 ```
 
-8 additional images are hosted externally on `ai4ra.uidaho.edu` and referenced in slide decks.
+Additional images are hosted externally on `ai4ra.uidaho.edu` and referenced in slide decks.
 
 ## Interactive elements
 
-- **Quiz** (slides-data-lakehouse, slides-workshop) — "What is the most important model?" with 12 AI/ML model types. Single-select toggle, all wrong, reveals "The data model!"
-- **Context slider** (slides-putting-it-to-work, slides-workshop) — Draggable slider showing context window capacity across 4 disciplines, with preset buttons
-- **Promptulus character grid** (slides-ai-literacy, slides-workshop) — 9 mascots representing tools in the AI4RA ecosystem
+- **Quiz** (slides-data-lakehouse) — "What is the most important model?" with 12 AI/ML model types. Single-select toggle, all wrong, reveals "The data model!"
+- **Vandalizer experiment cards** (slides-putting-it-to-work) — Four experiment cards (OCR quality, cross-tool comparison, structured outputs, replicate consensus), each opening a lightbox with run instructions.
+- **Lifecycle flip cards** (slides-putting-it-to-work) — Four cards across creation/extraction, cleaning, search, synthesis; click to flip to the Session 1/2 callback.
+- **Promptulus character grid** (slides-ai-literacy) — 9 mascots representing tools in the AI4RA ecosystem.
