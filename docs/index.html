@@ -82,6 +82,14 @@
           </div>
         </section>
 
+        <!-- QR Fullscreen Overlay -->
+        <div id="qr-fullscreen" style="display:none; position:fixed; inset:0; z-index:9999; background:rgba(0,0,0,0.92); flex-direction:column; align-items:center; justify-content:center; cursor:pointer;">
+          <p style="color:#fff; font-size:1.1rem; margin-bottom:1.5rem; opacity:0.7;">Enable interactive activities</p>
+          <img src="img/workshop_QR_code.png" alt="QR code" style="width:min(360px, 45vw); border-radius:12px;" />
+          <p style="color:var(--gold, #f1b300); font-size:min(4rem, 8vw); font-weight:800; margin-top:1.5rem; letter-spacing:0.02em;">bit.ly/4cCCUtD</p>
+          <p style="color:#fff; font-size:0.9rem; margin-top:2rem; opacity:0.5;">Click anywhere or press Escape to close</p>
+        </div>
+
         <!-- API Key Modal -->
         <div id="apikey-modal" class="modal-overlay">
           <div class="modal-dialog">
@@ -91,7 +99,10 @@
             <div style="text-align:center; margin:1rem 0;">
               <img src="img/workshop_QR_code.png" alt="Scan to open the workshop site with the API key pre-filled" style="width:180px;" />
               <p style="font-size:0.75rem; color:var(--muted); margin-top:0.25rem;">Scan to auto-fill the key</p>
-              <p style="font-size:0.75rem; color:var(--muted); margin-top:0.15rem;">Or visit <a href="https://bit.ly/4cCCUtD" target="_blank" rel="noopener" style="color:var(--gold);">bit.ly/4cCCUtD</a></p>
+              <p style="font-size:1.3rem; font-weight:700; margin-top:0.35rem;">
+                <a href="https://bit.ly/4cCCUtD" target="_blank" rel="noopener" style="color:var(--gold);">bit.ly/4cCCUtD</a>
+              </p>
+              <button id="expand-qr-btn" class="button-secondary" style="margin-top:0.5rem; font-size:0.8rem;">Expand for audience</button>
             </div>
             <div class="api-key-input-row">
               <input type="password" id="api-key-input" placeholder="Paste your Gemini API key here...">
@@ -170,6 +181,16 @@
       });
       modal.addEventListener('click', (e) => {
         if (e.target === modal) modal.classList.remove('visible');
+      });
+
+      // QR fullscreen expand
+      const qrFs = document.getElementById('qr-fullscreen');
+      document.getElementById('expand-qr-btn').addEventListener('click', () => {
+        qrFs.style.display = 'flex';
+      });
+      qrFs.addEventListener('click', () => { qrFs.style.display = 'none'; });
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && qrFs.style.display === 'flex') qrFs.style.display = 'none';
       });
     </script>
   </body>
