@@ -83,16 +83,16 @@
         </section>
 
         <!-- QR Fullscreen Overlay -->
-        <div id="qr-fullscreen" style="display:none; position:fixed; inset:0; z-index:9999; background:#fff; flex-direction:column; align-items:center; justify-content:center; cursor:pointer;">
-          <p style="color:#666; font-size:1.1rem; margin-bottom:1.5rem;">Enable interactive activities</p>
-          <img src="img/workshop_QR_code.png" alt="QR code" style="width:min(360px, 45vw); border-radius:12px;" />
-          <p style="color:var(--ink, #191919); font-size:min(4rem, 8vw); font-weight:800; margin-top:1.5rem; letter-spacing:0.02em;">bit.ly/4cCCUtD</p>
-          <div style="margin-top:2rem; background:rgba(241,179,0,0.12); border:1px solid rgba(241,179,0,0.4); border-radius:10px; padding:0.75rem 1.5rem; text-align:center;">
+        <div id="qr-fullscreen" style="display:none; position:fixed; inset:0; z-index:9999; background:#fff; flex-direction:column; align-items:center; justify-content:flex-start; cursor:pointer; overflow-y:auto; padding:2rem 1rem; box-sizing:border-box;">
+          <p style="color:#666; font-size:clamp(0.9rem, 2vw, 1.1rem); margin:0 0 1rem;">Enable interactive activities</p>
+          <img src="img/workshop_QR_code.png" alt="QR code" style="width:min(300px, 60vw); max-width:100%; border-radius:12px;" />
+          <p style="color:var(--ink, #191919); font-size:clamp(1.8rem, 6vw, 4rem); font-weight:800; margin:1rem 0 0; letter-spacing:0.02em; text-align:center; max-width:100%; word-break:break-all;">bit.ly/4cCCUtD</p>
+          <div style="margin-top:1.5rem; background:rgba(241,179,0,0.12); border:1px solid rgba(241,179,0,0.4); border-radius:10px; padding:0.75rem 1.25rem; text-align:center; max-width:90%; box-sizing:border-box;">
             <p style="color:#888; font-size:0.85rem; margin:0 0 0.25rem;">Conference Wi-Fi</p>
-            <p style="color:#191919; font-size:1.3rem; font-weight:700; margin:0;">MarriottBonvoy_Conference</p>
+            <p style="color:#191919; font-size:clamp(1rem, 3vw, 1.3rem); font-weight:700; margin:0; word-break:break-word;">MarriottBonvoy_Conference</p>
             <p style="color:#444; font-size:1rem; margin:0.2rem 0 0;">Password: <strong>UKY2026</strong></p>
           </div>
-          <p style="color:#999; font-size:0.9rem; margin-top:1.5rem;">Click anywhere or press Escape to close</p>
+          <p style="color:#999; font-size:0.9rem; margin:1.5rem 0 0;">Click anywhere or press Escape to close</p>
         </div>
 
         <!-- API Key Modal -->
