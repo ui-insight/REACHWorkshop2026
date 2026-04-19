@@ -370,6 +370,157 @@
               <p style="font-size:0.6rem; opacity:0.6; margin-top:0.25rem; font-style:italic;">Click for setup</p>
             </article>
           </div>
+          <p class="slide-note" style="margin-top:0.6rem; font-size:0.72rem;">
+            Each exercise gives you a menu of synthetic documents and a canonical extraction prompt. Pick a document, hold it constant across steps, and isolate the one variable for that exercise. The next four slides provide the materials and directions.
+          </p>
+        </section>
+
+        <!-- EXERCISE 1 SETUP: OCR QUALITY IS A TOOL PROPERTY -->
+        <section>
+          <p class="slide-kicker">Exercise 1 setup</p>
+          <h2>OCR quality is a property of the tool</h2>
+          <div class="slide-split">
+            <div class="split-text">
+              <p style="font-size:0.75rem; margin:0 0 0.4rem;"><strong>Question.</strong> "Works for me" in one tool is not an argument that OCR is solved. How far does the same scanned document travel depending on which pipeline touches it first?</p>
+              <ol style="font-size:0.72rem; padding-left:1.1rem;">
+                <li>Pick one of the <strong>tier 3</strong> PDFs. Run it through the Vandalizer with the extraction prompt and schema. Notice how much dotsocr recovers.</li>
+                <li>Now take the same PDF to a tool you'd actually use day to day: paste or upload it to ChatGPT, Claude, Copilot, a generic "PDF to text" converter, or the text-only extract from your browser.</li>
+                <li>Score each tool's output against the ground truth JSON. Mark missing, garbled, and silently collapsed fields.</li>
+                <li>The budget table and the stamped/highlighted header are the usual breaking points. Predict which tool will cope before you run it.</li>
+              </ol>
+            </div>
+            <div class="split-text" style="flex: 0 0 42%;">
+              <div class="slide-card dark" style="margin-top:0;">
+                <span class="slide-label">Materials</span>
+                <p style="font-size:0.62rem; margin:0.25rem 0 0.15rem; opacity:0.75;">Documents (synthetic; pick any)</p>
+                <ul style="font-size:0.64rem; margin:0 0 0.35rem; padding-left:0.95rem; line-height:1.35;">
+                  <li>NSF Award OAC-2415678 · <a href="files/workshop_ocr/nsf_award_notice_OAC-2415678_clean.pdf" target="_blank">clean</a> / <a href="files/workshop_ocr/nsf_award_notice_OAC-2415678_tier3_authentic.pdf" target="_blank">tier 3</a></li>
+                  <li>NIH NoA 1R01AI248002 · <a href="files/workshop_ocr/nih_notice_of_award_1R01AI248002-01_clean.pdf" target="_blank">clean</a> / <a href="files/workshop_ocr/nih_notice_of_award_1R01AI248002-01_tier3_authentic.pdf" target="_blank">tier 3</a></li>
+                  <li>Subaward SUB-24-001 · <a href="files/workshop_ocr/subaward_agreement_SUB-24-001_clean.pdf" target="_blank">clean</a> / <a href="files/workshop_ocr/subaward_agreement_SUB-24-001_tier3_authentic.pdf" target="_blank">tier 3</a></li>
+                </ul>
+                <p style="font-size:0.62rem; margin:0.15rem 0 0.15rem; opacity:0.75;">Ground truth and prompt</p>
+                <ul style="font-size:0.64rem; margin:0; padding-left:0.95rem; line-height:1.35;">
+                  <li><a href="files/workshop_ocr/ground_truth_workshop_ocr.json" target="_blank">ground_truth_workshop_ocr.json</a></li>
+                  <li><a href="files/prompts/nsf-award-notice-extraction/prompt.md" target="_blank">prompt.md</a> / <a href="files/prompts/nsf-award-notice-extraction/schema.json" target="_blank">schema.json</a></li>
+                </ul>
+                <p style="font-size:0.57rem; margin:0.4rem 0 0; opacity:0.55;">Prompt is tuned for NSF Award Notices; using it on NIH NoA or subaward is itself a test of how it generalizes. Source: <a href="https://github.com/AI4RA/prompt-library" target="_blank" style="color:inherit;">AI4RA/prompt-library</a></p>
+              </div>
+            </div>
+          </div>
+          <p class="slide-callout">
+            OCR is a tool-level property, not something the model handles for you. Know which of your tools have a dedicated OCR stage and which silently pass through whatever text they can reach.
+          </p>
+        </section>
+
+        <!-- EXERCISE 2 SETUP: CROSS-TOOL COMPARISON -->
+        <section>
+          <p class="slide-kicker">Exercise 2 setup</p>
+          <h2>Cross-tool comparison: where do they diverge?</h2>
+          <div class="slide-split">
+            <div class="split-text">
+              <p style="font-size:0.75rem; margin:0 0 0.4rem;"><strong>Question.</strong> Same prompt, same document, different AI tools in different browser tabs. Where do they agree, and where does disagreement flag fields that need review?</p>
+              <ol style="font-size:0.72rem; padding-left:1.1rem;">
+                <li>Pick two or three AI tools you actually use: ChatGPT, Claude, Copilot, Gemini, Vandalizer, a local model. Open each in its own tab.</li>
+                <li>Paste the canonical extraction prompt (prompt.md) into each tool. Upload the <strong>clean</strong> PDF. Clean input isolates the tool variable so OCR is not in the mix.</li>
+                <li>Save every tool's JSON output. Score each against the ground truth field by field.</li>
+                <li>Build a per-tool agreement matrix. Fields where every tool agrees are cheap to trust. Fields where tools diverge are where human review earns its keep.</li>
+              </ol>
+            </div>
+            <div class="split-text" style="flex: 0 0 42%;">
+              <div class="slide-card dark" style="margin-top:0;">
+                <span class="slide-label">Materials</span>
+                <p style="font-size:0.62rem; margin:0.25rem 0 0.15rem; opacity:0.75;">Documents (synthetic; pick any)</p>
+                <ul style="font-size:0.64rem; margin:0 0 0.35rem; padding-left:0.95rem; line-height:1.35;">
+                  <li>NSF Award OAC-2415678 · <a href="files/workshop_ocr/nsf_award_notice_OAC-2415678_clean.pdf" target="_blank">clean</a> / <a href="files/workshop_ocr/nsf_award_notice_OAC-2415678_tier3_authentic.pdf" target="_blank">tier 3</a></li>
+                  <li>NIH NoA 1R01AI248002 · <a href="files/workshop_ocr/nih_notice_of_award_1R01AI248002-01_clean.pdf" target="_blank">clean</a> / <a href="files/workshop_ocr/nih_notice_of_award_1R01AI248002-01_tier3_authentic.pdf" target="_blank">tier 3</a></li>
+                  <li>Subaward SUB-24-001 · <a href="files/workshop_ocr/subaward_agreement_SUB-24-001_clean.pdf" target="_blank">clean</a> / <a href="files/workshop_ocr/subaward_agreement_SUB-24-001_tier3_authentic.pdf" target="_blank">tier 3</a></li>
+                </ul>
+                <p style="font-size:0.62rem; margin:0.15rem 0 0.15rem; opacity:0.75;">Ground truth and prompt</p>
+                <ul style="font-size:0.64rem; margin:0; padding-left:0.95rem; line-height:1.35;">
+                  <li><a href="files/workshop_ocr/ground_truth_workshop_ocr.json" target="_blank">ground_truth_workshop_ocr.json</a></li>
+                  <li><a href="files/prompts/nsf-award-notice-extraction/prompt.md" target="_blank">prompt.md</a> / <a href="files/prompts/nsf-award-notice-extraction/schema.json" target="_blank">schema.json</a></li>
+                </ul>
+                <p style="font-size:0.57rem; margin:0.4rem 0 0; opacity:0.55;">The prompt is deliberately LLM-agnostic so it runs in any tool. Source: <a href="https://github.com/AI4RA/prompt-library" target="_blank" style="color:inherit;">AI4RA/prompt-library</a></p>
+              </div>
+            </div>
+          </div>
+          <p class="slide-callout">
+            Bigger is not always better. The disagreement pattern across tools is itself a verification signal. If every tool agrees on a field, trust it. If they split, look.
+          </p>
+        </section>
+
+        <!-- EXERCISE 3 SETUP: STRUCTURED OUTPUTS -->
+        <section>
+          <p class="slide-kicker">Exercise 3 setup</p>
+          <h2>Structured outputs: does the schema help?</h2>
+          <div class="slide-split">
+            <div class="split-text">
+              <p style="font-size:0.75rem; margin:0 0 0.4rem;"><strong>Question.</strong> Does constraining the output to a JSON schema reduce errors, or does it introduce new failure modes like silent null-filling?</p>
+              <ol style="font-size:0.72rem; padding-left:1.1rem;">
+                <li>Run the extraction prompt on the <strong>clean</strong> PDF in the Vandalizer with schema enforcement <strong>on</strong> (structured output mode).</li>
+                <li>Run the same prompt and PDF with schema enforcement <strong>off</strong>. Ask for JSON in the prompt but don't constrain it.</li>
+                <li>Parse both outputs. Record parse successes, field completeness, and any fields the model silently filled or skipped.</li>
+                <li>Score against the ground truth. Separate "parse failure" from "wrong value" in your tally, they are different failure modes.</li>
+              </ol>
+            </div>
+            <div class="split-text" style="flex: 0 0 42%;">
+              <div class="slide-card dark" style="margin-top:0;">
+                <span class="slide-label">Materials</span>
+                <p style="font-size:0.62rem; margin:0.25rem 0 0.15rem; opacity:0.75;">Documents (synthetic; pick any)</p>
+                <ul style="font-size:0.64rem; margin:0 0 0.35rem; padding-left:0.95rem; line-height:1.35;">
+                  <li>NSF Award OAC-2415678 · <a href="files/workshop_ocr/nsf_award_notice_OAC-2415678_clean.pdf" target="_blank">clean</a> / <a href="files/workshop_ocr/nsf_award_notice_OAC-2415678_tier3_authentic.pdf" target="_blank">tier 3</a></li>
+                  <li>NIH NoA 1R01AI248002 · <a href="files/workshop_ocr/nih_notice_of_award_1R01AI248002-01_clean.pdf" target="_blank">clean</a> / <a href="files/workshop_ocr/nih_notice_of_award_1R01AI248002-01_tier3_authentic.pdf" target="_blank">tier 3</a></li>
+                  <li>Subaward SUB-24-001 · <a href="files/workshop_ocr/subaward_agreement_SUB-24-001_clean.pdf" target="_blank">clean</a> / <a href="files/workshop_ocr/subaward_agreement_SUB-24-001_tier3_authentic.pdf" target="_blank">tier 3</a></li>
+                </ul>
+                <p style="font-size:0.62rem; margin:0.15rem 0 0.15rem; opacity:0.75;">Ground truth and prompt</p>
+                <ul style="font-size:0.64rem; margin:0; padding-left:0.95rem; line-height:1.35;">
+                  <li><a href="files/workshop_ocr/ground_truth_workshop_ocr.json" target="_blank">ground_truth_workshop_ocr.json</a></li>
+                  <li><a href="files/prompts/nsf-award-notice-extraction/prompt.md" target="_blank">prompt.md</a> / <a href="files/prompts/nsf-award-notice-extraction/schema.json" target="_blank">schema.json</a></li>
+                </ul>
+                <p style="font-size:0.57rem; margin:0.4rem 0 0; opacity:0.55;">Prompt source: <a href="https://github.com/AI4RA/prompt-library" target="_blank" style="color:inherit;">AI4RA/prompt-library</a></p>
+              </div>
+            </div>
+          </div>
+          <p class="slide-callout">
+            Schemas buy you valid parses. They also make null-filling look confident. Separate "did it parse?" from "is the value right?" in your measurements.
+          </p>
+        </section>
+
+        <!-- EXERCISE 4 SETUP: REPLICATE CONSENSUS -->
+        <section>
+          <p class="slide-kicker">Exercise 4 setup</p>
+          <h2>Replicate consensus: what is reproducible?</h2>
+          <div class="slide-split">
+            <div class="split-text">
+              <p style="font-size:0.75rem; margin:0 0 0.4rem;"><strong>Question.</strong> Same prompt, same document, same model, three runs. Which fields land on the same answer every time, and which shift between runs?</p>
+              <ol style="font-size:0.72rem; padding-left:1.1rem;">
+                <li>In the Vandalizer, lock the model, prompt, and schema. Run the extraction three times on the <strong>tier 3</strong> PDF. Clean PDF works too if the room is tight on time; tier 3 just exposes more variance.</li>
+                <li>Collect all three JSON outputs.</li>
+                <li>Compare field by field across the three runs. Mark each field as concordant (all three match) or discordant.</li>
+                <li>Score the concordant set against ground truth. Route the discordant set to human review.</li>
+              </ol>
+            </div>
+            <div class="split-text" style="flex: 0 0 42%;">
+              <div class="slide-card dark" style="margin-top:0;">
+                <span class="slide-label">Materials</span>
+                <p style="font-size:0.62rem; margin:0.25rem 0 0.15rem; opacity:0.75;">Documents (synthetic; pick any)</p>
+                <ul style="font-size:0.64rem; margin:0 0 0.35rem; padding-left:0.95rem; line-height:1.35;">
+                  <li>NSF Award OAC-2415678 · <a href="files/workshop_ocr/nsf_award_notice_OAC-2415678_clean.pdf" target="_blank">clean</a> / <a href="files/workshop_ocr/nsf_award_notice_OAC-2415678_tier3_authentic.pdf" target="_blank">tier 3</a></li>
+                  <li>NIH NoA 1R01AI248002 · <a href="files/workshop_ocr/nih_notice_of_award_1R01AI248002-01_clean.pdf" target="_blank">clean</a> / <a href="files/workshop_ocr/nih_notice_of_award_1R01AI248002-01_tier3_authentic.pdf" target="_blank">tier 3</a></li>
+                  <li>Subaward SUB-24-001 · <a href="files/workshop_ocr/subaward_agreement_SUB-24-001_clean.pdf" target="_blank">clean</a> / <a href="files/workshop_ocr/subaward_agreement_SUB-24-001_tier3_authentic.pdf" target="_blank">tier 3</a></li>
+                </ul>
+                <p style="font-size:0.62rem; margin:0.15rem 0 0.15rem; opacity:0.75;">Ground truth and prompt</p>
+                <ul style="font-size:0.64rem; margin:0; padding-left:0.95rem; line-height:1.35;">
+                  <li><a href="files/workshop_ocr/ground_truth_workshop_ocr.json" target="_blank">ground_truth_workshop_ocr.json</a></li>
+                  <li><a href="files/prompts/nsf-award-notice-extraction/prompt.md" target="_blank">prompt.md</a> / <a href="files/prompts/nsf-award-notice-extraction/schema.json" target="_blank">schema.json</a></li>
+                </ul>
+                <p style="font-size:0.57rem; margin:0.4rem 0 0; opacity:0.55;">Prompt source: <a href="https://github.com/AI4RA/prompt-library" target="_blank" style="color:inherit;">AI4RA/prompt-library</a></p>
+              </div>
+            </div>
+          </div>
+          <p class="slide-callout">
+            Concordance is cheap confidence. Discordance is your routing rule for human review. Three runs is the floor for a meaningful signal.
+          </p>
         </section>
 
         <!-- AUDITABILITY & PROVENANCE: RFP EXERCISE -->
