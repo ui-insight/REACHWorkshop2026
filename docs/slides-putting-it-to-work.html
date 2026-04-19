@@ -191,8 +191,44 @@
             <li>Design verification strategies proportional to the stakes</li>
           </ul>
           <p class="slide-callout">
-            Human verification of every record doesn't scale — when a pipeline processes thousands of documents, you need evaluation strategies: sampling, automated consistency checks, and reproducibility testing.
+            Human verification of every record doesn't scale.
           </p>
+        </section>
+
+        <!-- WHERE HUMAN VERIFICATION BREAKS DOWN -->
+        <section>
+          <p class="slide-kicker">Why it doesn't scale</p>
+          <h2>Where human verification breaks down</h2>
+          <p class="slide-note">Three shapes the bottleneck takes in real research-analytics workflows. Different axes, same conclusion.</p>
+          <div class="slide-grid">
+            <article class="slide-card accent">
+              <span class="slide-label">Batch extraction at volume</span>
+              <p style="font-size:0.72rem;">An overnight pipeline runs <strong>thousands of documents</strong> through OCR, extraction, and classification. Every proposal, award letter, or subaward agreement produces dozens of structured fields. Reading each one before anyone acts is a full headcount's worth of work — that never catches up.</p>
+            </article>
+            <article class="slide-card accent">
+              <span class="slide-label">Autonomous agents on live data</span>
+              <p style="font-size:0.72rem;">Agents crawl the data lakehouse making <strong>thousands of classification, join, and lookup decisions per second</strong>. Each decision looks reasonable in isolation. Humans never see the intermediate steps — only the summary — so a subtle drift compounds invisibly across millions of ops before anyone notices.</p>
+            </article>
+            <article class="slide-card accent">
+              <span class="slide-label">Continuous compliance triage</span>
+              <p style="font-size:0.72rem;">Every COI disclosure, cost transfer, and effort variance is auto-routed into <strong>clear, escalate, or review</strong>. A silent rule drift — a prompt tweak, a schema change, a new sponsor edge case — can redirect hundreds of cases into the wrong bucket before audit season catches it.</p>
+            </article>
+          </div>
+          <p class="slide-callout">
+            So the job stops being "review every output" and starts being "design the verification pipeline" — sampling, automated consistency checks, and reproducibility tests, scaled to match the throughput.
+          </p>
+          <aside class="notes">
+            The previous slide ended on a declarative punchline: human verification doesn't scale. This slide gives that punchline a body.
+
+            Why three examples rather than one: each is a different axis of "doesn't scale."
+            - Batch extraction = throughput (volume over time, one-off outputs you never revisit).
+            - Agents = speed and opacity (humans can't even observe the intermediate steps at line rate).
+            - Compliance triage = drift (a continuous stream where the rule itself can silently shift).
+
+            All three are live in research-admin workflows today. You probably know staff who do one of these by hand now and are being asked to automate.
+
+            Closing move: pivot to the hands-on exercise. The next slide introduces the Vandalizer evaluation experiment — the concrete version of "design the verification pipeline" for extraction.
+          </aside>
         </section>
 
         <!-- VANDALIZER EVALUATION EXERCISE -->
