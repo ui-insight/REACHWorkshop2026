@@ -199,7 +199,7 @@
         <section>
           <p class="slide-kicker">Why it doesn't scale</p>
           <h2>Where human verification breaks down</h2>
-          <p class="slide-note">Three shapes the bottleneck takes in real research-analytics workflows. Different axes, same conclusion.</p>
+          <p class="slide-note">Three shapes the bottleneck takes in real research-analytics workflows, plus an open slot for the room. Different axes, same conclusion.</p>
           <div class="slide-grid">
             <article class="slide-card accent">
               <span class="slide-label">Batch extraction at volume</span>
@@ -212,6 +212,11 @@
             <article class="slide-card accent">
               <span class="slide-label">Continuous compliance triage</span>
               <p style="font-size:0.72rem;">Every COI disclosure, cost transfer, and effort variance is auto-routed into <strong>clear, escalate, or review</strong>. A silent rule drift — a prompt tweak, a schema change, a new sponsor edge case — can redirect hundreds of cases into the wrong bucket before audit season catches it.</p>
+            </article>
+            <article class="slide-card" style="border:1px dashed rgba(25,25,25,0.35); background:transparent;">
+              <span class="slide-label">Your turn</span>
+              <p style="font-size:0.72rem;">Where else at your institution does AI-assisted work outpace any reasonable human review? <strong>What's the fourth shape?</strong></p>
+              <p style="font-size:0.65rem; opacity:0.7; margin-top:0.4rem; font-style:italic;">Call them out — we'll add the best ones to the card.</p>
             </article>
           </div>
           <p class="slide-callout">
@@ -558,22 +563,25 @@
               </div>
             </div>
           </div>
-        </section>
-
-        <!-- WORKED EXAMPLE (from existing module) -->
-        <section>
-          <p class="slide-kicker">Worked example</p>
-          <h2>Quarterly research metrics report</h2>
-          <p>
-            Your office needs a report combining HERD expenditures, proposal
-            counts from the eRA system, and publication metrics. A generic AI
-            summary can sound polished while pulling stale numbers, mismatching
-            fiscal years, or fabricating trends.
-          </p>
-          <p class="slide-callout">
-            Better workflows combine reporting instructions, a template, SQL
-            queries, retrieved publication data, and human review for anomalies.
-          </p>
+          <div class="slide-card dark" style="margin-top:0.6rem; padding:0.55rem 0.9rem;">
+            <div style="display:flex; gap:1.2rem; font-size:0.65rem; flex-wrap:wrap;">
+              <div style="flex:1; min-width:150px;">
+                <span class="slide-label" style="font-size:0.55rem;">Prompt — checklist</span>
+                <div style="margin-top:0.2rem;"><a href="files/prompts/rfp-extraction/prompt-checklist.md" target="_blank">prompt-checklist.md</a></div>
+              </div>
+              <div style="flex:1; min-width:150px;">
+                <span class="slide-label" style="font-size:0.55rem;">Prompt — structured JSON</span>
+                <div style="margin-top:0.2rem;"><a href="files/prompts/rfp-extraction/prompt-structured.md" target="_blank">prompt-structured.md</a> · <a href="files/prompts/rfp-extraction/schema.json" target="_blank">schema.json</a></div>
+              </div>
+              <div style="flex:1; min-width:150px;">
+                <span class="slide-label" style="font-size:0.55rem;">Validated output — NSF 26-508</span>
+                <div style="margin-top:0.2rem;"><a href="files/prompts/rfp-extraction/NSF_26-508_expected.md" target="_blank">expected.md</a> · <a href="files/prompts/rfp-extraction/NSF_26-508_expected.json" target="_blank">expected.json</a></div>
+              </div>
+            </div>
+            <p style="font-size:0.57rem; margin:0.5rem 0 0; opacity:0.6;">
+              Prompts and validated case from the public <a href="https://github.com/AI4RA/prompt-library" target="_blank" style="color:inherit;">AI4RA/prompt-library</a>. NSF 26-508 (TechAccess) is a separate validated eval case that lets you preview what the extractor produces before we run it live on NSF 25-541.
+            </p>
+          </div>
         </section>
 
         <!-- CONTEXT FOR TRUST -->
@@ -713,17 +721,6 @@
           </aside>
         </section>
 
-        <!-- FROM DATA TO ACTION (from workshop deck) -->
-        <section>
-          <p class="slide-kicker">From data to action</p>
-          <h2>Connecting organized data to analytics</h2>
-          <ul>
-            <li>Observable, governed data feeds analytics pipelines and reports</li>
-            <li>AI-assisted decision-making works when the data model is trustworthy</li>
-            <li>The lakehouse makes the data AI-ready; the AI makes the data actionable</li>
-          </ul>
-        </section>
-
         <!-- DECISION FRAMEWORK (from workshop deck) -->
         <section>
           <p class="slide-kicker">Decision framework</p>
@@ -774,10 +771,10 @@
             <article class="slide-card accent">
               <span class="slide-label">Monday morning</span>
               <ul style="font-size:0.7rem;">
-                <li>Find your institution's AI acceptable use policy and read it</li>
-                <li>Assess one analytics workflow using the three zones framework</li>
-                <li>Audit one data source with the governance checklist</li>
-                <li>Upload a document to <a href="https://vandalizer.uidaho.edu" style="color:var(--gold);">vandalizer.uidaho.edu</a> and run an extraction workflow</li>
+                <li>Pick one analytics claim you're about to send to leadership. Write down the source rows or fields a skeptic would need to reach to prove it.</li>
+                <li>Pick one workflow currently owned by humans. Draft its verification plan: ground truth, sampling rate, trigger for full review.</li>
+                <li>Run the same extraction through two tools you use (<a href="https://vandalizer.uidaho.edu" style="color:var(--gold);">Vandalizer</a> + whatever you normally paste into). Compare where they disagree.</li>
+                <li>Take the "defend this number" exercise to your team. Pass around a dashboard screenshot, vote on which claims would survive a press-for-evidence.</li>
               </ul>
             </article>
           </div>
