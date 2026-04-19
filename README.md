@@ -35,7 +35,7 @@ Help research administration professionals build safer, more relevant, and more 
 
 ### Module 1 — The intersection between AI and data science (Nathan Wiggins)
 
-Broad overview of AI for research administration. Introduces the AI4RA community of practice and its ecosystem (Vandalizer, Data Lakehouse, Promptulus). Covers how LLMs work at a practical level, FAIR data principles as operational guardrails, accuracy and reproducibility challenges, the three zones of AI appropriateness, and decision frameworks for when to use AI versus when human judgment must lead. Introduces prompt engineering and the shift toward context engineering. (~28 slides with interactive elements.)
+Broad overview of AI for research administration. Introduces the AI4RA community of practice and its ecosystem (Vandalizer, Data Lakehouse, Promptulus). Covers how LLMs work at a practical level, FAIR data principles as operational guardrails, accuracy and reproducibility challenges, the three zones of AI appropriateness, and decision frameworks for when to use AI versus when human judgment must lead. Introduces prompt engineering and the shift toward context engineering. (~25 slides with interactive elements.)
 
 **Key topics:** AI4RA introduction, community of practice ecosystem, how LLMs actually work (token prediction, attention, next-token probability), FAIR principles, accuracy and hallucination, three zones of intent, prompt-to-intent engineering, context engineering fundamentals.
 
@@ -43,46 +43,31 @@ Broad overview of AI for research administration. Introduces the AI4RA community
 
 ### Module 2 — The data lakehouse and data organization (Nathan Layman)
 
-Opens with the interactive quiz — "What is the most important model?" — and reveals the answer: the data model. Builds the case that AI is only as good as the data infrastructure underneath it. Introduces the Universal Data Model (UDM) for research administration and shows how source data maps to it. Covers data warehouse vs. data lake vs. data lakehouse architectures, the eight capabilities of a lakehouse, and the GRANTED project's open-source implementation (Shipyard, Marina, MinIO, Polaris, Trino). Walks through the medallion architecture (Bronze/Silver/Gold/Platinum) with a worked example tracing data from source to application. Covers AI-assisted data ingestion, data governance as a prerequisite for AI, observability, and context readiness. (~20 slides with interactive quiz, toggle comparisons, flip cards, UDM translation table, trust rater, and context readiness checklist.)
+Opens with the interactive quiz — "What is the most important model?" — and reveals the answer: the data model. Builds the case that AI is only as good as the data infrastructure underneath it. Introduces the Universal Data Model (UDM) for research administration and shows how source data maps to it. Covers data warehouse vs. data lake vs. data lakehouse architectures, the eight capabilities of a lakehouse, and the GRANTED project's open-source implementation (Shipyard, Marina, MinIO, Polaris, Trino). Walks through the medallion architecture (Bronze/Silver/Gold/Platinum) with a worked example tracing data from source to application. Covers AI-assisted data ingestion, data governance as a prerequisite for AI, observability, and context readiness. (~23 slides with interactive quiz, toggle comparisons, flip cards, UDM translation table, trust rater, and context readiness checklist.)
 
 **Key topics:** Universal Data Model, medallion architecture, eight lakehouse capabilities, GRANTED architecture, AI-assisted adapter mapping (Suggest All / Fill Tree / Write SQL), data governance, observability, source trust, context readiness.
 
-**Interactive activity:** Context readiness checklist (take-home handout at `governance-checklist.html`).
+**Interactive activity:** Context readiness checklist (embedded in the module).
 
 ### Module 3 — Reproducibility, accuracy, and putting it to work (Barrie Robison)
 
-Picks up from the data governance foundation and asks: can you trust the output? Covers the practical context stack, what each layer contributes, the "thinnest layer" decision rule, accuracy evaluation, detecting AI-generated content, and lessons from the GRANTED project. Includes a live Vandalizer demo where participants find AI-introduced errors in real RA content. Ends with the adoption decision framework (automate / augment / leave alone), a hands-on exercise mapping participants' own workflows, and workshop wrap-up. (~17 slides.)
+Picks up from the data governance foundation and asks: can you trust the output? Opens with AI across the data lifecycle (extraction, cleaning, search, synthesis) and the "human verification doesn't scale" problem, with three concrete shapes (batch extraction, autonomous agents on live data, continuous compliance triage). Moves into four hands-on evaluation experiments using a canonical NSF Award Notice extraction prompt and synthetic workshop documents: OCR quality as a tool-level property, cross-tool comparison, structured output enforcement, and replicate consensus. Adds a provenance exercise on a real NSF solicitation using the RFP extraction prompt from the AI4RA prompt library, a context-layers decision rule, and a "Can you defend this number?" exercise where every cell in the reporting table traces to a JSON field in a synthetic sponsored-research corpus. Closes with the adoption decision framework (automate / augment / leave alone), institutional-fit discussion, and "Monday morning" takeaways. (~25 slides.)
 
-**Key topics:** Context engineering layers, evaluation and accuracy verification, AI content detection, Vandalizer demo, GRANTED lessons learned, adoption decision framework, "Monday morning" action items.
+**Key topics:** AI data lifecycle risks, human verification at scale, extraction evaluation (OCR tool comparison, cross-tool model comparison, schema enforcement, replicate consensus), provenance and auditability, context layer decision rule, defensible analytics claims, adoption framework.
 
-**Demo:** Vandalizer (AI-powered document review — participants find planted errors in RA content).
+**Demo and materials:** Vandalizer evaluation experiments against synthetic Notice-of-Award and Subaward PDFs with full ground truth; RFP extraction against a real NSF solicitation. Prompts and schemas are pulled from the public [AI4RA prompt library](https://github.com/AI4RA/prompt-library).
 
-## Current status (as of April 2026)
+## Current status
 
-### What's done
-- [x] Companion site live on GitHub Pages (index, presenters, sessions, resources, at-reach pages)
-- [x] All three Reveal.js slide decks created and populated with content
-- [x] Module 1 (Wiggins): ~28 slides with community cards, FAIR icons, interactive elements, context engineering section
-- [x] Module 2 (Layman): ~20 slides with interactive quiz, UDM translation table, toggle comparisons, flip cards, pipeline diagrams, trust rater, context readiness checklist
-- [x] Module 3 (Robison): ~17 slides with context stack, Vandalizer demo, evaluation, adoption framework, wrap-up
-- [x] Facilitator guides for all three modules
-- [x] Presenter bios and headshots (Robison complete, Layman complete, Wiggins placeholder)
-- [x] Resources page with Promptulus, Vandalizer, AI4RA, Data Lakehouse, MindRouter cards
-- [x] Context readiness checklist handout (`governance-checklist.html`)
-- [x] Interactive slide JS (toggle panels, flip cards, quiz, traffic-light trust rater)
-- [x] Custom slide CSS theme with gold/ink palette
+The companion site is live on GitHub Pages with all three modules fully built out: slide decks, facilitator guides, presenter bios, resources, synthetic-document materials for the Module 3 exercises, and the AI4RA prompt library references.
 
-### What's in progress
-- [ ] Nathan Wiggins: update presenter bio and credentials (#34)
-- [ ] Vandalizer demo access for workshop participants (#37)
-- [ ] Replace placeholder copy with real examples and activities (#27)
-- [ ] Final content readiness pass across all three decks (#26)
+For current work, open issues, and anything in flight, check the issue tracker:
 
-### What's not started
-- [ ] Synthetic document corpus for workshop examples (#6)
-- [ ] Downloadable course content section (#8)
-- [ ] Align with Nate Jones materials (#5)
-- [ ] Update Promptulus for the workshop (#13)
+```bash
+gh issue list --state open
+```
+
+A bulleted status checklist used to live here; it drifted faster than the issues themselves, so the pointer replaces it.
 
 ## Presenters
 
@@ -98,28 +83,37 @@ Picks up from the data governance foundation and asks: can you trust the output?
 REACHWorkshop2026/
   CLAUDE.md                        Project instructions for Claude Code
   README.md                        This file
+  workshop-layout.md               Session flow, demo handoffs, interactive elements
+  audience-profile-anon.md         Anonymized registrant profile
   docs/                            GitHub Pages source — the live site
     index.html                     Workshop home page
     course-content.html            Session hub and module directory
     presenters.html                Presenter bios and credentials
     resources.html                 Tools and resources page
     at-reach.html                  REACH 2026 logistics
-    governance-checklist.html      Context readiness checklist handout
+    ai4ra-workshop.ics             Calendar invite
     module-foundational.html       Module 1 facilitator guide
     module-data-governance.html    Module 2 facilitator guide
     module-context-layers.html     Module 3 facilitator guide
     slides-ai-literacy.html        Module 1 Reveal.js deck (Wiggins)
     slides-data-lakehouse.html     Module 2 Reveal.js deck (Layman)
+    slides-data-lakehouse-outline.md  Outline source for the data lakehouse deck
     slides-putting-it-to-work.html Module 3 Reveal.js deck (Robison)
     slides-interactive.js          Shared interactive slide behaviors
     styles.css                     Site stylesheet
     slides.css                     Slide deck theme
     app.js                         Scroll animation observer
+    js/                            Additional page scripts
+    files/                         Downloadable workshop materials
+      workshop_ocr/                Synthetic sponsor PDFs + ground truth for Module 3 exercises
+      prompts/                     Prompts and JSON schemas from AI4RA/prompt-library
+      *.pdf / *.csv / *.xlsx       NSF award notices, FBU budget docs, synthetic records
     img/
       logos/                       AI4RA, NSF, UI, SUU, FAIR, data-lake logos
       promptulus/                  Promptulus animal mascot icons
       presenters/                  Presenter headshots
       diagrams/                    Data model, architecture, FAIR diagrams
+      vandalizer/                  Screenshots for Vandalizer exercise lightboxes
     reveal/dist/                   Reveal.js library
   resources/                       Reference materials (not served)
 ```
