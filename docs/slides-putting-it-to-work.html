@@ -448,33 +448,36 @@
                   <thead>
                     <tr>
                       <th style="text-align:left; border-bottom:1px solid rgba(25,25,25,0.18); padding:0.35rem 0.35rem 0.35rem 0;">Metric</th>
-                      <th style="text-align:right; border-bottom:1px solid rgba(25,25,25,0.18); padding:0.35rem;">FY2023</th>
-                      <th style="text-align:right; border-bottom:1px solid rgba(25,25,25,0.18); padding:0.35rem 0;">FY2024</th>
+                      <th style="text-align:right; border-bottom:1px solid rgba(25,25,25,0.18); padding:0.35rem;">FY2024</th>
+                      <th style="text-align:right; border-bottom:1px solid rgba(25,25,25,0.18); padding:0.35rem 0;">FY2025</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
                       <td style="padding:0.35rem 0.35rem 0.35rem 0; border-bottom:1px solid rgba(25,25,25,0.08);">Proposals submitted</td>
-                      <td style="text-align:right; padding:0.35rem; border-bottom:1px solid rgba(25,25,25,0.08);">108</td>
-                      <td style="text-align:right; padding:0.35rem 0; border-bottom:1px solid rgba(25,25,25,0.08);">128</td>
+                      <td style="text-align:right; padding:0.35rem; border-bottom:1px solid rgba(25,25,25,0.08);">11</td>
+                      <td style="text-align:right; padding:0.35rem 0; border-bottom:1px solid rgba(25,25,25,0.08);">6</td>
                     </tr>
                     <tr>
                       <td style="padding:0.35rem 0.35rem 0.35rem 0; border-bottom:1px solid rgba(25,25,25,0.08);">Awards received</td>
-                      <td style="text-align:right; padding:0.35rem; border-bottom:1px solid rgba(25,25,25,0.08);">39</td>
-                      <td style="text-align:right; padding:0.35rem 0; border-bottom:1px solid rgba(25,25,25,0.08);">41</td>
+                      <td style="text-align:right; padding:0.35rem; border-bottom:1px solid rgba(25,25,25,0.08);">1</td>
+                      <td style="text-align:right; padding:0.35rem 0; border-bottom:1px solid rgba(25,25,25,0.08);">9</td>
                     </tr>
                     <tr>
-                      <td style="padding:0.35rem 0.35rem 0.35rem 0; border-bottom:1px solid rgba(25,25,25,0.08);">Award dollars</td>
-                      <td style="text-align:right; padding:0.35rem; border-bottom:1px solid rgba(25,25,25,0.08);">$10.8M</td>
-                      <td style="text-align:right; padding:0.35rem 0; border-bottom:1px solid rgba(25,25,25,0.08);">$12.4M</td>
+                      <td style="padding:0.35rem 0.35rem 0.35rem 0; border-bottom:1px solid rgba(25,25,25,0.08);">Award dollars obligated</td>
+                      <td style="text-align:right; padding:0.35rem; border-bottom:1px solid rgba(25,25,25,0.08);">$825K</td>
+                      <td style="text-align:right; padding:0.35rem 0; border-bottom:1px solid rgba(25,25,25,0.08);">$5.45M</td>
                     </tr>
                     <tr>
                       <td style="padding:0.35rem 0.35rem 0.35rem 0;">Publications linked to awards</td>
-                      <td style="text-align:right; padding:0.35rem;">61</td>
-                      <td style="text-align:right; padding:0.35rem 0;">67</td>
+                      <td style="text-align:right; padding:0.35rem;">7</td>
+                      <td style="text-align:right; padding:0.35rem 0;">13</td>
                     </tr>
                   </tbody>
                 </table>
+                <p style="font-size:0.55rem; color:rgba(25,25,25,0.55); margin:0.45rem 0 0; line-height:1.3;">
+                  Source: AI4RA synthetic sponsored-research corpus. Every cell traces to a field in <code style="font-size:0.55rem;">records/proposals.json</code>, <code style="font-size:0.55rem;">awards.json</code>, or <code style="font-size:0.55rem;">publications.json</code>.
+                </p>
               </div>
             </div>
             <div class="split-text" style="flex: 0 0 46%;">
@@ -486,20 +489,20 @@
                 </p>
                 <ol style="font-size:0.68rem; margin:0.45rem 0 0; padding-left:1.1rem;">
                   <li style="margin-bottom:0.4rem;">
-                    Proposal volume grew 18.5% year over year.
-                    <span class="fragment" style="display:block; color:#9be564; margin-top:0.12rem;">Supported: 128 vs 108.</span>
-                  </li>
-                  <li style="margin-bottom:0.4rem;">
-                    Award dollars rose 14.8%, from $10.8M to $12.4M.
+                    Award dollars obligated grew more than six-fold, from $825K to $5.45M.
                     <span class="fragment" style="display:block; color:#9be564; margin-top:0.12rem;">Supported: both values are visible in the table.</span>
                   </li>
                   <li style="margin-bottom:0.4rem;">
-                    The stronger proposal pipeline improved the award conversion rate.
-                    <span class="fragment" style="display:block; color:#ff9e80; margin-top:0.12rem;">Not supported: the conversion rate fell from 36.1% to 32.0%.</span>
+                    Publications linked to awards rose from 7 to 13.
+                    <span class="fragment" style="display:block; color:#9be564; margin-top:0.12rem;">Supported: both values are visible in the table.</span>
+                  </li>
+                  <li style="margin-bottom:0.4rem;">
+                    A growing proposal pipeline drove the surge in awards.
+                    <span class="fragment" style="display:block; color:#ff9e80; margin-top:0.12rem;">Contradicted: proposals submitted actually fell from 11 to 6. Awards lag submissions by a review cycle.</span>
                   </li>
                   <li>
-                    Engineering drove most of the growth.
-                    <span class="fragment" style="display:block; color:#ffd54f; margin-top:0.12rem;">No provenance: nothing here identifies discipline or source breakdown.</span>
+                    Industry sponsors powered most of the growth.
+                    <span class="fragment" style="display:block; color:#ffd54f; margin-top:0.12rem;">No provenance: the aggregate hides sponsor mix. Answer lives in <code style="font-size:0.6rem;">awards.json · sponsor_code</code>, not the summary.</span>
                   </li>
                 </ol>
               </div>
@@ -516,6 +519,10 @@
             3. Reveal the fragments one by one and make them justify their choices from the visible evidence.
             4. Ask what evidence they would need before approving claims 3 and 4.
             5. Bridge to the next slide: if a human still needs to validate and defend the summary, that is augment. If you cannot trace the claim at all, leave it alone.
+
+            Provenance note: every cell on this table is derived from the AI4RA synthetic sponsored-research corpus. If a participant presses on a number, you can literally open the JSON: proposals submitted come from proposals.json (counting submission_deadline by FY), awards received and award dollars come from awards.json (award_received_date, total_obligated), publications linked come from publications.json (year, award_ids). That is what defensibility looks like in practice: a reporter can trace every figure to a field in a file.
+
+            Claim 4 callback: the corpus DOES contain an industry sponsor (Pharmakom SRA with Meyer), but it is one award out of nine in FY25. So "industry drove growth" is not just unprovable from the aggregate, it is wrong once you drop into sponsor_code. Good moment to point out that AI summaries often sound plausible AND are defeated by a single query against the source.
           </aside>
         </section>
 
