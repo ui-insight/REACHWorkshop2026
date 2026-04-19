@@ -5,130 +5,113 @@
 
 ---
 
+## Module Structure
+
+| Part | Title | Duration |
+|------|-------|----------|
+| 1 | AI-Assisted EDA | 15 min |
+| 2 | Data Models & the UDM | 20 min |
+| 3 | Data Lakehouse Architecture | 10 min |
+
+---
+
 ## Slide Outline
 
-### 0. Title
+### 1. Title
 - Module title, presenter photo and name
-- **Status:** Done
 
-### 1. Quiz: What is the most important model?
-- 12 multiple-choice options (LLM, GPT, CNN, GAN, Diffusion, RNN, BERT, RL, Random Forest, SVM, VAE, GNN)
-- Interactive: audience selects an answer
-- **Status:** Done
+### 2. Module Preview
+- Three-part flow diagram showing the module structure and timing
 
-### 2. Data model is the most important model
-- Reveal: the most important model is your data model
+### Activity 1: AI-Assisted EDA
+- Launch Data Crawler Carl demo
+- Upload a CSV, ask questions in plain English
+- Sample datasets available (synthetic proposals, awards, publications)
+
+### Activity 1 Debrief
+- Discussion: Did the AI sound confident but wrong? Missing values? Different answers from rephrasing?
+- Takeaway: AI analyzes what you give it, governed data and reproducibility matter
+
+### Cloud vs. Locally Hosted Models
+- Toggle between Cloud / Local / Hybrid
+- Security considerations for each approach
+
+### The Model Behind the Demo
+- Explains Gemini 2.5 Flash and how LLMs work (token prediction, no understanding)
+
+### Quiz: What is the Most Important Model?
+- 12 multiple-choice options (LLM, GPT, CNN, GAN, etc.)
+- Interactive audience participation
+
+### Reveal: Your Data Model
+- The most important model is your data model
 - "AI models come and go, but how you organize your data determines whether any of them are useful"
-- **Status:** Done (currently "Wrong! Your data model")
 
-### 3. What is a data model?
-- Define what a data model is in general terms
-- Relatable to the audience: tables, columns, relationships, schemas
-- **Status:** NEW -- needs to be created
+### What is a Data Model?
+- General definition, relatable examples (tables, columns, relationships)
+- Three things a data model does: names, relates, constrains
 
-### 4. What is a Universal Data Model and what are its benefits?
+### What is a Universal Data Model (UDM)?
 - A shared vocabulary across institutions, not a database
 - Map each source once, AI learns one schema, apps work everywhere
-- Cross-institutional comparison and benchmarking
-- **Status:** Exists (current 4b), may need rework
 
-### 5. Standards proliferation problem
+### The AI4RA UDM: Domains and Scope
+- Diagram showing UDM domains (People, Organizations, Awards, Proposals, etc.)
+- Full model available on GitHub
+
+### Ontology: Predictable Naming Conventions
+- Five naming convention rules (e.g. singular nouns, underscore separation)
+- Examples of how conventions apply to field names
+
+### The Standards Problem
 - XKCD #927 comic
-- Every institution stores the same concept differently
-- The UDM is not "yet another standard" -- it is a translation layer
-- **Status:** Exists (current 4a), reorder to after UDM intro
+- The UDM is a translation layer, not another standard
 
-### 6. AI as a universal adapter
-- AI can read source schemas and UDM schemas and suggest mappings
+### AI as a Universal Adapter
+- AI reads source schemas and UDM schemas, suggests mappings
 - Replaces manual N-to-N integration work
-- AI is a bonus, not integral -- every adapter works without AI
-- **Status:** NEW -- needs to be created (draws from current slides 12/13)
+- Every adapter works without AI (AI is a bonus)
 
-### 7. Four approaches to institutional data
-- Warehouse, Data Lake, Lakehouse, Data Mesh
-- Comparison diagram + toggle or cards
-- **Status:** Exists (current slides 5/5b), merge into one slide
+### Transition: Now How Do We Handle All That Data?
+- Bridge from data model to infrastructure
 
-### 8. Capabilities of a data lakehouse
-- 8 static cards: Trust & Governance, Data Quality, Reliability, Scalability, Openness, Multi-Modal, Simplicity, Cost Efficiency
-- **Status:** Done (current slide 6)
+### Four Approaches to Institutional Data
+- Toggle between Warehouse / Data Lake / Lakehouse / Data Swamp
+- Comparison of tradeoffs for each
 
-### 9. The data lakehouse vs the data swamp (header)
-- Section divider: "Same query. Same task. Two very different outcomes."
-- **Status:** Done (current slide 11)
+### Capabilities of a Data Lakehouse
+- 8 capability cards: Trust & Governance, Data Quality, Reliability, Scalability, Openness, Multi-Modal, Simplicity, Cost Efficiency
 
-### 10. What goes into a data lakehouse
-- What kinds of data belong in a lakehouse
-- Sources: post-award systems, ERPs, spreadsheets, PDFs, emails, forms
-- **Status:** NEW -- needs to be created
+### The GRANTED Data Lakehouse Architecture
+- D3 pipeline diagram: Sources > Bronze > Silver > Gold > Platinum > API > App
+- Data flow legend with color-coded layers
 
-### 10a. Structured vs unstructured data
-- Structured: tables, CSVs, database exports
-- Unstructured: PDFs, images, emails, Word docs
-- Semi-structured: JSON, XML, API responses
-- A lakehouse handles all three
-- **Status:** NEW -- needs to be created
-
-### 11. The GRANTED data lakehouse architecture
-- Pipeline flow: Sources > Bronze > Silver > Gold > Platinum > API > App
-- Component legend: Shipyard, Marina, MinIO, Polaris, Trino
-- **Status:** Done (current slide 7)
-
-### 12. Open technology, interchangeable parts
+### Open Technology, Interchangeable Parts
 - Every layer is replaceable (ingestion, storage, query, applications)
-- Open table formats (Iceberg) mean no vendor lock-in
-- **Status:** Done (current slide 7b)
+- Two paths: Medallion (recommended) and Direct database
 
-### 13. Following data through the layers
+### The Medallion Layers
+- Horizontal flow: Bronze > Silver > Gold > Platinum
+- Detail cards for each layer
+
+### Following Data Through the Layers
 - Worked example: VERAS AGENCY_TYPE from source to application
 - Bronze (raw) > Silver (mapped) > Gold (deduped) > Platinum (joined)
-- **Status:** Done (current slide 9)
 
-### 14. What well-organized data lets you do
-- Capstone slide: tie it all together
-- Governed data enables: reliable AI, cross-institutional benchmarking, reproducible reports, safe automation
-- Ungoverned data enables: confident-sounding wrong answers
-- **Status:** NEW -- needs to be created
+### What Well-Organized Data Lets You Do
+- Capstone: governed data vs. ungoverned data outcomes
 
-### End slide
+### End of Module
 - Back to sessions link
-- **Status:** Done
 
 ---
-
-## Slides removed from previous version
-
-These slides are cut from the deck. Content may be repurposed elsewhere:
-
-- UDM translation table (old 4c) -- too detailed for presentation, could be a handout
-- PI Smith effort allocation toggle (old 11b)
-- AI-assisted data ingestion detail (old 12) -- folded into slide 6
-- Three levels of AI-assisted mapping (old 13) -- folded into slide 6
-- Data governance as prerequisite (old 14) -- themes moved to slide 14
-- Observability (old 15)
-- AI inputs and outputs (old 16)
-- Governance lens (old 17)
-- Proposal routing worked example (old 18)
-- Source trust rater (old 19)
-- Context readiness checklist (old 20)
-
----
-
-## New slides to create
-
-| Slide | Title | Notes |
-|-------|-------|-------|
-| 3 | What is a data model? | General definition, relatable to audience |
-| 6 | AI as a universal adapter | Consolidate old slides 12/13 |
-| 10 | What goes into a data lakehouse | Types of sources |
-| 10a | Structured vs unstructured data | Three data types, lakehouse handles all |
-| 14 | What well-organized data lets you do | Capstone, tie themes together |
 
 ## Interactive Elements
 
-Only use interactivity when it serves as a teaching tool, not decoration.
-
 | Slide | Type | Description |
 |-------|------|-------------|
-| 1 | Quiz | Select a model type -- genuine audience participation |
-| 7 | Toggle tabs | Compare Warehouse / Lake / Lakehouse tradeoffs side by side |
+| Quiz | Multiple choice | Select a model type, genuine audience participation |
+| Cloud vs Local | Toggle tabs | Compare Cloud / Local / Hybrid tradeoffs |
+| Four Approaches | Toggle tabs | Compare Warehouse / Lake / Lakehouse / Swamp |
+| Architecture | D3 diagram | Live-rendered pipeline visualization |
+| Activity 1 | External demo | Data Crawler Carl with sample datasets |
