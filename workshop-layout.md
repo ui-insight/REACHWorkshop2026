@@ -10,6 +10,8 @@ index.html ─── Workshop home (agenda, themes, session details)
   │     ├── module-data-governance.html ── Module 2 facilitator guide
   │     └── module-context-layers.html ── Module 3 facilitator guide
   │
+  ├── next-steps.html ─── Post-workshop guide (role-based paths + pilot ideas)
+  │
   ├── slides-ai-literacy.html ─── Module 1 deck (Wiggins)
   ├── slides-data-lakehouse.html ── Module 2 deck (Layman)
   ├── slides-putting-it-to-work.html ─ Module 3 deck (Robison)

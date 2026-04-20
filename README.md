@@ -59,7 +59,7 @@ Picks up from the data governance foundation and asks: can you trust the output?
 
 ## Current status
 
-The companion site is live on GitHub Pages with all three modules fully built out: slide decks, facilitator guides, presenter bios, resources, synthetic-document materials for the Module 3 exercises, and the AI4RA prompt library references.
+The companion site is live on GitHub Pages with all three modules fully built out: slide decks, facilitator guides, presenter bios, resources, synthetic-document materials for the Module 3 exercises, AI4RA prompt library references, and a post-workshop next-steps guide organized by audience and pilot type.
 
 For current work, open issues, and anything in flight, check the issue tracker:
 
@@ -88,6 +88,7 @@ REACHWorkshop2026/
   docs/                            GitHub Pages source — the live site
     index.html                     Workshop home page
     course-content.html            Session hub and module directory
+    next-steps.html               Post-workshop guide by audience and pilot type
     presenters.html                Presenter bios and credentials
     resources.html                 Tools and resources page
     at-reach.html                  REACH 2026 logistics

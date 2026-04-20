@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#191919" />
+    <title>Next Steps | AI4RA Workshop</title>
+    <meta
+      name="description"
+      content="Post-workshop guide for bringing AI4RA ideas, tools, and pilots back to your institution."
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-frame">
+      <header class="site-header">
+        <div class="shell">
+          <div class="brand-lockup">
+            <a class="brand-home" href="index.html">
+              <img class="brand-logo" src="img/logos/ai4ra-logo.png" alt="AI4RA logo" />
+              <span class="brand-line">AI4RA workshop companion for REACH 2026</span>
+            </a>
+          </div>
+          <nav aria-label="Primary">
+            <ul class="nav-list">
+              <li><a class="nav-link" href="index.html">Home</a></li>
+              <li><a class="nav-link" href="presenters.html">Presenters</a></li>
+              <li><a class="nav-link" href="course-content.html">Sessions</a></li>
+              <li><a class="nav-link is-active" href="next-steps.html">Next Steps</a></li>
+              <li><a class="nav-link" href="resources.html">Resources</a></li>
+              <li><a class="nav-link" href="at-reach.html">At REACH</a></li>
+              <li><a class="nav-link" href="https://github.com/ui-insight/REACHWorkshop2026" target="_blank" aria-label="GitHub repository"><svg height="20" width="20" viewBox="0 0 16 16" fill="currentColor" style="vertical-align:middle;"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.63 7.63 0 0 1 2-.27c.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg></a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+
+      <main>
+        <section class="page-intro reveal">
+          <div class="page-intro-panel">
+            <p class="eyebrow">Post-workshop guide</p>
+            <h1>Bring it back to your institution.</h1>
+            <p class="section-copy">
+              The workshop introduced several tools and ideas at once. This
+              page turns them into practical next steps for research
+              administrators, software and data teams, institutional leaders,
+              and mixed working groups that need a realistic first pilot.
+            </p>
+            <div class="hero-actions">
+              <a class="button" href="#paths">Choose your path</a>
+              <a class="button-secondary" href="resources.html">Open the resource library</a>
+              <a class="button-secondary" href="course-content.html">Replay the modules</a>
+            </div>
+          </div>
+        </section>
+
+        <section class="jump-strip reveal" aria-label="Next steps sections">
+          <div class="jump-links">
+            <a class="jump-link" href="#paths">Audience paths</a>
+            <a class="jump-link" href="#pilots">Pilot ideas</a>
+            <a class="jump-link" href="#resource-map">Resource map</a>
+            <a class="jump-link" href="#roadmap">30-day plan</a>
+          </div>
+        </section>
+
+        <section id="paths" class="content-block reveal">
+          <p class="eyebrow">Audience paths</p>
+          <h2 class="section-heading section-heading-wide">Different roles should leave with different first moves.</h2>
+          <div class="compact-grid">
+            <article id="path-ra" class="content-card">
+              <span class="tag">Research administration</span>
+              <h3>Start with one document or review workflow</h3>
+              <p>
+                Choose something people already do by hand: sponsor notices,
+                subawards, compliance checks, routing summaries, or internal
+                review prep.
+              </p>
+              <ul class="module-points">
+                <li>Use Vandalizer to test extraction or review on real-looking documents.</li>
+                <li>Borrow prompt structure from the prompt library instead of inventing from scratch.</li>
+                <li>Define the human review threshold before anyone treats the output as final.</li>
+              </ul>
+              <div class="card-actions">
+                <a class="button" href="resources.html#vandalizer">Start with Vandalizer</a>
+                <a class="button-secondary" href="resources.html#prompt-library">Open prompt library</a>
+              </div>
+            </article>
+            <article id="path-data" class="content-card">
+              <span class="tag">Software and data</span>
+              <h3>Prototype with one dataset and one shared model</h3>
+              <p>
+                Start with a single CSV, reporting workflow, or schema problem
+                before you design anything more ambitious.
+              </p>
+              <ul class="module-points">
+                <li>Use Data Crawler Carl to pressure-test questions against a safe dataset.</li>
+                <li>Use the UDM and Module 2 materials when the real bottleneck is data organization.</li>
+                <li>Treat reproducibility, provenance, and evaluation as part of the build, not cleanup work.</li>
+              </ul>
+              <div class="card-actions">
+                <a class="button" href="resources.html#data-crawler">Try Data Crawler Carl</a>
+                <a class="button-secondary" href="resources.html#udm">Open UDM resources</a>
+              </div>
+            </article>
+            <article id="path-leadership" class="content-card">
+              <span class="tag">Leadership</span>
+              <h3>Sponsor a small pilot with explicit guardrails</h3>
+              <p>
+                The strongest leadership move is not a broad AI mandate. It is
+                funding a small, reviewable pilot with a named owner and a
+                clear decision point.
+              </p>
+              <ul class="module-points">
+                <li>Pick one low-risk, high-friction workflow instead of a broad transformation effort.</li>
+                <li>Require provenance, a source of truth, and a human review step from day one.</li>
+                <li>Review the pilot after 30 days and decide whether to automate, augment, or leave it alone.</li>
+              </ul>
+              <div class="card-actions">
+                <a class="button" href="#roadmap">Open the 30-day plan</a>
+                <a class="button-secondary" href="resources.html#ai4ra">Visit the AI4RA hub</a>
+              </div>
+            </article>
+            <article id="path-team" class="content-card">
+              <span class="tag">Mixed teams</span>
+              <h3>Use the workshop as a shared language across roles</h3>
+              <p>
+                Cross-functional teams can get traction faster by pairing a
+                workflow owner, a data or technical partner, and a sponsor who
+                can decide what happens next.
+              </p>
+              <ul class="module-points">
+                <li>Replay the modules together so everyone has the same language for context, data, and trust.</li>
+                <li>Pick one pilot that needs domain knowledge, data readiness, and governance at the same time.</li>
+                <li>Use the resource map below to split work without losing the shared thread.</li>
+              </ul>
+              <div class="card-actions">
+                <a class="button" href="course-content.html">Replay the modules</a>
+                <a class="button-secondary" href="#resource-map">Use the resource map</a>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section id="pilots" class="content-block reveal">
+          <p class="eyebrow">Pilot ideas</p>
+          <h2 class="section-heading section-heading-wide">Four practical ways to reuse the workshop after REACH.</h2>
+          <div class="compact-grid">
+            <article class="content-card">
+              <span class="tag">Document workflows</span>
+              <h3>Run a Vandalizer pilot on one recurring document type</h3>
+              <p>
+                Choose one document category that already creates repeated
+                manual work and use the workshop's evaluation mindset to test
+                whether the output is ready for use.
+              </p>
+              <div class="card-actions">
+                <a class="button" href="resources.html#vandalizer">Open Vandalizer</a>
+              </div>
+            </article>
+            <article class="content-card">
+              <span class="tag">Internal training</span>
+              <h3>Reuse the interactive workshop elements for team learning</h3>
+              <p>
+                Promptulus and the slide activities can become a short internal
+                training session that uses your own prompts, examples, and
+                evaluation rules.
+              </p>
+              <div class="card-actions">
+                <a class="button" href="resources.html#promptulus">Launch Promptulus</a>
+                <a class="button-secondary" href="slides-ai-literacy.html">Open Module 1 slides</a>
+              </div>
+            </article>
+            <article class="content-card">
+              <span class="tag">Data exploration</span>
+              <h3>Use one safe CSV to explore what AI-assisted analysis adds</h3>
+              <p>
+                Data Crawler Carl is a lightweight way to test whether natural
+                language exploration helps your team ask better questions
+                before you commit to a larger analytics build.
+              </p>
+              <div class="card-actions">
+                <a class="button" href="resources.html#data-crawler">Launch the demo</a>
+                <a class="button-secondary" href="slides-data-lakehouse.html">Open Module 2 slides</a>
+              </div>
+            </article>
+            <article class="content-card">
+              <span class="tag">Governance and architecture</span>
+              <h3>Use the data model and provenance materials as design guardrails</h3>
+              <p>
+                If your main challenge is scattered data and fragile reporting,
+                the fastest progress may come from shared models, traceability,
+                and clearer review rules rather than another new tool.
+              </p>
+              <div class="card-actions">
+                <a class="button" href="resources.html#udm">Open the UDM</a>
+                <a class="button-secondary" href="module-context-layers.html">Open Module 3 guide</a>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section id="resource-map" class="content-block reveal">
+          <p class="eyebrow">Resource map</p>
+          <h2 class="section-heading section-heading-wide">Use this to find the right resource faster.</h2>
+          <div class="card-grid">
+            <article class="content-card">
+              <span class="tag">Best for RA teams</span>
+              <h3>Vandalizer</h3>
+              <p>
+                Start here when the problem is document review, extraction,
+                sponsor guidance, or another workflow that already depends on
+                careful human reading.
+              </p>
+              <div class="card-actions">
+                <a class="button" href="resources.html#vandalizer">Open Vandalizer</a>
+              </div>
+            </article>
+            <article class="content-card">
+              <span class="tag">Best for training</span>
+              <h3>Promptulus</h3>
+              <p>
+                Start here when your team needs a shared language for prompt
+                design before you talk about automation or procurement.
+              </p>
+              <div class="card-actions">
+                <a class="button" href="resources.html#promptulus">Launch Promptulus</a>
+              </div>
+            </article>
+            <article class="content-card">
+              <span class="tag">Best for data teams</span>
+              <h3>Data Crawler Carl</h3>
+              <p>
+                Start here when you want a low-friction demo that turns one CSV
+                into an exploratory conversation about questions, limits, and
+                evidence.
+              </p>
+              <div class="card-actions">
+                <a class="button" href="resources.html#data-crawler">Launch the demo</a>
+              </div>
+            </article>
+            <article class="content-card">
+              <span class="tag">Best for shared structure</span>
+              <h3>Universal Data Model</h3>
+              <p>
+                Start here when the real issue is inconsistent institutional
+                data, unclear definitions, or reporting logic that does not
+                scale across units.
+              </p>
+              <div class="card-actions">
+                <a class="button" href="resources.html#udm">Open UDM resources</a>
+              </div>
+            </article>
+            <article class="content-card">
+              <span class="tag">Best for reusable prompts</span>
+              <h3>Prompt Library</h3>
+              <p>
+                Start here when the team wants real prompt examples, schemas,
+                and workflow patterns that can be adapted instead of invented
+                from scratch.
+              </p>
+              <div class="card-actions">
+                <a class="button" href="resources.html#prompt-library">Open prompt library</a>
+              </div>
+            </article>
+            <article class="content-card">
+              <span class="tag">Best for longer-term follow-through</span>
+              <h3>AI4RA community hub</h3>
+              <p>
+                Start here when you need a broader story, more examples, or a
+                way to keep the conversation going after the pilot is scoped.
+              </p>
+              <div class="card-actions">
+                <a class="button" href="resources.html#ai4ra">Visit AI4RA</a>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section id="roadmap" class="content-block reveal">
+          <p class="eyebrow">30-day plan</p>
+          <h2 class="section-heading section-heading-wide">A simple roadmap for turning workshop energy into an institutional pilot.</h2>
+          <div class="compact-grid">
+            <article class="course-module">
+              <span class="tag">Week 1</span>
+              <h3>Name one workflow</h3>
+              <p>
+                Pick a small, annoying, repeatable task. If the problem is too
+                broad to explain in one paragraph, it is too broad for the
+                first pilot.
+              </p>
+            </article>
+            <article class="course-module">
+              <span class="tag">Week 2</span>
+              <h3>Gather the real context</h3>
+              <p>
+                Collect the actual documents, source tables, definitions, and
+                human review criteria that make the workflow trustworthy.
+              </p>
+            </article>
+            <article class="course-module">
+              <span class="tag">Week 3</span>
+              <h3>Run the pilot and evaluate it</h3>
+              <p>
+                Test the workflow with a small sample, compare outputs to an
+                authoritative source, and document where the system fails.
+              </p>
+            </article>
+            <article class="course-module">
+              <span class="tag">Week 4</span>
+              <h3>Decide what happens next</h3>
+              <p>
+                Use the automate, augment, or leave-alone decision rule. Keep
+                only the work that is auditable, useful, and appropriate for
+                the stakes.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section class="callout-band reveal">
+          <div class="callout-panel">
+            <p class="eyebrow">Keep the scope healthy</p>
+            <h2 class="section-heading section-heading-wide">Do not try to launch an institutional AI strategy from a slide deck.</h2>
+            <p>
+              Start with one workflow, one owner, one source of truth, and one
+              review loop. If that works, you will have something real to scale.
+            </p>
+            <div class="cta-row">
+              <a class="button" href="resources.html">Browse the full resource library</a>
+              <a class="button-secondary" href="https://ai4ra.uidaho.edu" target="_blank" rel="noopener">Visit AI4RA</a>
+            </div>
+          </div>
+        </section>
+      </main>
+
+    </div>
+
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
