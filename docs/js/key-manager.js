@@ -5,7 +5,7 @@ const STORAGE_KEY = 'ai4ra_gemini_key';
 
 // Cross-origin links that need ?key= appended (sessionStorage can't help here)
 const CROSS_ORIGIN_TARGETS = [
-  'nate-layman.github.io/promptulus',
+  'ai4ra.github.io/promptulus',
   'ui-insight.github.io/data-crawler-carl'
 ];
 

@@ -87,7 +87,7 @@ This is the concrete example of "the most important model is the data model." Th
 
 ## Promptulus — The AI Literacy Companions
 
-**Repo:** `promptulus` | **Status:** Production | **Live:** [nate-layman.github.io/promptulus](https://nate-layman.github.io/promptulus/)
+**Repo:** `promptulus` | **Status:** Production | **Live:** [ai4ra.github.io/promptulus](https://ai4ra.github.io/promptulus/)
 
 ### What it is
 
